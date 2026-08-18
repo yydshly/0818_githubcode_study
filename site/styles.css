@@ -39,6 +39,15 @@ h2 { margin: 0; font: clamp(2.2rem, 5vw, 4.4rem)/1 Georgia, serif; }
 .project-card-second .actions .primary { color: var(--text); background: var(--orange); border-color: var(--orange); }
 .project-card-third .project-number { background: #edc26d; }
 .project-card-third .actions .primary { color: var(--bg); background: #edc26d; border-color: #edc26d; }
+.project-card-fourth .project-number { background: #d97a3f; }
+.project-card-fourth .actions .primary { color: #fff; background: #d97a3f; border-color: #d97a3f; }
+.promise-cover { position: relative; float: right; width: min(320px, 42%); min-height: 230px; margin: 0 0 24px 34px; overflow: hidden; border: 1px solid #b9aa93; border-radius: 2px 20px 2px 20px; background-color: #c7b79f; background-image: linear-gradient(90deg, rgba(255,255,255,.14) 1px, transparent 1px), linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), radial-gradient(circle at 35% 20%, rgba(255,255,255,.3), transparent 14rem); background-size: 54px 43px, 54px 43px, auto; box-shadow: inset 0 -22px 0 #9a704b, inset 0 -28px 0 #e4dac9; }
+.promise-cover small { position: absolute; right: 9px; bottom: 6px; color: rgba(255,255,255,.7); font-size: .54rem; font-weight: 800; }
+.promise-note { position: absolute; width: 92px; min-height: 76px; padding: 25px 10px 10px; display: grid; place-items: center; color: #463c32; background: #f3e8ce; box-shadow: 0 9px 16px rgba(52,37,22,.2); font: 700 .68rem/1.2 Georgia, serif; text-align: center; }
+.promise-note::before { content: ""; position: absolute; left: 50%; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: #9c6737; box-shadow: 0 2px 3px rgba(40,25,10,.3); transform: translateX(-50%); }
+.promise-note.note-one { left: 18px; top: 34px; transform: rotate(-4deg); }
+.promise-note.note-two { right: 18px; top: 66px; color: #443950; background: #cec3db; transform: rotate(3deg); }
+.promise-note.note-three { left: 90px; bottom: 38px; color: #35402e; background: #ccd3bf; transform: rotate(-1deg); }
 .stamp-cover { width: min(300px, 40%); color: #d7dedd; background-color: #111d26; background-image: linear-gradient(45deg, #1b2a34 25%, transparent 25%), linear-gradient(-45deg, #1b2a34 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #1b2a34 75%), linear-gradient(-45deg, transparent 75%, #1b2a34 75%); background-position: 0 0, 0 8px, 8px -8px, -8px 0; background-size: 16px 16px; }
 .stamp-cover img { aspect-ratio: 3/2; object-fit: contain; }
 .project-cover { float: right; width: min(210px, 32%); margin: 0 0 22px 34px; padding: 7px; color: #182523; background: #fff8e9; border: 1px solid #d9cbb3; transform: rotate(1deg); }
@@ -65,6 +74,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 32px
   .project-number { padding: 20px 26px; font-size: 2.4rem; }
   .project-body ul { grid-template-columns: 1fr; }
   .project-cover { float: none; width: min(100%, 360px); margin: 24px 0; }
+  .promise-cover { float: none; width: min(100%, 360px); margin: 24px 0; }
   footer { display: block; }
   footer span { display: block; margin-bottom: 6px; }
 }

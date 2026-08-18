@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Promise Wall Three.js 项目研究：真实原版 Demo、程序化材质、空间交互、能力边界、使用与扩展场景。">
+  <title>Promise Wall · 一面可以真正钉东西的 3D 墙</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="topbar">
+    <a class="brand" href="../../../"><span aria-hidden="true">●</span> GITHUB CODE STUDY</a>
+    <nav aria-label="研究导航">
+      <a href="#live">真实样例</a>
+      <a href="#inside">内部能力</a>
+      <a href="#use">使用场景</a>
+      <a href="#extend">扩展路线</a>
+    </nav>
+    <a class="source-link" href="https://github.com/thebuggeddev/promise-wall">上游源码 ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="kicker">RESEARCH 04 · THREE.JS / DOM + WEBGL</p>
+        <h1 id="hero-title">一面真的可以<br><em>钉东西</em>的墙。</h1>
+        <p class="hero-lede">Promise Wall 把短内容先画成有纤维、折痕和手写字的纸，再放进一间可拖动、缩放和聚焦的 3D 房间。我们保留原版运行证据，并把“视觉能力”和“产品能力”彻底分开。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#live">操作原版 Demo</a>
+          <a class="button" href="../docs/analysis.md">阅读技术拆解</a>
+        </div>
+        <dl class="facts" aria-label="项目事实">
+          <div><dt>3,587</dt><dd>行单文件入口</dd></div>
+          <div><dt>07</dt><dd>CanvasTexture 入口</dd></div>
+          <div><dt>01</dt><dd>上游提交</dd></div>
+          <div><dt>00</dt><dd>持久化调用</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-wall" aria-label="研究页面自制的结构示意：纸张、图钉和墙面">
+        <div class="wall-light"></div>
+        <article class="note note-a"><span class="pin"></span><p>小小的承诺，<br>也值得一个空间。</p><small>视觉层 · 已实现</small></article>
+        <article class="note note-b"><span class="tape"></span><p>Canvas → Texture<br>→ 3D Card</p><small>技术层 · 已验证</small></article>
+        <article class="note note-c"><span class="clip"></span><p>多人、账号、审核？</p><small>产品层 · 尚未实现</small></article>
+        <span class="wall-label">STRUCTURE SKETCH · 本研究自制示意</span>
+      </div>
+    </section>
+
+    <section class="truth-band" aria-label="能力边界摘要">
+      <div><span class="state real">真实实现</span><strong>渲染、材质、镜头、创建与放置</strong></div>
+      <div><span class="state simulated">界面模拟</span><strong>支持、反思、收藏、举报与社区</strong></div>
+      <div><span class="state planned">研究扩展</span><strong>持久化、协作、媒体、关系图与导览</strong></div>
+    </section>
+
+    <section class="live-section section" id="live" aria-labelledby="live-title">
+      <div class="section-heading">
+        <p>01 / LIVE EVIDENCE</p>
+        <div>
+          <h2 id="live-title">先操作原版，再谈能力。</h2>
+          <p>下面直接运行固定提交中的上游页面。它不是截图，也不是我们重写的相似效果。</p>
+        </div>
+      </div>
+
+      <div class="demo-shell">
+        <div class="demo-toolbar">
+          <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span><b>PINNED UPSTREAM</b> · 0cb1b20 · 未修改</span>
+          <div class="demo-actions">
+            <button type="button" id="reload-demo">重新加载</button>
+            <a href="../upstream/index.html" target="_blank" rel="noreferrer">单独打开 ↗</a>
+          </div>
+        </div>
+        <div class="demo-frame-wrap">
+          <div class="demo-loading" id="demo-loading" role="status">正在连接固定上游 Demo…</div>
+          <iframe id="upstream-demo" src="../upstream/index.html" title="Promise Wall 固定上游原版交互 Demo" loading="eager"></iframe>
+        </div>
+        <div class="walkthrough" aria-label="原版体验步骤">
+          <div class="walkthrough-tabs" role="tablist" aria-label="体验步骤">
+            <button role="tab" aria-selected="true" aria-controls="walkthrough-copy" data-walkthrough="browse">01 浏览</button>
+            <button role="tab" aria-selected="false" aria-controls="walkthrough-copy" data-walkthrough="inspect">02 聚焦</button>
+            <button role="tab" aria-selected="false" aria-controls="walkthrough-copy" data-walkthrough="create">03 创建</button>
+          </div>
+          <div id="walkthrough-copy" class="walkthrough-copy" role="tabpanel">
+            <strong>拖动墙面，滚轮缩放。</strong>
+            <span>相机在逻辑墙面坐标中移动，远处的卡片也能被发现。</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="runtime-note"><strong>运行边界：</strong>上游从 CDN 加载 Three.js r128、GSAP 3.12.5 和 Google Fonts。网络或 WebGL 不可用时，3D 舞台可能无法启动；本页的全部研究结论仍可阅读。</p>
+    </section>
+
+    <section class="section" id="inside" aria-labelledby="inside-title">
+      <div class="section-heading">
+        <p>02 / CAPABILITY MAP</p>
+        <div>
+          <h2 id="inside-title">它不是一张背景图，<br>而是五层协作。</h2>
+          <p>每层都能在固定源码中找到对应实现。点击切换研究视角。</p>
+        </div>
+      </div>
+
+      <div class="capability-workbench">
+        <div class="capability-tabs" role="tablist" aria-label="能力层">
+          <button role="tab" aria-selected="true" aria-controls="capability-panel" data-capability="data"><span>01</span>内容数据</button>
+          <button role="tab" aria-selected="false" aria-controls="capability-panel" data-capability="texture"><span>02</span>程序化纸张</button>
+          <button role="tab" aria-selected="false" aria-controls="capability-panel" data-capability="scene"><span>03</span>3D 空间</button>
+          <button role="tab" aria-selected="false" aria-controls="capability-panel" data-capability="interaction"><span>04</span>空间交互</button>
+          <button role="tab" aria-selected="false" aria-controls="capability-panel" data-capability="product"><span>05</span>DOM 产品层</button>
+        </div>
+        <div class="capability-panel" id="capability-panel" role="tabpanel">
+          <p class="panel-label" id="capability-label">LAYER 01 · DATA</p>
+          <h3 id="capability-title">一份数据，同时驱动纸面与空间。</h3>
+          <p id="capability-description">分类、作者、正文、纸张、附件、位置、旋转和互动数值保存在统一对象中。页面内置八个分类和八种纸张。</p>
+          <ul id="capability-points">
+            <li>统一 P() 默认值工厂</li>
+            <li>约二十条固定内容样例</li>
+            <li>wallStateJSON() 后端适配钩子</li>
+          </ul>
+          <a id="capability-source" href="https://github.com/thebuggeddev/promise-wall/blob/0cb1b20c3952e4c4184b7e0e33fe5acfac2b4447/index.html#L1482-L1874">查看固定源码 1482–1874 ↗</a>
+        </div>
+      </div>
+
+      <ol class="flow" aria-label="内容进入 3D 场景的流程">
+        <li><span>DATA</span><strong>Promise object</strong><small>文字、分类、纸张、坐标</small></li>
+        <li><span>CANVAS</span><strong>Texture factory</strong><small>纸张、文字、纤维、撕边</small></li>
+        <li><span>THREE.JS</span><strong>Bent card mesh</strong><small>网格、附件、阴影、叠放</small></li>
+        <li><span>RAYCAST</span><strong>Spatial input</strong><small>悬停、聚焦、放置、镜头</small></li>
+        <li><span>DOM</span><strong>Readable product UI</strong><small>搜索、详情、创建、反馈</small></li>
+      </ol>
+    </section>
+
+    <section class="section sample-section" aria-labelledby="sample-title">
+      <div class="section-heading compact">
+        <p>03 / INTERNAL SAMPLES</p>
+        <div>
+          <h2 id="sample-title">原版内部样例说明了什么？</h2>
+          <p>不是素材数量，而是同一内容系统如何形成不同触感和状态。</p>
+        </div>
+      </div>
+      <div class="sample-grid">
+        <article><span class="sample-chip classic"></span><h3>八种纸张</h3><p>撕纸、笔记本、方格、粉色、紫色、绿色、牛皮纸和手工纸，共享同一个 Canvas 绘制管线。</p></article>
+        <article><span class="sample-chip attach"></span><h3>三种附件</h3><p>图钉、胶带和长尾夹是独立 3D 几何，不是画进纸张里的装饰。</p></article>
+        <article><span class="sample-chip photo"></span><h3>照片卡</h3><p>山脊和海滩样例仍由 Canvas 程序化生成，用于验证混合内容，不代表上传能力。</p></article>
+        <article><span class="sample-chip motion"></span><h3>空间反馈</h3><p>悬停抬升、选中聚焦、背景变暗和放置回弹共同建立“摸到纸”的感觉。</p></article>
+      </div>
+    </section>
+
+    <section class="section boundary-section" aria-labelledby="boundary-title">
+      <div class="section-heading compact">
+        <p>04 / PRODUCT TRUTH</p>
+        <div><h2 id="boundary-title">看起来像产品，<br>但还不是产品。</h2></div>
+      </div>
+      <div class="boundary-grid">
+        <article class="boundary-real"><p>上游已实现</p><h3>空间体验</h3><ul><li>浏览、缩放和选择</li><li>搜索和分类过滤</li><li>创建并放置新卡片</li><li>响应式界面与动效降级</li></ul></article>
+        <article class="boundary-sim"><p>仅当前会话模拟</p><h3>社区反馈</h3><ul><li>支持数字加减</li><li>反思内容插入 DOM</li><li>收藏状态切换</li><li>举报成功 Toast</li></ul></article>
+        <article class="boundary-none"><p>完全未包含</p><h3>服务能力</h3><ul><li>账号、权限和身份</li><li>数据库与刷新后保存</li><li>多人实时协作</li><li>审核、上传和运营后台</li></ul></article>
+      </div>
+    </section>
+
+    <section class="section" id="use" aria-labelledby="use-title">
+      <div class="section-heading">
+        <p>05 / USE-CASE ROUTER</p>
+        <div>
+          <h2 id="use-title">换掉“承诺”，<br>空间模式仍然成立。</h2>
+          <p>最适合它的内容都具备：短内容、视觉身份、空间位置、详情和轻互动。</p>
+        </div>
+      </div>
+      <div class="use-grid">
+        <article><span>01</span><h3>校园／公益心愿墙</h3><p>保留匿名张贴、分类和浏览；补充审核、敏感词和活动归档。</p><b>最短落地路径</b></article>
+        <article><span>02</span><h3>企业目标墙</h3><p>把作者换成负责人，把分类换成团队；补充 SSO、周期和进度状态。</p><b>组织内使用</b></article>
+        <article><span>03</span><h3>活动留言墙</h3><p>适合婚礼、毕业季和展会；增加二维码入口、照片上传与投屏模式。</p><b>现场互动</b></article>
+        <article><span>04</span><h3>品牌故事展厅</h3><p>卡片承载用户证言或品牌节点，镜头与空间成为非线性叙事路径。</p><b>内容策展</b></article>
+        <article><span>05</span><h3>研究灵感墙</h3><p>将承诺换成论文、观点和来源；增加引用、附件和全文检索。</p><b>知识组织</b></article>
+        <article><span>06</span><h3>游戏线索板</h3><p>把卡片变成任务、人物和证据；叠加连线、状态与存档。</p><b>交互叙事</b></article>
+        <article><span>07</span><h3>私人反思墙</h3><p>使用本地优先存储记录习惯、复盘和成长轨迹，强调隐私与导出。</p><b>个人工具</b></article>
+        <article><span>08</span><h3>纪念与故事墙</h3><p>照片、人物和时间共同形成可浏览档案；需要长期保存和无障碍替代。</p><b>长期档案</b></article>
+      </div>
+    </section>
+
+    <section class="section extension-section" id="extend" aria-labelledby="extend-title">
+      <div class="section-heading">
+        <p>06 / EXTENSION MAP</p>
+        <div>
+          <h2 id="extend-title">下一步不是更多纸张，<br>而是新的状态能力。</h2>
+          <p>每条扩展都标注真正增加的系统复杂度，避免把规划写成现有能力。</p>
+        </div>
+      </div>
+      <div class="extension-list">
+        <article><span class="effort high">高工程量</span><h3>真实多人社区</h3><p>认证、数据库、实时订阅、审核、限流与状态冲突处理。</p><small>产品价值：高 · 上游现状：无</small></article>
+        <article><span class="effort medium">中工程量</span><h3>可分享空间</h3><p>版本化 JSON、本地保存、导入导出、相机状态与分享 URL。</p><small>产品价值：高 · 适合先做单机版</small></article>
+        <article><span class="effort high">高工程量</span><h3>关系图／调查板</h3><p>语义端口、连线拾取、碰撞避让和自动布局。</p><small>产品价值：高 · 视觉结构改变</small></article>
+        <article><span class="effort medium">中工程量</span><h3>时间与进度</h3><p>过去／现在／未来分区，状态驱动材质、位置和聚类。</p><small>产品价值：中高 · 适合目标与里程碑</small></article>
+        <article><span class="effort high">高工程量</span><h3>多媒体卡片</h3><p>上传、转码、懒加载、资源预算和权限管理。</p><small>产品价值：高 · 不只是换纹理</small></article>
+        <article><span class="effort medium">中工程量</span><h3>AI 辅助组织</h3><p>建议标签、相似内容聚类、摘要与反思问题；不自动公开或审核。</p><small>产品价值：中 · 外部模型能力</small></article>
+        <article><span class="effort low">低工程量</span><h3>自动导览</h3><p>确定性相机路径、聚焦、字幕、暂停和 reduced-motion 替代。</p><small>展示价值：高 · 适合活动与研究演示</small></article>
+        <article><span class="effort high">高工程量</span><h3>千级卡片引擎</h3><p>分块、图集、裁剪、对象池、LOD 和 20／100／500／1000 基准。</p><small>工程价值：高 · 必须先测量</small></article>
+      </div>
+    </section>
+
+    <section class="section roadmap-section" aria-labelledby="roadmap-title">
+      <div class="section-heading compact">
+        <p>07 / PRODUCTION ROUTE</p>
+        <div><h2 id="roadmap-title">从漂亮 Demo 到可信产品。</h2></div>
+      </div>
+      <ol class="roadmap">
+        <li><span>PHASE 0</span><h3>工程整理</h3><p>拆分单文件、锁定依赖、清理默认模板、建立类型和测试。</p></li>
+        <li><span>PHASE 1</span><h3>可信单机版</h3><p>本地持久化、迁移、导入导出、编辑撤销和列表 fallback。</p></li>
+        <li><span>PHASE 2</span><h3>真实在线产品</h3><p>身份、数据库、同步、审核、隐私、上传和可观测性。</p></li>
+        <li><span>PHASE 3</span><h3>选择一个场景</h3><p>关系、时间、导览或 AI 四选一，用真实任务指标验证。</p></li>
+      </ol>
+    </section>
+
+    <section class="verdict section" aria-labelledby="verdict-title">
+      <p>RESEARCH VERDICT</p>
+      <h2 id="verdict-title">值得研究它怎样把内容变成空间；<br>不应把它误认成成熟社区框架。</h2>
+      <div class="verdict-grid">
+        <div><strong>8/10</strong><span>Three.js 视觉与交互</span></div>
+        <div><strong>8/10</strong><span>Canvas 程序化材质</span></div>
+        <div><strong>8/10</strong><span>DOM / WebGL 混合 UI</span></div>
+        <div><strong>3/10</strong><span>直接代码复用</span></div>
+        <div><strong>2/10</strong><span>现有后端能力</span></div>
+        <div><strong>8/10</strong><span>AI 生成工程样本</span></div>
+      </div>
+      <div class="document-actions">
+        <a class="button primary" href="../docs/analysis.md">完整能力分析</a>
+        <a class="button" href="../docs/extension-scenarios.md">使用与扩展路线</a>
+        <a class="button" href="../README.md">项目复现说明</a>
+        <a class="button" href="https://github.com/thebuggeddev/promise-wall/commit/0cb1b20c3952e4c4184b7e0e33fe5acfac2b4447">固定上游提交 ↗</a>
+      </div>
+      <p class="license-note"><strong>许可提醒：</strong>固定上游版本没有 LICENSE。本研究通过 Git submodule 保存来源与 commit，不复制上游代码历史；修改、再分发或商用前需取得明确许可。</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Promise Wall Research · 2026-08-19</span>
+    <span>source evidence → runtime evidence → bounded conclusion</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

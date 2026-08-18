@@ -7,3 +7,6 @@
 [submodule "projects/stamp-edge-skill/upstream"]
 	path = projects/stamp-edge-skill/upstream
 	url = https://github.com/xianxie6/stamp-edge-skill.git
+[submodule "projects/promise-wall/upstream"]
+	path = projects/promise-wall/upstream
+	url = https://github.com/thebuggeddev/promise-wall.git
