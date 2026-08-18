@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="luopan 的能力、原理、边界与项目研究扩展">
+  <title>luopan · 项目研究 01</title>
+  <style>:root {
+  color-scheme: light;
+  --paper: #f2efe7;
+  --paper-deep: #e8e1d4;
+  --ink: #18201f;
+  --muted: #5d6764;
+  --line: rgba(24, 32, 31, 0.16);
+  --surface: rgba(255, 255, 255, 0.72);
+  --signal: #e8562a;
+  --cyan: #147b78;
+  --gold: #a76b00;
+  --red: #a1392f;
+  --shadow: 0 22px 70px rgba(43, 37, 28, 0.1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 4%, rgba(232, 86, 42, 0.12), transparent 25rem),
+    linear-gradient(115deg, transparent 0 49.7%, rgba(24, 32, 31, 0.025) 50% 50.3%, transparent 50.6%),
+    var(--paper);
+  font: 16px/1.72 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+}
+
+a { color: var(--cyan); text-underline-offset: 0.18em; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+:focus-visible { outline: 3px solid var(--signal); outline-offset: 4px; }
+
+.shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+.masthead { padding: 28px 0 0; }
+.topline { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: 0.08em; }
+.brand-mark { width: 18px; height: 18px; border: 5px solid var(--ink); border-radius: 50%; position: relative; }
+.brand-mark::after { content: ""; position: absolute; width: 7px; height: 2px; background: var(--signal); top: 3px; left: 8px; transform: rotate(-35deg); transform-origin: left; }
+.source-link { color: var(--ink); font-size: 0.9rem; font-weight: 700; }
+
+.hero { padding: clamp(58px, 10vw, 118px) 0 68px; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr); gap: 50px; align-items: end; }
+.eyebrow { margin: 0 0 18px; color: var(--signal); font-size: 0.78rem; font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase; }
+h1, h2, h3, p { margin-top: 0; }
+h1 { margin-bottom: 28px; max-width: 880px; font-family: Georgia, "Noto Serif SC", serif; font-size: clamp(3.2rem, 9vw, 7.3rem); line-height: 0.92; letter-spacing: -0.065em; }
+.hero-lede { max-width: 760px; margin: 0; font-size: clamp(1.06rem, 2vw, 1.35rem); color: #37413f; }
+.hero-side { border-left: 1px solid var(--line); padding-left: 26px; }
+.hero-side strong { display: block; font-family: Georgia, serif; font-size: 2.8rem; line-height: 1; }
+.hero-side span { display: block; color: var(--muted); margin-top: 9px; }
+
+.viewbar { position: sticky; top: 12px; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 58px; padding: 11px; border: 1px solid rgba(255,255,255,.75); border-radius: 18px; background: rgba(250, 248, 242, 0.82); box-shadow: 0 12px 40px rgba(37, 31, 24, 0.11); backdrop-filter: blur(18px); }
+.viewbar-label { padding-left: 12px; color: var(--muted); font-size: 0.86rem; font-weight: 800; }
+.segmented { display: flex; gap: 6px; }
+.segmented button, .filters button { border: 0; border-radius: 12px; background: transparent; color: var(--muted); cursor: pointer; padding: 9px 14px; font-weight: 800; }
+.segmented button[aria-pressed="true"] { background: var(--ink); color: white; }
+
+.section { padding: 68px 0; border-top: 1px solid var(--line); }
+.section-head { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 28px; margin-bottom: 38px; }
+.section-no { color: var(--signal); font-size: 0.8rem; font-weight: 900; letter-spacing: 0.12em; }
+h2 { max-width: 850px; margin-bottom: 12px; font-family: Georgia, "Noto Serif SC", serif; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.03; letter-spacing: -0.04em; }
+.section-intro { max-width: 760px; color: var(--muted); font-size: 1.04rem; }
+
+.verdict-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.verdict { min-height: 220px; padding: 28px; background: var(--surface); border: 1px solid rgba(255,255,255,.7); border-radius: 4px 24px 4px 4px; box-shadow: var(--shadow); }
+.verdict:nth-child(2), .verdict:nth-child(3) { border-radius: 24px 4px 4px; }
+.verdict small { color: var(--signal); font-weight: 900; letter-spacing: .12em; }
+.verdict h3 { margin: 28px 0 0; font-size: clamp(1.25rem, 3vw, 2rem); line-height: 1.28; }
+
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.filters button { border: 1px solid var(--line); background: rgba(255,255,255,.42); }
+.filters button[aria-pressed="true"] { color: white; background: var(--cyan); border-color: var(--cyan); }
+.capability-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.capability { padding: 26px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.5); transition: transform .22s ease, opacity .2s ease; }
+.capability:hover { transform: translateY(-3px); }
+.capability[hidden] { display: none; }
+.cap-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.capability h3 { margin-bottom: 12px; font-size: 1.35rem; }
+.capability p { color: var(--muted); }
+.status { flex: none; border: 1px solid currentColor; border-radius: 999px; padding: 3px 9px; font-size: .72rem; font-weight: 900; letter-spacing: .06em; }
+.status-verified { color: var(--cyan); }
+.status-declared { color: var(--gold); }
+.status-external { color: #5a5198; }
+.status-gap { color: var(--red); }
+.evidence { margin: 20px 0 0; padding: 15px 0 0 20px; border-top: 1px solid var(--line); color: #3c4744; font-size: .9rem; }
+.evidence li + li { margin-top: 7px; }
+
+.mechanism { counter-reset: stages; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.mechanism-step { counter-increment: stages; min-height: 250px; padding: 24px 18px; border-right: 1px solid var(--line); }
+.mechanism-step:last-child { border-right: 0; }
+.mechanism-step::before { content: "0" counter(stages); display: block; margin-bottom: 46px; color: var(--signal); font-weight: 900; }
+.mechanism-step h3 { font-size: 1rem; }
+.mechanism-step p { color: var(--muted); font-size: .91rem; }
+
+.proof-layout { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 32px; }
+.scoreboard { padding: 32px; color: white; background: var(--ink); border-radius: 24px 4px 24px 4px; }
+.scoreboard strong { display: block; font: 4.7rem/.9 Georgia, serif; }
+.scoreboard span { color: #c5cdca; }
+.command-list { display: grid; gap: 10px; }
+.command { overflow-x: auto; padding: 16px 18px; border: 1px solid var(--line); background: rgba(255,255,255,.45); font: .84rem/1.55 ui-monospace, SFMono-Regular, Consolas, monospace; }
+.notes { margin: 22px 0 0; padding-left: 20px; color: var(--muted); }
+
+.warning-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; list-style: none; padding: 0; }
+.warning-list li { position: relative; padding: 22px 22px 22px 52px; background: rgba(161,57,47,.07); border-left: 3px solid var(--red); }
+.warning-list li::before { content: "!"; position: absolute; left: 20px; color: var(--red); font-weight: 900; }
+
+.extension-hero { overflow: hidden; position: relative; padding: clamp(34px, 6vw, 70px); color: white; background: var(--ink); border-radius: 4px 46px 4px 46px; }
+.extension-hero::after { content: ""; position: absolute; width: 330px; height: 330px; right: -90px; top: -120px; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; box-shadow: 0 0 0 40px rgba(255,255,255,.025), 0 0 0 80px rgba(255,255,255,.02); }
+.extension-hero h3 { max-width: 780px; margin-bottom: 20px; font: clamp(2rem, 5vw, 4.5rem)/1.02 Georgia, serif; letter-spacing: -.04em; }
+.extension-hero p { max-width: 720px; color: #c6cfcc; font-size: 1.08rem; }
+.route { display: flex; flex-wrap: wrap; gap: 7px; margin: 30px 0 0; }
+.route span { padding: 7px 10px; border: 1px solid rgba(255,255,255,.26); border-radius: 99px; font-size: .8rem; }
+.extension-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.extension-card { padding: 26px; border: 1px solid var(--line); background: rgba(255,255,255,.55); }
+.extension-card small { color: var(--cyan); font-weight: 900; }
+.extension-card h3 { margin: 20px 0 10px; }
+.acceptance { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+
+.sources { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.sources li { display: grid; grid-template-columns: 60px minmax(0,1fr); gap: 20px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.level { color: var(--signal); font-weight: 900; }
+footer { padding: 35px 0 70px; color: var(--muted); font-size: .88rem; }
+.noscript { padding: 12px 18px; color: white; background: var(--red); }
+
+@media (max-width: 850px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-side { max-width: 420px; }
+  .mechanism { grid-template-columns: 1fr; }
+  .mechanism-step { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .mechanism-step:last-child { border-bottom: 0; }
+  .mechanism-step::before { margin-bottom: 16px; }
+  .proof-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .shell { width: min(100% - 24px, 1180px); }
+  .masthead { padding-top: 18px; }
+  .source-link { font-size: 0; }
+  .source-link::after { content: "上游 ↗"; font-size: .85rem; }
+  .hero { padding-top: 62px; gap: 32px; }
+  h1 { font-size: clamp(3.15rem, 19vw, 5rem); }
+  .viewbar { top: 6px; align-items: stretch; flex-direction: column; }
+  .viewbar-label { display: none; }
+  .segmented { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .segmented button { padding-inline: 8px; font-size: .82rem; }
+  .section { padding: 52px 0; }
+  .section-head { grid-template-columns: 1fr; gap: 9px; }
+  .verdict-grid, .capability-grid, .warning-list, .extension-grid { grid-template-columns: 1fr; }
+  .verdict { min-height: 0; }
+  .filters { display: grid; grid-template-columns: repeat(2, 1fr); }
+  .filters button { min-height: 44px; }
+  .cap-top { display: block; }
+  .status { display: inline-block; margin-bottom: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+}
+
+@media print {
+  .viewbar, .filters { display: none; }
+  body { background: white; }
+  .section { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+  <noscript><div class="noscript">JavaScript 已关闭：全部研究内容仍然可读，视角切换和筛选不可用。</div></noscript>
+  <header class="masthead shell">
+    <div class="topline">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span>CODE STUDY / 01</div>
+      <a class="source-link" href="https://github.com/zhangxiaoqiang1991/luopan" target="_blank" rel="noopener">查看上游源码 ↗</a>
+    </div>
+    <div class="hero">
+      <div>
+        <p class="eyebrow">能力不是宣称，证据才是边界</p>
+        <h1>luopan<br>研究罗盘</h1>
+        <p class="hero-lede">luopan 是一套运行在 AI 编程/助手宿主中的商业研究 Skill，而不是独立金融应用：它把请求路由到行业研究或公司研究，再以证据规则和报告模板约束输出。 它解决的不是“搜到资料”，而是快速建立钱、权力、竞争与决策边界的结构化地图，减少百科式堆料和无依据判断。</p>
+      </div>
+      <aside class="hero-side" aria-label="研究版本">
+        <strong>499eb43</strong>
+        <span>2026-08-18 固定研究版本</span>
+        <span>MIT License</span>
+      </aside>
+    </div>
+  </header>
+
+  <main class="shell">
+    <nav class="viewbar" aria-label="研究视角">
+      <span class="viewbar-label">切换阅读视角</span>
+      <div class="segmented">
+        <button type="button" data-set-view="upstream" aria-pressed="false">上游能力</button>
+        <button type="button" data-set-view="extension" aria-pressed="false">项目扩展</button>
+        <button type="button" data-set-view="all" aria-pressed="true">完整研究</button>
+      </div>
+    </nav>
+
+    <section class="section" data-view-scope="upstream extension">
+      <div class="section-head"><span class="section-no">00 / VERDICT</span><div><h2>它值得参考，但不该被当成开箱即用的数据产品。</h2><p class="section-intro">先给判断，再展开证据。四张卡分别回答能力、作用、原理和与当前主仓库的关系。</p></div></div>
+      <div class="verdict-grid"><article class="verdict"><small>能力</small><h3>luopan 是一套运行在 AI 编程/助手宿主中的商业研究 Skill，而不是独立金融应用：它把请求路由到行业研究或公司研究，再以证据规则和报告模板约束输出。</h3></article><article class="verdict"><small>作用</small><h3>它解决的不是“搜到资料”，而是快速建立钱、权力、竞争与决策边界的结构化地图，减少百科式堆料和无依据判断。</h3></article><article class="verdict"><small>原理</small><h3>核心价值来自路由规则、分阶段研究方法、A/B/C 信源分级、对抗验证和 JSON 单一事实源；Python 只承担 SEC 最小抓取与公司报告渲染。</h3></article><article class="verdict"><small>适配判断</small><h3>建议改造而非原样复制：保留证据分级、路由、对抗验证和单一事实源，将研究对象从行业/公司替换为 GitHub 仓库，形成当前主仓库的标准收录闭环。</h3></article></div>
+    </section>
+
+    <section class="section" data-view-scope="upstream">
+      <div class="section-head"><span class="section-no">01 / CAPABILITY</span><div><h2>原生能力被拆成四种状态，避免 README 代替验证。</h2><p class="section-intro">“已验证”只代表本次固定环境中的可复现范围；外部依赖和实现缺口不会被藏在脚注里。</p></div></div>
+      <div class="filters" role="group" aria-label="按能力状态筛选">
+        <button type="button" data-cap-filter="all" aria-pressed="true">全部</button>
+        <button type="button" data-cap-filter="verified" aria-pressed="false">已验证</button>
+        <button type="button" data-cap-filter="declared" aria-pressed="false">官方宣称</button>
+        <button type="button" data-cap-filter="external" aria-pressed="false">外部依赖</button>
+        <button type="button" data-cap-filter="gap" aria-pressed="false">实现缺口</button>
+      </div>
+      <p id="filter-status" class="refs" aria-live="polite">已显示 9 项能力</p>
+      <div class="capability-grid"><article class="capability" data-cap-status="verified"><div class="cap-top"><div><span class="status status-verified">已验证</span><h3>行业/公司统一路由</h3></div></div><p>根 SKILL.md 的职责边界清楚：行业进入 industry 模式，具体公司进入 company 模式；组合研究先行业后公司。这里验证的是规则和文件结构存在，实际路由质量仍取决于宿主 AI。</p><ul class="evidence"><li>仓库包含根路由器及 industry/company 两个独立子 Skill。</li><li>公司用途不明确时，被要求在投资、求职、双线三种模式中选择。</li></ul><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/SKILL.md" target="_blank" rel="noopener">根路由器 SKILL.md</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/SKILL.md" target="_blank" rel="noopener">公司研究模式</a> · <a href="../research/evidence/repo-scan.json" target="_blank" rel="noopener">本次确定性仓库扫描快照</a></p></article><article class="capability" data-cap-status="declared"><div class="cap-top"><div><span class="status status-declared">官方宣称</span><h3>九阶段行业研究方法</h3></div></div><p>上游定义行业类型识别、Day-1 假设、权力分层、竞争格局、深度材料、骨架、双格式报告、对抗验证和质量门禁。仓库包含多个示例产物，但本次未重新执行一份完整行业研究。</p><ul class="evidence"><li>方法强调按议价能力而非传统产业链位置划分上中下游。</li><li>要求至少四类视角、2–6 份深度材料，并保留数据冲突。</li></ul><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/industry/SKILL.md" target="_blank" rel="noopener">行业研究模式</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/industry/references/full-methodology.md" target="_blank" rel="noopener">行业研究完整方法论</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/README.md" target="_blank" rel="noopener">上游 README 与能力说明</a></p></article><article class="capability" data-cap-status="declared"><div class="cap-top"><div><span class="status status-declared">官方宣称</span><h3>投资/求职双线公司研究</h3></div></div><p>公司模式共享身份、业务和财务事实底座，但投资判断与求职判断分开；投资强调公司质量与价格分离，求职强调业务、团队和岗位层级。方法与示例齐全，本次未做实时公司研究。</p><ul class="evidence"><li>支持上市公司与非上市公司的不同证据路线。</li><li>求职主视角要求生成 10 条低防御面试反问。</li></ul><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/SKILL.md" target="_blank" rel="noopener">公司研究模式</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/README.md" target="_blank" rel="noopener">上游 README 与能力说明</a></p></article><article class="capability" data-cap-status="verified"><div class="cap-top"><div><span class="status status-verified">已验证</span><h3>JSON → HTML / Markdown 公司报告</h3></div></div><p>仓库提供确定性渲染器：校验报告对象后，从同一 JSON 生成 JSON、Markdown 和自包含 HTML，并支持能力视角折叠、数据健康度、事实表、面试问题和选择题。</p><ul class="evidence"><li>示例 JSON 已成功生成 3 个格式文件。</li><li>渲染器相关 7 项单元测试在 UTF-8 模式下通过。</li></ul><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/scripts/render_report.py" target="_blank" rel="noopener">公司报告渲染器</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/report-model.md" target="_blank" rel="noopener">统一报告模型</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/tests/test_render_report.py" target="_blank" rel="noopener">公司报告渲染测试</a></p></article><article class="capability" data-cap-status="verified"><div class="cap-top"><div><span class="status status-verified">已验证</span><h3>SEC 标准事实最小抓取</h3></div></div><p>sec_fetch.py 能将 ticker/公司名映射到 CIK，读取 submissions/companyfacts，并对标准 US-GAAP/IFRS 标签保留申报血缘。验证范围是 fixture 单元测试；本次未做 SEC 实网抓取。</p><ul class="evidence"><li>6 项 SEC fixture 测试覆盖消歧、表单定位、来源血缘、标签过滤与速率限制。</li><li>脚本只提取少量标准概念，明确忽略自定义标签。</li></ul><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/scripts/sec_fetch.py" target="_blank" rel="noopener">SEC 事实抓取器</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/tests/test_sec_fetch.py" target="_blank" rel="noopener">SEC 抓取器测试</a></p></article><article class="capability" data-cap-status="verified"><div class="cap-top"><div><span class="status status-verified">已验证</span><h3>研究示例与静态报告</h3></div></div><p>仓库内含 NVIDIA、字节跳动、腾讯三份公司报告的 HTML/Markdown/JSON，以及多个行业 HTML/Markdown 和截图，可直接用于理解预期交付形态。示例存在不等于其全部实时数字已在本次复核。</p><ul class="evidence"><li>确定性扫描识别 6 个 HTML、8 个 JSON、21 个 Markdown 和 8 张 PNG。</li></ul><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/README.md" target="_blank" rel="noopener">上游 README 与能力说明</a> · <a href="../research/evidence/repo-scan.json" target="_blank" rel="noopener">本次确定性仓库扫描快照</a></p></article><article class="capability" data-cap-status="external"><div class="cap-top"><div><span class="status status-external">外部依赖</span><h3>腾讯自选股结构化金融数据</h3></div></div><p>方法要求先调用 westock-data 获取行情、三表与一致预期，但该 CLI、安装说明、版本约束和依赖清单不在仓库中，本机也未检测到该命令。它是宿主环境能力，不是仓库自带能力。</p><ul class="evidence"><li>data-routing.md 给出 westock-data 命令，并把聚合结果作为 B 级证据要求回核原始披露。</li><li>仓库扫描未发现依赖 manifest。</li></ul><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/data-routing.md" target="_blank" rel="noopener">公司研究数据路由</a> · <a href="../research/evidence/repo-scan.json" target="_blank" rel="noopener">本次确定性仓库扫描快照</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/SKILL.md" target="_blank" rel="noopener">根路由器 SKILL.md</a></p></article><article class="capability" data-cap-status="gap"><div class="cap-top"><div><span class="status status-gap">实现缺口</span><h3>跨市场自动化覆盖</h3></div></div><p>README 和根 Skill 对结构化金融数据覆盖的表达很强，但仓库自带自动化只有 SEC 最小脚本；A 股、港股、行业研究和 westock-data 没有仓库内执行器。声明能力必须与外部依赖能力分开。</p><ul class="evidence"><li>自动化路线明确把 A 股、港股列为后续阶段。</li><li>扫描仅发现 4 个 Python 文件，未发现依赖 manifest 或 CI。</li></ul><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/README.md" target="_blank" rel="noopener">上游 README 与能力说明</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/SKILL.md" target="_blank" rel="noopener">根路由器 SKILL.md</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/data-routing.md" target="_blank" rel="noopener">公司研究数据路由</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/automation-roadmap.md" target="_blank" rel="noopener">数据自动化路线图</a> · <a href="../research/evidence/repo-scan.json" target="_blank" rel="noopener">本次确定性仓库扫描快照</a></p></article><article class="capability" data-cap-status="gap"><div class="cap-top"><div><span class="status status-gap">实现缺口</span><h3>Windows 默认编码可移植性</h3></div></div><p>在 Windows 中文默认编码环境直接运行 unittest 时，渲染器 7 项测试因测试代码 read_text() 未指定 UTF-8 而报错；使用 python -X utf8 后 13/13 通过。</p><ul class="evidence"><li>失败来自测试夹具读取而不是业务渲染器本身。</li><li>当前可复现 workaround 是为测试进程开启 UTF-8 模式。</li></ul><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/tests/test_render_report.py" target="_blank" rel="noopener">公司报告渲染测试</a></p></article></div>
+    </section>
+
+    <section class="section" data-view-scope="upstream">
+      <div class="section-head"><span class="section-no">02 / MECHANISM</span><div><h2>它的核心不是模型，而是把研究判断变成一条受约束的工作链。</h2><p class="section-intro">路由、证据、对抗验证与单一事实源共同减少“写得像、证据弱”的报告。</p></div></div>
+      <div class="mechanism"><article class="mechanism-step"><h3>触发与输入</h3><p>用户以自然语言提供行业、公司、股票、岗位或 Offer。根 Skill 先判断对象；公司用途不明确时只追问一次投资/求职/双线。</p><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/SKILL.md" target="_blank" rel="noopener">根路由器 SKILL.md</a></p></article><article class="mechanism-step"><h3>路由与编排</h3><p>行业进入九阶段流水线；公司按上市市场和用户目的加载数据路线、投资框架或求职框架。组合研究复用事实，但不混合两类结论。</p><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/industry/SKILL.md" target="_blank" rel="noopener">行业研究模式</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/SKILL.md" target="_blank" rel="noopener">公司研究模式</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/data-routing.md" target="_blank" rel="noopener">公司研究数据路由</a></p></article><article class="mechanism-step"><h3>核心转换</h3><p>AI 按方法论把来源转换为判断：行业侧分析权力、集中度、利润池与壁垒；公司侧建立共享事实底座，再分别判断投资交易条件或职业价值。</p><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/industry/references/full-methodology.md" target="_blank" rel="noopener">行业研究完整方法论</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/SKILL.md" target="_blank" rel="noopener">公司研究模式</a></p></article><article class="mechanism-step"><h3>验证与约束</h3><p>A/B/C 信源、事实/推断/计算分离、反方检查、质量门禁与 JSON schema 共同约束输出。公司渲染器提供部分确定性校验，行业门禁主要依赖宿主 AI 执行。</p><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/industry/SKILL.md" target="_blank" rel="noopener">行业研究模式</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/report-model.md" target="_blank" rel="noopener">统一报告模型</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/scripts/render_report.py" target="_blank" rel="noopener">公司报告渲染器</a></p></article><article class="mechanism-step"><h3>产物与反馈</h3><p>行业目标产物是 HTML+Markdown；公司以 JSON 为真源生成 HTML+Markdown，并附来源、信息局限和可继续追问方向。仓库示例承担演示与回归样本。</p><p class="refs"><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/industry/SKILL.md" target="_blank" rel="noopener">行业研究模式</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/report-model.md" target="_blank" rel="noopener">统一报告模型</a> · <a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/README.md" target="_blank" rel="noopener">上游 README 与能力说明</a></p></article></div>
+    </section>
+
+    <section class="section" data-view-scope="upstream">
+      <div class="section-head"><span class="section-no">03 / PROOF</span><div><h2>确定性代码可以运行；业务研究仍依赖宿主 AI 与外部数据。</h2><p class="section-intro">这里展示实际执行命令、测试结果和 Windows 编码边界。</p></div></div>
+      <div class="proof-layout">
+        <div class="scoreboard"><strong>13/13</strong><span>使用 UTF-8 模式通过的上游自动化测试</span></div>
+        <div><div class="command-list"><div class="command">python -m unittest discover -s projects/luopan/upstream/modes/company/tests -v</div><div class="command">python -X utf8 -m unittest discover -s projects/luopan/upstream/modes/company/tests -v</div><div class="command">python projects/luopan/upstream/modes/company/scripts/render_report.py projects/luopan/upstream/modes/company/examples/example_report.json --output-dir .tmp/luopan-rendered</div></div><ul class="notes"><li>默认 Windows 编码运行时，7 个渲染器测试因 read_text() 未指定 UTF-8 而错误；开启 -X utf8 后全部 13 项通过。</li><li>示例渲染成功生成 HTML、Markdown、JSON 三个文件。</li><li>未执行需要真实证券数据、外部 westock-data 或完整 Web 研究的业务流程，因此不把示例与单测外推为生产级准确性。</li></ul></div>
+      </div>
+    </section>
+
+    <section class="section" data-view-scope="upstream extension">
+      <div class="section-head"><span class="section-no">04 / BOUNDARY</span><div><h2>最值得研究的地方，也恰好暴露了它还不是完整产品。</h2><p class="section-intro">方法论很强，但数据依赖、可移植性和部分指标定义需要二次校正。</p></div></div>
+      <ul class="warning-list"><li>它不是独立应用：完整行业/公司研究依赖能读取 Skill、浏览网页和调用工具的 AI 宿主。</li><li>westock-data 未随仓库提供，本次环境中也不可用；相关金融数据能力属于外部依赖。</li><li>行业研究大部分是提示词政策与人工门禁，缺少与公司报告类似的统一 schema、执行器和自动化测试。</li><li>Windows 默认编码会让 7 项测试报错；测试文件应显式使用 encoding=&quot;utf-8&quot;。</li><li>SEC 脚本测试基于 fixture，本次没有实网验证；A 股和港股自动化仍在路线图中。</li><li>行业权力指标中的应收/应付强势特征文字疑似反向：占用供应商资金通常对应较高应付，快速回款通常对应较低应收，需在用于评分前校正。</li><li>方法文档标题称“10 条红线”但实际列出 16 条且存在重复项，说明方法维护还需要结构化 lint。</li></ul>
+    </section>
+
+    <section class="section" data-view-scope="extension">
+      <div class="section-head"><span class="section-no">05 / EXTENSION</span><div><h2>把“商业研究罗盘”改造成主仓库的“GitHub 项目研究罗盘”。</h2><p class="section-intro">保留证据分级、路由、对抗验证和单一事实源，替换行业/公司领域假设。</p></div></div>
+      <div class="extension-hero">
+        <p class="eyebrow">LUOPAN → CODE STUDY</p>
+        <h3>从一个仓库链接，到可验证、可展示、可继续扩展的研究条目。</h3>
+        <p>建议改造而非原样复制：保留证据分级、路由、对抗验证和单一事实源，将研究对象从行业/公司替换为 GitHub 仓库，形成当前主仓库的标准收录闭环。</p>
+        <div class="route" aria-label="扩展流程"><span>仓库 URL</span><span>固定 commit</span><span>能力核验</span><span>原理追踪</span><span>适配判断</span><span>扩展实现</span><span>主索引</span></div>
+      </div>
+      <div class="extension-grid"><article class="extension-card"><small>可交付扩展</small><h3>GitHub 项目研究 Skill</h3><p>新增 study-github-projects 路由，将输入从行业/公司替换为仓库 URL 或本地 checkout，并强制区分已验证、官方宣称、外部依赖和实现缺口。</p><p class="acceptance"><strong>验收：</strong>Skill 通过 quick_validate.py，描述能触发仓库分析场景，方法与 schema 由 SKILL.md 直接路由。</p></article><article class="extension-card"><small>可交付扩展</small><h3>确定性仓库快照</h3><p>inspect_repo.py 固定 remote、commit、文件/语言、manifest、测试、CI、许可证和 Skill 信号，为后续判断提供不会随措辞漂移的证据底座。</p><p class="acceptance"><strong>验收：</strong>对 luopan 扫描得到 52 个有效文件、3 个 Skill、MIT 许可证、测试存在、CI/依赖 manifest 不存在，并记录 commit 499eb43。</p></article><article class="extension-card"><small>可交付扩展</small><h3>单一事实源研究展厅</h3><p>用一份项目研究 JSON 同时生成 Markdown 和响应式 HTML；页面支持研究视角切换与能力状态筛选，明确展示验证结果和边界。</p><p class="acceptance"><strong>验收：</strong>JSON 校验通过；HTML/Markdown 同步生成；桌面、平板、390px 手机可读且交互可键盘操作。</p></article><article class="extension-card"><small>可交付扩展</small><h3>主索引收录闭环</h3><p>每个研究项目在主 README 中只保留来源、主题、研究记录、演示和状态，详细证据留在子项目；未来可按相同 schema 自动生成索引。</p><p class="acceptance"><strong>验收：</strong>根 README 与 projects/luopan/README.md 同时链接上游、固定版本、研究报告、展厅与扩展 Skill。</p></article></div>
+    </section>
+
+    <section class="section" data-view-scope="upstream extension">
+      <div class="section-head"><span class="section-no">06 / SOURCES</span><div><h2>所有关键结论都回到固定版本、源码、测试和上游说明。</h2></div></div>
+      <ul class="sources"><li><span class="level">B</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/README.md" target="_blank" rel="noopener">上游 README 与能力说明</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/SKILL.md" target="_blank" rel="noopener">根路由器 SKILL.md</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/industry/SKILL.md" target="_blank" rel="noopener">行业研究模式</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/industry/references/full-methodology.md" target="_blank" rel="noopener">行业研究完整方法论</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/SKILL.md" target="_blank" rel="noopener">公司研究模式</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/data-routing.md" target="_blank" rel="noopener">公司研究数据路由</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/automation-roadmap.md" target="_blank" rel="noopener">数据自动化路线图</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/references/report-model.md" target="_blank" rel="noopener">统一报告模型</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/scripts/render_report.py" target="_blank" rel="noopener">公司报告渲染器</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/scripts/sec_fetch.py" target="_blank" rel="noopener">SEC 事实抓取器</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/tests/test_render_report.py" target="_blank" rel="noopener">公司报告渲染测试</a></li><li><span class="level">A</span><a href="https://github.com/zhangxiaoqiang1991/luopan/blob/499eb43b4ecb35ba0653c6d51d18a950efef160a/modes/company/tests/test_sec_fetch.py" target="_blank" rel="noopener">SEC 抓取器测试</a></li><li><span class="level">A</span><a href="../research/evidence/repo-scan.json" target="_blank" rel="noopener">本次确定性仓库扫描快照</a></li></ul>
+    </section>
+  </main>
+
+  <footer class="shell">研究对象归原作者所有；本页为独立研究与扩展，不代表上游维护者观点。上游代码遵循其 MIT License。</footer>
+  <script>(() => {
+  document.documentElement.classList.add("js");
+
+  const viewButtons = [...document.querySelectorAll("[data-set-view]")];
+  const viewSections = [...document.querySelectorAll("[data-view-scope]")];
+  const setView = (view) => {
+    viewButtons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.setView === view)));
+    viewSections.forEach((section) => {
+      const scopes = section.dataset.viewScope.split(" ");
+      section.hidden = view !== "all" && !scopes.includes(view);
+    });
+    document.body.dataset.activeView = view;
+  };
+  viewButtons.forEach((button) => button.addEventListener("click", () => setView(button.dataset.setView)));
+
+  const filterButtons = [...document.querySelectorAll("[data-cap-filter]")];
+  const capabilityCards = [...document.querySelectorAll("[data-cap-status]")];
+  filterButtons.forEach((button) => button.addEventListener("click", () => {
+    const filter = button.dataset.capFilter;
+    filterButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    capabilityCards.forEach((card) => { card.hidden = filter !== "all" && card.dataset.capStatus !== filter; });
+    const count = capabilityCards.filter((card) => !card.hidden).length;
+    const region = document.getElementById("filter-status");
+    if (region) region.textContent = `已显示 ${count} 项能力`;
+  }));
+
+  setView("all");
+})();
+</script>
+</body>
+</html>

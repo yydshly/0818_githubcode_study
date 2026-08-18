@@ -1,0 +1,3 @@
+[submodule "projects/luopan/upstream"]
+	path = projects/luopan/upstream
+	url = https://github.com/zhangxiaoqiang1991/luopan.git

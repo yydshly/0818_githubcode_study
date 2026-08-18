@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub 项目研究"
+  short_description: "用证据验证 GitHub 项目的能力、原理、适配性、风险与扩展机会"
+  default_prompt: "Use $study-github-projects to analyze a GitHub repository, verify its capabilities, and connect it to our research index."
