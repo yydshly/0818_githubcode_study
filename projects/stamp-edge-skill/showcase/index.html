@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stamp Edge Skill 研究展厅：六类真实内容场景、透明邮票边、白边、背景模式与原版瀑布流合集完整演示。">
+  <title>Stamp Edge · 把好图片变成可收藏的邮票</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="topbar">
+    <a class="brand" href="../../../"><span aria-hidden="true"></span>GITHUB CODE STUDY</a>
+    <nav aria-label="页面导航">
+      <a href="#scene-lab">场景实验室</a>
+      <a href="#gallery">成品墙</a>
+      <a href="#effects">三种效果</a>
+      <a href="#collection">合集</a>
+      <a href="#extension">扩展</a>
+    </nav>
+    <a class="source-link" href="https://github.com/xianxie6/stamp-edge-skill">上游源码 ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">PROJECT 03 / IMAGE EFFECT SKILL</p>
+        <h1 id="hero-title"><span class="nowrap">把好图片，</span><br>变成一套<em>可收藏的邮票。</em></h1>
+        <p class="lede">不再用抽象占位图演示。旅行、建筑、餐饮、植物、社交长帖与编辑海报，全部经过未修改的上游脚本生成真实齿孔、透明画布和柔和投影。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#scene-lab">逐个看场景</a>
+          <a class="button" href="#collection">直接看合集</a>
+        </div>
+        <dl class="metrics" aria-label="新版 Demo 摘要">
+          <div><dt>06</dt><dd>内容场景</dd></div>
+          <div><dt>09</dt><dd>单图输出</dd></div>
+          <div><dt>02</dt><dd>完整合集</dd></div>
+          <div><dt>00</dt><dd>上游改动</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-collection">
+        <img src="assets/demo/outputs-v2/collection-dark-4col.png" width="1588" height="808" alt="六个旅行、建筑、餐饮、植物和编辑内容场景组成的四列深色邮票合集">
+        <figcaption><span>STAMP SHEET / DEFAULT</span><strong>4 列 · 深色背景 · 原版贪心排布</strong></figcaption>
+      </figure>
+    </section>
+
+    <section class="proof-strip" aria-label="产物真实性">
+      <p><b>图片素材</b>：4 张原创生成摄影 + 2 张本地确定性内容卡</p>
+      <p><b>邮票处理</b>：上游 `stamp_effect.py`</p>
+      <p><b>合集排版</b>：上游 `stamp_sheet.py`</p>
+    </section>
+
+    <section class="section scene-section" id="scene-lab" aria-labelledby="scene-title">
+      <div class="section-heading">
+        <div><span>01 / SCENE LAB</span><h2 id="scene-title">同一个能力，<br>六种真实场景。</h2></div>
+        <p>选择场景查看原图与透明邮票输出。照片、长截图和编辑海报都使用同一个上游算法，没有为任何场景单独修边。</p>
+      </div>
+
+      <div class="scene-picker" role="group" aria-label="选择演示场景">
+        <button type="button" data-scene="travel" aria-pressed="true"><span>01</span>旅行</button>
+        <button type="button" data-scene="architecture" aria-pressed="false"><span>02</span>建筑</button>
+        <button type="button" data-scene="food" aria-pressed="false"><span>03</span>餐饮</button>
+        <button type="button" data-scene="botanical" aria-pressed="false"><span>04</span>植物</button>
+        <button type="button" data-scene="social" aria-pressed="false"><span>05</span>长帖</button>
+        <button type="button" data-scene="poster" aria-pressed="false"><span>06</span>海报</button>
+      </div>
+
+      <div class="scene-workbench">
+        <article class="source-panel">
+          <header><span>BEFORE / 输入</span><strong id="scene-source-label">原创旅行摄影</strong></header>
+          <div class="image-well"><img id="scene-source" src="assets/demo/inputs-v2/travel-coast.jpg" width="1400" height="933" alt="海岸公路与红色踏板车的旅行照片"></div>
+        </article>
+        <article class="output-panel">
+          <header>
+            <div><span>AFTER / 输出</span><strong id="scene-output-label">默认透明邮票</strong></div>
+            <div class="background-picker" role="group" aria-label="邮票承载背景">
+              <button type="button" data-preview-background="dark" aria-pressed="true">深色</button>
+              <button type="button" data-preview-background="paper" aria-pressed="false">纸色</button>
+              <button type="button" data-preview-background="checker" aria-pressed="false">透明格</button>
+            </div>
+          </header>
+          <div class="stamp-well" data-background="dark"><img id="scene-output" src="assets/demo/outputs-v2/travel-coast-stamp.png" width="1580" height="1113" alt="旅行照片生成的透明邮票边输出"></div>
+        </article>
+      </div>
+      <div class="scene-note">
+        <span id="scene-kicker">TRAVEL / 3:2 LANDSCAPE</span>
+        <p id="scene-description">高信息量风景最能体现齿孔边缘的“收藏品”语义；默认模式让画面直接延伸到齿孔。</p>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <div class="gallery-heading">
+        <p class="eyebrow">02 / STAMP WALL</p>
+        <h2 id="gallery-title">不是一张示意图，<br>是六类可用成品。</h2>
+      </div>
+      <div class="stamp-wall">
+        <figure class="stamp-card wide"><div><img src="assets/demo/outputs-v2/travel-coast-stamp.png" width="1580" height="1113" alt="海岸旅行透明邮票"></div><figcaption><b>旅行照片</b><span>风景 / 横向</span></figcaption></figure>
+        <figure class="stamp-card tall"><div><img src="assets/demo/outputs-v2/architecture-rain-stamp.png" width="1300" height="1580" alt="雨中建筑透明邮票"></div><figcaption><b>建筑观察</b><span>摄影 / 竖向</span></figcaption></figure>
+        <figure class="stamp-card square"><div><img src="assets/demo/outputs-v2/breakfast-table-stamp.png" width="1434" height="1434" alt="早餐静物透明邮票"></div><figcaption><b>餐饮静物</b><span>顶视 / 方形</span></figcaption></figure>
+        <figure class="stamp-card wide"><div><img src="assets/demo/outputs-v2/botanical-glasshouse-stamp.png" width="1580" height="1230" alt="植物温室透明邮票"></div><figcaption><b>自然研究</b><span>室内 / 横向</span></figcaption></figure>
+        <figure class="stamp-card tall feature"><div><img src="assets/demo/outputs-v2/social-travel-story-stamp.png" width="1180" height="1680" alt="旅行社交长帖透明邮票"></div><figcaption><b>社交长帖</b><span>截图 / 长图</span></figcaption></figure>
+        <figure class="stamp-card tall"><div><img src="assets/demo/outputs-v2/field-notes-poster-stamp.png" width="1080" height="1380" alt="建筑编辑海报透明邮票"></div><figcaption><b>编辑海报</b><span>内容卡 / 竖向</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section" id="effects" aria-labelledby="effects-title">
+      <div class="section-heading">
+        <div><span>03 / THREE MODES</span><h2 id="effects-title">上游真正提供的<br>三种单图效果。</h2></div>
+        <p>效果差异不是滤镜，而是输出合同：默认真透明、可选白色纸边、或直接压平为浅灰白成品背景。</p>
+      </div>
+      <div class="effect-grid">
+        <article>
+          <div class="effect-preview checker"><img src="assets/demo/outputs-v2/travel-coast-stamp.png" width="1580" height="1113" alt="默认无白边透明输出"></div>
+          <span>01 / DEFAULT</span><h3>无白边 · 真透明</h3><p>画面抵达齿孔边；孔洞、外部和投影空间保留 Alpha。</p><code>stamp_effect.py input output.png</code>
+        </article>
+        <article>
+          <div class="effect-preview paper"><img src="assets/demo/outputs-v2/travel-coast-margin.png" width="1672" height="1205" alt="增加白色纸边的透明输出"></div>
+          <span>02 / MARGIN</span><h3>白色纸边 · 真透明</h3><p>内容四边增加 46 px 白边，再在纸边上雕刻齿孔。</p><code>... output.png margin</code>
+        </article>
+        <article>
+          <div class="effect-preview flat"><img src="assets/demo/outputs-v2/travel-coast-bg.png" width="1580" height="1113" alt="浅灰白背景的压平成品输出"></div>
+          <span>03 / BG</span><h3>浅色背景 · RGB</h3><p>将透明图层压平为浅灰白背景，适合直接分享。</p><code>... output.png bg</code>
+        </article>
+      </div>
+    </section>
+
+    <section class="collection-section" id="collection" aria-labelledby="collection-title">
+      <div class="collection-intro">
+        <p class="eyebrow">04 / ORIGINAL COLLECTION FEATURE</p>
+        <h2 id="collection-title">原始库的第二项能力：<br>把多张邮票排成合集。</h2>
+        <p>`stamp_sheet.py` 会把图片等比缩放到统一列宽，按高度从大到小排序，再逐张放入当前最矮的列。它追求列高平衡，因此会改变输入顺序。</p>
+      </div>
+      <div class="collection-pair">
+        <figure class="collection-card dark-card">
+          <img src="assets/demo/outputs-v2/collection-dark-4col.png" width="1588" height="808" alt="六张邮票组成的默认四列深色合集">
+          <figcaption><div><span>DEFAULT</span><strong>4 列深色合集</strong></div><code>stamp_sheet.py sheet.png *_stamp.png</code></figcaption>
+        </figure>
+        <figure class="collection-card paper-card">
+          <img src="assets/demo/outputs-v2/collection-paper-3col.png" width="1362" height="1020" alt="六张邮票组成的三列纸色合集">
+          <figcaption><div><span>CUSTOM</span><strong>3 列纸色合集</strong></div><code>--cols 3 --bg "#f5f2ea"</code></figcaption>
+        </figure>
+      </div>
+      <div class="collection-facts">
+        <div><strong>1</strong><span>统一列宽</span></div>
+        <div><strong>2</strong><span>高度降序</span></div>
+        <div><strong>3</strong><span>放入最矮列</span></div>
+        <div><strong>4</strong><span>按 Alpha 合成</span></div>
+      </div>
+    </section>
+
+    <section class="section mechanism-section" aria-labelledby="mechanism-title">
+      <div class="section-heading">
+        <div><span>05 / MECHANISM</span><h2 id="mechanism-title">视觉更丰富，<br>算法仍然很小。</h2></div>
+        <p>Agent 负责识别请求和选择模式；Pillow 负责蒙版、合成与排版。没有生成模型参与邮票处理。</p>
+      </div>
+      <ol class="pipeline">
+        <li><span>01</span><h3>灰度蒙版</h3><p>先建立完整矩形 Alpha。</p></li>
+        <li><span>02</span><h3>四边减圆</h3><p>圆心贴边，留下半圆齿孔。</p></li>
+        <li><span>03</span><h3>图像合成</h3><p>可选白边后覆盖新蒙版。</p></li>
+        <li><span>04</span><h3>柔和投影</h3><p>两次模糊和轻微位置偏移。</p></li>
+        <li><span>05</span><h3>输出或合集</h3><p>RGBA 单图，或 RGB 瀑布流。</p></li>
+      </ol>
+      <aside class="alpha-warning"><strong>已验证边界</strong><p>外部与齿孔透明成立，但输入图片内部原有 Alpha 会被新蒙版覆盖。透明素材往返需要改为 Alpha 相乘。</p><span>INPUT CENTER α 0 → OUTPUT α 255</span></aside>
+    </section>
+
+    <section class="extension-section" id="extension" aria-labelledby="extension-title">
+      <div class="extension-heading">
+        <p class="eyebrow">06 / IMPLEMENTED EXTENSIONS</p>
+        <h2 id="extension-title">邮票之后，<br>六个 preset 已经可运行。</h2>
+        <p>沿用“确定性脚本 + Agent 路由”的结构，新扩展全部使用 Pillow，由同一个 CLI 调用；这里展示的不是规划图，而是实际输出。</p>
+      </div>
+      <div class="extension-grid">
+        <article><div class="extension-preview dark"><img src="assets/extensions/polaroid-travel.png" width="1464" height="1123" alt="海岸旅行照片生成的拍立得效果"></div><span>POLAROID</span><h3>拍立得</h3><p>暖白纸框、加厚底边和可选题注。</p><code>--preset polaroid</code></article>
+        <article><div class="extension-preview dark"><img src="assets/extensions/torn-botanical.png" width="1420" height="1120" alt="植物温室照片生成的撕纸效果"></div><span>TORN PAPER</span><h3>撕纸</h3><p>可复现的不规则 Alpha 纸边与柔和投影。</p><code>--preset torn-paper</code></article>
+        <article><div class="extension-preview dark"><img src="assets/extensions/film-architecture.png" width="1160" height="1560" alt="建筑照片生成的胶片边框效果"></div><span>FILM FRAME</span><h3>胶片</h3><p>黑色片框、上下透明齿孔、帧号。</p><code>--preset film-frame</code></article>
+        <article><div class="extension-preview dark"><img src="assets/extensions/ticket-coast.png" width="1384" height="764" alt="海岸照片生成的旅行票券效果"></div><span>TICKET</span><h3>票券</h3><p>横向裁切、侧边缺口、编号和票根区。</p><code>--preset ticket</code></article>
+        <article><div class="extension-preview dark"><img src="assets/extensions/riso-breakfast.png" width="1330" height="1330" alt="早餐静物生成的双色 Riso 印刷效果"></div><span>RISO PRINT</span><h3>Riso 印刷</h3><p>蓝红双色、错版边缘、网点和纸色底。</p><code>--preset riso-print</code></article>
+        <article><div class="extension-preview dark"><img src="assets/extensions/sticker-architecture.png" width="1163" height="1376" alt="已有 Alpha 的建筑邮票生成的白色轮廓贴纸"></div><span>STICKER OUTLINE</span><h3>轮廓贴纸</h3><p>围绕已有 Alpha 扩展白色轮廓；不冒充自动抠图。</p><code>--preset sticker-outline</code></article>
+      </div>
+      <figure class="extension-sheet">
+        <img src="assets/extensions/extension-collection-dark.png" width="1392" height="935" alt="拍立得、撕纸、胶片、票券、Riso 和贴纸组成的三列混合效果合集">
+        <figcaption><div><span>MIXED PRESET SHEET</span><strong>六种扩展效果 · 3 列深色合集</strong></div><code>generate_demo.py</code></figcaption>
+      </figure>
+      <div class="document-links">
+        <a href="../docs/analysis.md">完整能力分析</a>
+        <a href="../docs/extension-roadmap.md">扩展设计文档</a>
+        <a href="../demo/README.md">复现新版 Demo</a>
+        <a href="../demo/PROMPTS.md">图片提示词归档</a>
+        <a href="../extension/image-style-skill/SKILL.md">扩展 Skill</a>
+      </div>
+    </section>
+
+    <section class="closure-section" id="closure" aria-labelledby="closure-title">
+      <div class="closure-heading">
+        <p class="eyebrow">07 / RESEARCH CLOSURE</p>
+        <h2 id="closure-title">本次研究到这里，<br>已经足够。</h2>
+        <p>我们已经确认上游的真实能力与限制，完成高质量场景复现、合集展示和六个确定性扩展。继续把它产品化的边际收益已经不高，因此当前项目正式收口，不再继续开发 `stamp-v2`。</p>
+      </div>
+      <div class="closure-status">
+        <article>
+          <span>COMPLETED / 已完成</span>
+          <ul>
+            <li>固定并审阅上游 v1.2.0</li>
+            <li>复现三种单图模式与两种合集</li>
+            <li>完成六类真实内容场景</li>
+            <li>实现六个确定性扩展 preset</li>
+            <li>沉淀 Skill、文档、测试与浏览器证据</li>
+          </ul>
+        </article>
+        <article>
+          <span>INTENTIONALLY STOPPED / 刻意不继续</span>
+          <ul>
+            <li>不修改上游为 `stamp-v2`</li>
+            <li>不继续堆叠相似滤镜</li>
+            <li>不建设完整批量生产产品</li>
+            <li>不引入主体分割或生成模型依赖</li>
+            <li>不进行全局安装、发布或商业化包装</li>
+          </ul>
+        </article>
+      </div>
+      <div class="future-heading">
+        <div><span>IF REOPENED LATER</span><h3>后期如果重启，只建议沿四个方向继续。</h3></div>
+        <p>以下内容仅作为未来探索索引，不属于当前已经实现的能力，也不是下一阶段承诺。</p>
+      </div>
+      <div class="future-grid">
+        <article><span>01</span><h3>核心画质</h3><p>保留输入 Alpha、相对尺寸参数、超采样抗锯齿与更自然的阴影。</p></article>
+        <article><span>02</span><h3>批量工作流</h3><p>文件夹处理、顺序模式、参数 manifest、批量预览与多版本导出。</p></article>
+        <article><span>03</span><h3>邮票语义</h3><p>面值、年份、编号、邮戳、波浪消印、明信片正反面和收藏系列。</p></article>
+        <article><span>04</span><h3>可选 AI</h3><p>仅在确有需要时加入主体分割、内容感知裁切与模板推荐，基础引擎仍保持离线。</p></article>
+      </div>
+      <p class="closure-note"><strong>当前决定：</strong>保留现有研究成果，停止继续深入；未来只有出现真实使用需求时，再从对应方向恢复。</p>
+    </section>
+  </main>
+
+  <footer>
+    <span>Stamp Edge Skill Study · upstream pinned at <code>2b89ce8</code></span>
+    <span>素材：OpenAI ImageGen + 本地 Pillow 组装；邮票效果：未修改的上游脚本。</span>
+  </footer>
+</body>
+</html>

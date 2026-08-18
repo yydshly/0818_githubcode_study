@@ -37,6 +37,10 @@ h2 { margin: 0; font: clamp(2.2rem, 5vw, 4.4rem)/1 Georgia, serif; }
 .project-card + .project-card { margin-top: 22px; }
 .project-card-second .project-number { background: var(--mint); }
 .project-card-second .actions .primary { color: var(--text); background: var(--orange); border-color: var(--orange); }
+.project-card-third .project-number { background: #edc26d; }
+.project-card-third .actions .primary { color: var(--bg); background: #edc26d; border-color: #edc26d; }
+.stamp-cover { width: min(300px, 40%); color: #d7dedd; background-color: #111d26; background-image: linear-gradient(45deg, #1b2a34 25%, transparent 25%), linear-gradient(-45deg, #1b2a34 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #1b2a34 75%), linear-gradient(-45deg, transparent 75%, #1b2a34 75%); background-position: 0 0, 0 8px, 8px -8px, -8px 0; background-size: 16px 16px; }
+.stamp-cover img { aspect-ratio: 3/2; object-fit: contain; }
 .project-cover { float: right; width: min(210px, 32%); margin: 0 0 22px 34px; padding: 7px; color: #182523; background: #fff8e9; border: 1px solid #d9cbb3; transform: rotate(1deg); }
 .project-cover img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; }
 .project-cover figcaption { padding: 7px 2px 1px; color: #776b59; font-size: .66rem; font-weight: 850; }

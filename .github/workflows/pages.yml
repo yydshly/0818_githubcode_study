@@ -10,6 +10,7 @@ on:
       - "site/**"
       - "projects/luopan/**"
       - "projects/hand-drawn-styles/**"
+      - "projects/stamp-edge-skill/**"
   workflow_dispatch:
 
 permissions:
@@ -60,6 +61,12 @@ jobs:
           cp projects/hand-drawn-styles/upstream/assets/style-3.1/anchor-family.png _site/projects/hand-drawn-styles/upstream/assets/style-3.1/anchor-family.png
           cp projects/hand-drawn-styles/upstream/examples/README.md _site/projects/hand-drawn-styles/upstream/examples/README.md
           cp projects/hand-drawn-styles/upstream/examples/01-minimal-line.png projects/hand-drawn-styles/upstream/examples/02-crayon.png projects/hand-drawn-styles/upstream/examples/04-bean-doodle.png projects/hand-drawn-styles/upstream/examples/05-ms-paint.png projects/hand-drawn-styles/upstream/examples/07-real-crayon.png projects/hand-drawn-styles/upstream/examples/10-emo-sketch.png projects/hand-drawn-styles/upstream/examples/11-retro-concept.png projects/hand-drawn-styles/upstream/examples/13-paper-folk.png projects/hand-drawn-styles/upstream/examples/15-softnose-vinyl.png projects/hand-drawn-styles/upstream/examples/17-inked-storybook.png projects/hand-drawn-styles/upstream/examples/18-warm-flat-storybook.png _site/projects/hand-drawn-styles/upstream/examples/
+          mkdir -p _site/projects/stamp-edge-skill
+          cp -R projects/stamp-edge-skill/showcase _site/projects/stamp-edge-skill/showcase
+          cp -R projects/stamp-edge-skill/docs _site/projects/stamp-edge-skill/docs
+          cp -R projects/stamp-edge-skill/demo _site/projects/stamp-edge-skill/demo
+          cp -R projects/stamp-edge-skill/extension _site/projects/stamp-edge-skill/extension
+          cp projects/stamp-edge-skill/README.md _site/projects/stamp-edge-skill/README.md
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
