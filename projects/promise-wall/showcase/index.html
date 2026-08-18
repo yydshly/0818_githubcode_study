@@ -16,7 +16,9 @@
       <a href="#live">真实样例</a>
       <a href="#inside">内部能力</a>
       <a href="#use">使用场景</a>
-      <a href="#extend">扩展路线</a>
+      <a href="#scene-lab">场景体验</a>
+      <a href="#extend">效果语言</a>
+      <a href="#future-actions">后期动作</a>
     </nav>
     <a class="source-link" href="https://github.com/thebuggeddev/promise-wall">上游源码 ↗</a>
   </header>
@@ -24,18 +26,19 @@
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="kicker">RESEARCH 04 · THREE.JS / DOM + WEBGL</p>
+        <p class="kicker">RESEARCH 04 · THREE.JS / DOM + WEBGL · ARCHIVED</p>
         <h1 id="hero-title">一面真的可以<br><em>钉东西</em>的墙。</h1>
-        <p class="hero-lede">Promise Wall 把短内容先画成有纤维、折痕和手写字的纸，再放进一间可拖动、缩放和聚焦的 3D 房间。我们保留原版运行证据，并把“视觉能力”和“产品能力”彻底分开。</p>
+        <p class="hero-lede">Promise Wall 把短内容先画成有纤维、折痕和手写字的纸，再放进一间可拖动、缩放和聚焦的 3D 房间。现在它不仅展示原版能力，也把六种情绪空间和十二类真实使用场景做成可操作的体验草案。</p>
         <div class="hero-actions">
           <a class="button primary" href="#live">操作原版 Demo</a>
           <a class="button" href="../docs/analysis.md">阅读技术拆解</a>
+          <span class="archive-pill">已完成 · 已归档</span>
         </div>
         <dl class="facts" aria-label="项目事实">
-          <div><dt>3,587</dt><dd>行单文件入口</dd></div>
-          <div><dt>07</dt><dd>CanvasTexture 入口</dd></div>
-          <div><dt>01</dt><dd>上游提交</dd></div>
-          <div><dt>00</dt><dd>持久化调用</dd></div>
+          <div><dt>12</dt><dd>独立场景第一版</dd></div>
+          <div><dt>12</dt><dd>真实使用场景</dd></div>
+          <div><dt>05</dt><dd>内部能力层</dd></div>
+          <div><dt>01</dt><dd>未修改原版 Demo</dd></div>
         </dl>
       </div>
 
@@ -163,53 +166,190 @@
       <div class="section-heading">
         <p>05 / USE-CASE ROUTER</p>
         <div>
-          <h2 id="use-title">换掉“承诺”，<br>空间模式仍然成立。</h2>
-          <p>最适合它的内容都具备：短内容、视觉身份、空间位置、详情和轻互动。</p>
+          <h2 id="use-title">十二种真实时刻，<br>需要六种不同的墙。</h2>
+          <p>这里不再只列举用途。每张卡都指向一种初步效果，点击即可进入对应体验。</p>
         </div>
       </div>
       <div class="use-grid">
-        <article><span>01</span><h3>校园／公益心愿墙</h3><p>保留匿名张贴、分类和浏览；补充审核、敏感词和活动归档。</p><b>最短落地路径</b></article>
-        <article><span>02</span><h3>企业目标墙</h3><p>把作者换成负责人，把分类换成团队；补充 SSO、周期和进度状态。</p><b>组织内使用</b></article>
-        <article><span>03</span><h3>活动留言墙</h3><p>适合婚礼、毕业季和展会；增加二维码入口、照片上传与投屏模式。</p><b>现场互动</b></article>
-        <article><span>04</span><h3>品牌故事展厅</h3><p>卡片承载用户证言或品牌节点，镜头与空间成为非线性叙事路径。</p><b>内容策展</b></article>
-        <article><span>05</span><h3>研究灵感墙</h3><p>将承诺换成论文、观点和来源；增加引用、附件和全文检索。</p><b>知识组织</b></article>
-        <article><span>06</span><h3>游戏线索板</h3><p>把卡片变成任务、人物和证据；叠加连线、状态与存档。</p><b>交互叙事</b></article>
-        <article><span>07</span><h3>私人反思墙</h3><p>使用本地优先存储记录习惯、复盘和成长轨迹，强调隐私与导出。</p><b>个人工具</b></article>
-        <article><span>08</span><h3>纪念与故事墙</h3><p>照片、人物和时间共同形成可浏览档案；需要长期保存和无障碍替代。</p><b>长期档案</b></article>
+        <article><span>01 · NEW YEAR</span><h3>新年愿望墙</h3><p>写下明年的目标，在指定日期前保持封存；跨年时整面墙一起开启。</p><b>核心体感：期待</b><button type="button" data-route-scene="newyear">预览新年愿望 →</button></article>
+        <article><span>02 · GRADUATION</span><h3>毕业留言墙</h3><p>照片、同学寄语和未来计划混合排列，最后形成一面班级共同记忆。</p><b>核心体感：告别</b><button type="button" data-route-scene="graduation">预览毕业留言 →</button></article>
+        <article><span>03 · WEDDING</span><h3>婚礼祝福墙</h3><p>来宾留下祝福和共同回忆，感谢的金线逐渐连接起两个人的关系网络。</p><b>核心体感：被祝福</b><button type="button" data-route-scene="wedding">预览婚礼祝福 →</button></article>
+        <article><span>04 · TEAM GOALS</span><h3>企业目标墙</h3><p>团队承诺从种子开始，随着进展和互相支持长成一片共享花园。</p><b>核心体感：一起成长</b><button type="button" data-route-scene="goals">预览企业目标 →</button></article>
+        <article><span>05 · RECOGNITION</span><h3>员工感谢墙</h3><p>每一次真诚认可都让某张卡片亮起来，长期积累成团队的感谢网络。</p><b>核心体感：被看见</b><button type="button" data-route-scene="recognition">预览员工感谢 →</button></article>
+        <article><span>06 · PUBLIC GOOD</span><h3>公益承诺墙</h3><p>环保、志愿和社区行动被转化为叶片与花朵，集体行动形成可见景观。</p><b>核心体感：共同改变</b><button type="button" data-route-scene="publicgood">预览公益承诺 →</button></article>
+        <article><span>07 · INNER VOICE</span><h3>匿名心声墙</h3><p>身份退到背景，心声以折叠纸条出现；回应不是排名，而是一圈温柔的光。</p><b>核心体感：被理解</b><button type="button" data-route-scene="anonymous">预览匿名心声 →</button></article>
+        <article><span>08 · FAMILY</span><h3>家庭记忆墙</h3><p>老照片、手写信和重要日期按年代聚集，像走进一个可以浏览的家庭档案。</p><b>核心体感：回到过去</b><button type="button" data-route-scene="family">预览家庭记忆 →</button></article>
+        <article><span>09 · JOURNEY</span><h3>旅行记忆墙</h3><p>明信片、车票和途中片段沿路线展开，让一次旅程重新获得时间和触感。</p><b>核心体感：重新出发</b><button type="button" data-route-scene="travel">预览旅行记忆 →</button></article>
+        <article><span>10 · BRAND STORY</span><h3>品牌故事展厅</h3><p>用户证言化作光点，相似故事被连成星座，适合活动大屏和自动导览。</p><b>核心体感：属于同一群人</b><button type="button" data-route-scene="brand">预览品牌故事 →</button></article>
+        <article><span>11 · CITY MEMORY</span><h3>城市故事墙</h3><p>居民记忆、街区照片和未来愿望共同组成一幅跨年代的城市星图。</p><b>核心体感：共同生活</b><button type="button" data-route-scene="city">预览城市故事 →</button></article>
+        <article><span>12 · GAME STORY</span><h3>游戏线索板</h3><p>人物、地点和证据在暗色空间中逐步亮起，玩家通过关系发现隐藏路径。</p><b>核心体感：发现真相</b><button type="button" data-route-scene="game">预览游戏线索 →</button></article>
+      </div>
+    </section>
+
+    <section class="section scene-lab-section" id="scene-lab" aria-labelledby="scene-lab-title">
+      <div class="section-heading">
+        <p>06 / EXPERIENCE LAB</p>
+        <div>
+          <h2 id="scene-lab-title">同一面墙，<br>依次进入十二种真实场景。</h2>
+          <p>每一幕都严格对应上方的一种用途和效果要求。这里展示的是第一版产品效果，不是已完成业务。</p>
+        </div>
+      </div>
+
+      <figure class="scene-atlas">
+        <img src="assets/generated/promise-wall-six-scenes.png" width="1672" height="941" loading="lazy" decoding="async" alt="从左到右连续展示时间胶囊、成长花园、星光愿望、记忆旧墙、匿名心声和感谢墙的气氛概念图">
+        <figcaption><span>ATMOSPHERE ATLAS</span> OpenAI ImageGen 生成的六场景气氛总览；页面舞台为可操作的本地效果原型。</figcaption>
+      </figure>
+
+      <div class="experience-shell" data-scene="newyear">
+        <div class="experience-toolbar">
+          <div><span id="scene-counter">01 / 12</span><strong id="scene-toolbar-title">新年愿望墙</strong></div>
+          <div class="experience-actions">
+            <button type="button" id="scene-prev" aria-label="上一个场景">← 上一幕</button>
+            <button type="button" id="scene-play" aria-pressed="false">播放十二幕</button>
+            <button type="button" id="scene-next" aria-label="下一个场景">下一幕 →</button>
+          </div>
+        </div>
+
+        <div class="experience-main" id="scene-panel" role="tabpanel" aria-live="polite" aria-labelledby="scene-title">
+          <div class="scene-stage" aria-labelledby="scene-title">
+            <div class="scene-glow" aria-hidden="true"></div>
+            <div class="scene-decor" aria-hidden="true">
+              <i class="decor decor-1"></i><i class="decor decor-2"></i><i class="decor decor-3"></i>
+              <i class="decor decor-4"></i><i class="decor decor-5"></i><i class="decor decor-6"></i>
+            </div>
+            <article class="prototype-card prototype-card-a"><span class="prototype-fixture"></span><strong id="scene-card-a">写给明年的我</strong><small id="scene-card-a-meta">封存至 2027.01.01</small></article>
+            <article class="prototype-card prototype-card-b"><span class="prototype-fixture"></span><strong id="scene-card-b">希望我依然勇敢</strong><small id="scene-card-b-meta">还有 135 天</small></article>
+            <article class="prototype-card prototype-card-c"><span class="prototype-fixture"></span><strong id="scene-card-c">这次先不偷看</strong><small id="scene-card-c-meta">已封存</small></article>
+            <div class="scene-symbol" aria-hidden="true"><span></span></div>
+            <p class="scene-stage-caption" id="scene-stage-caption">倒计时归零时，所有愿望一起迎来新年的第一次开启。</p>
+          </div>
+
+          <aside class="scene-story" aria-label="当前场景说明">
+            <p class="scene-eyebrow" id="scene-eyebrow">SCENE 01 · NEW YEAR</p>
+            <h3 id="scene-title">新年愿望墙</h3>
+            <p id="scene-description">用户写下明年的目标与愿望，完成一次郑重封存。跨年倒计时让等待成为体验，零点时整面墙共同开启。</p>
+            <dl>
+              <div><dt>谁会来</dt><dd id="scene-who">跨年活动参与者、毕业生、伴侣和未来的自己</dd></div>
+              <div><dt>写下什么</dt><dd id="scene-write">愿望、约定、未来计划和暂时不想公开的话</dd></div>
+              <div><dt>墙的变化</dt><dd id="scene-change">纸条折成信封，出现封蜡、开启日期和温暖倒计时</dd></div>
+              <div><dt>记忆点</dt><dd id="scene-memory">到期那天，整面墙同时亮起并慢慢开封</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <div class="scene-tabs" role="tablist" aria-label="十二种场景效果">
+          <button role="tab" aria-selected="true" aria-controls="scene-panel" data-scene-select="newyear"><span>01</span>新年愿望<small>倒计时开启</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="graduation"><span>02</span>毕业留言<small>校园与班级</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="wedding"><span>03</span>婚礼祝福<small>花瓣与周年</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="goals"><span>04</span>企业目标<small>部门与完成</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="recognition"><span>05</span>员工感谢<small>金线与回顾</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="publicgood"><span>06</span>公益承诺<small>行动与群体</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="anonymous"><span>07</span>匿名心声<small>隐私与回应</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="family"><span>08</span>家庭记忆<small>年代与语音</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="travel"><span>09</span>旅行记忆<small>地图与路线</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="brand"><span>10</span>品牌故事<small>导览与大屏</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="city"><span>11</span>城市故事<small>街区与年代</small></button>
+          <button role="tab" aria-selected="false" aria-controls="scene-panel" data-scene-select="game"><span>12</span>游戏线索<small>隐藏与解锁</small></button>
+        </div>
       </div>
     </section>
 
     <section class="section extension-section" id="extend" aria-labelledby="extend-title">
       <div class="section-heading">
-        <p>06 / EXTENSION MAP</p>
+        <p>07 / EFFECT LANGUAGE</p>
         <div>
-          <h2 id="extend-title">下一步不是更多纸张，<br>而是新的状态能力。</h2>
-          <p>每条扩展都标注真正增加的系统复杂度，避免把规划写成现有能力。</p>
+          <h2 id="extend-title">效果不是装饰，<br>而是状态的另一种说法。</h2>
+          <p>同一套反馈语言可以进入不同活动：支持变成光、反思变成生长、完成变成印章、等待变成封存。</p>
         </div>
       </div>
-      <div class="extension-list">
-        <article><span class="effort high">高工程量</span><h3>真实多人社区</h3><p>认证、数据库、实时订阅、审核、限流与状态冲突处理。</p><small>产品价值：高 · 上游现状：无</small></article>
-        <article><span class="effort medium">中工程量</span><h3>可分享空间</h3><p>版本化 JSON、本地保存、导入导出、相机状态与分享 URL。</p><small>产品价值：高 · 适合先做单机版</small></article>
-        <article><span class="effort high">高工程量</span><h3>关系图／调查板</h3><p>语义端口、连线拾取、碰撞避让和自动布局。</p><small>产品价值：高 · 视觉结构改变</small></article>
-        <article><span class="effort medium">中工程量</span><h3>时间与进度</h3><p>过去／现在／未来分区，状态驱动材质、位置和聚类。</p><small>产品价值：中高 · 适合目标与里程碑</small></article>
-        <article><span class="effort high">高工程量</span><h3>多媒体卡片</h3><p>上传、转码、懒加载、资源预算和权限管理。</p><small>产品价值：高 · 不只是换纹理</small></article>
-        <article><span class="effort medium">中工程量</span><h3>AI 辅助组织</h3><p>建议标签、相似内容聚类、摘要与反思问题；不自动公开或审核。</p><small>产品价值：中 · 外部模型能力</small></article>
-        <article><span class="effort low">低工程量</span><h3>自动导览</h3><p>确定性相机路径、聚焦、字幕、暂停和 reduced-motion 替代。</p><small>展示价值：高 · 适合活动与研究演示</small></article>
-        <article><span class="effort high">高工程量</span><h3>千级卡片引擎</h3><p>分块、图集、裁剪、对象池、LOD 和 20／100／500／1000 基准。</p><small>工程价值：高 · 必须先测量</small></article>
+      <div class="extension-list effect-list">
+        <article><span class="effect-mark glow-mark"></span><h3>支持 → 暖光</h3><p>每一次回应让卡片更温暖，而不是制造热门排名。</p><small>用户体感：我的话被人看见</small></article>
+        <article><span class="effect-mark grow-mark"></span><h3>反思 → 生长</h3><p>新的思考长成叶片、枝条或花苞，呈现内容继续发展的过程。</p><small>用户体感：这件事还在发生</small></article>
+        <article><span class="effect-mark seal-mark"></span><h3>完成 → 印章</h3><p>实现目标时盖下日期印章或系上金线，形成清晰的完成仪式。</p><small>用户体感：我走到了这里</small></article>
+        <article><span class="effect-mark wait-mark"></span><h3>等待 → 封存</h3><p>内容暂时折叠、封蜡或模糊，到约定时刻才允许展开。</p><small>用户体感：时间具有重量</small></article>
+        <article><span class="effect-mark cluster-mark"></span><h3>共鸣 → 聚集</h3><p>相似内容靠近并形成花园、星座或故事群，不依赖榜单。</p><small>用户体感：原来不只我一个人</small></article>
+        <article><span class="effect-mark age-mark"></span><h3>时间 → 痕迹</h3><p>纸张、光线和环境随季节改变，让长期内容拥有可见历史。</p><small>用户体感：这里真的经历过时间</small></article>
       </div>
     </section>
 
     <section class="section roadmap-section" aria-labelledby="roadmap-title">
       <div class="section-heading compact">
-        <p>07 / PRODUCTION ROUTE</p>
-        <div><h2 id="roadmap-title">从漂亮 Demo 到可信产品。</h2></div>
+        <p>08 / EXPERIENCE ARC</p>
+        <div><h2 id="roadmap-title">一次完整体验，应当留下一个记忆时刻。</h2></div>
       </div>
-      <ol class="roadmap">
-        <li><span>PHASE 0</span><h3>工程整理</h3><p>拆分单文件、锁定依赖、清理默认模板、建立类型和测试。</p></li>
-        <li><span>PHASE 1</span><h3>可信单机版</h3><p>本地持久化、迁移、导入导出、编辑撤销和列表 fallback。</p></li>
-        <li><span>PHASE 2</span><h3>真实在线产品</h3><p>身份、数据库、同步、审核、隐私、上传和可观测性。</p></li>
-        <li><span>PHASE 3</span><h3>选择一个场景</h3><p>关系、时间、导览或 AI 四选一，用真实任务指标验证。</p></li>
+      <ol class="roadmap experience-arc">
+        <li><span>01 · ARRIVE</span><h3>先被氛围吸引</h3><p>用户第一眼就知道这里是等待、成长、回忆还是感谢的空间。</p></li>
+        <li><span>02 · RITUAL</span><h3>完成一次仪式</h3><p>封存、播种、点亮、展开或连接，比普通提交按钮更有意义。</p></li>
+        <li><span>03 · TOGETHER</span><h3>看见集体变化</h3><p>个人内容进入墙后，对整体光线、植物或关系产生可见影响。</p></li>
+        <li><span>04 · REMEMBER</span><h3>带走一个画面</h3><p>最终状态形成一幅可回看、可投屏、可分享的共同记忆。</p></li>
       </ol>
+    </section>
+
+    <section class="section future-actions-section" id="future-actions" aria-labelledby="future-actions-title">
+      <div class="section-heading">
+        <p>09 / FUTURE ACTIONS</p>
+        <div>
+          <h2 id="future-actions-title">研究在这里收口，<br>动作留给真实需求。</h2>
+          <p>这些不是当前已经实现的能力，也不是继续开发承诺。它们记录未来恢复研究时，最值得验证的用户动作、结果和触发条件。</p>
+        </div>
+      </div>
+
+      <div class="archive-status" role="status">
+        <span>ARCHIVED · 2026-08-19</span>
+        <strong>当前决定：完成研究，停止继续扩展。</strong>
+        <p>原版能力、十二场景效果、使用边界和后期行动地图已经形成完整证据链。未来只有出现真实场景、真实内容和明确使用目标时才重新启动。</p>
+      </div>
+
+      <div class="future-action-grid">
+        <article data-future-action="interaction-loop">
+          <span class="future-index">ACTION 01</span><span class="future-state">未来可选</span>
+          <h3>独立互动闭环</h3>
+          <p>让每个场景从“看见效果”升级为一次完整动作：输入内容、完成仪式、墙面变化、得到结果。</p>
+          <dl><div><dt>适用</dt><dd>全部十二场景</dd></div><div><dt>用户体感</dt><dd>我不只是浏览，而是真的完成了一件事</dd></div><div><dt>结果</dt><dd>封存卡、班级墙、祝福信、完成印章</dd></div><div><dt>重启条件</dt><dd>确定一个真实活动，并能提供完整参与流程</dd></div></dl>
+        </article>
+        <article data-future-action="time-change">
+          <span class="future-index">ACTION 02</span><span class="future-state">未来可选</span>
+          <h3>让墙经历时间</h3>
+          <p>内容随日期、季节和活动周期改变：愿望临近开启、纸张留下年代、植物持续生长。</p>
+          <dl><div><dt>适用</dt><dd>新年、企业目标、家庭、城市</dd></div><div><dt>用户体感</dt><dd>这里真的经历过时间</dd></div><div><dt>结果</dt><dd>周年回顾、年度变化、年代档案</dd></div><div><dt>重启条件</dt><dd>需要跨天或跨月使用的真实内容</dd></div></dl>
+        </article>
+        <article data-future-action="collective-feedback">
+          <span class="future-index">ACTION 03</span><span class="future-state">未来可选</span>
+          <h3>集体反馈改变整面墙</h3>
+          <p>个人行动不只增加数字，而是让光、植物、星座、关系或群体图案发生可见变化。</p>
+          <dl><div><dt>适用</dt><dd>公益、员工感谢、品牌、城市</dd></div><div><dt>用户体感</dt><dd>我的参与改变了整体</dd></div><div><dt>结果</dt><dd>行动花园、感谢网络、城市星图</dd></div><div><dt>重启条件</dt><dd>存在多人参与和可定义的集体结果</dd></div></dl>
+        </article>
+        <article data-future-action="takeaway-result">
+          <span class="future-index">ACTION 04</span><span class="future-state">未来可选</span>
+          <h3>生成可带走的成果</h3>
+          <p>活动结束后不让内容消失，而是生成可下载、打印、投屏或分享的共同记忆。</p>
+          <dl><div><dt>适用</dt><dd>毕业、婚礼、旅行、公益、团队</dd></div><div><dt>用户体感</dt><dd>这次参与留下了真实纪念</dd></div><div><dt>结果</dt><dd>海报、纪念册、路线图、年度报告</dd></div><div><dt>重启条件</dt><dd>明确最终载体、尺寸和分享渠道</dd></div></dl>
+        </article>
+        <article data-future-action="live-event">
+          <span class="future-index">ACTION 05</span><span class="future-state">未来可选</span>
+          <h3>活动现场模式</h3>
+          <p>让扫码参与、实时上墙、主持人揭晓、倒计时、自动轮播和集体完成动画组成现场节奏。</p>
+          <dl><div><dt>适用</dt><dd>婚礼、毕业、品牌、公益、城市展览</dd></div><div><dt>用户体感</dt><dd>现场正在因为大家而变化</dd></div><div><dt>结果</dt><dd>大屏展厅、活动回顾、集体揭晓</dd></div><div><dt>重启条件</dt><dd>出现具体活动日期、场地和参与规模</dd></div></dl>
+        </article>
+        <article data-future-action="personal-space">
+          <span class="future-index">ACTION 06</span><span class="future-state">未来可选</span>
+          <h3>个人长期空间</h3>
+          <p>把一次性墙面变成长期房间，持续保存愿望、成长、旅行、家庭与私人反思。</p>
+          <dl><div><dt>适用</dt><dd>新年、匿名心声、家庭、旅行</dd></div><div><dt>用户体感</dt><dd>这是只属于我的时间空间</dd></div><div><dt>结果</dt><dd>月度回顾、年度房间、人生阶段档案</dd></div><div><dt>重启条件</dt><dd>有长期使用者和明确隐私要求</dd></div></dl>
+        </article>
+        <article class="future-action-wide" data-future-action="lifecycle">
+          <span class="future-index">ACTION 07</span><span class="future-state">未来可选</span>
+          <h3>让十二场景形成生命周期</h3>
+          <p>同一条内容可以从愿望进入目标，再变成成长记录、完成印章和年度回忆；旅行计划也可以成为路线、明信片和家庭记忆。</p>
+          <dl><div><dt>适用</dt><dd>跨场景长期产品</dd></div><div><dt>用户体感</dt><dd>内容不是重复填写，而是在不同人生阶段继续变化</dd></div><div><dt>结果</dt><dd>个人时间线、团队年度史、共同记忆档案</dd></div><div><dt>重启条件</dt><dd>至少两个场景由同一批真实用户连续使用</dd></div></dl>
+        </article>
+      </div>
+
+      <div class="archive-boundary" aria-label="归档边界">
+        <article><span>COMPLETED</span><h3>已经完成</h3><ul><li>固定上游原版与真实运行证据</li><li>十二场景第一版效果和顺序导览</li><li>使用边界、ImageGen 气氛资产与跨端验收</li></ul></article>
+        <article><span>STOPPED</span><h3>刻意停止</h3><ul><li>不继续增加相似视觉场景</li><li>不实现账号、上传、后端与真实活动运营</li><li>不复制或修改无许可证的上游源码</li></ul></article>
+        <article><span>REOPEN WHEN</span><h3>何时重新启动</h3><ul><li>出现一个具体真实场景和目标用户</li><li>拥有可用于验证的真实内容和参与流程</li><li>明确成功指标、结果载体与隐私边界</li></ul></article>
+      </div>
     </section>
 
     <section class="verdict section" aria-labelledby="verdict-title">
