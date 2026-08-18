@@ -20,6 +20,7 @@
 | [Luopan 项目研究](projects/luopan/README.md) | [zhangxiaoqiang1991/luopan](https://github.com/zhangxiaoqiang1991/luopan) | 原版能力实演、数据与决策原理、AI 编程 Agent 实战及 GitHub 项目研究扩展 | [项目说明](projects/luopan/README.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/luopan/showcase/) | 已复现 |
 | [Hand-drawn Styles 项目研究](projects/hand-drawn-styles/README.md) | [threerocks/hand-drawn-styles](https://github.com/threerocks/hand-drawn-styles) | 视觉 Prompt 配方、单一真源、锚点校验、多阶段生成合同及日常场景路由 | [当前状态](projects/hand-drawn-styles/STATUS.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/) | 已复现 · 持续扩展 |
 | [Stamp Edge Skill 项目研究](projects/stamp-edge-skill/README.md) | [xianxie6/stamp-edge-skill](https://github.com/xianxie6/stamp-edge-skill) | 邮票齿孔、透明蒙版、投影、瀑布流合集，以及预设驱动图片风格引擎扩展 | [能力分析](projects/stamp-edge-skill/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/stamp-edge-skill/showcase/) | 已复现 · 已收口 |
+| [Promise Wall 项目研究](projects/promise-wall/README.md) | [thebuggeddev/promise-wall](https://github.com/thebuggeddev/promise-wall) | Three.js 空间卡片、Canvas 程序化材质、DOM/WebGL 混合交互、产品边界与场景扩展 | [能力分析](projects/promise-wall/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/promise-wall/showcase/) | 已获取 · 已验证 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
 
@@ -79,6 +80,18 @@
 - [通用图片风格系统扩展路线](projects/stamp-edge-skill/docs/extension-roadmap.md)
 - [已实现的图片风格扩展 Skill](projects/stamp-edge-skill/extension/image-style-skill/SKILL.md)
 - [可复现 Demo](projects/stamp-edge-skill/demo/README.md)
+
+## 第四个研究项目：Promise Wall
+
+[Promise Wall](https://github.com/thebuggeddev/promise-wall) 是一个把短内容、纸张身份和空间位置组合起来的 Three.js 单页原型。上游通过 Canvas 在运行时生成撕边、纤维、横线、方格、手写字、照片、石墙和木纹，再把纸张映射为弯曲的 3D 卡片；Raycaster、摄像机与 DOM 面板共同完成拖动、缩放、聚焦、搜索、创建和墙面放置。
+
+本研究直接嵌入未修改的固定上游页面作为运行证据，同时明确区分三层边界：渲染和空间交互是真实实现；支持、反思、收藏、举报是当前会话内的界面模拟；账号、持久化、实时协作、上传和审核完全未包含。在此基础上，展厅整理校园心愿、企业目标、活动留言、品牌故事、研究灵感、游戏线索、私人反思和纪念档案八类使用场景，并给出多人社区、可分享空间、关系图、时间轴、多媒体、AI 组织、自动导览和千级卡片八条扩展路线。
+
+- [原版 Demo 与能力研究展厅](projects/promise-wall/showcase/)
+- [项目研究说明](projects/promise-wall/README.md)
+- [能力、架构与限制](projects/promise-wall/docs/analysis.md)
+- [使用场景与扩展路线](projects/promise-wall/docs/extension-scenarios.md)
+- [固定上游版本](projects/promise-wall/upstream)
 
 ## 仓库结构
 

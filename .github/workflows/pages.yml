@@ -11,6 +11,7 @@ on:
       - "projects/luopan/**"
       - "projects/hand-drawn-styles/**"
       - "projects/stamp-edge-skill/**"
+      - "projects/promise-wall/**"
   workflow_dispatch:
 
 permissions:
@@ -67,6 +68,11 @@ jobs:
           cp -R projects/stamp-edge-skill/demo _site/projects/stamp-edge-skill/demo
           cp -R projects/stamp-edge-skill/extension _site/projects/stamp-edge-skill/extension
           cp projects/stamp-edge-skill/README.md _site/projects/stamp-edge-skill/README.md
+          mkdir -p _site/projects/promise-wall/upstream
+          cp -R projects/promise-wall/showcase _site/projects/promise-wall/showcase
+          cp -R projects/promise-wall/docs _site/projects/promise-wall/docs
+          cp projects/promise-wall/README.md _site/projects/promise-wall/README.md
+          cp projects/promise-wall/upstream/index.html _site/projects/promise-wall/upstream/index.html
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
