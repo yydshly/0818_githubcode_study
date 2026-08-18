@@ -9,7 +9,7 @@
 | 上游项目 | `threerocks/hand-drawn-styles` |
 | 上游地址 | <https://github.com/threerocks/hand-drawn-styles> |
 | 研究版本 | `9f150d9f4c90f3a4ace78a751d2d8263d818220c` |
-| 研究状态 | 已复现 |
+| 研究状态 | 已复现 · 持续扩展 |
 | 开始日期 | 2026-08-18 |
 | 最后更新 | 2026-08-18 |
 | 上游源码 | [`upstream/`](upstream/)（Git submodule） |
@@ -17,11 +17,14 @@
 | ChatGPT 生成资产 | [`showcase/assets/generated/`](showcase/assets/generated/) |
 | 完整分析 | [`docs/analysis.md`](docs/analysis.md) |
 | 后期使用指南 | [`docs/usage-guide.md`](docs/usage-guide.md) |
+| 当前状态快照 | [`STATUS.md`](STATUS.md) |
 | 许可证 | 上游 MIT，Copyright (c) 2026 liulei |
 
 ## 一句话结论
 
 它不是图像模型，而是图像模型之前的一层视觉编排：Agent 负责理解需求和选风格，协议负责限制输入，配方负责描述视觉语言，渲染器负责原样组装，外部图像模型才真正出图。
+
+> 当前发布状态：基础展厅已合并到 `main`；ImageGen内容资产、连续案例、多风格流程和长期使用指南已推送到远端分支，等待新PR。详见 [`STATUS.md`](STATUS.md)。
 
 ## 研究目标
 

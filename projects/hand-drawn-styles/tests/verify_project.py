@@ -50,6 +50,7 @@ def main() -> int:
     failures: list[str] = []
     required = [
         PROJECT / "README.md",
+        PROJECT / "STATUS.md",
         PROJECT / "docs" / "analysis.md",
         PROJECT / "docs" / "usage-guide.md",
         SHOWCASE / "index.html",
@@ -90,6 +91,7 @@ def main() -> int:
 
     readme = (PROJECT / "README.md").read_text(encoding="utf-8")
     analysis = (PROJECT / "docs" / "analysis.md").read_text(encoding="utf-8")
+    status = (PROJECT / "STATUS.md").read_text(encoding="utf-8")
     html = (SHOWCASE / "index.html").read_text(encoding="utf-8")
     script = (SHOWCASE / "app.js").read_text(encoding="utf-8")
     workflow = (REPO / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
@@ -98,6 +100,10 @@ def main() -> int:
     for document, name in ((readme, "README"), (analysis, "analysis")):
         if PINNED_COMMIT not in document:
             failures.append(f"{name} does not record pinned commit")
+
+    for phrase in ("893c202", "1bd2d18", "32/32", "20张 ChatGPT ImageGen", "等待新PR"):
+        if phrase not in status:
+            failures.append(f"STATUS missing current-state evidence: {phrase}")
 
     for phrase in ("不是新的生图模型", "从混乱样图", "SCENE 01", "SCENE 06", "三种图片职责", "同一主题", "STYLE 08", "STYLE 15", "以后怎么用", "七类交付场景", "每个研究项目默认交付7张", "五步操作流程", "copy-usage-template", "五层实现", "日常场景调用工作台", "FAIL-CLOSED"):
         if phrase not in html:
@@ -178,6 +184,7 @@ def main() -> int:
 
     print("PASS")
     print("- research artifacts and pinned commit present")
+    print("- current status snapshot distinguishes merged baseline from 5 pending enhancements")
     print("- 10 upstream style cards resolve locally")
     print("- 3 ChatGPT-generated content assets resolve locally")
     print("- 6-scene connected case and story archive resolve locally")
