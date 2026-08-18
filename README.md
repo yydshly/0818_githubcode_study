@@ -18,6 +18,7 @@
 | 项目 | 来源 | 研究主题 | 研究记录 | 在线演示 | 状态 |
 | --- | --- | --- | --- | --- | --- |
 | [Luopan 项目研究](projects/luopan/README.md) | [zhangxiaoqiang1991/luopan](https://github.com/zhangxiaoqiang1991/luopan) | 原版能力实演、数据与决策原理、AI 编程 Agent 实战及 GitHub 项目研究扩展 | [项目说明](projects/luopan/README.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/luopan/showcase/) | 已复现 |
+| [Hand-drawn Styles 项目研究](projects/hand-drawn-styles/README.md) | [threerocks/hand-drawn-styles](https://github.com/threerocks/hand-drawn-styles) | 视觉 Prompt 配方、单一真源、锚点校验、多阶段生成合同及日常场景路由 | [完整分析](projects/hand-drawn-styles/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/) | 已复现 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
 
@@ -48,6 +49,17 @@
 - [AI 编程 Agent 行业实战](projects/luopan/applied/ai-coding-agents-2026.md)
 - [GitHub 项目研究扩展 Skill](projects/luopan/extension/study-github-projects/SKILL.md)
 - [项目技术审计](projects/luopan/showcase/audit/analysis.md)
+
+## 第二个研究项目：Hand-drawn Styles
+
+[Hand-drawn Styles](https://github.com/threerocks/hand-drawn-styles) 不是图像模型，而是一套运行在 Agent 与外部图像模型之间的视觉 Prompt 编排层。它将 19 套风格保存为配方，以协议约束风格选择和变量填充，并对 3.1 稳定变体加入固定视觉锚点、像素身份校验和三阶段编辑合同。
+
+本仓库在不复制上游风格规则的前提下，增加了研究方法拆解、结论摘要卡、项目封面、里程碑故事和团队日常故事卡五类场景路由，用于演示如何把“风格怎么画”进一步转化为“我们的日常任务什么时候使用哪种风格”。
+
+- [在线效果与场景路由工作台](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/)
+- [项目研究说明](projects/hand-drawn-styles/README.md)
+- [能力、原理与使用意义分析](projects/hand-drawn-styles/docs/analysis.md)
+- [固定上游版本](projects/hand-drawn-styles/upstream)
 
 ## 仓库结构
 
