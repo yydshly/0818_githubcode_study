@@ -13,9 +13,9 @@
 | 主仓库 | `yydshly/0818_githubcode_study` |
 | 工作分支 | `agent/luopan-data-sources` |
 | 最新功能提交 | `893c202`（长期使用指南） |
-| 远端分支 | 功能提交已同步到 `origin/agent/luopan-data-sources`；本状态快照随下一提交同步 |
+| 远端分支 | 当前功能与状态文档均已同步到 `origin/agent/luopan-data-sources` |
 | `main` 当前基线 | PR #2 合并提交 `0c5c105`，包含 `ad73b38` 基础研究展厅 |
-| 待合并范围 | `1bd2d18`～`893c202` 共5个功能增强提交，外加本状态快照提交 |
+| 待合并范围 | `1bd2d18` 起的5个功能增强提交，以及状态整理提交 |
 | 研究状态 | 已复现，持续扩展，增强内容待合并 |
 
 ## 已进入 main 的内容
