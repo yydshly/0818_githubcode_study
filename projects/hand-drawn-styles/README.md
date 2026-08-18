@@ -81,6 +81,21 @@ python -m http.server 4174 --bind 127.0.0.1 --directory projects/hand-drawn-styl
 
 图片由 ChatGPT 内置 ImageGen 生成；[用途、来源和提示词均已归档](showcase/assets/generated/README.md)。精确标题和技术术语继续由 HTML 承担，避免把不可控的图片内文字当成事实表达。
 
+### 六幕连续案例
+
+为解决“图片彼此孤立”的问题，展厅进一步使用同一角色与画风锚点生成六幕故事：
+
+```text
+发现图片混乱
+→ 建立风格档案
+→ 根据任务路由
+→ 组装正式生成合同
+→ 保留失败并修正规则
+→ 发布用途不同但视觉一致的资产系列
+```
+
+每一幕都说明发生原因、当前行动、得到结果和进入下一幕的理由。完整背景、角色设定、资产依赖和逐幕提示词见 [`STORY.md`](showcase/assets/generated/STORY.md)。
+
 ## 研究边界
 
 - 上游本身不调用图像模型；展厅展示的是上游已有样图和 Prompt 编排演示。

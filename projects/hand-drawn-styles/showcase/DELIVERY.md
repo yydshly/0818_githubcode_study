@@ -4,7 +4,7 @@
 
 ```text
 Entry mode: Brief-led extension of an existing research repository
-Request revision: 2
+Request revision: 3
 Target user and context: 主仓库维护者，以及希望把日常内容快速转成稳定视觉风格提示词的研究与内容创作者
 Desired first impression: 先看到真实风格效果，再明确它不是生图模型，而是一套可执行的视觉风格合同
 Visual ambition: Editorial
@@ -14,12 +14,12 @@ Information constraints: 必须区分上游事实、我们的解释和我们的�
 Operation constraints: 纯静态 HTML/CSS/JavaScript；无后端、登录、真实图像 API 或构建依赖；演示只生成可复制 Prompt/调用方案，不伪装成已经出图
 State constraints: 风格筛选、场景模板、强度与比例选择、Prompt 预览和复制反馈；禁用 JavaScript 时核心研究内容与静态示例仍可阅读
 Environment constraints: GitHub Pages artifact；本地使用 Python HTTP server；上游以 Git submodule 固定版本
-Primary journey: 进入展厅 → 区分上游能力样图与我们的内容资产 → 查看 ChatGPT 生成的项目封面/原理讲解/里程碑故事 → 理解 Prompt/参考图/多阶段编辑原理 → 选择日常场景 → 生成并复制扩展 Prompt
-User-defined phases: 获取上游；展示效果能力并说明原理；结合我们的场景说明意义；用 ChatGPT 直接生成对应图片进行演示；演示可日常扩展的能力
-Required artifacts: Git submodule、项目 README、研究文档、3张 ChatGPT 生成的内容资产及其来源说明、可运行展厅、主索引与 Pages workflow 更新、浏览器验收记录与最终截图
+Primary journey: 进入展厅 → 阅读完整案例背景 → 跟随同一研究者经历问题、归档、路由、组装、复盘、发布六幕连续过程 → 再区分上游能力样图与我们的内容资产 → 理解 Prompt/参考图/多阶段编辑原理 → 选择日常场景
+User-defined phases: 获取上游；展示效果能力并说明原理；结合我们的场景说明意义；用 ChatGPT 直接生成对应图片；增加更多展示样例；为样例提供背景和描述；把图片串成完整案例而不是孤立单图；演示可日常扩展的能力
+Required artifacts: Git submodule、项目 README、研究文档、6幕连续案例图片、故事背景/角色设定/逐幕描述/提示词/来源说明、3类独立内容资产、可运行展厅、主索引与 Pages workflow 更新、浏览器验收记录与最终截图
 Autonomy authorization: 用户明确要求将该库作为研究子项目获取、分析、展示并结合我们的场景实现演示
 User-decision boundary: 对外调用付费图像模型、修改或提交上游仓库、创建独立仓库需要另行授权
-Observable completion criteria: 上游 commit 固定；能力与原理有源码证据；至少 8 个真实样图入口；3张由 ChatGPT 生成且分别承担封面/讲解/故事职责的项目图片有明确语义、来源和对应位置；至少 4 个日常场景可交互生成 Prompt；桌面/平板/390px 无遮挡或横向溢出；键盘焦点可见；reduced-motion 与无 JavaScript 可读；本地发布路径与链接通过
+Observable completion criteria: 上游 commit 固定；能力与原理有源码证据；至少 8 个真实样图入口；连续案例包含背景、目标、角色、约束、六幕因果和结果，六幕使用同一主角与统一视觉语言；每幕有标题、场景、发生原因、得到结果和下一幕衔接；3类独立内容资产有明确语义、来源和位置；至少 4 个日常场景可交互生成 Prompt；桌面/平板/390px 无遮挡或横向溢出；键盘焦点可见；reduced-motion 与无 JavaScript 可读；本地发布路径与链接通过
 Coverage record: 见下表
 ```
 
@@ -144,3 +144,58 @@ Revision 2 最终浏览器证据保存在会话可视化目录：
 - `hand-drawn-styles-generated-assets-desktop.png`
 - `hand-drawn-styles-generated-assets-tablet.png`
 - `hand-drawn-styles-generated-assets-mobile.png`
+
+## Revision 3 · Six-scene connected case
+
+### Scope revision
+
+```text
+Entry mode: Revision-led
+Request revision: 3
+User goal: 更多展示样例必须有背景、描述和前后因果，能够串成一个完整案例，而不是若干孤立图片
+Preserved evidence: 上游仓库、能力画廊、三类图片职责、五层原理、场景路由、既有生成资产和浏览器验收
+Reopened surfaces: 应用演示的信息架构、生成资产数量与一致性、长页面阅读节奏、三视口、图片加载和Pages artifact
+Story premise: 一个研究团队要发布 Hand-drawn Styles 研究项目，但初始图片彼此无关；同一位研究者将混乱样例变成可追踪、可复用、可发布的视觉系统
+Character anchor: project-cover.png 中的深蓝上衣、黑色发髻研究者
+Visual contract: 暖白纸底、深藏青/雾蓝/珊瑚橙/金橙、扁平绘本几何形、无图片内文字；HTML承担准确标题与叙事
+Narrative: 01发现混乱 → 02建立档案 → 03按任务路由 → 04组装生成 → 05保留失败并修正 → 06形成可发布资产系列
+Required artifacts: 5张新增连续场景 + 既有封面组成6幕；STORY.md；逐幕Prompt；六幕时间线；最终浏览器证据
+Autonomy authorization: 用户明确要求更多样例、有背景和描述、并且必须串联成完整案例
+Observable completion: 六幕同一主角/画风；每幕有因果与下一步；桌面横向阅读关系清楚、移动端纵向顺序清楚；图片加载、alt和发布路径通过
+```
+
+### Revision 3 coverage manifest
+
+| 用户要求 | 要求/产物 | 界面/状态 | 所需证据 | 阶段 | 状态 | 下一步 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 更多展示样例 | 六幕连续图片 | 故事时间线 | 6张工作区PNG、统一主角与画风 | 2/3 | pass | 既有封面作第02幕，5张新图组成完整六幕 |
+| 有背景和描述 | 背景、目标、角色、约束、结果 | 案例序言 | DOM、文档与浏览器观察 | 3 | pass | 背景/任务/连续性合同和4项案例统计完整可读 |
+| 能串起来 | 每幕原因→行动→结果→下一幕 | 六幕卡片与连接线 | 顺序DOM、视觉连接与移动端阅读 | 3/7 | pass | 桌面左右交替时间线、手机单列连接线；6个标题顺序正确 |
+| 一致性 | 同一研究者与统一视觉合同 | 6张图片 | 人物、发型、服装、色板与材质目视检查 | 2 | pass | 黑色发髻、深蓝服装、暖白纸底与蓝橙色板六幕一致 |
+| 来源与复现 | STORY.md与逐幕Prompt | 资产档案 | 文件、链接与ImageGen来源 | 9 | pass | 背景、角色、因果、依赖树和5张新增图最终Prompt已归档 |
+| 响应式与性能 | 1440/768/390及图片加载 | 全页 | 截图、scrollWidth、naturalWidth、alt | 7/8/9 | pass | 20/20图片加载、missingAlt=0、390px scrollWidth=390、控制台无错误 |
+
+### Revision 3 browser refinement ledger
+
+```text
+Current stage: 9 · Engineering and delivery closure
+User phase: 更多样例 + 背景描述 + 串联成完整案例
+Coverage item: 六幕图片、案例背景、因果时间线、一致角色、逐幕Prompt、三视口和图片加载
+User goal: 看到一个能够说明“为什么、怎么做、最后得到什么”的连续案例，而不是孤立图片
+Browser environment: agent-browser 0.27.0 / Chromium / 1440×1000, 768×1024, 390×844
+Observed evidence: 浏览器语义树按01-06列出六幕标题；桌面左右交替并由中心线连接；手机恢复图片→描述的单列顺序；20张页面图片全部加载且有alt
+Problem category: Information architecture / narrative continuity
+Root cause: Revision 2只按“封面/讲解/故事”分类，没有共同背景、固定角色和前后因果，用户必须自己猜图片之间的关系
+Minimal intervention: 固定一个主角与视觉合同，以既有封面为第02幕新增5张场景；在三职责区之前增加背景、任务、合同、六幕原因/行动/结果/衔接时间线
+Adjacent regression surfaces: 首屏CTA、三职责区、上游画廊、五层原理、工作台、1440/768/390、图片懒加载与STORY.md链接
+Observed result: 案例从“图片分类”升级为“发现混乱→建立档案→路由→组装→回归→发布”的完整闭环；三视口无横向溢出
+Decision: pass
+Next executable action: none
+New authority required: none
+```
+
+Revision 3 最终浏览器证据：
+
+- `hand-drawn-styles-story-desktop.png`
+- `hand-drawn-styles-story-tablet.png`
+- `hand-drawn-styles-story-mobile.png`

@@ -2,6 +2,8 @@
 
 执行方式：ChatGPT 内置 `image_gen`。
 
+六幕连续案例的5张新增场景使用 `project-cover.png` 作为角色/画风锚点，并从第04幕起同时携带前一幕作为连续性参考。完整逐幕提示词见 [`STORY.md`](STORY.md)。
+
 ## `project-cover.png`
 
 ```text
