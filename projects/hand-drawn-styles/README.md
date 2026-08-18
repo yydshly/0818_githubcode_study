@@ -9,17 +9,22 @@
 | 上游项目 | `threerocks/hand-drawn-styles` |
 | 上游地址 | <https://github.com/threerocks/hand-drawn-styles> |
 | 研究版本 | `9f150d9f4c90f3a4ace78a751d2d8263d818220c` |
-| 研究状态 | 已复现 |
+| 研究状态 | 已复现 · 持续扩展 |
 | 开始日期 | 2026-08-18 |
 | 最后更新 | 2026-08-18 |
 | 上游源码 | [`upstream/`](upstream/)（Git submodule） |
 | 在线演示 | [`showcase/`](showcase/) |
+| ChatGPT 生成资产 | [`showcase/assets/generated/`](showcase/assets/generated/) |
 | 完整分析 | [`docs/analysis.md`](docs/analysis.md) |
+| 后期使用指南 | [`docs/usage-guide.md`](docs/usage-guide.md) |
+| 当前状态快照 | [`STATUS.md`](STATUS.md) |
 | 许可证 | 上游 MIT，Copyright (c) 2026 liulei |
 
 ## 一句话结论
 
 它不是图像模型，而是图像模型之前的一层视觉编排：Agent 负责理解需求和选风格，协议负责限制输入，配方负责描述视觉语言，渲染器负责原样组装，外部图像模型才真正出图。
+
+> 当前发布状态：基础展厅已合并到 `main`；ImageGen内容资产、连续案例、多风格流程和长期使用指南已推送到远端分支，等待新PR。详见 [`STATUS.md`](STATUS.md)。
 
 ## 研究目标
 
@@ -27,6 +32,7 @@
 2. 从 `SKILL.md`、`PROTOCOL.md`、`STYLES.md`、`render_prompt.py` 和回归测试解释实现原理。
 3. 明确它对我们的价值是“可执行视觉合同”，而不是新的生图算法。
 4. 在不复制上游风格规则的前提下，增加适合研究封面、原理讲解、结论信息图、项目里程碑和团队故事卡的日常场景路由。
+5. 直接使用 ChatGPT ImageGen 生成与本研究语义关联的项目封面、原理讲解和里程碑故事图，示范图片应该如何承担页面职责。
 
 ## 目录
 
@@ -66,6 +72,48 @@ python -m http.server 4174 --bind 127.0.0.1 --directory projects/hand-drawn-styl
 | 团队/家庭故事卡 | 3.1 潦草蜡笔 | 通过锚点和三阶段编辑追求连续一致 |
 
 日常扩展层只输出上游风格编号、内容、文字、比例和调用纪律，不维护第二份线条、色板、五官或材质规则。
+
+后续新增项目或PPT视觉时，先阅读[长期使用指南](docs/usage-guide.md)：它包含使用决策门、七类场景矩阵、标准视觉资产包、风格路由、五步SOP、请求模板和验收清单。
+
+## 从“风格样图”到“内容资产”
+
+上游样图回答“这种风格长什么样”，本项目生成的三张内容资产回答“为什么画、代表什么、放在哪里”：
+
+| 图片 | 意义 | 实际使用 |
+| --- | --- | --- |
+| `project-cover.png` | 把零散 Prompt 工程化为视觉合同 | 展厅首屏和主研究索引 |
+| `method-explainer.png` | 把收集、选风格、组装、出图变成四步动作 | 原理讲解与教程 |
+| `milestone-story.png` | 把保留失败样例转成可感知的团队行动 | 回归复盘与里程碑故事 |
+
+图片由 ChatGPT 内置 ImageGen 生成；[用途、来源和提示词均已归档](showcase/assets/generated/README.md)。精确标题和技术术语继续由 HTML 承担，避免把不可控的图片内文字当成事实表达。
+
+### 六幕连续案例
+
+为解决“图片彼此孤立”的问题，展厅进一步使用同一角色与画风锚点生成六幕故事：
+
+```text
+发现图片混乱
+→ 建立风格档案
+→ 根据任务路由
+→ 组装正式生成合同
+→ 保留失败并修正规则
+→ 发布用途不同但视觉一致的资产系列
+```
+
+每一幕都说明发生原因、当前行动、得到结果和进入下一幕的理由。完整背景、角色设定、资产依赖和逐幕提示词见 [`STORY.md`](showcase/assets/generated/STORY.md)。
+
+### 其他风格应用实验
+
+六幕主案例解决“同一项目如何保持连续”，多风格实验进一步回答“任务变化时为什么要换风格”：
+
+- 8 水墨写意：策略、文化与知识体系封面；
+- 9 复古像素：新手引导、进度机制与开发者内容；
+- 13 北欧纸雕：设计报告、发布会与展览主视觉；
+- 15 大鼻软偶：项目头像、栏目助手和短视频角色IP。
+
+四张新图都使用上游对应样图作为纯风格参考，内容重新生成。完整适用/不适用场景和最终提示词见 [`MULTI-STYLE.md`](showcase/assets/generated/MULTI-STYLE.md)。
+
+为避免多风格实验再次退化成单图展示，Revision 5 为每种风格补齐“问题 → 处理 → 结果”三幕：水墨从纸片风暴走向知识庭院，像素从锁定关卡走向全节点完成，纸雕从散乱材料走向展览交付，软偶从空白身份走向持续栏目助手。4条流程及8张新增图的提示词见 [`MULTI-STYLE-FLOWS.md`](showcase/assets/generated/MULTI-STYLE-FLOWS.md)。
 
 ## 研究边界
 

@@ -13,9 +13,13 @@
   <header class="topbar">
     <a class="brand" href="../../../"><span aria-hidden="true"></span>GITHUB CODE STUDY</a>
     <nav aria-label="页面导航">
+      <a href="#case-study">案例</a>
+      <a href="#applied-assets">应用</a>
+      <a href="#style-lab">多风格</a>
       <a href="#effects">效果</a>
       <a href="#how">原理</a>
       <a href="#meaning">意义</a>
+      <a href="#usage-guide">指南</a>
       <a href="#workbench">工作台</a>
     </nav>
     <a class="source-link" href="https://github.com/threerocks/hand-drawn-styles">上游源码 ↗</a>
@@ -28,7 +32,7 @@
         <h1 id="hero-title">不是新的生图模型，<br><em>是一套视觉风格合同。</em></h1>
         <p class="lede">它把“画成某种感觉”拆成可选择的风格、不可随意改写的配方、可校验的输入，以及必要时必须完成的多阶段编辑流程。</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#effects">先看真实效果</a>
+          <a class="button button-primary" href="#case-study">看完整案例</a>
           <a class="button" href="#workbench">试用日常场景路由</a>
         </div>
         <dl class="metrics" aria-label="项目能力摘要">
@@ -39,19 +43,375 @@
         </dl>
       </div>
       <figure class="hero-visual paper-frame">
-        <img src="../upstream/examples/18-warm-flat-storybook.png" alt="上游暖色扁平绘本风格样图：一家三口以蓝橙色几何色块绘制">
-        <figcaption><span>UPSTREAM OUTPUT</span>18 · 暖色扁平绘本</figcaption>
+        <img src="assets/generated/project-cover.png" width="1122" height="1402" alt="项目概念封面：研究者把散乱的图片提示卡整理成有序档案，并连接到一个完成的插画画框">
+        <figcaption><span>CHATGPT GENERATED</span>项目封面 · 从 Prompt 到视觉合同</figcaption>
       </figure>
     </section>
 
     <section class="thesis" aria-label="核心判断">
       <p><strong>用户内容</strong>交给 Agent 理解，<strong>视觉身份</strong>交给固定配方，<strong>组装正确性</strong>交给渲染器，<strong>像素生成</strong>交给外部图像模型。</p>
-      <span>这就是它的全部边界，也是它最值得研究的地方。</span>
+      <span>上游样图证明“能画成什么样”；我们生成的内容资产回答“为什么画、代表什么、应该放在哪里”。</span>
+    </section>
+
+    <section class="section case-study" id="case-study" aria-labelledby="case-study-title">
+      <div class="section-heading">
+        <div><span>01 / CONNECTED CASE</span><h2 id="case-study-title">从混乱样图，<br>到可发布视觉系统</h2></div>
+        <p>这不是六张风格相似的插画，而是同一个研究项目的完整过程。每一幕都由上一幕的问题触发，并产生下一幕需要的输入。</p>
+      </div>
+
+      <div class="case-brief">
+        <article>
+          <span>BACKGROUND / 背景</span>
+          <h3>图片很多，却不像同一个项目。</h3>
+          <p>团队准备发布 Hand-drawn Styles 研究，但已有图片来自不同题材和画风，只能展示能力，无法建立项目自己的视觉叙事。</p>
+        </article>
+        <article>
+          <span>MISSION / 任务</span>
+          <h3>把一次研究变成可持续的视觉生产流程。</h3>
+          <p>同一位研究者必须完成问题定义、风格归档、任务路由、请求组装、失败复盘和成套发布。</p>
+        </article>
+        <article>
+          <span>CONTRACT / 连续性约束</span>
+          <h3>一个主角，一套色板，一条因果链。</h3>
+          <p>六幕固定深蓝服装、黑色发髻、暖白纸底与蓝橙色板；图片内不写字，准确叙事由页面文本承担。</p>
+        </article>
+      </div>
+
+      <div class="case-summary" aria-label="连续案例统计">
+        <div><strong>01</strong><span>固定主角</span></div>
+        <div><strong>06</strong><span>连续场景</span></div>
+        <div><strong>05</strong><span>因果转折</span></div>
+        <div><strong>01</strong><span>最终资产系统</span></div>
+      </div>
+
+      <div class="story-timeline">
+        <article class="story-scene">
+          <figure>
+            <img src="assets/generated/story-01-problem.png" width="1122" height="1402" loading="lazy" alt="同一位研究者坐在混乱的图片样张之间，手持两张风格明显不一致的图片进行比较">
+            <figcaption>同一主角 · Scene 01</figcaption>
+          </figure>
+          <div class="story-copy">
+            <span>SCENE 01 / PROBLEM</span>
+            <h3>先承认：这些图片彼此无关。</h3>
+            <p class="story-lede">研究者把两张结果并排拿起：一张像水彩，一张像扁平绘本；桌上还有涂鸦、3D和抽象图。单张都能看，但放在同一项目里没有共同身份。</p>
+            <dl>
+              <div><dt>发生原因</dt><dd>每次都从一句临时 Prompt 开始，没有风格真源。</dd></div>
+              <div><dt>当前行动</dt><dd>不再挑最好看的一张，而是先比较差异并定义问题。</dd></div>
+              <div><dt>得到结果</dt><dd>问题被明确为“缺少可检索、可复用的共同视觉语言”。</dd></div>
+            </dl>
+            <p class="story-bridge"><b>因此</b> 不能继续随机生成，下一步必须先建立风格档案。</p>
+          </div>
+        </article>
+
+        <article class="story-scene">
+          <figure>
+            <img src="assets/generated/project-cover.png" width="1122" height="1402" loading="lazy" alt="同一位研究者把散乱的图片提示卡整理进多个有序档案盒，卡片沿路径连接到一幅完成插画">
+            <figcaption>角色与画风锚点 · Scene 02</figcaption>
+          </figure>
+          <div class="story-copy">
+            <span>SCENE 02 / ARCHIVE</span>
+            <h3>把“感觉”整理成可以选择的档案。</h3>
+            <p class="story-lede">散乱图片被拆成构图、线条、色板、材质和禁用项，再收进统一档案。它们不再只是收藏夹里的灵感图，而是有身份的生产资产。</p>
+            <dl>
+              <div><dt>发生原因</dt><dd>知道图片不一致，还不足以指导下一次生成。</dd></div>
+              <div><dt>当前行动</dt><dd>将风格配方、样图和使用边界归档到单一真源。</dd></div>
+              <div><dt>得到结果</dt><dd>风格从模糊形容词变成可以被 Agent 选择的编号资产。</dd></div>
+            </dl>
+            <p class="story-bridge"><b>但是</b> 有档案不代表会选，下一步要回答“这个任务该用哪一种”。</p>
+          </div>
+        </article>
+
+        <article class="story-scene">
+          <figure>
+            <img src="assets/generated/story-03-route.png" width="1122" height="1402" loading="lazy" alt="同一位研究者站在风格卡墙前，一手拿内容任务卡，一手选择唯一的橙色风格卡">
+            <figcaption>同一主角与服装 · Scene 03</figcaption>
+          </figure>
+          <div class="story-copy">
+            <span>SCENE 03 / ROUTE</span>
+            <h3>不是选最喜欢的，而是选最适合任务的。</h3>
+            <p class="story-lede">研究者拿着“研究项目封面”任务卡，在风格墙中选择一张珊瑚橙配方。内容目的成为路由条件，个人偏好不再是唯一依据。</p>
+            <dl>
+              <div><dt>发生原因</dt><dd>解释流程、建立识别和讲人物故事需要不同视觉职责。</dd></div>
+              <div><dt>当前行动</dt><dd>用“要看懂、要记住、要感受”匹配对应风格。</dd></div>
+              <div><dt>得到结果</dt><dd>任务卡和风格卡形成一对明确输入。</dd></div>
+            </dl>
+            <p class="story-bridge"><b>接下来</b> 两张卡仍不能直接出图，还需要完整规则和确定性组装。</p>
+          </div>
+        </article>
+
+        <article class="story-scene">
+          <figure>
+            <img src="assets/generated/story-04-assemble.png" width="1122" height="1402" loading="lazy" alt="同一位研究者把内容卡和橙色风格卡放入两个输入槽，规则卡通过蓝橙路径连接到一幅完成插画">
+            <figcaption>内容 + 风格 + 规则 · Scene 04</figcaption>
+          </figure>
+          <div class="story-copy">
+            <span>SCENE 04 / ASSEMBLE</span>
+            <h3>把内容和风格组装成正式生成合同。</h3>
+            <p class="story-lede">内容卡与风格卡进入不同输入槽，固定规则卡负责补齐构图、色板和禁用项，最后才交给图像模型。过程看起来像组装，而不是许愿。</p>
+            <dl>
+              <div><dt>发生原因</dt><dd>只写“画成某某风”仍会被模型自由解释。</dd></div>
+              <div><dt>当前行动</dt><dd>原样提取配方、填入变量、校验锚点并生成调用包。</dd></div>
+              <div><dt>得到结果</dt><dd>同一输入可以被重复执行，内容和视觉规则互不污染。</dd></div>
+            </dl>
+            <p class="story-bridge"><b>然而</b> 正式流程也会失败，下一幕必须让失败变成规则的一部分。</p>
+          </div>
+        </article>
+
+        <article class="story-scene">
+          <figure>
+            <img src="assets/generated/story-05-review.png" width="1122" height="1402" loading="lazy" alt="同一位研究者在证据墙上并排保留失败图和修正图，用箭头把橙色证据卡连接到新的规则卡">
+            <figcaption>失败不是垃圾 · Scene 05</figcaption>
+          </figure>
+          <div class="story-copy">
+            <span>SCENE 05 / REVIEW</span>
+            <h3>不删除失败图，把它写回规则。</h3>
+            <p class="story-lede">第一张结果过于统一，缺少目标风格的局部节奏。研究者把它和修正图并排保留，再用一张橙色证据卡把缺陷连接到更新后的规则。</p>
+            <dl>
+              <div><dt>发生原因</dt><dd>Prompt正确不等于输出一定合格，模型仍有生成惯性。</dd></div>
+              <div><dt>当前行动</dt><dd>保存失败、描述差距、增加门禁并做下一轮回归。</dd></div>
+              <div><dt>得到结果</dt><dd>失败从一次性损耗变成后续生成可复用的知识。</dd></div>
+            </dl>
+            <p class="story-bridge"><b>直到</b> 不同用途的图片都能遵守同一视觉语言，项目才具备发布条件。</p>
+          </div>
+        </article>
+
+        <article class="story-scene">
+          <figure>
+            <img src="assets/generated/story-06-publish.png" width="1122" height="1402" loading="lazy" alt="同一位研究者站在成套视觉资产展示墙前，墙上有封面、流程图、故事图和分享卡，桌面保留风格档案盒和规则卡">
+            <figcaption>一套系统，多种用途 · Scene 06</figcaption>
+          </figure>
+          <div class="story-copy">
+            <span>SCENE 06 / PUBLISH</span>
+            <h3>最后得到的不是一张图，而是一套系统。</h3>
+            <p class="story-lede">封面负责让人记住，流程图负责让人看懂，故事图负责让人感受，分享卡负责传播。用途不同，但主角、色板、纸面和视觉语法一致。</p>
+            <dl>
+              <div><dt>发生原因</dt><dd>研究项目需要持续更新，而不是发布后就停止。</dd></div>
+              <div><dt>当前行动</dt><dd>将成套资产与档案、规则和失败证据一起交付。</dd></div>
+              <div><dt>最终结果</dt><dd>新内容可以沿同一路由与合同继续扩展，无需重新发明画风。</dd></div>
+            </dl>
+            <p class="story-bridge story-complete"><b>闭环</b> 图片从孤立装饰，变成有背景、有因果、可持续复用的视觉系统。</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="case-outcome">
+        <div><span>BEFORE</span><strong>每次临时找图、临时写 Prompt</strong></div>
+        <div aria-hidden="true">→</div>
+        <div><span>AFTER</span><strong>背景 → 路由 → 合同 → 回归 → 成套资产</strong></div>
+        <a class="button" href="assets/generated/STORY.md">查看完整故事设定与逐幕 Prompt</a>
+      </div>
+    </section>
+
+    <section class="section applied-assets" id="applied-assets" aria-labelledby="applied-assets-title">
+      <div class="section-heading">
+        <div><span>02 / APPLIED ASSETS</span><h2 id="applied-assets-title">同一项研究，<br>三种图片职责</h2></div>
+        <p>下面三张图片由本项目直接使用 ChatGPT ImageGen 生成。它们不再是随机风格样图，而是分别服务于“记住项目、看懂原理、感受过程”。准确标题与解释保留在 HTML 中，图片只负责视觉转译。</p>
+      </div>
+      <div class="asset-role-grid">
+        <article class="asset-role-card">
+          <figure>
+            <img src="assets/generated/project-cover.png" width="1122" height="1402" alt="研究者将散乱提示卡整理成有序风格档案，并通过弧形路径连接到完成插画">
+            <figcaption>由 ChatGPT ImageGen 生成 · 2026-08-18</figcaption>
+          </figure>
+          <div class="asset-role-copy">
+            <span>ROLE 01 · 让人记住</span>
+            <h3>项目封面</h3>
+            <p>把“零散提示词被整理成可复用视觉合同”变成一个可见场景，替换原来漂亮但与项目主题无关的家庭样图。</p>
+            <dl>
+              <div><dt>对应内容</dt><dd>项目概览与核心结论</dd></div>
+              <div><dt>当前位置</dt><dd>展厅首屏、主研究索引</dd></div>
+              <div><dt>可复用</dt><dd>README、OG图、项目卡</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="asset-role-card">
+          <figure>
+            <img src="assets/generated/method-explainer.png" width="1086" height="1448" loading="lazy" alt="四格手绘流程：小豆人收集内容卡、放入风格档案、把内容与风格组合，最后得到一张完成插画">
+            <figcaption>由 ChatGPT ImageGen 生成 · 2026-08-18</figcaption>
+          </figure>
+          <div class="asset-role-copy">
+            <span>ROLE 02 · 让人看懂</span>
+            <h3>原理讲解图</h3>
+            <p>不用图片内文字，单靠四格动作表达“收集内容 → 选择风格 → 组装约束 → 生成图片”，准确术语由旁边正文负责。</p>
+            <dl>
+              <div><dt>对应内容</dt><dd>五层实现与生成链路</dd></div>
+              <div><dt>当前位置</dt><dd>应用演示区</dd></div>
+              <div><dt>可复用</dt><dd>教程、工作流说明、分享长图</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="asset-role-card">
+          <figure>
+            <img src="assets/generated/milestone-story.png" width="1086" height="1448" loading="lazy" alt="两位研究成员把失败实验图片保留在证据墙上，一人固定样图，另一人记录结论，墙上只有一张橙色便签作为焦点">
+            <figcaption>由 ChatGPT ImageGen 生成 · 2026-08-18</figcaption>
+          </figure>
+          <div class="asset-role-copy">
+            <span>ROLE 03 · 让人感受</span>
+            <h3>里程碑故事图</h3>
+            <p>把“失败样例也是研究证据”从一句抽象原则转成团队行动：不丢弃失败图，而是贴回证据墙并记录原因。</p>
+            <dl>
+              <div><dt>对应内容</dt><dd>回归方法与上游问题发现</dd></div>
+              <div><dt>当前位置</dt><dd>应用演示区</dd></div>
+              <div><dt>可复用</dt><dd>复盘、里程碑、团队故事</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+      <div class="asset-provenance">
+        <div><span>CAPABILITY SAMPLE</span><strong>上游画廊</strong><p>证明一种风格能长什么样，不代表我们的项目内容。</p></div>
+        <div aria-hidden="true">→</div>
+        <div><span>CONTENT ASSET</span><strong>本区三张图片</strong><p>代表明确内容、页面职责和复用位置，并保留生成提示词。</p></div>
+        <a class="button" href="assets/generated/PROMPTS.md">查看完整生成提示词</a>
+      </div>
+    </section>
+
+    <section class="section style-lab" id="style-lab" aria-labelledby="style-lab-title">
+      <div class="section-heading">
+        <div><span>03 / MULTI-STYLE LAB</span><h2 id="style-lab-title">同一主题，<br>不该只有一种画法</h2></div>
+        <p>核心内容始终是“把混乱 Prompt 变成可复用视觉系统”，但受众和传播任务改变后，画风承担的意义也会改变。下面4张均由 ChatGPT 使用上游对应样图作为纯风格参考重新生成。</p>
+      </div>
+
+      <div class="style-lab-premise">
+        <span>固定内容</span>
+        <strong>混乱 Prompt → 风格档案 → 受控生成 → 成套资产</strong>
+        <span>改变变量</span>
+        <strong>文化隐喻 / 游戏化进度 / 编辑主视觉 / 角色IP</strong>
+      </div>
+
+      <div class="multi-style-grid">
+        <article class="multi-style-card">
+          <div class="mini-flow ink-flow" aria-label="水墨写意三幕流程">
+            <figure class="style-preview ink-preview">
+              <img src="assets/generated/style-08-flow-01-chaos.png" width="1086" height="1448" loading="lazy" alt="水墨流程第一幕：纸片和断裂笔触形成混乱风暴，小型研究者站在一旁观察">
+              <figcaption><b>01 · 问题</b> 知识纸片仍在风暴中</figcaption>
+            </figure>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <figure class="style-preview ink-preview">
+              <img src="assets/generated/style-08-ink-archive.png" width="1086" height="1448" loading="lazy" alt="水墨流程第二幕：混乱纸片汇聚成向上的墨色档案阶梯并通向画卷">
+              <figcaption><b>02 · 处理</b> 墨石路径建立方法</figcaption>
+            </figure>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <figure class="style-preview ink-preview">
+              <img src="assets/generated/style-08-flow-03-order.png" width="1086" height="1448" loading="lazy" alt="水墨流程第三幕：档案成为稳定庭院，研究者坐在展开的山水画卷旁复核知识">
+              <figcaption><b>03 · 结果</b> 知识成为安静可读的卷轴</figcaption>
+            </figure>
+          </div>
+          <div class="multi-style-copy">
+            <span>STYLE 08 · INK WASH</span>
+            <h3>水墨写意：把流程变成战略隐喻</h3>
+            <p>混乱纸片像风暴，档案像向上延伸的墨石路径，最终抵达一卷安静画卷。它不解释每个操作步骤，而是表达“从无序到有序”的方法论气质。</p>
+            <dl>
+              <div><dt>背景</dt><dd>面向策略、文化或知识体系主题，需要更高层次的视觉隐喻。</dd></div>
+              <div><dt>适合</dt><dd>深度文章封面、方法论报告、文化研究、演讲开场。</dd></div>
+              <div><dt>不适合</dt><dd>逐步教程、产品UI说明、需要精确标签的架构图。</dd></div>
+              <div><dt>推荐位置</dt><dd>报告封面、章节扉页、专题海报。</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="multi-style-card">
+          <div class="mini-flow pixel-flow" aria-label="复古像素三幕流程">
+            <figure class="style-preview pixel-preview">
+              <img src="assets/generated/style-09-flow-01-start.png" width="1448" height="1086" loading="lazy" alt="像素流程第一幕：研究者站在起点，散乱卡片悬浮，档案与合成台仍处于锁定状态">
+              <figcaption><b>01 · 问题</b> 任务可见，系统尚未解锁</figcaption>
+            </figure>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <figure class="style-preview pixel-preview">
+              <img src="assets/generated/style-09-pixel-workflow.png" width="1448" height="1086" loading="lazy" alt="像素流程第二幕：研究者依次收集卡片、进入档案、合成内容与风格并抵达资产墙">
+              <figcaption><b>02 · 处理</b> 四个站点形成可执行关卡</figcaption>
+            </figure>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <figure class="style-preview pixel-preview">
+              <img src="assets/generated/style-09-flow-03-complete.png" width="1448" height="1086" loading="lazy" alt="像素流程第三幕：档案、合成台和成套资产墙全部点亮，底部进度节点全部完成">
+              <figcaption><b>03 · 结果</b> 全节点点亮，可重复通关</figcaption>
+            </figure>
+          </div>
+          <div class="multi-style-copy">
+            <span>STYLE 09 · PIXEL WORKFLOW</span>
+            <h3>复古像素：把研究过程变成可完成关卡</h3>
+            <p>收集卡片、进入档案检查点、在合成台组合内容与风格、到达成套资产终点。它把抽象流程转成有进度、有反馈的任务路径。</p>
+            <dl>
+              <div><dt>背景</dt><dd>面向开发者、新手或游戏受众，需要降低方法论的进入门槛。</dd></div>
+              <div><dt>适合</dt><dd>新手引导、课程进度、开发者社区、社媒轮播、挑战活动。</dd></div>
+              <div><dt>不适合</dt><dd>严肃审计正文、高端品牌报告、细腻情绪故事。</dd></div>
+              <div><dt>推荐位置</dt><dd>教程头图、学习路线、进度页、活动卡片。</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="multi-style-card">
+          <div class="mini-flow paper-flow" aria-label="北欧纸雕三幕流程">
+            <figure class="style-preview paper-preview">
+              <img src="assets/generated/style-13-flow-01-materials.png" width="1254" height="1254" loading="lazy" alt="纸雕流程第一幕：纸片、卷纸、叶片和空白框散落，黄色外套研究者拿着两块不匹配材料">
+              <figcaption><b>01 · 问题</b> 材料漂亮，却没有结构</figcaption>
+            </figure>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <figure class="style-preview paper-preview">
+              <img src="assets/generated/style-13-paper-system.png" width="1254" height="1254" loading="lazy" alt="纸雕流程第二幕：中央档案系统将散乱纸卡通过卷曲纸带连接到三类成品资产">
+              <figcaption><b>02 · 处理</b> 中央系统组织材料与用途</figcaption>
+            </figure>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <figure class="style-preview paper-preview">
+              <img src="assets/generated/style-13-flow-03-exhibit.png" width="1254" height="1254" loading="lazy" alt="纸雕流程第三幕：封面、流程图和故事卡形成统一展览系列，旁边保留档案与复用模块托盘">
+              <figcaption><b>03 · 结果</b> 三类资产成为展览级系列</figcaption>
+            </figure>
+          </div>
+          <div class="multi-style-copy">
+            <span>STYLE 13 · PAPER FOLK</span>
+            <h3>北欧纸雕：把系统结构变成编辑主视觉</h3>
+            <p>中央档案像一座层叠纸艺装置，卷曲纸带把输入连接到封面、流程图和故事卡。它强调“系统被精心设计和制作”，而不是技术运行细节。</p>
+            <dl>
+              <div><dt>背景</dt><dd>面向设计、创意产业或发布活动，需要高识别度的手工编辑质感。</dd></div>
+              <div><dt>适合</dt><dd>设计报告、发布会、展览面板、创意行业提案、活动主视觉。</dd></div>
+              <div><dt>不适合</dt><dd>密集数据表、快速操作说明、写实人物案例。</dd></div>
+              <div><dt>推荐位置</dt><dd>发布页首屏、活动海报、报告封套、展览入口。</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="multi-style-card">
+          <div class="mini-flow vinyl-flow" aria-label="大鼻软偶三幕流程">
+            <figure class="style-preview vinyl-preview">
+              <img src="assets/generated/style-15-flow-01-no-identity.png" width="1122" height="1402" loading="lazy" alt="软偶流程第一幕：同一研究者坐在灰色空白身份卡之间，手持一张空白卡思考项目身份">
+              <figcaption><b>01 · 问题</b> 项目没有可识别的人格</figcaption>
+            </figure>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <figure class="style-preview vinyl-preview">
+              <img src="assets/generated/style-15-vinyl-researcher.png" width="1122" height="1402" loading="lazy" alt="软偶流程第二幕：研究者拿着三张风格卡和装满有序卡片的黄色档案盒">
+              <figcaption><b>02 · 处理</b> 角色拿到风格与档案身份</figcaption>
+            </figure>
+            <div class="flow-arrow" aria-hidden="true">→</div>
+            <figure class="style-preview vinyl-preview">
+              <img src="assets/generated/style-15-flow-03-guide.png" width="1122" height="1402" loading="lazy" alt="软偶流程第三幕：同一研究者在头像、短视频和帮助卡中反复出现，旁边保留黄色档案盒和表情贴纸">
+              <figcaption><b>03 · 结果</b> 成为持续栏目和帮助入口</figcaption>
+            </figure>
+          </div>
+          <div class="multi-style-copy">
+            <span>STYLE 15 · VINYL RESEARCHER</span>
+            <h3>大鼻软偶：把抽象项目变成角色IP</h3>
+            <p>角色一手展示风格卡，一手抱着档案盒。它不承担复杂结论，而是让项目拥有可以反复出现的“研究助手”，适合建立亲近感和记忆点。</p>
+            <dl>
+              <div><dt>背景</dt><dd>面向连续栏目、短视频或社区运营，需要稳定可识别的角色。</dd></div>
+              <div><dt>适合</dt><dd>头像、贴纸、短视频封面、帮助入口、栏目主持人。</dd></div>
+              <div><dt>不适合</dt><dd>证据图、正式研究结论、架构图和严肃数据表达。</dd></div>
+              <div><dt>推荐位置</dt><dd>频道头像、侧边助手、空状态、社媒缩略图。</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+
+      <div class="style-lab-conclusion">
+        <div><span>不是换皮</span><strong>风格改变了用户如何理解同一内容</strong></div>
+        <p>水墨让人思考，像素让人行动，纸雕让人记住，软偶让人建立关系。需要精确事实时，仍应回到HTML、SVG、真实截图和数据。</p>
+        <a class="button" href="assets/generated/MULTI-STYLE-FLOWS.md">查看4条三幕流程与完整提示词</a>
+      </div>
     </section>
 
     <section class="section" id="effects" aria-labelledby="effects-title">
       <div class="section-heading">
-        <div><span>01 / EFFECTS</span><h2 id="effects-title">真实效果先于概念</h2></div>
+        <div><span>04 / EFFECTS</span><h2 id="effects-title">真实效果先于概念</h2></div>
         <p>以下均为上游仓库随配方保存的样图，不是我们重新生成或挑选的第三方图片。它们证明的是风格覆盖面，不代表不同模型每次都会得到完全相同的输出。</p>
       </div>
       <div class="filter-bar" role="group" aria-label="筛选样图">
@@ -108,7 +468,7 @@
 
     <section class="section architecture" id="how" aria-labelledby="how-title">
       <div class="section-heading">
-        <div><span>02 / HOW IT WORKS</span><h2 id="how-title">五层实现，一层真正出图</h2></div>
+        <div><span>05 / HOW IT WORKS</span><h2 id="how-title">五层实现，一层真正出图</h2></div>
         <p>最容易产生误解的是把它当成一个图片生成器。源码恰好证明相反：仓库负责生成之前的路由、知识和调用合同。</p>
       </div>
       <ol class="stack" aria-label="实现层次">
@@ -149,7 +509,7 @@
 
     <section class="section meaning" id="meaning" aria-labelledby="meaning-title">
       <div class="section-heading">
-        <div><span>03 / WHY IT MATTERS TO US</span><h2 id="meaning-title">我们的扩展，是场景路由</h2></div>
+        <div><span>06 / WHY IT MATTERS TO US</span><h2 id="meaning-title">我们的扩展，是场景路由</h2></div>
         <p>上游已经回答“这种风格怎么画”。我们不应该再维护一份色板和线条规则，而应回答“研究与日常内容什么时候适合用它”。</p>
       </div>
       <div class="scenario-map">
@@ -165,9 +525,129 @@
       </div>
     </section>
 
+    <section class="section usage-guide" id="usage-guide" aria-labelledby="usage-guide-title">
+      <div class="section-heading">
+        <div><span>07 / USAGE PLAYBOOK</span><h2 id="usage-guide-title">以后怎么用，<br>先看这份指南</h2></div>
+        <p>不要从“今天想用什么画风”开始，而要从“用户看完需要理解、记住、感受还是行动”开始。这份指南把项目介绍、PPT、报告、教程、社媒、产品和品牌活动统一成一套可执行流程。</p>
+      </div>
+
+      <div class="decision-gate">
+        <article class="gate-yes">
+          <span>USE / 应该使用</span>
+          <h3>图片用于理解、记住、感受、行动或建立关系。</h3>
+          <ul>
+            <li>项目封面和视觉身份</li>
+            <li>方法、步骤和关系讲解</li>
+            <li>人物故事和里程碑</li>
+            <li>社媒传播和栏目角色</li>
+          </ul>
+        </article>
+        <article class="gate-no">
+          <span>DON'T / 不应该使用</span>
+          <h3>图片用于证明事实，或要求文字与结构绝对准确。</h3>
+          <ul>
+            <li>数据图表、财务表格</li>
+            <li>系统架构、代码和产品UI</li>
+            <li>原始证据、人物身份和现场照片</li>
+            <li>大量准确标签、公式和坐标</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="guide-subheading">
+        <span>01 / CHOOSE A DELIVERY</span>
+        <h3>七类交付场景</h3>
+        <p>风格跟随传播任务，不跟随个人喜好。</p>
+      </div>
+      <div class="guide-scenario-grid">
+        <article><span>项目介绍</span><h4>建立身份并解释项目</h4><p>封面、README头图、原理图、三幕案例、分享卡。</p><b>1 / 4 / 10 / 13 / 15 / 18</b></article>
+        <article><span>PPT演示</span><h4>封面、转场、方法和案例</h4><p>图像负责插图；标题、数字、图表和箭头用PPT原生元素。</p><b>1 / 4 / 8 / 9 / 11 / 13 / 18</b></article>
+        <article><span>报告与文章</span><h4>建立封面与章节节奏</h4><p>报告封面、章节扉页、方法隐喻、人物案例。</p><b>6 / 8 / 10 / 11 / 14 / 17</b></article>
+        <article><span>教程与课程</span><h4>降低理解门槛</h4><p>新手引导、知识卡、学习路线、前后对比。</p><b>1 / 4 / 9 / 14 / 18</b></article>
+        <article><span>社交媒体</span><h4>抓住注意并形成栏目识别</h4><p>公众号封面、小红书长图、视频封面、分享卡。</p><b>2 / 5 / 9 / 10 / 15 / 18</b></article>
+        <article><span>产品与网站</span><h4>解释价值和补充状态</h4><p>Landing首屏、Onboarding、空状态、帮助中心。</p><b>1 / 4 / 13 / 15 / 18</b></article>
+        <article><span>品牌与活动</span><h4>建立主视觉和持续角色</h4><p>活动海报、发布会、展览面板、角色IP和贴纸。</p><b>8 / 11 / 13 / 15 / 16 / 18</b></article>
+      </div>
+
+      <div class="guide-two-column">
+        <section class="asset-pack" aria-labelledby="asset-pack-title">
+          <span>02 / STANDARD ASSET PACK</span>
+          <h3 id="asset-pack-title">每个研究项目默认交付7张</h3>
+          <ol>
+            <li><b>01</b><div><strong>项目封面</strong><small>README、网站首屏、OG图</small></div><code>cover.png</code></li>
+            <li><b>02</b><div><strong>原理讲解图</strong><small>解释核心工作链路</small></div><code>how-it-works.png</code></li>
+            <li><b>03–05</b><div><strong>三幕场景</strong><small>问题、处理、结果</small></div><code>case-01…03.png</code></li>
+            <li><b>06</b><div><strong>研究结论卡</strong><small>分享最重要结论</small></div><code>key-finding.png</code></li>
+            <li><b>07</b><div><strong>社交分享图</strong><small>文章和视频缩略图</small></div><code>social-card.png</code></li>
+            <li><b>+1</b><div><strong>可选项目角色</strong><small>栏目助手、头像、贴纸</small></div><code>mascot.png</code></li>
+          </ol>
+        </section>
+
+        <section class="style-router" aria-labelledby="style-router-title">
+          <span>03 / STYLE ROUTER</span>
+          <h3 id="style-router-title">按用户目标选风格</h3>
+          <dl>
+            <div><dt>要看懂</dt><dd>1 极简线条 / 4 小豆人</dd></div>
+            <div><dt>要形成进度</dt><dd>9 复古像素</dd></div>
+            <div><dt>要文化与战略</dt><dd>8 水墨写意</dd></div>
+            <div><dt>要人物与情绪</dt><dd>10 情绪速写 / 17 墨线绘本</dd></div>
+            <div><dt>要现代项目识别</dt><dd>11 二维水彩 / 18 暖色扁平</dd></div>
+            <div><dt>要活动主视觉</dt><dd>13 北欧纸雕 / 16 聚光水粉</dd></div>
+            <div><dt>要角色IP</dt><dd>15 大鼻软偶</dd></div>
+            <div><dt>要连续故事</dt><dd>3.1 锚点与三阶段合同</dd></div>
+          </dl>
+          <p>一个项目通常只需要一个主视觉风格，再配一个功能讲解风格。</p>
+        </section>
+      </div>
+
+      <div class="guide-subheading">
+        <span>04 / OPERATING PROCEDURE</span>
+        <h3>五步操作流程</h3>
+      </div>
+      <ol class="guide-steps">
+        <li><b>01</b><div><strong>写清交付目的</strong><p>给谁看、放在哪里、看完要理解/记住/感受/行动什么。</p></div></li>
+        <li><b>02</b><div><strong>确定图片职责</strong><p>封面、讲解、三幕流程、情绪故事、分享卡或角色IP，一张图只做一件事。</p></div></li>
+        <li><b>03</b><div><strong>路由风格</strong><p>提交编号、主体、动作、文字和比例，不追加第二套色板或线条规则。</p></div></li>
+        <li><b>04</b><div><strong>生成与验收</strong><p>检查内容、风格、留白、文字、连续角色；3.1必须执行完整合同。</p></div></li>
+        <li><b>05</b><div><strong>归档与复用</strong><p>保存图片、Prompt、版本、用途、alt、失败样例和修正理由。</p></div></li>
+      </ol>
+
+      <div class="request-template">
+        <div class="request-template-heading">
+          <div><span>05 / COPY TEMPLATE</span><h3>给 Agent / ChatGPT 的标准请求</h3></div>
+          <button id="copy-usage-template" class="copy-button" type="button">复制模板</button>
+        </div>
+        <pre id="usage-template" tabindex="0">请使用本项目固定的 hand-drawn-styles 上游配方，为以下交付生成视觉资产。
+
+【交付场景】项目介绍 / PPT / 报告文章 / 教程 / 社媒 / 产品网站 / 品牌活动
+【目标受众】……
+【图片职责】封面 / 讲解 / 三幕流程 / 情绪故事 / 分享卡 / 角色IP
+【用户看完要】理解 / 记住 / 感受 / 行动
+【核心内容】……
+【使用位置】……
+【画幅比例】……
+【是否连续系列】是 / 否
+【准确文字】…… / 不加任何文字
+
+执行要求：
+1. 先根据传播任务推荐1个主风格和1个备选风格，并说明理由。
+2. 从 upstream/STYLES.md 原样提取最终选中风格的完整配方，不得缩写、同义改写或混配。
+3. 只填入内容、准确文字和比例，不得追加第二套风格规则。
+4. 连续系列先建立角色/画风锚点，再逐张携带锚点生成。
+5. 使用3.1时输出正式JSON并完整执行三阶段workflow。
+6. 图片不承担事实证明；准确数字、图表、技术结构和长文字留给原生排版。
+7. 输出最终Prompt/调用合同、图片用途、alt文本和建议文件名。</pre>
+        <p id="usage-copy-status" class="copy-status" aria-live="polite"></p>
+        <div class="guide-actions">
+          <a class="button button-primary" href="../docs/usage-guide.md">阅读完整使用手册</a>
+          <a class="button" href="#workbench">进入日常场景工作台</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section workbench" id="workbench" aria-labelledby="workbench-title">
       <div class="section-heading">
-        <div><span>04 / DAILY ROUTER</span><h2 id="workbench-title">日常场景调用工作台</h2></div>
+        <div><span>08 / DAILY ROUTER</span><h2 id="workbench-title">日常场景调用工作台</h2></div>
         <p>这里演示我们新增的轻量扩展：先选用途，再得到推荐风格和一段可以交给 Agent 的调用指令。它不会伪装成图像模型，也不会复制上游配方。</p>
       </div>
       <div class="workbench-shell">
@@ -227,7 +707,7 @@
 
     <section class="section evidence" aria-labelledby="evidence-title">
       <div class="section-heading compact">
-        <div><span>05 / EVIDENCE & LIMITS</span><h2 id="evidence-title">证据与边界</h2></div>
+        <div><span>09 / EVIDENCE & LIMITS</span><h2 id="evidence-title">证据与边界</h2></div>
       </div>
       <div class="evidence-grid">
         <article><span>源码事实</span><h3>渲染器不含图像 SDK</h3><p>Python 标准库只负责模板、PNG像素校验和 JSON；真正生图发生在仓库之外。</p><a href="../upstream/scripts/render_prompt.py">查看渲染器</a></article>

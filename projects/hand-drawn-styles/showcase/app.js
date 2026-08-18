@@ -91,6 +91,9 @@ const styleReason = document.querySelector("#style-reason");
 const output = document.querySelector("#output");
 const copyButton = document.querySelector("#copy-output");
 const copyStatus = document.querySelector("#copy-status");
+const copyUsageButton = document.querySelector("#copy-usage-template");
+const usageTemplate = document.querySelector("#usage-template");
+const usageCopyStatus = document.querySelector("#usage-copy-status");
 
 function updateStyleOptions(selectedStyle) {
   const scenario = SCENARIOS[scenarioSelect.value];
@@ -193,8 +196,7 @@ styleSelect.addEventListener("change", () => {
   control.addEventListener("change", renderInstruction);
 });
 
-async function copyOutput() {
-  const text = output.textContent;
+async function copyText(text) {
   let copied = false;
   try {
     if (navigator.clipboard?.writeText) {
@@ -221,10 +223,20 @@ async function copyOutput() {
     }
   }
 
+  return copied;
+}
+
+async function copyOutput() {
+  const copied = await copyText(output.textContent);
   copyStatus.textContent = copied ? "已复制完整调用指令。" : "浏览器未允许复制，请在结果区手动选择。";
 }
 
 copyButton.addEventListener("click", copyOutput);
+
+copyUsageButton?.addEventListener("click", async () => {
+  const copied = await copyText(usageTemplate.textContent);
+  usageCopyStatus.textContent = copied ? "已复制标准请求模板。" : "浏览器未允许复制，请在模板区手动选择。";
+});
 
 document.querySelectorAll(".filter").forEach((button) => {
   button.addEventListener("click", () => {

@@ -50,11 +50,38 @@ def main() -> int:
     failures: list[str] = []
     required = [
         PROJECT / "README.md",
+        PROJECT / "STATUS.md",
         PROJECT / "docs" / "analysis.md",
+        PROJECT / "docs" / "usage-guide.md",
         SHOWCASE / "index.html",
         SHOWCASE / "styles.css",
         SHOWCASE / "app.js",
         SHOWCASE / "DELIVERY.md",
+        SHOWCASE / "assets" / "generated" / "project-cover.png",
+        SHOWCASE / "assets" / "generated" / "method-explainer.png",
+        SHOWCASE / "assets" / "generated" / "milestone-story.png",
+        SHOWCASE / "assets" / "generated" / "README.md",
+        SHOWCASE / "assets" / "generated" / "PROMPTS.md",
+        SHOWCASE / "assets" / "generated" / "STORY.md",
+        SHOWCASE / "assets" / "generated" / "MULTI-STYLE.md",
+        SHOWCASE / "assets" / "generated" / "MULTI-STYLE-FLOWS.md",
+        SHOWCASE / "assets" / "generated" / "story-01-problem.png",
+        SHOWCASE / "assets" / "generated" / "story-03-route.png",
+        SHOWCASE / "assets" / "generated" / "story-04-assemble.png",
+        SHOWCASE / "assets" / "generated" / "story-05-review.png",
+        SHOWCASE / "assets" / "generated" / "story-06-publish.png",
+        SHOWCASE / "assets" / "generated" / "style-08-ink-archive.png",
+        SHOWCASE / "assets" / "generated" / "style-09-pixel-workflow.png",
+        SHOWCASE / "assets" / "generated" / "style-13-paper-system.png",
+        SHOWCASE / "assets" / "generated" / "style-15-vinyl-researcher.png",
+        SHOWCASE / "assets" / "generated" / "style-08-flow-01-chaos.png",
+        SHOWCASE / "assets" / "generated" / "style-08-flow-03-order.png",
+        SHOWCASE / "assets" / "generated" / "style-09-flow-01-start.png",
+        SHOWCASE / "assets" / "generated" / "style-09-flow-03-complete.png",
+        SHOWCASE / "assets" / "generated" / "style-13-flow-01-materials.png",
+        SHOWCASE / "assets" / "generated" / "style-13-flow-03-exhibit.png",
+        SHOWCASE / "assets" / "generated" / "style-15-flow-01-no-identity.png",
+        SHOWCASE / "assets" / "generated" / "style-15-flow-03-guide.png",
         UPSTREAM / "STYLES.md",
         RENDERER,
     ]
@@ -64,6 +91,7 @@ def main() -> int:
 
     readme = (PROJECT / "README.md").read_text(encoding="utf-8")
     analysis = (PROJECT / "docs" / "analysis.md").read_text(encoding="utf-8")
+    status = (PROJECT / "STATUS.md").read_text(encoding="utf-8")
     html = (SHOWCASE / "index.html").read_text(encoding="utf-8")
     script = (SHOWCASE / "app.js").read_text(encoding="utf-8")
     workflow = (REPO / ".github" / "workflows" / "pages.yml").read_text(encoding="utf-8")
@@ -73,7 +101,11 @@ def main() -> int:
         if PINNED_COMMIT not in document:
             failures.append(f"{name} does not record pinned commit")
 
-    for phrase in ("不是新的生图模型", "五层实现", "日常场景调用工作台", "FAIL-CLOSED"):
+    for phrase in ("893c202", "1bd2d18", "32/32", "20张 ChatGPT ImageGen", "等待新PR"):
+        if phrase not in status:
+            failures.append(f"STATUS missing current-state evidence: {phrase}")
+
+    for phrase in ("不是新的生图模型", "从混乱样图", "SCENE 01", "SCENE 06", "三种图片职责", "同一主题", "STYLE 08", "STYLE 15", "以后怎么用", "七类交付场景", "每个研究项目默认交付7张", "五步操作流程", "copy-usage-template", "五层实现", "日常场景调用工作台", "FAIL-CLOSED"):
         if phrase not in html:
             failures.append(f"showcase missing content: {phrase}")
 
@@ -83,6 +115,14 @@ def main() -> int:
 
     if html.count('class="style-card') < 10:
         failures.append("showcase must contain at least 10 upstream style cards")
+    if html.count('class="story-scene') != 6:
+        failures.append("showcase must contain exactly 6 connected story scenes")
+    if html.count('class="multi-style-card') != 4:
+        failures.append("showcase must contain exactly 4 multi-style application examples")
+    if html.count('class="mini-flow') != 4:
+        failures.append("showcase must contain exactly 4 multi-style flows")
+    if html.count('class="style-preview') != 12:
+        failures.append("multi-style flows must contain exactly 12 scene figures")
 
     parser = ResourceParser()
     parser.feed(html)
@@ -99,6 +139,8 @@ def main() -> int:
         failures.append("Pages workflow does not publish the showcase")
     if "Hand-drawn Styles" not in root_index:
         failures.append("root Pages index does not list Hand-drawn Styles")
+    if "assets/generated/project-cover.png" not in root_index:
+        failures.append("root Pages index does not use the generated project cover")
 
     regular = run_renderer(
         "--style", "4",
@@ -142,8 +184,14 @@ def main() -> int:
 
     print("PASS")
     print("- research artifacts and pinned commit present")
+    print("- current status snapshot distinguishes merged baseline from 5 pending enhancements")
     print("- 10 upstream style cards resolve locally")
+    print("- 3 ChatGPT-generated content assets resolve locally")
+    print("- 6-scene connected case and story archive resolve locally")
+    print("- 4 multi-style application examples and prompt archive resolve locally")
+    print("- 4 three-scene style flows and 8 additional flow images resolve locally")
     print("- 5 daily routing scenarios present")
+    print("- long-term usage guide, 7 delivery scenarios, asset pack, SOP, and copy template present")
     print("- ordinary style 4 prompt rendering succeeds")
     print("- family-crayon-card-v3 three-stage contract succeeds")
     print("- root index and Pages workflow include the project")

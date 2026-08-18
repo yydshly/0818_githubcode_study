@@ -18,7 +18,7 @@
 | 项目 | 来源 | 研究主题 | 研究记录 | 在线演示 | 状态 |
 | --- | --- | --- | --- | --- | --- |
 | [Luopan 项目研究](projects/luopan/README.md) | [zhangxiaoqiang1991/luopan](https://github.com/zhangxiaoqiang1991/luopan) | 原版能力实演、数据与决策原理、AI 编程 Agent 实战及 GitHub 项目研究扩展 | [项目说明](projects/luopan/README.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/luopan/showcase/) | 已复现 |
-| [Hand-drawn Styles 项目研究](projects/hand-drawn-styles/README.md) | [threerocks/hand-drawn-styles](https://github.com/threerocks/hand-drawn-styles) | 视觉 Prompt 配方、单一真源、锚点校验、多阶段生成合同及日常场景路由 | [完整分析](projects/hand-drawn-styles/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/) | 已复现 |
+| [Hand-drawn Styles 项目研究](projects/hand-drawn-styles/README.md) | [threerocks/hand-drawn-styles](https://github.com/threerocks/hand-drawn-styles) | 视觉 Prompt 配方、单一真源、锚点校验、多阶段生成合同及日常场景路由 | [当前状态](projects/hand-drawn-styles/STATUS.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/) | 已复现 · 持续扩展 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
 
@@ -59,6 +59,7 @@
 - [在线效果与场景路由工作台](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/)
 - [项目研究说明](projects/hand-drawn-styles/README.md)
 - [能力、原理与使用意义分析](projects/hand-drawn-styles/docs/analysis.md)
+- [后期使用指南：项目、PPT、报告、教程、社媒与品牌场景](projects/hand-drawn-styles/docs/usage-guide.md)
 - [固定上游版本](projects/hand-drawn-styles/upstream)
 
 ## 仓库结构
