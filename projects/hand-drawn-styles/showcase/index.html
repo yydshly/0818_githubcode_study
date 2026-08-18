@@ -13,6 +13,7 @@
   <header class="topbar">
     <a class="brand" href="../../../"><span aria-hidden="true"></span>GITHUB CODE STUDY</a>
     <nav aria-label="页面导航">
+      <a href="#applied-assets">应用</a>
       <a href="#effects">效果</a>
       <a href="#how">原理</a>
       <a href="#meaning">意义</a>
@@ -28,7 +29,7 @@
         <h1 id="hero-title">不是新的生图模型，<br><em>是一套视觉风格合同。</em></h1>
         <p class="lede">它把“画成某种感觉”拆成可选择的风格、不可随意改写的配方、可校验的输入，以及必要时必须完成的多阶段编辑流程。</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#effects">先看真实效果</a>
+          <a class="button button-primary" href="#applied-assets">看内容资产</a>
           <a class="button" href="#workbench">试用日常场景路由</a>
         </div>
         <dl class="metrics" aria-label="项目能力摘要">
@@ -39,19 +40,84 @@
         </dl>
       </div>
       <figure class="hero-visual paper-frame">
-        <img src="../upstream/examples/18-warm-flat-storybook.png" alt="上游暖色扁平绘本风格样图：一家三口以蓝橙色几何色块绘制">
-        <figcaption><span>UPSTREAM OUTPUT</span>18 · 暖色扁平绘本</figcaption>
+        <img src="assets/generated/project-cover.png" width="1122" height="1402" alt="项目概念封面：研究者把散乱的图片提示卡整理成有序档案，并连接到一个完成的插画画框">
+        <figcaption><span>CHATGPT GENERATED</span>项目封面 · 从 Prompt 到视觉合同</figcaption>
       </figure>
     </section>
 
     <section class="thesis" aria-label="核心判断">
       <p><strong>用户内容</strong>交给 Agent 理解，<strong>视觉身份</strong>交给固定配方，<strong>组装正确性</strong>交给渲染器，<strong>像素生成</strong>交给外部图像模型。</p>
-      <span>这就是它的全部边界，也是它最值得研究的地方。</span>
+      <span>上游样图证明“能画成什么样”；我们生成的内容资产回答“为什么画、代表什么、应该放在哪里”。</span>
+    </section>
+
+    <section class="section applied-assets" id="applied-assets" aria-labelledby="applied-assets-title">
+      <div class="section-heading">
+        <div><span>01 / APPLIED ASSETS</span><h2 id="applied-assets-title">同一项研究，<br>三种图片职责</h2></div>
+        <p>下面三张图片由本项目直接使用 ChatGPT ImageGen 生成。它们不再是随机风格样图，而是分别服务于“记住项目、看懂原理、感受过程”。准确标题与解释保留在 HTML 中，图片只负责视觉转译。</p>
+      </div>
+      <div class="asset-role-grid">
+        <article class="asset-role-card">
+          <figure>
+            <img src="assets/generated/project-cover.png" width="1122" height="1402" alt="研究者将散乱提示卡整理成有序风格档案，并通过弧形路径连接到完成插画">
+            <figcaption>由 ChatGPT ImageGen 生成 · 2026-08-18</figcaption>
+          </figure>
+          <div class="asset-role-copy">
+            <span>ROLE 01 · 让人记住</span>
+            <h3>项目封面</h3>
+            <p>把“零散提示词被整理成可复用视觉合同”变成一个可见场景，替换原来漂亮但与项目主题无关的家庭样图。</p>
+            <dl>
+              <div><dt>对应内容</dt><dd>项目概览与核心结论</dd></div>
+              <div><dt>当前位置</dt><dd>展厅首屏、主研究索引</dd></div>
+              <div><dt>可复用</dt><dd>README、OG图、项目卡</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="asset-role-card">
+          <figure>
+            <img src="assets/generated/method-explainer.png" width="1086" height="1448" loading="lazy" alt="四格手绘流程：小豆人收集内容卡、放入风格档案、把内容与风格组合，最后得到一张完成插画">
+            <figcaption>由 ChatGPT ImageGen 生成 · 2026-08-18</figcaption>
+          </figure>
+          <div class="asset-role-copy">
+            <span>ROLE 02 · 让人看懂</span>
+            <h3>原理讲解图</h3>
+            <p>不用图片内文字，单靠四格动作表达“收集内容 → 选择风格 → 组装约束 → 生成图片”，准确术语由旁边正文负责。</p>
+            <dl>
+              <div><dt>对应内容</dt><dd>五层实现与生成链路</dd></div>
+              <div><dt>当前位置</dt><dd>应用演示区</dd></div>
+              <div><dt>可复用</dt><dd>教程、工作流说明、分享长图</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="asset-role-card">
+          <figure>
+            <img src="assets/generated/milestone-story.png" width="1086" height="1448" loading="lazy" alt="两位研究成员把失败实验图片保留在证据墙上，一人固定样图，另一人记录结论，墙上只有一张橙色便签作为焦点">
+            <figcaption>由 ChatGPT ImageGen 生成 · 2026-08-18</figcaption>
+          </figure>
+          <div class="asset-role-copy">
+            <span>ROLE 03 · 让人感受</span>
+            <h3>里程碑故事图</h3>
+            <p>把“失败样例也是研究证据”从一句抽象原则转成团队行动：不丢弃失败图，而是贴回证据墙并记录原因。</p>
+            <dl>
+              <div><dt>对应内容</dt><dd>回归方法与上游问题发现</dd></div>
+              <div><dt>当前位置</dt><dd>应用演示区</dd></div>
+              <div><dt>可复用</dt><dd>复盘、里程碑、团队故事</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+      <div class="asset-provenance">
+        <div><span>CAPABILITY SAMPLE</span><strong>上游画廊</strong><p>证明一种风格能长什么样，不代表我们的项目内容。</p></div>
+        <div aria-hidden="true">→</div>
+        <div><span>CONTENT ASSET</span><strong>本区三张图片</strong><p>代表明确内容、页面职责和复用位置，并保留生成提示词。</p></div>
+        <a class="button" href="assets/generated/PROMPTS.md">查看完整生成提示词</a>
+      </div>
     </section>
 
     <section class="section" id="effects" aria-labelledby="effects-title">
       <div class="section-heading">
-        <div><span>01 / EFFECTS</span><h2 id="effects-title">真实效果先于概念</h2></div>
+        <div><span>02 / EFFECTS</span><h2 id="effects-title">真实效果先于概念</h2></div>
         <p>以下均为上游仓库随配方保存的样图，不是我们重新生成或挑选的第三方图片。它们证明的是风格覆盖面，不代表不同模型每次都会得到完全相同的输出。</p>
       </div>
       <div class="filter-bar" role="group" aria-label="筛选样图">
@@ -108,7 +174,7 @@
 
     <section class="section architecture" id="how" aria-labelledby="how-title">
       <div class="section-heading">
-        <div><span>02 / HOW IT WORKS</span><h2 id="how-title">五层实现，一层真正出图</h2></div>
+        <div><span>03 / HOW IT WORKS</span><h2 id="how-title">五层实现，一层真正出图</h2></div>
         <p>最容易产生误解的是把它当成一个图片生成器。源码恰好证明相反：仓库负责生成之前的路由、知识和调用合同。</p>
       </div>
       <ol class="stack" aria-label="实现层次">
@@ -149,7 +215,7 @@
 
     <section class="section meaning" id="meaning" aria-labelledby="meaning-title">
       <div class="section-heading">
-        <div><span>03 / WHY IT MATTERS TO US</span><h2 id="meaning-title">我们的扩展，是场景路由</h2></div>
+        <div><span>04 / WHY IT MATTERS TO US</span><h2 id="meaning-title">我们的扩展，是场景路由</h2></div>
         <p>上游已经回答“这种风格怎么画”。我们不应该再维护一份色板和线条规则，而应回答“研究与日常内容什么时候适合用它”。</p>
       </div>
       <div class="scenario-map">
@@ -167,7 +233,7 @@
 
     <section class="section workbench" id="workbench" aria-labelledby="workbench-title">
       <div class="section-heading">
-        <div><span>04 / DAILY ROUTER</span><h2 id="workbench-title">日常场景调用工作台</h2></div>
+        <div><span>05 / DAILY ROUTER</span><h2 id="workbench-title">日常场景调用工作台</h2></div>
         <p>这里演示我们新增的轻量扩展：先选用途，再得到推荐风格和一段可以交给 Agent 的调用指令。它不会伪装成图像模型，也不会复制上游配方。</p>
       </div>
       <div class="workbench-shell">
@@ -227,7 +293,7 @@
 
     <section class="section evidence" aria-labelledby="evidence-title">
       <div class="section-heading compact">
-        <div><span>05 / EVIDENCE & LIMITS</span><h2 id="evidence-title">证据与边界</h2></div>
+        <div><span>06 / EVIDENCE & LIMITS</span><h2 id="evidence-title">证据与边界</h2></div>
       </div>
       <div class="evidence-grid">
         <article><span>源码事实</span><h3>渲染器不含图像 SDK</h3><p>Python 标准库只负责模板、PNG像素校验和 JSON；真正生图发生在仓库之外。</p><a href="../upstream/scripts/render_prompt.py">查看渲染器</a></article>

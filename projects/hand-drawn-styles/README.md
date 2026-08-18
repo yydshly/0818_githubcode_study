@@ -14,6 +14,7 @@
 | 最后更新 | 2026-08-18 |
 | 上游源码 | [`upstream/`](upstream/)（Git submodule） |
 | 在线演示 | [`showcase/`](showcase/) |
+| ChatGPT 生成资产 | [`showcase/assets/generated/`](showcase/assets/generated/) |
 | 完整分析 | [`docs/analysis.md`](docs/analysis.md) |
 | 许可证 | 上游 MIT，Copyright (c) 2026 liulei |
 
@@ -27,6 +28,7 @@
 2. 从 `SKILL.md`、`PROTOCOL.md`、`STYLES.md`、`render_prompt.py` 和回归测试解释实现原理。
 3. 明确它对我们的价值是“可执行视觉合同”，而不是新的生图算法。
 4. 在不复制上游风格规则的前提下，增加适合研究封面、原理讲解、结论信息图、项目里程碑和团队故事卡的日常场景路由。
+5. 直接使用 ChatGPT ImageGen 生成与本研究语义关联的项目封面、原理讲解和里程碑故事图，示范图片应该如何承担页面职责。
 
 ## 目录
 
@@ -66,6 +68,18 @@ python -m http.server 4174 --bind 127.0.0.1 --directory projects/hand-drawn-styl
 | 团队/家庭故事卡 | 3.1 潦草蜡笔 | 通过锚点和三阶段编辑追求连续一致 |
 
 日常扩展层只输出上游风格编号、内容、文字、比例和调用纪律，不维护第二份线条、色板、五官或材质规则。
+
+## 从“风格样图”到“内容资产”
+
+上游样图回答“这种风格长什么样”，本项目生成的三张内容资产回答“为什么画、代表什么、放在哪里”：
+
+| 图片 | 意义 | 实际使用 |
+| --- | --- | --- |
+| `project-cover.png` | 把零散 Prompt 工程化为视觉合同 | 展厅首屏和主研究索引 |
+| `method-explainer.png` | 把收集、选风格、组装、出图变成四步动作 | 原理讲解与教程 |
+| `milestone-story.png` | 把保留失败样例转成可感知的团队行动 | 回归复盘与里程碑故事 |
+
+图片由 ChatGPT 内置 ImageGen 生成；[用途、来源和提示词均已归档](showcase/assets/generated/README.md)。精确标题和技术术语继续由 HTML 承担，避免把不可控的图片内文字当成事实表达。
 
 ## 研究边界
 
