@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Luopan 原版能力实演、工作原理、数据来源、判断引擎与 GitHub 项目研究扩展">
+  <title>Luopan：先看报告，再拆罗盘</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <noscript><div class="noscript">JavaScript 已关闭：全部内容仍可阅读，判断引擎会顺序展开显示。</div></noscript>
+
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="主导航">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>LUOPAN STUDY / 01</a>
+      <div class="nav-links">
+        <a href="#original">原版能力</a>
+        <a href="#principle">原理与数据</a>
+        <a href="#decision">判断决策</a>
+        <a href="#applied">关联实战</a>
+        <a class="nav-source" href="https://github.com/zhangxiaoqiang1991/luopan" target="_blank" rel="noopener">上游源码 ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <div>
+        <p class="kicker">不是先解释仓库，而是先看它研究出了什么</p>
+        <h1>先看报告，<br>再拆罗盘。</h1>
+        <p class="hero-lede">Luopan 把自然语言研究请求路由成行业、投资或求职判断。这里先打开它已经生成的六份真实报告，再解释数据从哪来、如何经过规则变成决策。</p>
+        <p class="hero-note">固定上游版本 499eb43 · 2026-07-18 · MIT License</p>
+        <div class="actions">
+          <a class="button button-primary" href="#original">查看原版报告</a>
+          <a class="button" href="#decision">理解判断引擎</a>
+        </div>
+      </div>
+
+      <div class="compass-stage" aria-label="Luopan 路由图：行业与公司，公司继续分为投资和求职">
+        <span class="compass-node node-top">行业研究</span>
+        <span class="compass-node node-right">投资判断</span>
+        <span class="compass-node node-bottom">公司研究</span>
+        <span class="compass-node node-left">求职判断</span>
+        <div class="compass-core">对象识别<br>＋ 路由</div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="original">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-index">01 / ORIGINAL OUTPUT</span>
+          <div><h2>六份上游原版产物，直接展示它已有的能力。</h2><p class="section-lede">这些文件来自固定的 upstream submodule，不是我们重新包装的摘要。点开即可阅读完整 HTML 报告；报告中的日期、数据和结论保留上游原貌。</p></div>
+        </div>
+
+        <div class="mode-block">
+          <div class="subhead"><h3>行业研究：看钱、权力与进入机会</h3><span>3 份 HTML 原版报告</span></div>
+          <div class="report-grid">
+            <a class="report-card industry" href="../upstream/test-output/AI行业-行业研究.html" target="_blank">
+              <div><div class="report-meta"><span class="report-route">行业模式</span><span>科技 / 制造型</span></div><h3>中国 AI 行业</h3><p>从大模型、算力到应用层，比较利润错配与权力分布。</p></div><span class="report-open">打开原版报告 ↗</span>
+            </a>
+            <a class="report-card industry" href="../upstream/test-output/跨境电商-行业研究.html" target="_blank">
+              <div><div class="report-meta"><span class="report-route">行业模式</span><span>平台 / 交易型</span></div><h3>跨境电商</h3><p>把平台、品牌与服务商放在同一张权力地图中比较。</p></div><span class="report-open">打开原版报告 ↗</span>
+            </a>
+            <a class="report-card industry" href="../upstream/test-output/知识付费-行业研究.html" target="_blank">
+              <div><div class="report-meta"><span class="report-route">行业模式</span><span>消费 / 内容型</span></div><h3>知识付费</h3><p>解释为什么掌握流量的入口比生产内容的平台更有话语权。</p></div><span class="report-open">打开原版报告 ↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="mode-block">
+          <div class="subhead"><h3>公司研究：同一事实底座，三种决策路线</h3><span>投资 / 求职 / 双线</span></div>
+          <div class="report-grid">
+            <a class="report-card company" href="../upstream/review-output/NVIDIA-公司调研-2026-07-12.html" target="_blank">
+              <div><div class="report-meta"><span class="report-route">投资为主</span><span>2026-07-12</span></div><h3>NVIDIA</h3><p>公司质量通过，但约 210.96 美元高于基准内在价值；“好公司”没有替代价格门。</p></div><span class="report-open">打开投资报告 ↗</span>
+            </a>
+            <a class="report-card company" href="../upstream/review-output/字节跳动-公司调研-2026-07-12.html" target="_blank">
+              <div><div class="report-meta"><span class="report-route">求职为主</span><span>2026-07-12</span></div><h3>字节跳动</h3><p>公司级值得继续投递，但岗位价值取决于业务线、直属上级与成果所有权。</p></div><span class="report-open">打开求职报告 ↗</span>
+            </a>
+            <a class="report-card company" href="../upstream/review-output/腾讯控股-公司调研-2026-07-12.html" target="_blank">
+              <div><div class="report-meta"><span class="report-route">投资＋求职</span><span>2026-07-12</span></div><h3>腾讯控股</h3><p>共享一次公司事实，但分别给出价格安全边际和具体业务求职结论。</p></div><span class="report-open">打开双线报告 ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="principle">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-index">02 / PRINCIPLE</span>
+          <div><h2>它的原理不是“一个更懂商业的模型”，而是一套约束研究行为的路由和门禁。</h2><p class="section-lede">模型负责理解与推理；Skill 规定何时问问题、去哪里找证据、按什么顺序判断、什么情况下必须承认证据不足。</p></div>
+        </div>
+
+        <div class="principle-grid">
+          <article class="route-card">
+            <p class="kicker">路由原理</p>
+            <h3>先识别对象，再确认目的，最后加载完整方法。</h3>
+            <div class="route-stack">
+              <div class="route-step"><b>01</b><span><strong>对象识别</strong><br>行业、赛道、产业链 → 行业模式；具体公司、股票、岗位、Offer → 公司模式。</span></div>
+              <div class="route-step"><b>02</b><span><strong>用途确认</strong><br>公司研究若没有目的，只问一次：投资、求职或两者并重；选择前暂停搜索。</span></div>
+              <div class="route-step"><b>03</b><span><strong>方法加载</strong><br>行业读取九阶段方法；公司按市场和受众加载数据、投资或求职框架。</span></div>
+              <div class="route-step"><b>04</b><span><strong>同源交付</strong><br>公司报告先形成 JSON 真源，再生成 HTML 和 Markdown，避免数字与结论漂移。</span></div>
+            </div>
+          </article>
+
+          <article class="contract-card">
+            <p class="kicker">结论契约</p>
+            <h3>每个判断都必须交代“为什么信、哪里可能错、什么会推翻”。</h3>
+            <ul class="contract-list">
+              <li><strong>判断状态</strong><span>通过、需关注、不通过、证据不足或不适用；PASS 只代表继续研究门槛，不等于买入或入职。</span></li>
+              <li><strong>支持证据</strong><span>事实保留时间、币种、口径、来源、页码，以及是否为计算或推断。</span></li>
+              <li><strong>最强反证</strong><span>主动找能破坏当前叙事的材料，不把管理层或媒体叙述直接当事实。</span></li>
+              <li><strong>推理链</strong><span>把事实、计算、推断和建议分开，结论强度不能高于证据强度。</span></li>
+              <li><strong>推翻条件</strong><span>说明哪个变量、事件或新证据出现后，需要改变当前判断。</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="data">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-index">03 / DATA LINEAGE</span>
+          <div><h2>数据不是“来自网络”，而是按市场和证据等级进入事实底座。</h2><p class="section-lede">Luopan 将原始披露、结构化金融平台、行业研究和线索分层使用。来源等级越低，越不能独立支撑核心结论。</p></div>
+        </div>
+
+        <div class="data-map">
+          <article class="data-tier"><span class="tier-label">A</span><h3>原始证据</h3><p>决定核心数字与公司身份。</p><ul><li>SEC 10-K / 10-Q / 20-F / 6-K</li><li>巨潮、上交所、深交所</li><li>HKEXnews 与公司年报</li><li>政府、法院、正式公告</li></ul></article>
+          <article class="data-tier"><span class="tier-label">B</span><h3>可核验二手数据</h3><p>提高速度并补充行业语境。</p><ul><li>westock-data / 腾讯自选股聚合</li><li>有方法和日期的行业报告</li><li>权威媒体、评级和数据库</li><li>关键数字仍回核 A 级</li></ul></article>
+          <article class="data-tier"><span class="tier-label">C</span><h3>调查线索</h3><p>只能告诉研究者“去哪里继续查”。</p><ul><li>员工评价与社交内容</li><li>论坛、自媒体与未说明口径数字</li><li>多源一致前不支撑强结论</li><li>必须标注未经官方证实</li></ul></article>
+          <article class="data-tier"><span class="tier-label">6×</span><h3>行业多视角</h3><p>行业研究至少覆盖其中四个。</p><ul><li>政策 / 监管</li><li>资本 / IPO</li><li>产业链 / 技术</li><li>需求 / 人才</li></ul></article>
+        </div>
+
+        <div class="dependency-note">
+          <strong>关键能力边界</strong>
+          <p><code>westock-data</code> 是 Luopan 方法要求优先调用的外部 CLI，数据被其方法定义为 B 级；但这个命令、安装方式和版本并不在仓库内。仓库自带的自动抓取器只有 SEC 最小实现。因此“方法支持的数据路线”不等于“仓库开箱即有的数据能力”。<br><a href="../docs/data-sources-and-acquisition.md" target="_blank">打开完整数据来源与获取方式档案 ↗</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="decision">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-index">04 / DECISION ENGINES</span>
+          <div><h2>三套判断引擎解决三种不同问题，不能混成一个总分。</h2><p class="section-lede">切换查看行业权力、投资交易条件和求职职业资本如何分别形成决策。</p></div>
+        </div>
+
+        <div class="engine-tabs" role="tablist" aria-label="判断引擎">
+          <button id="tab-industry" role="tab" aria-selected="true" aria-controls="panel-industry">行业判断</button>
+          <button id="tab-investment" role="tab" aria-selected="false" aria-controls="panel-investment" tabindex="-1">投资判断</button>
+          <button id="tab-career" role="tab" aria-selected="false" aria-controls="panel-career" tabindex="-1">求职判断</button>
+        </div>
+
+        <article class="engine-panel" id="panel-industry" role="tabpanel" aria-labelledby="tab-industry">
+          <div class="engine-title"><h3>行业：九阶段研究＋权力评分</h3><span class="formula">8 项权力指标 + R&amp;D 加分 → 0–10</span></div>
+          <p>目标不是列产业链，而是判断谁拥有定价权、现金流和不可替代性。先识别行业类型和视角权重，再建立 Day-1 假设，最后用事实推翻或修正。</p>
+          <div class="engine-flow"><span>类型与用户视角</span><span>热身搜索</span><span>Day-1 假设</span><span>公司与权力分层</span><span>多报告补缺</span><span>骨架与双格式</span><span>对抗验证</span></div>
+          <div class="engine-rules">
+            <div class="engine-rule"><strong>权力指标</strong><p>毛利率及弹性、应收应付、预收预付、客户与供应商集中、转换成本、经营现金流/净利润，并以研发强度加分。</p></div>
+            <div class="engine-rule"><strong>竞争五步</strong><p>定义边界 → 集中度 → 利润池 → 进入壁垒 → 生命周期；数据不足时定性，不硬算 CR8。</p></div>
+            <div class="engine-rule"><strong>审计发现</strong><p>原文“应付低＝占供应商钱、应收高＝回款快”疑似方向写反，实际应用前必须修正，不能照表机械评分。</p></div>
+          </div>
+        </article>
+
+        <article class="engine-panel" id="panel-investment" role="tabpanel" aria-labelledby="tab-investment">
+          <div class="engine-title"><h3>投资：七道门，最后才判断价格</h3><span class="formula">安全边际 = (基准价值 − 当前价格) / 基准价值</span></div>
+          <p>先判断是否理解公司和财务是否可信，再判断商业模式、护城河、管理层与风险；公司质量通过后，当前交易条件仍可能失败。</p>
+          <div class="engine-flow"><span>业务可理解性</span><span>商业模式</span><span>护城河</span><span>管理层与文化</span><span>财务质量</span><span>风险与反证</span><span>价格与机会成本</span></div>
+          <div class="engine-rules">
+            <div class="engine-rule"><strong>三情景估值</strong><p>悲观、基准、乐观分别写现金流、利润率、再投资、折现率、终值、债务和稀释；高敏感时输出区间。</p></div>
+            <div class="engine-rule"><strong>反向估值</strong><p>从当前市值倒推市场押注的增长、利润率和终值，检查是否需要长期接近乐观情景。</p></div>
+            <div class="engine-rule"><strong>价格门</strong><p>高/中/低可预测性参考 15–20%、25–30%、35–50%+ 安全边际；这是执行校准，不是市场定律。</p></div>
+          </div>
+        </article>
+
+        <article class="engine-panel" id="panel-career" role="tabpanel" aria-labelledby="tab-career">
+          <div class="engine-title"><h3>求职：五层漏斗，结论随信息层级升级</h3><span class="formula">职业资本净收益 = 获得 − 时间 − 风险 − 最佳机会</span></div>
+          <p>公司名只能得到公司级初筛；加入业务线后升级为业务级判断；只有岗位、职级、薪酬、上级、团队和个人目标齐全，才可能形成 Offer 级建议。</p>
+          <div class="engine-flow five"><span>公司会不会沉</span><span>业务是不是核心舱</span><span>岗位能积累什么</span><span>上级与组织是否可靠</span><span>是否适合这个人</span></div>
+          <div class="engine-rules">
+            <div class="engine-rule"><strong>岗位价值</strong><p>能力密度、成果所有权、资源杠杆、可迁移性和两三年后的选择权增量。</p></div>
+            <div class="engine-rule"><strong>风险分级</strong><p>一票否决、强制核实、普通代价分开；不是看到任一红灯就机械跳过。</p></div>
+            <div class="engine-rule"><strong>面试验证</strong><p>输出 10 个低防御问题，向 HR、经理和未来同事交叉验证；绿黄红只用于用户后台复盘。</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section light-section" id="applied">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-index">05 / APPLIED STUDY</span>
+          <div><h2>把 Luopan 用到我们的背景：AI 编程 Agent 行业实战。</h2><p class="section-lede">这不是再解释 Luopan，而是用它的行业方法研究我们正在使用的工具生态，并据此决定当前主项目应该建设什么。</p></div>
+        </div>
+
+        <div class="case-hero">
+          <div class="case-stat"><div><strong>85%</strong><span>JetBrains 2025 调查中，经常使用 AI 开发工具的开发者比例</span></div><span>但 Stack Overflow 同年显示 52% 不使用 Agent 或只用简单 AI 工具。</span></div>
+          <div class="case-copy">
+            <p class="kicker">核心修正</p>
+            <h3>模型能力重要，但仓库入口、执行环境、验证闭环和企业治理共同决定行业权力。</h3>
+            <p>结论不是“再造一个 Agent”。我们应直接采用成熟 Agent 作为执行引擎，改造 Luopan 的证据与决策方法，建设跨 GitHub 项目的研究、复现、扩展和展示控制层。</p>
+            <a class="button button-primary" href="../applied/ai-coding-agents-2026.md" target="_blank">阅读全文与来源 ↗</a>
+          </div>
+        </div>
+
+        <div class="case-judgments">
+          <article class="judgment"><b>采用</b><p>使用 Codex 等成熟 Agent 完成源码读取、修改、测试和浏览器验证。</p></article>
+          <article class="judgment"><b>改造</b><p>迁移 Luopan 的路由、信源分级、对抗验证和 JSON 单一事实源。</p></article>
+          <article class="judgment"><b>不做</b><p>不与 Copilot、Codex、Claude Code、Cursor 正面竞争通用编码能力。</p></article>
+          <article class="judgment"><b>衡量</b><p>用“仓库链接到可复现理解和可展示扩展的时间”，而不是生成代码行数。</p></article>
+        </div>
+        <p class="case-source">关键来源：<a href="https://survey.stackoverflow.co/2025/ai" target="_blank" rel="noopener">Stack Overflow 2025</a> · <a href="https://blog.jetbrains.com/research/2025/10/state-of-developer-ecosystem-2025/" target="_blank" rel="noopener">JetBrains 2025</a> · <a href="https://dora.dev/research/2025/dora-report/" target="_blank" rel="noopener">DORA 2025</a> · <a href="https://openai.com/index/unrolling-the-codex-agent-loop/" target="_blank" rel="noopener">Codex agent loop</a></p>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="extension">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-index">06 / EXTENSION</span>
+          <div><h2>在行业与公司之外，新增“GitHub 项目研究”路由。</h2><p class="section-lede">保留 Luopan 的研究纪律，替换它的商业研究对象，形成当前主仓库可重复使用的收录闭环。</p></div>
+        </div>
+
+        <div class="extension-stage">
+          <div class="extension-copy"><p class="kicker">LUOPAN → CODE STUDY</p><h3>从仓库链接到可复现、可解释、可扩展、可展示。</h3><p>这个扩展不评价“项目火不火”，而是回答能力是否真实、原理在哪里、依赖和许可证是什么、与当前项目如何连接，以及扩展是否经过验证。</p><div class="artifact-links"><a href="../extension/study-github-projects/SKILL.md">扩展 Skill</a><a href="../research/luopan-study.json">研究 JSON</a><a href="../research/evidence/repo-scan.json">仓库扫描</a></div></div>
+          <ol class="pipeline">
+            <li><div><strong>固定研究对象</strong><span>记录 upstream URL、commit、license 和研究日期。</span></div></li>
+            <li><div><strong>确定性扫描</strong><span>识别语言、manifest、测试、CI、文档、许可证和 Skill。</span></div></li>
+            <li><div><strong>能力分层</strong><span>把能力分为已验证、官方宣称、外部依赖和实现缺口。</span></div></li>
+            <li><div><strong>原理追踪</strong><span>按输入、路由、核心转换、验证、产物五层追踪源码。</span></div></li>
+            <li><div><strong>关联扩展</strong><span>从主项目真实工作流出发，定义一个可验收的扩展闭环。</span></div></li>
+            <li><div><strong>统一展示</strong><span>JSON 真源同步生成研究文档、交互页面和主索引入口。</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section" id="appendix">
+      <div class="wrap">
+        <div class="appendix">
+          <div><h3>技术审计已移到附录</h3><p>仓库结构、13 项测试、Windows 编码问题、westock-data 缺失和方法矛盾仍然保留，但不再抢占主展示路径。</p></div>
+          <div class="appendix-links"><a href="audit/index.html">打开技术审计</a><a href="audit/analysis.md">Markdown</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap"><div class="footer-row"><span>研究对象归原作者所有；上游代码遵循 MIT License。</span><span>当前展示固定于 upstream commit 499eb43。</span></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-08-18T07:48:36+00:00",
+  "repository": {
+    "path": "E:\\0818_codex_project\\projects\\luopan\\upstream",
+    "remote": "https://github.com/zhangxiaoqiang1991/luopan.git",
+    "commit": "499eb43b4ecb35ba0653c6d51d18a950efef160a",
+    "branch": "main",
+    "latest_commit": "499eb43b4ecb35ba0653c6d51d18a950efef160a|2026-07-18T12:00:32+08:00|docs: add data source authority to README",
+    "dirty": false
+  },
+  "inventory": {
+    "file_count": 52,
+    "extensions": {
+      ".md": 21,
+      ".json": 8,
+      ".png": 8,
+      ".html": 6,
+      ".py": 4,
+      ".yaml": 3,
+      "[no extension]": 2
+    },
+    "languages": {
+      "Markdown": 21,
+      "JSON": 8,
+      "HTML": 6,
+      "Python": 4,
+      "YAML": 3
+    },
+    "manifests": [],
+    "tests": [
+      "modes/company/tests/fixtures/sec_company_tickers.json",
+      "modes/company/tests/fixtures/sec_companyfacts.json",
+      "modes/company/tests/fixtures/sec_submissions.json",
+      "modes/company/tests/fixtures/sec_submissions_fpi.json",
+      "modes/company/tests/test_render_report.py",
+      "modes/company/tests/test_sec_fetch.py"
+    ],
+    "documentation": [
+      "modes/company/references/audience-routing.md",
+      "modes/company/references/automation-roadmap.md",
+      "modes/company/references/career-framework.md",
+      "modes/company/references/data-routing.md",
+      "modes/company/references/evidence-standard.md",
+      "modes/company/references/interview-questions.md",
+      "modes/company/references/investment-framework.md",
+      "modes/company/references/language-and-sources.md",
+      "modes/company/references/price-safety-margin.md",
+      "modes/company/references/quiz-cards.md",
+      "modes/company/references/report-design.md",
+      "modes/company/references/report-model.md",
+      "modes/company/SKILL.md",
+      "modes/industry/references/full-methodology.md",
+      "modes/industry/SKILL.md",
+      "README.md",
+      "review-output/NVIDIA-公司调研-2026-07-12.md",
+      "review-output/字节跳动-公司调研-2026-07-12.md",
+      "review-output/腾讯控股-公司调研-2026-07-12.md",
+      "SKILL.md",
+      "test-output/跨境电商-报告.md"
+    ],
+    "workflows": [],
+    "licenses": [
+      "LICENSE"
+    ],
+    "skills": [
+      "modes/company/SKILL.md",
+      "modes/industry/SKILL.md",
+      "SKILL.md"
+    ]
+  },
+  "signals": {
+    "has_tests": true,
+    "has_ci": false,
+    "has_license": true,
+    "has_dependency_manifest": false,
+    "is_skill_repository": true
+  }
+}

@@ -1,5 +1,8 @@
 # GitHub Code Study
 
+[![Deploy research showcase to Pages](https://github.com/yydshly/0818_githubcode_study/actions/workflows/pages.yml/badge.svg)](https://github.com/yydshly/0818_githubcode_study/actions/workflows/pages.yml)
+[![Online showcase](https://img.shields.io/badge/GitHub%20Pages-online-147b78)](https://yydshly.github.io/0818_githubcode_study/)
+
 这是一个面向长期积累的代码研究主仓库，用于整理、索引和展示值得深入阅读的开源项目与实践成果。
 
 本仓库主要承担三项职责：
@@ -10,13 +13,41 @@
 
 ## 项目索引
 
-> 当前尚未添加研究项目。新增项目时，请复制[研究记录模板](docs/research-template.md)，并在下表登记。
+新增项目时，请复制[研究记录模板](docs/research-template.md)，并在下表登记。
 
 | 项目 | 来源 | 研究主题 | 研究记录 | 在线演示 | 状态 |
 | --- | --- | --- | --- | --- | --- |
-| — | — | — | — | — | 待开始 |
+| [Luopan 项目研究](projects/luopan/README.md) | [zhangxiaoqiang1991/luopan](https://github.com/zhangxiaoqiang1991/luopan) | 原版能力实演、数据与决策原理、AI 编程 Agent 实战及 GitHub 项目研究扩展 | [项目说明](projects/luopan/README.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/luopan/showcase/) | 已复现 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
+
+## 首个研究项目：Luopan
+
+[Luopan](https://github.com/zhangxiaoqiang1991/luopan) 是一套运行在 Codex、Claude Code 等 AI 宿主中的商业研究 Skill。它先识别用户研究的是行业、公司、股票还是岗位，再根据投资、求职或行业进入目标，获取必要证据并运行对应判断框架。
+
+本仓库围绕 Luopan 完成了四层归档：
+
+1. **原版能力实演**：直接关联上游已有的 3 份行业报告，以及 NVIDIA 投资、字节跳动求职、腾讯双线公司报告。
+2. **数据来源整理**：归档 westock-data、A/H/美股、SEC、非上市公司、行业六视角、行情估值和证据冲突处理方式。
+3. **原理与判断拆解**：解释对象路由、A/B/C 证据等级、行业九阶段、投资七道门和求职五层漏斗。
+4. **关联扩展**：使用 Luopan 方法研究 AI 编程 Agent 行业，并扩展出标准化的 GitHub 项目研究 Skill。
+
+### 数据来源概览
+
+| 类型 | 主要来源 | 作用 |
+| --- | --- | --- |
+| 原始披露（A 级） | SEC、巨潮资讯、上交所、深交所、北交所、HKEXnews、公司正式报告 | 公司身份、财务和重大事项的事实基准 |
+| 结构化金融数据（B 级） | 外部 `westock-data` / 腾讯自选股接口 | 财务三表、行情、一致预期和行业板块快扫 |
+| 行业研究（B 级） | 政策、资本、产业链、技术、需求和人才六类来源 | 建立行业边界、权力格局、利润池和趋势 |
+| 调查线索（C 级） | 员工评价、论坛、社交内容和未说明口径的数字 | 发现需要继续核实的问题，不独立支撑结论 |
+
+> 重要边界：`westock-data` 是 Luopan 方法依赖的外部 CLI，并不包含在上游仓库内；仓库自带的数据自动化主要是 SEC 标准财务事实的最小抓取器。
+
+- [在线研究展厅](https://yydshly.github.io/0818_githubcode_study/projects/luopan/showcase/)
+- [数据来源与信息获取档案](projects/luopan/docs/data-sources-and-acquisition.md)
+- [AI 编程 Agent 行业实战](projects/luopan/applied/ai-coding-agents-2026.md)
+- [GitHub 项目研究扩展 Skill](projects/luopan/extension/study-github-projects/SKILL.md)
+- [项目技术审计](projects/luopan/showcase/audit/analysis.md)
 
 ## 仓库结构
 
