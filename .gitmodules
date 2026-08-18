@@ -1,3 +1,6 @@
 [submodule "projects/luopan/upstream"]
 	path = projects/luopan/upstream
 	url = https://github.com/zhangxiaoqiang1991/luopan.git
+[submodule "projects/hand-drawn-styles/upstream"]
+	path = projects/hand-drawn-styles/upstream
+	url = https://github.com/threerocks/hand-drawn-styles.git

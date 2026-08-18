@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hand-drawn Styles 研究展厅：真实效果、实现原理，以及适合日常研究与内容生产的场景路由演示。">
+  <title>Hand-drawn Styles · 可执行视觉风格合同</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="topbar">
+    <a class="brand" href="../../../"><span aria-hidden="true"></span>GITHUB CODE STUDY</a>
+    <nav aria-label="页面导航">
+      <a href="#effects">效果</a>
+      <a href="#how">原理</a>
+      <a href="#meaning">意义</a>
+      <a href="#workbench">工作台</a>
+    </nav>
+    <a class="source-link" href="https://github.com/threerocks/hand-drawn-styles">上游源码 ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">PROJECT 02 / VISUAL PROMPT ENGINEERING</p>
+        <h1 id="hero-title">不是新的生图模型，<br><em>是一套视觉风格合同。</em></h1>
+        <p class="lede">它把“画成某种感觉”拆成可选择的风格、不可随意改写的配方、可校验的输入，以及必要时必须完成的多阶段编辑流程。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#effects">先看真实效果</a>
+          <a class="button" href="#workbench">试用日常场景路由</a>
+        </div>
+        <dl class="metrics" aria-label="项目能力摘要">
+          <div><dt>19</dt><dd>套可调用配方</dd></div>
+          <div><dt>0</dt><dd>仓库内图像模型</dd></div>
+          <div><dt>3</dt><dd>3.1 正式阶段</dd></div>
+          <div><dt>1</dt><dd>风格单一真源</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-visual paper-frame">
+        <img src="../upstream/examples/18-warm-flat-storybook.png" alt="上游暖色扁平绘本风格样图：一家三口以蓝橙色几何色块绘制">
+        <figcaption><span>UPSTREAM OUTPUT</span>18 · 暖色扁平绘本</figcaption>
+      </figure>
+    </section>
+
+    <section class="thesis" aria-label="核心判断">
+      <p><strong>用户内容</strong>交给 Agent 理解，<strong>视觉身份</strong>交给固定配方，<strong>组装正确性</strong>交给渲染器，<strong>像素生成</strong>交给外部图像模型。</p>
+      <span>这就是它的全部边界，也是它最值得研究的地方。</span>
+    </section>
+
+    <section class="section" id="effects" aria-labelledby="effects-title">
+      <div class="section-heading">
+        <div><span>01 / EFFECTS</span><h2 id="effects-title">真实效果先于概念</h2></div>
+        <p>以下均为上游仓库随配方保存的样图，不是我们重新生成或挑选的第三方图片。它们证明的是风格覆盖面，不代表不同模型每次都会得到完全相同的输出。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="筛选样图">
+        <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">全部</button>
+        <button type="button" class="filter" data-filter="explain" aria-pressed="false">讲解</button>
+        <button type="button" class="filter" data-filter="raw" aria-pressed="false">稚拙质感</button>
+        <button type="button" class="filter" data-filter="story" aria-pressed="false">叙事绘本</button>
+        <button type="button" class="filter" data-filter="object" aria-pressed="false">立体与物件</button>
+      </div>
+      <div class="gallery" id="gallery">
+        <figure class="style-card" data-group="explain">
+          <img src="../upstream/examples/01-minimal-line.png" alt="极简黑白线条讲解漫画样图" loading="lazy">
+          <figcaption><strong>01 · 极简线条</strong><span>步骤、方法、概念拆解</span></figcaption>
+        </figure>
+        <figure class="style-card tall" data-group="explain">
+          <img src="../upstream/examples/04-bean-doodle.png" alt="小豆人竖版信息图样图" loading="lazy">
+          <figcaption><strong>04 · 小豆人信息图</strong><span>结论卡、纵向说明</span></figcaption>
+        </figure>
+        <figure class="style-card" data-group="raw">
+          <img src="../upstream/examples/02-crayon.png" alt="五岁儿童蜡笔涂画风格样图" loading="lazy">
+          <figcaption><strong>02 · 蜡笔童涂</strong><span>故意笨拙、轻松幽默</span></figcaption>
+        </figure>
+        <figure class="style-card" data-group="raw">
+          <img src="../upstream/examples/05-ms-paint.png" alt="MS Paint 烂涂鸦风格样图" loading="lazy">
+          <figcaption><strong>05 · MS Paint</strong><span>病毒感、故意画烂</span></figcaption>
+        </figure>
+        <figure class="style-card tall" data-group="raw">
+          <img src="../upstream/examples/07-real-crayon.png" alt="真实蜡笔纸张质感样图" loading="lazy">
+          <figcaption><strong>07 · 蜡笔实拍</strong><span>纸纹、蜡质、手涂痕迹</span></figcaption>
+        </figure>
+        <figure class="style-card" data-group="story">
+          <img src="../upstream/examples/10-emo-sketch.png" alt="情绪叙事淡彩速写样图：雨中母女和橙色雨伞" loading="lazy">
+          <figcaption><strong>10 · 情绪淡彩速写</strong><span>单一暖色、家庭叙事</span></figcaption>
+        </figure>
+        <figure class="style-card" data-group="story">
+          <img src="../upstream/examples/11-retro-concept.png" alt="二维水彩复古动画概念稿样图" loading="lazy">
+          <figcaption><strong>11 · 二维水彩</strong><span>复古概念稿、项目封面</span></figcaption>
+        </figure>
+        <figure class="style-card tall" data-group="story">
+          <img src="../upstream/examples/17-inked-storybook.png" alt="墨线绘本风格人物样图" loading="lazy">
+          <figcaption><strong>17 · 墨线绘本</strong><span>钢笔线稿、轻薄淡彩</span></figcaption>
+        </figure>
+        <figure class="style-card" data-group="object">
+          <img src="../upstream/examples/13-paper-folk.png" alt="北欧纸雕风格样图" loading="lazy">
+          <figcaption><strong>13 · 北欧纸雕</strong><span>层叠纸艺、编辑插画</span></figcaption>
+        </figure>
+        <figure class="style-card" data-group="object">
+          <img src="../upstream/examples/15-softnose-vinyl.png" alt="大鼻软胶潮玩人物样图" loading="lazy">
+          <figcaption><strong>15 · 大鼻软偶</strong><span>角色设定、软胶潮玩</span></figcaption>
+        </figure>
+      </div>
+      <p class="source-note">完整 19 套样图与输入示例：<a href="../upstream/examples/README.md">upstream/examples/README.md</a></p>
+    </section>
+
+    <section class="section architecture" id="how" aria-labelledby="how-title">
+      <div class="section-heading">
+        <div><span>02 / HOW IT WORKS</span><h2 id="how-title">五层实现，一层真正出图</h2></div>
+        <p>最容易产生误解的是把它当成一个图片生成器。源码恰好证明相反：仓库负责生成之前的路由、知识和调用合同。</p>
+      </div>
+      <ol class="stack" aria-label="实现层次">
+        <li><span>01</span><div><strong>宿主适配</strong><code>SKILL.md / AGENTS.md</code><p>告诉不同 Agent 何时触发，以及完整规则放在哪里。</p></div><b>指令</b></li>
+        <li><span>02</span><div><strong>执行协议</strong><code>PROTOCOL.md</code><p>识别风格、推断占位符、处理比例、选择文本或 JSON 输出。</p></div><b>路由</b></li>
+        <li><span>03</span><div><strong>风格知识</strong><code>STYLES.md</code><p>将线条、色板、材质、构图和禁止项固化成19套完整配方。</p></div><b>真源</b></li>
+        <li><span>04</span><div><strong>确定性渲染</strong><code>render_prompt.py</code><p>原样提取模板、替换变量、校验锚点并构建调用包。</p></div><b>编译</b></li>
+        <li class="external"><span>05</span><div><strong>外部图像模型</strong><code>GPT Image / Midjourney / other</code><p>真正解释 Prompt、参考图和编辑请求并生成像素。</p></div><b>出图</b></li>
+      </ol>
+
+      <div class="contract-grid">
+        <article>
+          <p class="kicker">普通风格</p>
+          <h3>Prompt 是最终交付</h3>
+          <p>Agent 填充内容参数，渲染器从单一真源原样取配方。下游模型负责执行，仓库不保证跨模型像素一致。</p>
+          <pre><code>内容 → 风格编号 → 完整 Prompt → 图像模型</code></pre>
+        </article>
+        <article class="accent-card">
+          <p class="kicker">3.1 稳定变体</p>
+          <h3>JSON 工作流才是最终交付</h3>
+          <p>固定锚点随每张请求传入；前两阶段只能算中间图，只有第二次涂抹修正后的输出才能进入 final。</p>
+          <pre><code>基础生成
+  → scribble-correction
+  → scribble-chaos-correction ✓</code></pre>
+        </article>
+      </div>
+
+      <div class="guardrail">
+        <div><span>FAIL-CLOSED</span><h3>错误时停止，不偷偷降级。</h3></div>
+        <ul>
+          <li>占位符缺失或多传：拒绝</li>
+          <li>锚点像素或尺寸变化：拒绝</li>
+          <li>把第二套配色、线条塞进主体：拒绝</li>
+          <li>3.1 正式生产只输出纯 Prompt：拒绝</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section meaning" id="meaning" aria-labelledby="meaning-title">
+      <div class="section-heading">
+        <div><span>03 / WHY IT MATTERS TO US</span><h2 id="meaning-title">我们的扩展，是场景路由</h2></div>
+        <p>上游已经回答“这种风格怎么画”。我们不应该再维护一份色板和线条规则，而应回答“研究与日常内容什么时候适合用它”。</p>
+      </div>
+      <div class="scenario-map">
+        <article><span>研究方法</span><h3>把复杂流程讲清楚</h3><p>用 1 或 4 号把研究步骤、证据分级和决策链拆成多格信息图。</p><b>推荐 01 / 04</b></article>
+        <article><span>研究结论</span><h3>把长报告压成一张卡</h3><p>用小豆人突出要点，或用暖色扁平绘本建立更强传播识别。</p><b>推荐 04 / 18</b></article>
+        <article><span>项目封面</span><h3>建立每个研究项目的视觉记忆</h3><p>二维水彩适合概念气氛，暖色扁平适合清晰、现代的项目主视觉。</p><b>推荐 11 / 18</b></article>
+        <article><span>里程碑故事</span><h3>让阶段成果有人和情绪</h3><p>用单一橙色焦点和大片留白，把发布、修复或失败复盘变成一个场景。</p><b>推荐 10</b></article>
+        <article><span>团队故事</span><h3>连续输出统一的生活化故事卡</h3><p>3.1 适合人物关系和日常事件，但正式使用必须执行锚点与三阶段合同。</p><b>推荐 3.1</b></article>
+      </div>
+      <div class="extension-rule">
+        <span aria-hidden="true">+</span>
+        <div><strong>新增日常能力，只增加“场景 → 风格”的映射。</strong><p>不复制 `STYLES.md`，不追加第二套风格段落，不把业务偏好混进受控主体字段。</p></div>
+      </div>
+    </section>
+
+    <section class="section workbench" id="workbench" aria-labelledby="workbench-title">
+      <div class="section-heading">
+        <div><span>04 / DAILY ROUTER</span><h2 id="workbench-title">日常场景调用工作台</h2></div>
+        <p>这里演示我们新增的轻量扩展：先选用途，再得到推荐风格和一段可以交给 Agent 的调用指令。它不会伪装成图像模型，也不会复制上游配方。</p>
+      </div>
+      <div class="workbench-shell">
+        <form id="router-form">
+          <div class="field">
+            <label for="scenario">我要做什么</label>
+            <select id="scenario" name="scenario">
+              <option value="method">拆解一个研究方法</option>
+              <option value="summary">制作研究结论摘要卡</option>
+              <option value="cover">制作项目封面</option>
+              <option value="milestone">讲一个项目里程碑故事</option>
+              <option value="family">制作团队 / 家庭日常故事卡</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="style">采用推荐风格</label>
+            <select id="style" name="style"></select>
+            <small id="style-reason"></small>
+          </div>
+          <div class="field">
+            <label for="content">核心内容</label>
+            <textarea id="content" name="content" rows="4" required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="title">准确标题</label>
+              <input id="title" name="title" type="text">
+            </div>
+            <div class="field">
+              <label for="aspect">画幅</label>
+              <select id="aspect" name="aspect">
+                <option value="3:4">3:4 竖版</option>
+                <option value="16:9">16:9 横版</option>
+                <option value="1:1">1:1 方图</option>
+                <option value="">由模型与内容决定</option>
+              </select>
+            </div>
+          </div>
+          <button class="button button-primary form-submit" type="submit">生成 Agent 调用指令</button>
+        </form>
+
+        <section class="output-panel" aria-labelledby="output-title">
+          <div class="output-heading">
+            <div><span>ROUTING RESULT</span><h3 id="output-title">调用指令</h3></div>
+            <button id="copy-output" class="copy-button" type="button">复制</button>
+          </div>
+          <pre id="output" tabindex="0"></pre>
+          <p id="copy-status" class="copy-status" aria-live="polite"></p>
+          <details>
+            <summary>这段输出做了什么？</summary>
+            <p>它只提交场景、风格编号、内容、文字和比例，并明确要求 Agent 从上游配方原样渲染。3.1 会额外要求正式 JSON、固定锚点和三阶段工作流。</p>
+          </details>
+        </section>
+      </div>
+      <noscript><p class="noscript">JavaScript 已关闭。你仍可按上方“我们的扩展”选择风格，然后使用：请从上游 `STYLES.md` 原样提取对应配方，填入我的内容与比例，不得缩写或混配。</p></noscript>
+    </section>
+
+    <section class="section evidence" aria-labelledby="evidence-title">
+      <div class="section-heading compact">
+        <div><span>05 / EVIDENCE & LIMITS</span><h2 id="evidence-title">证据与边界</h2></div>
+      </div>
+      <div class="evidence-grid">
+        <article><span>源码事实</span><h3>渲染器不含图像 SDK</h3><p>Python 标准库只负责模板、PNG像素校验和 JSON；真正生图发生在仓库之外。</p><a href="../upstream/scripts/render_prompt.py">查看渲染器</a></article>
+        <article><span>工程事实</span><h3>测试验证合同，不验证审美</h3><p>自动测试能证明变量、锚点和阶段状态正确，不能证明每张生成图都好看。</p><a href="../upstream/scripts/test_render_prompt.py">查看测试</a></article>
+        <article><span>实验事实</span><h3>保留失败样图是一项优点</h3><p>3.1 记录了单次生成、一次修正和一次强修正的失败，但最终仍主要是作者人工判断。</p><a href="../upstream/benchmarks/style-3.1/README.md">查看验证记录</a></article>
+        <article><span>使用边界</span><h3>工具无关，不等于输出相同</h3><p>不同模型对长 Prompt、中文文字、参考图和编辑支持不同，生产前仍需做自己的回归。</p><a href="../docs/analysis.md">阅读完整分析</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>HAND-DRAWN STYLES STUDY</strong><span>研究版本 9f150d9 · 2026-08-18</span></div>
+    <div><a href="../README.md">研究说明</a><a href="../docs/analysis.md">完整分析</a><a href="../../../">返回研究索引</a></div>
+    <p>上游项目采用 MIT License，Copyright (c) 2026 liulei。样图来自固定的上游版本。</p>
+  </footer>
+</body>
+</html>

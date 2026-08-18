@@ -34,6 +34,9 @@ h1 { max-width: 950px; margin-bottom: 30px; font: clamp(3.2rem, 8vw, 7.2rem)/.92
 .section-heading span { color: var(--orange); font-size: .75rem; font-weight: 900; letter-spacing: .14em; }
 h2 { margin: 0; font: clamp(2.2rem, 5vw, 4.4rem)/1 Georgia, serif; }
 .project-card { display: grid; grid-template-columns: 170px 1fr; border: 1px solid var(--line); border-radius: 4px 34px 4px 34px; background: var(--surface); overflow: hidden; }
+.project-card + .project-card { margin-top: 22px; }
+.project-card-second .project-number { background: var(--mint); }
+.project-card-second .actions .primary { color: var(--text); background: var(--orange); border-color: var(--orange); }
 .project-number { padding: 34px; color: var(--bg); background: var(--orange); font: 700 4rem/1 Georgia, serif; }
 .project-body { padding: clamp(28px, 5vw, 56px); }
 .tags { display: flex; flex-wrap: wrap; gap: 7px; }
