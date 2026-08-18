@@ -20,7 +20,7 @@
 | [Luopan 项目研究](projects/luopan/README.md) | [zhangxiaoqiang1991/luopan](https://github.com/zhangxiaoqiang1991/luopan) | 原版能力实演、数据与决策原理、AI 编程 Agent 实战及 GitHub 项目研究扩展 | [项目说明](projects/luopan/README.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/luopan/showcase/) | 已复现 |
 | [Hand-drawn Styles 项目研究](projects/hand-drawn-styles/README.md) | [threerocks/hand-drawn-styles](https://github.com/threerocks/hand-drawn-styles) | 视觉 Prompt 配方、单一真源、锚点校验、多阶段生成合同及日常场景路由 | [当前状态](projects/hand-drawn-styles/STATUS.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/) | 已复现 · 持续扩展 |
 | [Stamp Edge Skill 项目研究](projects/stamp-edge-skill/README.md) | [xianxie6/stamp-edge-skill](https://github.com/xianxie6/stamp-edge-skill) | 邮票齿孔、透明蒙版、投影、瀑布流合集，以及预设驱动图片风格引擎扩展 | [能力分析](projects/stamp-edge-skill/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/stamp-edge-skill/showcase/) | 已复现 · 已收口 |
-| [Promise Wall 项目研究](projects/promise-wall/README.md) | [thebuggeddev/promise-wall](https://github.com/thebuggeddev/promise-wall) | Three.js 空间卡片、Canvas 程序化材质、DOM/WebGL 混合交互、产品边界与场景扩展 | [能力分析](projects/promise-wall/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/promise-wall/showcase/) | 已获取 · 已验证 |
+| [Promise Wall 项目研究](projects/promise-wall/README.md) | [thebuggeddev/promise-wall](https://github.com/thebuggeddev/promise-wall) | Three.js 空间卡片、十二场景第一版效果、后期行动地图与归档边界 | [能力分析](projects/promise-wall/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/promise-wall/showcase/) | 已完成 · 已归档 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
 
@@ -85,7 +85,9 @@
 
 [Promise Wall](https://github.com/thebuggeddev/promise-wall) 是一个把短内容、纸张身份和空间位置组合起来的 Three.js 单页原型。上游通过 Canvas 在运行时生成撕边、纤维、横线、方格、手写字、照片、石墙和木纹，再把纸张映射为弯曲的 3D 卡片；Raycaster、摄像机与 DOM 面板共同完成拖动、缩放、聚焦、搜索、创建和墙面放置。
 
-本研究直接嵌入未修改的固定上游页面作为运行证据，同时明确区分三层边界：渲染和空间交互是真实实现；支持、反思、收藏、举报是当前会话内的界面模拟；账号、持久化、实时协作、上传和审核完全未包含。在此基础上，展厅整理校园心愿、企业目标、活动留言、品牌故事、研究灵感、游戏线索、私人反思和纪念档案八类使用场景，并给出多人社区、可分享空间、关系图、时间轴、多媒体、AI 组织、自动导览和千级卡片八条扩展路线。
+本研究直接嵌入未修改的固定上游页面作为运行证据，同时明确区分三层边界：渲染和空间交互是真实实现；支持、反思、收藏、举报是当前会话内的界面模拟；账号、持久化、实时协作、上传和审核完全未包含。在此基础上，第三版展厅为新年、毕业、婚礼、企业、员工感谢、公益、匿名心声、家庭、旅行、品牌、城市与游戏十二类使用场景分别建立第一版效果舞台，并使用 ImageGen 气氛总览辅助建立整体产品体感。
+
+当前研究已完成并归档。展厅最后保留独立互动、时间变化、集体反馈、成果输出、现场模式、个人空间和跨场景生命周期七类未来行动，以及明确的重新启动条件；它们不是当前实现承诺。
 
 - [原版 Demo 与能力研究展厅](projects/promise-wall/showcase/)
 - [项目研究说明](projects/promise-wall/README.md)

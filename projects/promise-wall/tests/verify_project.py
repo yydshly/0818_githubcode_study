@@ -19,6 +19,9 @@ class ResourceParser(HTMLParser):
     def __init__(self) -> None:
         super().__init__()
         self.resources: list[str] = []
+        self.scene_routes: list[str] = []
+        self.scene_tabs: list[str] = []
+        self.future_actions: list[str] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         values = dict(attrs)
@@ -26,6 +29,12 @@ class ResourceParser(HTMLParser):
             value = values.get(name)
             if value:
                 self.resources.append(value)
+        if values.get("data-route-scene"):
+            self.scene_routes.append(values["data-route-scene"] or "")
+        if values.get("data-scene-select"):
+            self.scene_tabs.append(values["data-scene-select"] or "")
+        if values.get("data-future-action"):
+            self.future_actions.append(values["data-future-action"] or "")
 
 
 def git(*args: str) -> subprocess.CompletedProcess[str]:
@@ -49,6 +58,8 @@ def main() -> int:
         SHOWCASE / "styles.css",
         SHOWCASE / "app.js",
         SHOWCASE / "DELIVERY.md",
+        SHOWCASE / "assets" / "generated" / "promise-wall-six-scenes.png",
+        SHOWCASE / "assets" / "generated" / "PROMPT.md",
         UPSTREAM / "index.html",
         UPSTREAM / "package.json",
     ]
@@ -97,20 +108,26 @@ def main() -> int:
     for document, name in ((readme, "README"), (analysis, "analysis"), (delivery, "delivery")):
         if PINNED_COMMIT not in document and name != "delivery":
             failures.append(f"{name} does not record the pinned commit")
-    for phrase in ("真实实现", "界面模拟", "研究扩展", "先操作原版，再谈能力", "五层协作", "看起来像产品", "从漂亮 Demo 到可信产品"):
+    for phrase in ("真实实现", "界面模拟", "研究扩展", "先操作原版，再谈能力", "五层协作", "看起来像产品", "同一面墙", "效果不是装饰"):
         if phrase not in html:
             failures.append(f"showcase missing capability boundary: {phrase}")
-    for phrase in ("校园／公益心愿墙", "企业目标墙", "活动留言墙", "品牌故事展厅", "研究灵感墙", "游戏线索板", "私人反思墙", "纪念与故事墙"):
+    for phrase in ("新年愿望墙", "毕业留言墙", "婚礼祝福墙", "企业目标墙", "员工感谢墙", "公益承诺墙", "匿名心声墙", "家庭记忆墙", "旅行记忆墙", "品牌故事展厅", "城市故事墙", "游戏线索板"):
         if phrase not in html:
             failures.append(f"showcase missing use case: {phrase}")
-    for phrase in ("真实多人社区", "可分享空间", "关系图／调查板", "时间与进度", "多媒体卡片", "AI 辅助组织", "自动导览", "千级卡片引擎"):
-        if phrase not in html or phrase not in extensions:
-            failures.append(f"extension route missing from showcase or document: {phrase}")
+    for phrase in ("新年愿望墙", "毕业留言墙", "婚礼祝福墙", "企业目标墙", "员工感谢墙", "公益承诺墙", "匿名心声墙", "家庭记忆墙", "旅行记忆墙", "品牌故事墙", "城市故事墙", "游戏线索墙"):
+        if (phrase not in html and phrase not in script) or phrase not in extensions:
+            failures.append(f"experience scene missing from showcase or document: {phrase}")
     for key in ("data", "texture", "scene", "interaction", "product"):
         if f"{key}:" not in script:
             failures.append(f"capability workbench missing key: {key}")
     if 'src="../upstream/index.html"' not in html or 'href="../upstream/index.html"' not in html:
         failures.append("showcase does not expose the unchanged upstream runtime")
+    for marker in ("sceneOrder", "startScenePlayback", "stopScenePlayback", "dataset.scene", "reducedMotion"):
+        if marker not in script:
+            failures.append(f"scene director missing marker: {marker}")
+    for phrase in ("独立互动闭环", "让墙经历时间", "集体反馈改变整面墙", "生成可带走的成果", "活动现场模式", "个人长期空间", "让十二场景形成生命周期", "当前决定：完成研究，停止继续扩展", "何时重新启动"):
+        if phrase not in html:
+            failures.append(f"showcase missing future/archive content: {phrase}")
 
     parser = ResourceParser()
     parser.feed(html)
@@ -120,9 +137,27 @@ def main() -> int:
         target = (SHOWCASE / resource.split("#", 1)[0]).resolve()
         if not target.exists():
             failures.append(f"missing local showcase resource: {resource}")
+    expected_scenes = ["newyear", "graduation", "wedding", "goals", "recognition", "publicgood", "anonymous", "family", "travel", "brand", "city", "game"]
+    if len(parser.scene_routes) != 12:
+        failures.append(f"expected 12 routed use cases, found {len(parser.scene_routes)}")
+    if parser.scene_routes != expected_scenes:
+        failures.append(f"use-case routes do not match canonical order: {parser.scene_routes}")
+    if parser.scene_tabs != expected_scenes:
+        failures.append(f"scene tabs do not match canonical order: {parser.scene_tabs}")
+    if not set(parser.scene_routes).issubset(set(expected_scenes)):
+        failures.append("use-case router targets an unknown scene")
+    expected_actions = ["interaction-loop", "time-change", "collective-feedback", "takeaway-result", "live-event", "personal-space", "lifecycle"]
+    if parser.future_actions != expected_actions:
+        failures.append(f"future actions do not match canonical order: {parser.future_actions}")
+    atmosphere = SHOWCASE / "assets" / "generated" / "promise-wall-six-scenes.png"
+    if atmosphere.stat().st_size < 500_000:
+        failures.append("ImageGen atmosphere atlas is unexpectedly small")
 
     if "Promise Wall" not in root_readme or "Promise Wall" not in site_index:
         failures.append("root research indexes do not include Promise Wall")
+    for document, name in ((readme, "README"), (root_readme, "root README"), (site_index, "site index")):
+        if "已归档" not in document:
+            failures.append(f"{name} does not mark Promise Wall archived")
     if "projects/promise-wall/**" not in workflow:
         failures.append("Pages path trigger does not include Promise Wall")
     for phrase in ("projects/promise-wall/showcase", "projects/promise-wall/upstream/index.html", "projects/promise-wall/docs"):
@@ -151,7 +186,9 @@ def report(failures: list[str]) -> int:
     print("PASS")
     print("- upstream commit is pinned and unmodified")
     print("- runtime source markers and persistence boundary match the analysis")
-    print("- live demo, five capability layers, eight use cases, and eight extension routes are present")
+    print("- live demo, five capability layers, twelve routed use cases, and twelve ordered scene prototypes are present")
+    print("- ImageGen atmosphere atlas, prompt provenance, playback controls, and reduced-motion route pass")
+    print("- seven future actions, reopen triggers, and archived status are consistent")
     print("- local resources, JavaScript syntax, root indexes, and Pages wiring pass")
     return 0
 
