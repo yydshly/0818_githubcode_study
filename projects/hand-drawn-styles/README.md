@@ -16,6 +16,7 @@
 | 在线演示 | [`showcase/`](showcase/) |
 | ChatGPT 生成资产 | [`showcase/assets/generated/`](showcase/assets/generated/) |
 | 完整分析 | [`docs/analysis.md`](docs/analysis.md) |
+| 后期使用指南 | [`docs/usage-guide.md`](docs/usage-guide.md) |
 | 许可证 | 上游 MIT，Copyright (c) 2026 liulei |
 
 ## 一句话结论
@@ -68,6 +69,8 @@ python -m http.server 4174 --bind 127.0.0.1 --directory projects/hand-drawn-styl
 | 团队/家庭故事卡 | 3.1 潦草蜡笔 | 通过锚点和三阶段编辑追求连续一致 |
 
 日常扩展层只输出上游风格编号、内容、文字、比例和调用纪律，不维护第二份线条、色板、五官或材质规则。
+
+后续新增项目或PPT视觉时，先阅读[长期使用指南](docs/usage-guide.md)：它包含使用决策门、七类场景矩阵、标准视觉资产包、风格路由、五步SOP、请求模板和验收清单。
 
 ## 从“风格样图”到“内容资产”
 

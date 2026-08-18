@@ -59,6 +59,7 @@
 - [在线效果与场景路由工作台](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/)
 - [项目研究说明](projects/hand-drawn-styles/README.md)
 - [能力、原理与使用意义分析](projects/hand-drawn-styles/docs/analysis.md)
+- [后期使用指南：项目、PPT、报告、教程、社媒与品牌场景](projects/hand-drawn-styles/docs/usage-guide.md)
 - [固定上游版本](projects/hand-drawn-styles/upstream)
 
 ## 仓库结构

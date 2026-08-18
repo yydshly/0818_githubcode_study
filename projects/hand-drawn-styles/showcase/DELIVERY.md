@@ -4,7 +4,7 @@
 
 ```text
 Entry mode: Brief-led extension of an existing research repository
-Request revision: 5
+Request revision: 6
 Target user and context: 主仓库维护者，以及希望把日常内容快速转成稳定视觉风格提示词的研究与内容创作者
 Desired first impression: 先看到真实风格效果，再明确它不是生图模型，而是一套可执行的视觉风格合同
 Visual ambition: Editorial
@@ -15,8 +15,8 @@ Operation constraints: 纯静态 HTML/CSS/JavaScript；无后端、登录、真�
 State constraints: 风格筛选、场景模板、强度与比例选择、Prompt 预览和复制反馈；禁用 JavaScript 时核心研究内容与静态示例仍可阅读
 Environment constraints: GitHub Pages artifact；本地使用 Python HTTP server；上游以 Git submodule 固定版本
 Primary journey: 进入展厅 → 阅读完整案例背景 → 跟随同一研究者经历问题、归档、路由、组装、复盘、发布六幕连续过程 → 再区分上游能力样图与我们的内容资产 → 理解 Prompt/参考图/多阶段编辑原理 → 选择日常场景
-User-defined phases: 获取上游；展示效果能力并说明原理；结合我们的场景说明意义；用 ChatGPT 直接生成对应图片；增加更多展示样例；为样例提供背景和描述；把图片串成完整案例而不是孤立单图；继续以其他风格增加样例说明；其他风格也必须以场景或流程串联，而非单图能力展示；演示可日常扩展的能力
-Required artifacts: Git submodule、项目 README、研究文档、6幕主案例、3类独立内容资产、水墨/像素/纸雕/软偶各3幕微型流程（共12张）、每条流程背景/因果/提示词/适用边界、可运行展厅、主索引与 Pages workflow 更新、浏览器验收记录与最终截图
+User-defined phases: 获取上游；展示效果能力并说明原理；结合我们的场景说明意义；用 ChatGPT 直接生成对应图片；增加更多展示样例；为样例提供背景和描述；把图片串成完整案例而不是孤立单图；继续以其他风格增加样例说明；其他风格也必须以场景或流程串联；把能力与应用场景整理成笔记并接入网页，指导后期使用
+Required artifacts: Git submodule、项目 README、研究文档、6幕主案例、3类独立内容资产、4条三幕风格流程、独立使用手册、网页使用指南、场景矩阵、风格路由、标准资产包、五步流程、可复制请求模板、可运行展厅、主索引与 Pages workflow 更新、浏览器验收记录与最终截图
 Autonomy authorization: 用户明确要求将该库作为研究子项目获取、分析、展示并结合我们的场景实现演示
 User-decision boundary: 对外调用付费图像模型、修改或提交上游仓库、创建独立仓库需要另行授权
 Observable completion criteria: 上游 commit 固定；能力与原理有源码证据；至少 8 个真实样图入口；连续案例包含背景、目标、角色、约束、六幕因果和结果，六幕使用同一主角与统一视觉语言；每幕有标题、场景、发生原因、得到结果和下一幕衔接；3类独立内容资产有明确语义、来源和位置；至少 4 个日常场景可交互生成 Prompt；桌面/平板/390px 无遮挡或横向溢出；键盘焦点可见；reduced-motion 与无 JavaScript 可读；本地发布路径与链接通过
@@ -307,3 +307,55 @@ Revision 5 最终浏览器证据：
 - `hand-drawn-styles-style-flows-tablet.png`
 - `hand-drawn-styles-style-flows-mobile.png`
 - `hand-drawn-styles-style-flows-mobile-2.png`
+
+## Revision 6 · Long-term usage playbook
+
+### Scope revision
+
+```text
+Entry mode: Revision-led
+Request revision: 6
+User goal: 把“这个库适合哪些场景、怎样选择风格、如何形成资产”整理成长期笔记并接入网页，供后续项目直接照着使用
+Preserved evidence: 六幕主案例、4条三幕风格流程、三职责区、上游能力、五层原理、工作台和既有浏览器验收
+Reopened surfaces: 意义区之后的阅读路径、导航、工作台衔接、键盘与复制反馈、三视口、主索引入口与Pages artifact
+Guide model: 是否应使用 → 选择交付场景 → 选择图片职责 → 路由画风 → 生成/验收/归档
+Required artifacts: docs/usage-guide.md；网页Guide区；7类场景矩阵；适用/不适用边界；项目标准资产包；5步SOP；可复制请求模板和反馈
+Autonomy authorization: 用户明确要求整理笔记并接入网页指导后期使用
+Observable completion: 新用户能在页面回答“什么时候用、用在哪里、选什么风格、交付哪些资产、怎样请求Agent、怎样验收”；复制模板可用/失败有反馈；桌面/平板/390px、无脚本阅读和Pages路径通过
+```
+
+### Revision 6 coverage manifest
+
+| 用户要求 | 要求/产物 | 界面/状态 | 所需证据 | 阶段 | 状态 | 下一步 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 笔记整理 | 独立使用手册 | docs/usage-guide.md | 文件、目录与项目入口 | 3/9 | pass | 完整决策、场景、资产包、SOP、模板、验收和清单已归档 |
+| 接入网页 | 使用指南主路径 | #usage-guide | DOM、导航与浏览器截图 | 3/4 | pass | 导航入口、决策门、场景矩阵、资产包、路由、SOP和模板区可达 |
+| 后期指导 | 7类场景与风格路由 | 场景矩阵 | 项目/PPT/报告/教程/社媒/产品/品牌 | 3 | pass | 浏览器语义树确认7类交付场景和8条目标→风格路由 |
+| 标准化 | 每项目视觉资产包 | 资产包区 | 资产数量、职责和文件建议 | 3 | pass | 默认7张+可选角色、职责和文件名完整呈现 |
+| 可执行 | 5步流程和请求模板 | 模板区 | 复制成功/失败、键盘、无JS | 4/5/6 | pass | 5步SOP；复制受限时显示手动选择反馈；按钮3px焦点 |
+| 响应式与交付 | 1440/768/390及Pages | 全页 | 截图、scrollWidth、链接、控制台 | 7/8/9 | pass | 三视口通过；390px scrollWidth=375；usage-guide.md HTTP 200；控制台无错误 |
+
+### Revision 6 browser refinement ledger
+
+```text
+Current stage: 9 · Engineering and delivery closure
+User phase: 把能力与应用场景整理成笔记并接入网页
+Coverage item: 使用决策、7类场景、标准资产包、风格路由、5步SOP、请求模板、复制反馈、三视口和文档路径
+User goal: 后续研究项目、PPT、报告和内容生产可以直接照指南使用，不依赖本次对话记忆
+Browser environment: agent-browser 0.27.0 / Chromium / 1440×1000, 768×1024, 390×844
+Observed evidence: #usage-guide语义树包含使用/禁用门、7个场景、资产包、路由、5步和模板；复制受限时aria-live提示手动选择；焦点轮廓3px；文档HTTP 200
+Problem category: Operational guidance / knowledge retention
+Root cause: 项目已有大量案例和风格实验，但“什么时候用、交付什么、怎样请求和验收”仍散落在对话和页面各处
+Minimal intervention: 新增独立usage-guide.md并在意义区与工作台之间插入可执行指南；以决策门、7场景、资产包、路由、SOP和复制模板组成后期主路径
+Adjacent regression surfaces: 导航、意义区、工作台、复制逻辑、主索引、1440/768/390、无脚本正文和Pages docs路径
+Observed result: 页面从研究展厅升级为研究+应用手册；新用户可从使用判断直接走到标准请求和工作台
+Decision: pass
+Next executable action: none
+New authority required: none
+```
+
+Revision 6 最终浏览器证据：
+
+- `hand-drawn-styles-usage-guide-viewport.png`
+- `hand-drawn-styles-usage-guide-tablet.png`
+- `hand-drawn-styles-usage-guide-mobile.png`

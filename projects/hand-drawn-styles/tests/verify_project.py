@@ -51,6 +51,7 @@ def main() -> int:
     required = [
         PROJECT / "README.md",
         PROJECT / "docs" / "analysis.md",
+        PROJECT / "docs" / "usage-guide.md",
         SHOWCASE / "index.html",
         SHOWCASE / "styles.css",
         SHOWCASE / "app.js",
@@ -98,7 +99,7 @@ def main() -> int:
         if PINNED_COMMIT not in document:
             failures.append(f"{name} does not record pinned commit")
 
-    for phrase in ("不是新的生图模型", "从混乱样图", "SCENE 01", "SCENE 06", "三种图片职责", "同一主题", "STYLE 08", "STYLE 15", "五层实现", "日常场景调用工作台", "FAIL-CLOSED"):
+    for phrase in ("不是新的生图模型", "从混乱样图", "SCENE 01", "SCENE 06", "三种图片职责", "同一主题", "STYLE 08", "STYLE 15", "以后怎么用", "七类交付场景", "每个研究项目默认交付7张", "五步操作流程", "copy-usage-template", "五层实现", "日常场景调用工作台", "FAIL-CLOSED"):
         if phrase not in html:
             failures.append(f"showcase missing content: {phrase}")
 
@@ -183,6 +184,7 @@ def main() -> int:
     print("- 4 multi-style application examples and prompt archive resolve locally")
     print("- 4 three-scene style flows and 8 additional flow images resolve locally")
     print("- 5 daily routing scenarios present")
+    print("- long-term usage guide, 7 delivery scenarios, asset pack, SOP, and copy template present")
     print("- ordinary style 4 prompt rendering succeeds")
     print("- family-crayon-card-v3 three-stage contract succeeds")
     print("- root index and Pages workflow include the project")
