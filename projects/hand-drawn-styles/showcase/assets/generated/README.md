@@ -34,6 +34,8 @@
 
 完整背景、适用/不适用场景与生成提示词见 [`MULTI-STYLE.md`](MULTI-STYLE.md)。
 
+Revision 5 已为4种风格各补充前因与结果两幕，共8张新图。4条三幕流程和新增提示词见 [`MULTI-STYLE-FLOWS.md`](MULTI-STYLE-FLOWS.md)。
+
 生成日期：2026-08-18。
 
 ## 生成原则

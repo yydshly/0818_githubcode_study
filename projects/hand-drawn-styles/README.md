@@ -107,6 +107,8 @@ python -m http.server 4174 --bind 127.0.0.1 --directory projects/hand-drawn-styl
 
 四张新图都使用上游对应样图作为纯风格参考，内容重新生成。完整适用/不适用场景和最终提示词见 [`MULTI-STYLE.md`](showcase/assets/generated/MULTI-STYLE.md)。
 
+为避免多风格实验再次退化成单图展示，Revision 5 为每种风格补齐“问题 → 处理 → 结果”三幕：水墨从纸片风暴走向知识庭院，像素从锁定关卡走向全节点完成，纸雕从散乱材料走向展览交付，软偶从空白身份走向持续栏目助手。4条流程及8张新增图的提示词见 [`MULTI-STYLE-FLOWS.md`](showcase/assets/generated/MULTI-STYLE-FLOWS.md)。
+
 ## 研究边界
 
 - 上游本身不调用图像模型；展厅展示的是上游已有样图和 Prompt 编排演示。

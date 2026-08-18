@@ -6,6 +6,8 @@
 
 水墨、像素、纸雕和软偶4种传播任务样例的提示词见 [`MULTI-STYLE.md`](MULTI-STYLE.md)。
 
+上述4种风格扩展为三幕流程时新增的8张场景提示词见 [`MULTI-STYLE-FLOWS.md`](MULTI-STYLE-FLOWS.md)。
+
 ## `project-cover.png`
 
 ```text

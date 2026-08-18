@@ -62,6 +62,7 @@ def main() -> int:
         SHOWCASE / "assets" / "generated" / "PROMPTS.md",
         SHOWCASE / "assets" / "generated" / "STORY.md",
         SHOWCASE / "assets" / "generated" / "MULTI-STYLE.md",
+        SHOWCASE / "assets" / "generated" / "MULTI-STYLE-FLOWS.md",
         SHOWCASE / "assets" / "generated" / "story-01-problem.png",
         SHOWCASE / "assets" / "generated" / "story-03-route.png",
         SHOWCASE / "assets" / "generated" / "story-04-assemble.png",
@@ -71,6 +72,14 @@ def main() -> int:
         SHOWCASE / "assets" / "generated" / "style-09-pixel-workflow.png",
         SHOWCASE / "assets" / "generated" / "style-13-paper-system.png",
         SHOWCASE / "assets" / "generated" / "style-15-vinyl-researcher.png",
+        SHOWCASE / "assets" / "generated" / "style-08-flow-01-chaos.png",
+        SHOWCASE / "assets" / "generated" / "style-08-flow-03-order.png",
+        SHOWCASE / "assets" / "generated" / "style-09-flow-01-start.png",
+        SHOWCASE / "assets" / "generated" / "style-09-flow-03-complete.png",
+        SHOWCASE / "assets" / "generated" / "style-13-flow-01-materials.png",
+        SHOWCASE / "assets" / "generated" / "style-13-flow-03-exhibit.png",
+        SHOWCASE / "assets" / "generated" / "style-15-flow-01-no-identity.png",
+        SHOWCASE / "assets" / "generated" / "style-15-flow-03-guide.png",
         UPSTREAM / "STYLES.md",
         RENDERER,
     ]
@@ -103,6 +112,10 @@ def main() -> int:
         failures.append("showcase must contain exactly 6 connected story scenes")
     if html.count('class="multi-style-card') != 4:
         failures.append("showcase must contain exactly 4 multi-style application examples")
+    if html.count('class="mini-flow') != 4:
+        failures.append("showcase must contain exactly 4 multi-style flows")
+    if html.count('class="style-preview') != 12:
+        failures.append("multi-style flows must contain exactly 12 scene figures")
 
     parser = ResourceParser()
     parser.feed(html)
@@ -168,6 +181,7 @@ def main() -> int:
     print("- 3 ChatGPT-generated content assets resolve locally")
     print("- 6-scene connected case and story archive resolve locally")
     print("- 4 multi-style application examples and prompt archive resolve locally")
+    print("- 4 three-scene style flows and 8 additional flow images resolve locally")
     print("- 5 daily routing scenarios present")
     print("- ordinary style 4 prompt rendering succeeds")
     print("- family-crayon-card-v3 three-stage contract succeeds")

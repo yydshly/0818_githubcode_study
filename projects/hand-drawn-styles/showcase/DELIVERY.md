@@ -4,7 +4,7 @@
 
 ```text
 Entry mode: Brief-led extension of an existing research repository
-Request revision: 4
+Request revision: 5
 Target user and context: 主仓库维护者，以及希望把日常内容快速转成稳定视觉风格提示词的研究与内容创作者
 Desired first impression: 先看到真实风格效果，再明确它不是生图模型，而是一套可执行的视觉风格合同
 Visual ambition: Editorial
@@ -15,8 +15,8 @@ Operation constraints: 纯静态 HTML/CSS/JavaScript；无后端、登录、真�
 State constraints: 风格筛选、场景模板、强度与比例选择、Prompt 预览和复制反馈；禁用 JavaScript 时核心研究内容与静态示例仍可阅读
 Environment constraints: GitHub Pages artifact；本地使用 Python HTTP server；上游以 Git submodule 固定版本
 Primary journey: 进入展厅 → 阅读完整案例背景 → 跟随同一研究者经历问题、归档、路由、组装、复盘、发布六幕连续过程 → 再区分上游能力样图与我们的内容资产 → 理解 Prompt/参考图/多阶段编辑原理 → 选择日常场景
-User-defined phases: 获取上游；展示效果能力并说明原理；结合我们的场景说明意义；用 ChatGPT 直接生成对应图片；增加更多展示样例；为样例提供背景和描述；把图片串成完整案例而不是孤立单图；继续以其他风格增加样例说明；演示可日常扩展的能力
-Required artifacts: Git submodule、项目 README、研究文档、6幕连续案例图片、故事背景/角色设定/逐幕描述/提示词/来源说明、3类独立内容资产、水墨/像素/纸雕/软偶4种项目主题生成样例及适用边界、可运行展厅、主索引与 Pages workflow 更新、浏览器验收记录与最终截图
+User-defined phases: 获取上游；展示效果能力并说明原理；结合我们的场景说明意义；用 ChatGPT 直接生成对应图片；增加更多展示样例；为样例提供背景和描述；把图片串成完整案例而不是孤立单图；继续以其他风格增加样例说明；其他风格也必须以场景或流程串联，而非单图能力展示；演示可日常扩展的能力
+Required artifacts: Git submodule、项目 README、研究文档、6幕主案例、3类独立内容资产、水墨/像素/纸雕/软偶各3幕微型流程（共12张）、每条流程背景/因果/提示词/适用边界、可运行展厅、主索引与 Pages workflow 更新、浏览器验收记录与最终截图
 Autonomy authorization: 用户明确要求将该库作为研究子项目获取、分析、展示并结合我们的场景实现演示
 User-decision boundary: 对外调用付费图像模型、修改或提交上游仓库、创建独立仓库需要另行授权
 Observable completion criteria: 上游 commit 固定；能力与原理有源码证据；至少 8 个真实样图入口；连续案例包含背景、目标、角色、约束、六幕因果和结果，六幕使用同一主角与统一视觉语言；每幕有标题、场景、发生原因、得到结果和下一幕衔接；3类独立内容资产有明确语义、来源和位置；至少 4 个日常场景可交互生成 Prompt；桌面/平板/390px 无遮挡或横向溢出；键盘焦点可见；reduced-motion 与无 JavaScript 可读；本地发布路径与链接通过
@@ -253,3 +253,57 @@ Revision 4 最终浏览器证据：
 - `hand-drawn-styles-multi-style-desktop-2.png`
 - `hand-drawn-styles-multi-style-tablet.png`
 - `hand-drawn-styles-multi-style-mobile.png`
+
+## Revision 5 · Multi-style scenario flows
+
+### Scope revision
+
+```text
+Entry mode: Revision-led
+Request revision: 5
+User goal: 水墨、像素、纸雕、软偶不能再以单张图说明单项能力；每种都要有场景背景和前因→处理→结果的连续理解
+Preserved evidence: 六幕主案例、三职责区、4种风格中间场景、上游画廊、五层原理、工作台和既有响应式验收
+Reopened surfaces: 多风格实验区的信息架构、8张新增图片、图片性能、长页面阅读、三视口和Pages artifact
+Flow model: 每种风格固定3幕——01问题/背景、02该风格如何处理、03适合该传播任务的最终结果
+Existing middle frames: style-08-ink-archive.png、style-09-pixel-workflow.png、style-13-paper-system.png、style-15-vinyl-researcher.png
+Required artifacts: 每种风格新增before/after各1张，共8张；MULTI-STYLE.md补4条三幕因果；页面改为4条流程而非4张单图卡
+Autonomy authorization: 用户明确要求以场景或者流程串起来理解，而不是单个图片的能力展示
+Observable completion: 4种风格各有3张一致图片和清楚背景；每幕说明原因、动作、结果；桌面横向三幕、手机纵向三幕；图片加载、alt、无溢出和发布路径通过
+```
+
+### Revision 5 coverage manifest
+
+| 用户要求 | 要求/产物 | 界面/状态 | 所需证据 | 阶段 | 状态 | 下一步 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 水墨流程 | 混乱→墨路归档→知识卷轴 | 08三幕流程 | 3张风格一致PNG与因果文本 | 2/3 | pass | 纸片风暴、墨石阶梯、知识庭院三幕完成 |
+| 像素流程 | 初始任务→四站关卡→完成界面 | 09三幕流程 | 3张风格一致PNG与因果文本 | 2/3 | pass | 锁定起点、四站过程、全节点点亮三幕完成 |
+| 纸雕流程 | 散乱纸材→中央系统→展览交付 | 13三幕流程 | 3张风格一致PNG与因果文本 | 2/3 | pass | 散乱材料、中央档案、三件展览系列三幕完成 |
+| 软偶流程 | 无身份项目→研究助手→持续栏目 | 15三幕流程 | 3张风格一致PNG与因果文本 | 2/3 | pass | 灰色身份卡、研究助手、持续栏目角色三幕完成 |
+| 流程化说明 | 每种背景、问题、处理、结果 | 4条流程 | DOM与MULTI-STYLE.md | 3/6 | pass | 单图卡已替换为4条横向/纵向三幕流程，并链接MULTI-STYLE-FLOWS.md |
+| 响应式与性能 | 1440/768/390及32张图片 | 全页 | 截图、scrollWidth、naturalWidth、alt | 7/8/9 | pass | 完整滚动后32/32图片加载；4条流程/12幕；390px scrollWidth=375；alt完整 |
+
+### Revision 5 browser refinement ledger
+
+```text
+Current stage: 9 · Engineering and delivery closure
+User phase: 其他风格也必须以场景或流程串联
+Coverage item: 水墨/像素/纸雕/软偶各三幕、8张新增图、因果文档、桌面/平板/手机与32张图片加载
+User goal: 不通过单图猜测能力，而是沿场景看到为什么使用、怎样处理、最后得到什么
+Browser environment: agent-browser 0.27.0 / Chromium / 1440×1000, 768×1024, 390×844
+Observed evidence: 桌面每组3张横排并由箭头连接；平板仍保持三幕横向；手机恢复01→02→03纵向箭头；完整滚动后32张图片全部加载且无缺失alt
+Problem category: Narrative continuity / process comprehension
+Root cause: Revision 4虽然有背景和适用边界，但每种风格仍只有一张中间结果，不能呈现前因和结果变化
+Minimal intervention: 保留4张既有项目图作为处理幕，分别生成before/after共8张；将2×2单图卡重构为4条独占整行的三幕流程；新增MULTI-STYLE-FLOWS.md归档因果与Prompt
+Adjacent regression surfaces: 六幕主案例、三职责区、上游画廊、1440/768/390、32张图片懒加载和文档链接
+Observed result: 每种风格现在都能按“问题→风格处理→适合的传播结果”阅读，用户不再需要从单图反推流程
+Decision: pass
+Next executable action: none
+New authority required: none
+```
+
+Revision 5 最终浏览器证据：
+
+- `hand-drawn-styles-style-flows-desktop.png`
+- `hand-drawn-styles-style-flows-tablet.png`
+- `hand-drawn-styles-style-flows-mobile.png`
+- `hand-drawn-styles-style-flows-mobile-2.png`

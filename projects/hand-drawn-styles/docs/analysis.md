@@ -205,6 +205,16 @@ canonical_style_id
 
 完整实验见 [`MULTI-STYLE.md`](../showcase/assets/generated/MULTI-STYLE.md)。
 
+### 8.3 多风格也必须形成流程
+
+只给每种风格放一张项目样例，仍然只能说明视觉结果，不能解释这种风格怎样帮助用户理解内容。Revision 5 将4种风格各扩展为三幕：
+
+- **问题幕**说明为什么需要这种传播方式；
+- **处理幕**说明该风格如何组织内容；
+- **结果幕**说明最终适合落在哪种产品或传播表面。
+
+这样水墨、像素、纸雕和软偶不再是4张互不相关的能力卡，而是4条分别服务策略、学习、编辑设计和角色运营的微型工作流。完整流程见 [`MULTI-STYLE-FLOWS.md`](../showcase/assets/generated/MULTI-STYLE-FLOWS.md)。
+
 ## 9. 证据入口
 
 - [上游 README](../upstream/README.md)
