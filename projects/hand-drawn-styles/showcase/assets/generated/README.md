@@ -23,6 +23,17 @@
 
 完整背景、角色设定、逐幕因果与最终提示词见 [`STORY.md`](STORY.md)。
 
+## 其他风格应用实验
+
+为同一研究主题补充4种传播任务样例：
+
+- `style-08-ink-archive.png`：文化/策略型水墨封面；
+- `style-09-pixel-workflow.png`：游戏化研究流程；
+- `style-13-paper-system.png`：纸雕编辑主视觉；
+- `style-15-vinyl-researcher.png`：研究项目角色IP。
+
+完整背景、适用/不适用场景与生成提示词见 [`MULTI-STYLE.md`](MULTI-STYLE.md)。
+
 生成日期：2026-08-18。
 
 ## 生成原则

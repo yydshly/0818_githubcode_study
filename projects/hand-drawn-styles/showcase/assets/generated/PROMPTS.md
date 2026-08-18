@@ -4,6 +4,8 @@
 
 六幕连续案例的5张新增场景使用 `project-cover.png` 作为角色/画风锚点，并从第04幕起同时携带前一幕作为连续性参考。完整逐幕提示词见 [`STORY.md`](STORY.md)。
 
+水墨、像素、纸雕和软偶4种传播任务样例的提示词见 [`MULTI-STYLE.md`](MULTI-STYLE.md)。
+
 ## `project-cover.png`
 
 ```text

@@ -61,11 +61,16 @@ def main() -> int:
         SHOWCASE / "assets" / "generated" / "README.md",
         SHOWCASE / "assets" / "generated" / "PROMPTS.md",
         SHOWCASE / "assets" / "generated" / "STORY.md",
+        SHOWCASE / "assets" / "generated" / "MULTI-STYLE.md",
         SHOWCASE / "assets" / "generated" / "story-01-problem.png",
         SHOWCASE / "assets" / "generated" / "story-03-route.png",
         SHOWCASE / "assets" / "generated" / "story-04-assemble.png",
         SHOWCASE / "assets" / "generated" / "story-05-review.png",
         SHOWCASE / "assets" / "generated" / "story-06-publish.png",
+        SHOWCASE / "assets" / "generated" / "style-08-ink-archive.png",
+        SHOWCASE / "assets" / "generated" / "style-09-pixel-workflow.png",
+        SHOWCASE / "assets" / "generated" / "style-13-paper-system.png",
+        SHOWCASE / "assets" / "generated" / "style-15-vinyl-researcher.png",
         UPSTREAM / "STYLES.md",
         RENDERER,
     ]
@@ -84,7 +89,7 @@ def main() -> int:
         if PINNED_COMMIT not in document:
             failures.append(f"{name} does not record pinned commit")
 
-    for phrase in ("不是新的生图模型", "从混乱样图", "SCENE 01", "SCENE 06", "三种图片职责", "五层实现", "日常场景调用工作台", "FAIL-CLOSED"):
+    for phrase in ("不是新的生图模型", "从混乱样图", "SCENE 01", "SCENE 06", "三种图片职责", "同一主题", "STYLE 08", "STYLE 15", "五层实现", "日常场景调用工作台", "FAIL-CLOSED"):
         if phrase not in html:
             failures.append(f"showcase missing content: {phrase}")
 
@@ -96,6 +101,8 @@ def main() -> int:
         failures.append("showcase must contain at least 10 upstream style cards")
     if html.count('class="story-scene') != 6:
         failures.append("showcase must contain exactly 6 connected story scenes")
+    if html.count('class="multi-style-card') != 4:
+        failures.append("showcase must contain exactly 4 multi-style application examples")
 
     parser = ResourceParser()
     parser.feed(html)
@@ -160,6 +167,7 @@ def main() -> int:
     print("- 10 upstream style cards resolve locally")
     print("- 3 ChatGPT-generated content assets resolve locally")
     print("- 6-scene connected case and story archive resolve locally")
+    print("- 4 multi-style application examples and prompt archive resolve locally")
     print("- 5 daily routing scenarios present")
     print("- ordinary style 4 prompt rendering succeeds")
     print("- family-crayon-card-v3 three-stage contract succeeds")

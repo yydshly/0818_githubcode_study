@@ -4,7 +4,7 @@
 
 ```text
 Entry mode: Brief-led extension of an existing research repository
-Request revision: 3
+Request revision: 4
 Target user and context: 主仓库维护者，以及希望把日常内容快速转成稳定视觉风格提示词的研究与内容创作者
 Desired first impression: 先看到真实风格效果，再明确它不是生图模型，而是一套可执行的视觉风格合同
 Visual ambition: Editorial
@@ -15,8 +15,8 @@ Operation constraints: 纯静态 HTML/CSS/JavaScript；无后端、登录、真�
 State constraints: 风格筛选、场景模板、强度与比例选择、Prompt 预览和复制反馈；禁用 JavaScript 时核心研究内容与静态示例仍可阅读
 Environment constraints: GitHub Pages artifact；本地使用 Python HTTP server；上游以 Git submodule 固定版本
 Primary journey: 进入展厅 → 阅读完整案例背景 → 跟随同一研究者经历问题、归档、路由、组装、复盘、发布六幕连续过程 → 再区分上游能力样图与我们的内容资产 → 理解 Prompt/参考图/多阶段编辑原理 → 选择日常场景
-User-defined phases: 获取上游；展示效果能力并说明原理；结合我们的场景说明意义；用 ChatGPT 直接生成对应图片；增加更多展示样例；为样例提供背景和描述；把图片串成完整案例而不是孤立单图；演示可日常扩展的能力
-Required artifacts: Git submodule、项目 README、研究文档、6幕连续案例图片、故事背景/角色设定/逐幕描述/提示词/来源说明、3类独立内容资产、可运行展厅、主索引与 Pages workflow 更新、浏览器验收记录与最终截图
+User-defined phases: 获取上游；展示效果能力并说明原理；结合我们的场景说明意义；用 ChatGPT 直接生成对应图片；增加更多展示样例；为样例提供背景和描述；把图片串成完整案例而不是孤立单图；继续以其他风格增加样例说明；演示可日常扩展的能力
+Required artifacts: Git submodule、项目 README、研究文档、6幕连续案例图片、故事背景/角色设定/逐幕描述/提示词/来源说明、3类独立内容资产、水墨/像素/纸雕/软偶4种项目主题生成样例及适用边界、可运行展厅、主索引与 Pages workflow 更新、浏览器验收记录与最终截图
 Autonomy authorization: 用户明确要求将该库作为研究子项目获取、分析、展示并结合我们的场景实现演示
 User-decision boundary: 对外调用付费图像模型、修改或提交上游仓库、创建独立仓库需要另行授权
 Observable completion criteria: 上游 commit 固定；能力与原理有源码证据；至少 8 个真实样图入口；连续案例包含背景、目标、角色、约束、六幕因果和结果，六幕使用同一主角与统一视觉语言；每幕有标题、场景、发生原因、得到结果和下一幕衔接；3类独立内容资产有明确语义、来源和位置；至少 4 个日常场景可交互生成 Prompt；桌面/平板/390px 无遮挡或横向溢出；键盘焦点可见；reduced-motion 与无 JavaScript 可读；本地发布路径与链接通过
@@ -199,3 +199,57 @@ Revision 3 最终浏览器证据：
 - `hand-drawn-styles-story-desktop.png`
 - `hand-drawn-styles-story-tablet.png`
 - `hand-drawn-styles-story-mobile.png`
+
+## Revision 4 · Multi-style application lab
+
+### Scope revision
+
+```text
+Entry mode: Revision-led
+Request revision: 4
+User goal: 在六幕主案例之外，继续用其他风格生成与本研究相关的样例，并解释不同风格为什么适合不同场景
+Preserved evidence: 六幕主案例、三类图片职责、上游能力画廊、五层原理、工作台与既有响应式验收
+Reopened surfaces: 应用演示与上游效果之间的内容层级、多风格图片加载、三视口和Pages artifact
+Comparison premise: 核心主题保持“把混乱 Prompt 变成可复用视觉系统”，但传播任务分别改变为文化隐喻、游戏化进度、编辑主视觉和角色IP
+Style references: upstream/examples/08-ink-wash.png、09-pixel-art.png、13-paper-folk.png、15-softnose-vinyl.png，仅作风格参考，不复制其人物与情节
+Required artifacts: style-08-ink-archive.png、style-09-pixel-workflow.png、style-13-paper-system.png、style-15-vinyl-researcher.png、MULTI-STYLE.md、页面对比区
+Autonomy authorization: 用户明确要求继续以其他风格增加样例说明
+Observable completion: 4张项目主题新图分别命中参考风格；每张说明背景、表达意义、适合位置和不适合场景；与六幕主案例区分清楚；三视口、alt、加载和发布路径通过
+```
+
+### Revision 4 coverage manifest
+
+| 用户要求 | 要求/产物 | 界面/状态 | 所需证据 | 阶段 | 状态 | 下一步 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 其他风格样例 | 8 水墨写意 | 多风格实验区 | 项目主题PNG、参考来源、用途说明 | 2/3 | pass | 1086×1448水墨策略隐喻图已集成 |
+| 其他风格样例 | 9 复古像素 | 多风格实验区 | 项目主题PNG、参考来源、用途说明 | 2/3 | pass | 1448×1086四站游戏化流程图已集成 |
+| 其他风格样例 | 13 北欧纸雕 | 多风格实验区 | 项目主题PNG、参考来源、用途说明 | 2/3 | pass | 1254×1254纸雕系统主视觉已集成 |
+| 其他风格样例 | 15 大鼻软偶 | 多风格实验区 | 项目主题PNG、参考来源、用途说明 | 2/3 | pass | 1122×1402研究者角色IP已集成 |
+| 样例说明 | 背景、意义、适合/不适合 | 多风格卡片 | DOM与MULTI-STYLE.md | 3/6 | pass | 4张均包含背景、适合、不适合、位置和风格参考声明 |
+| 响应式与性能 | 1440/768/390及图片加载 | 全页 | 截图、scrollWidth、naturalWidth、alt | 7/8/9 | pass | 24/24页面图片完整滚动后加载，missingAlt=0，390px scrollWidth=375 |
+
+### Revision 4 browser refinement ledger
+
+```text
+Current stage: 9 · Engineering and delivery closure
+User phase: 继续以其他风格增加样例说明
+Coverage item: 水墨、像素、纸雕、软偶项目主题新图、适用边界、三视口与图片加载
+User goal: 理解同一研究内容在其他风格下如何改变意义和使用场景，而不是只看风格名称
+Browser environment: agent-browser 0.27.0 / Chromium / 1440×1000, 768×1024, 390×844
+Observed evidence: 多风格区语义树包含4个风格标题；桌面2×2、平板图片+说明双栏、手机单列；完整滚动后24/24图片加载，4张新图均有alt
+Problem category: Use-case coverage / semantic comparison
+Root cause: 既有连续案例证明了单一视觉系统的价值，但还没有展示受众与传播任务改变时为什么应该换风格
+Minimal intervention: 保持核心内容不变，使用上游08/09/13/15样图作为纯风格参考分别生成文化隐喻、游戏化进度、编辑主视觉和角色IP，并明确适用/不适用场景
+Adjacent regression surfaces: 六幕案例、三职责区、上游画廊、1440/768/390、图片懒加载和MULTI-STYLE.md链接
+Observed result: 用户可以比较“同一主题、不同传播任务”；页面明确说明换风格是改变理解路径而非换皮
+Decision: pass
+Next executable action: none
+New authority required: none
+```
+
+Revision 4 最终浏览器证据：
+
+- `hand-drawn-styles-multi-style-desktop.png`
+- `hand-drawn-styles-multi-style-desktop-2.png`
+- `hand-drawn-styles-multi-style-tablet.png`
+- `hand-drawn-styles-multi-style-mobile.png`
