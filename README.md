@@ -19,6 +19,7 @@
 | --- | --- | --- | --- | --- | --- |
 | [Luopan 项目研究](projects/luopan/README.md) | [zhangxiaoqiang1991/luopan](https://github.com/zhangxiaoqiang1991/luopan) | 原版能力实演、数据与决策原理、AI 编程 Agent 实战及 GitHub 项目研究扩展 | [项目说明](projects/luopan/README.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/luopan/showcase/) | 已复现 |
 | [Hand-drawn Styles 项目研究](projects/hand-drawn-styles/README.md) | [threerocks/hand-drawn-styles](https://github.com/threerocks/hand-drawn-styles) | 视觉 Prompt 配方、单一真源、锚点校验、多阶段生成合同及日常场景路由 | [当前状态](projects/hand-drawn-styles/STATUS.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/) | 已复现 · 持续扩展 |
+| [Stamp Edge Skill 项目研究](projects/stamp-edge-skill/README.md) | [xianxie6/stamp-edge-skill](https://github.com/xianxie6/stamp-edge-skill) | 邮票齿孔、透明蒙版、投影、瀑布流合集，以及预设驱动图片风格引擎扩展 | [能力分析](projects/stamp-edge-skill/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/stamp-edge-skill/showcase/) | 已复现 · 已收口 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
 
@@ -61,6 +62,23 @@
 - [能力、原理与使用意义分析](projects/hand-drawn-styles/docs/analysis.md)
 - [后期使用指南：项目、PPT、报告、教程、社媒与品牌场景](projects/hand-drawn-styles/docs/usage-guide.md)
 - [固定上游版本](projects/hand-drawn-styles/upstream)
+
+## 第三个研究项目：Stamp Edge Skill
+
+[Stamp Edge Skill](https://github.com/xianxie6/stamp-edge-skill) 是一个轻量 Agent Skill：`SKILL.md` 负责把“做成邮票边”等自然语言请求路由到 Pillow 脚本，`stamp_effect.py` 生成齿孔、透明画布和投影，`stamp_sheet.py` 将多张结果排成列高均衡的合集。
+
+本仓库固定上游 v1.2.0 对应 commit，用四张原创生成摄影与两张本地确定性内容卡，复现旅行、建筑、餐饮、植物、社交长帖和编辑海报六类场景；同时完整展示默认 4 列深色与自定义 3 列纸色合集。Alpha 往返实验进一步确认“输入图片内部透明区域不会被保留”的实现边界。在此基础上，文档提出从单一邮票效果演进为形状、边框、材质、色彩、景深和布局模块组成的预设驱动引擎。
+
+第一批扩展已经落地：统一的 Pillow CLI 提供拍立得、撕纸、胶片、票券、Riso 印刷和已有 Alpha 的轮廓贴纸六个 preset，并配套 Agent Skill、行为测试与混合效果合集。
+
+当前研究已正式收口，不继续开发 `stamp-v2` 或更多相似效果；页面仅保留核心画质、批量工作流、邮票语义与可选 AI 四类未来探索索引。
+
+- [真实效果与扩展路线展厅](projects/stamp-edge-skill/showcase/)
+- [项目研究说明](projects/stamp-edge-skill/README.md)
+- [能力、原理与限制](projects/stamp-edge-skill/docs/analysis.md)
+- [通用图片风格系统扩展路线](projects/stamp-edge-skill/docs/extension-roadmap.md)
+- [已实现的图片风格扩展 Skill](projects/stamp-edge-skill/extension/image-style-skill/SKILL.md)
+- [可复现 Demo](projects/stamp-edge-skill/demo/README.md)
 
 ## 仓库结构
 

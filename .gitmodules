@@ -4,3 +4,6 @@
 [submodule "projects/hand-drawn-styles/upstream"]
 	path = projects/hand-drawn-styles/upstream
 	url = https://github.com/threerocks/hand-drawn-styles.git
+[submodule "projects/stamp-edge-skill/upstream"]
+	path = projects/stamp-edge-skill/upstream
+	url = https://github.com/xianxie6/stamp-edge-skill.git

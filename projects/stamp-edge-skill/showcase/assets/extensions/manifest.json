@@ -1,0 +1,20 @@
+{
+  "engine": "extension/image-style-skill/scripts/style_effects.py",
+  "presets": [
+    "polaroid",
+    "torn-paper",
+    "film-frame",
+    "ticket",
+    "riso-print",
+    "sticker-outline"
+  ],
+  "outputs": [
+    "polaroid-travel.png",
+    "torn-botanical.png",
+    "film-architecture.png",
+    "ticket-coast.png",
+    "riso-breakfast.png",
+    "sticker-architecture.png"
+  ],
+  "collection": "extension-collection-dark.png"
+}

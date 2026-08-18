@@ -1,0 +1,44 @@
+{
+  "upstream_commit": "2b89ce823aa589e912fcfbb9b529fa893142ab63",
+  "sources": [
+    {
+      "slug": "travel-coast",
+      "scene": "旅行风景",
+      "origin": "OpenAI built-in ImageGen"
+    },
+    {
+      "slug": "architecture-rain",
+      "scene": "建筑观察",
+      "origin": "OpenAI built-in ImageGen"
+    },
+    {
+      "slug": "breakfast-table",
+      "scene": "餐饮静物",
+      "origin": "OpenAI built-in ImageGen"
+    },
+    {
+      "slug": "botanical-glasshouse",
+      "scene": "自然与研究",
+      "origin": "OpenAI built-in ImageGen"
+    },
+    {
+      "slug": "social-travel-story",
+      "scene": "社交长帖",
+      "origin": "Local deterministic composition"
+    },
+    {
+      "slug": "field-notes-poster",
+      "scene": "编辑海报",
+      "origin": "Local deterministic composition"
+    }
+  ],
+  "effects": [
+    "default transparent",
+    "margin transparent",
+    "bg flattened"
+  ],
+  "collections": [
+    "4 columns / dark",
+    "3 columns / paper"
+  ]
+}
