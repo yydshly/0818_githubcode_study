@@ -4,22 +4,22 @@
 
 ```text
 Entry mode: Revision-led refinement
-Request revision: 3
+Request revision: 4
 Target user and context: 希望快速理解开源视觉 Skill 能力、效果、扩展与场景的中文研究者
-Desired first impression: 在一个视口内直接看见原图与场景成品的明显差异，再理解“六格只是候选、场景决定成品”
+Desired first impression: 先理解“六格不是能力上限”，再通过七个可操作模块看见视觉记忆系统从单图效果扩展到叙事、材料、情绪、分层、系列、动态与声音的完整产品形态
 Visual ambition: Editorial
 Experience architecture: Editorial Flow
 Visual constraints: 暖米白纸面、锈红强调、编辑层级、大留白；不使用外部字体和连续动画
-Information constraints: 明确区分上游样张、本研究生成、Skill 规则和外部模型能力；明确六格并非固定滤镜；用“输入—场景—适配—成品—用途”解释能力
-Operation constraints: 保留键盘可达的原图/成品 range 比较器；新增键盘可达的旅行/人物/节日场景切换台；其他内容在正常文档流中
-State constraints: 比较器从 50% 开始，可显示 0–100%；场景切换台默认旅行成品，按钮与面板同步 aria-selected / hidden；无加载、空态或远程数据状态
+Information constraints: 明确区分上游已定义能力、本研究前端概念原型和真正需要后端或生成模型的新能力；每个扩展模块必须说明输入、处理目标、可交付成品、适用场景和边界
+Operation constraints: 保留原比较器与场景切换台；新增键盘可达的七模块导航、时间/情绪双滑杆、分层显隐开关、系列规格切换、动态记忆播放与声音转写模拟；所有核心含义在无动画时仍可读
+State constraints: 扩展实验室默认多照片叙事；七模块按钮与面板同步 aria-selected / hidden；情绪舞台随时间与情绪值更新；分层开关可独立显隐；动态播放可开始/暂停/复位；声音模块仅模拟已提供转写进入视觉编排，不声称浏览器录音或真实生成
 Environment constraints: 纯静态 HTML/CSS/JS；GitHub Pages；无构建依赖、后端、账号或外部 API
-Primary journey: 首页理解定位 → 看懂六格与最终成品的关系 → 在大幅左右对照中切换旅行/人物/节日成品 → 阅读七类场景能力 → 明确不适用边界 → 从公开 Web URL 访问
-User-defined phases: 强化效果差异；增加大幅场景切换；响应式与键盘验收；提交并部署到 Web
-Required artifacts: 更新后的静态展厅与交付记录、Git 提交、GitHub PR、成功的 Pages 部署、公开 URL
-Autonomy authorization: 用户指出“效果没有那么明显”并要求部署到 Web，授权本次前端修订与发布流程
+Primary journey: 首页理解定位 → 看懂六格与最终成品关系 → 进入扩展实验室 → 在七个模块间切换并操作关键状态 → 对照输入、处理目标与成品形态 → 阅读现有场景和边界 → 从公开 Web URL 访问
+User-defined phases: 理解七个扩展模块的细节；理解每个模块的目标；看见或操作成品效果；响应式与键盘验收；提交并部署到 Web
+Required artifacts: 更新后的静态展厅、扩展研究文档与交付记录、Git 提交、成功的 Pages 部署、公开 URL
+Autonomy authorization: 用户明确指出网页尚未重点演示七个扩展方向，并期望理解其细节、目标与成品效果；授权在现有展厅内完成可逆的内容与交互扩展
 User-decision boundary: 不引入后端、登录或批量生产系统；发布仅限现有 GitHub 仓库和 Pages 工作流
-Observable completion criteria: 一个桌面视口内同时出现原图与大幅场景成品；三种成品可通过鼠标和键盘切换且状态明确；桌面/平板/390px 无横向溢出；原比较器无回归；提交合并后 Pages 工作流成功，公开 URL 返回页面
+Observable completion criteria: 七个模块均有输入、处理、成品、目标和边界；至少时间/情绪、分层、系列、动态和声音模块具有可观察交互状态；桌面/平板/390px 无横向溢出；键盘与 reduced-motion 可用；原比较器与场景切换无回归；发布后公开 URL 包含扩展实验室
 Coverage record: 见下表
 ```
 
@@ -44,6 +44,16 @@ Coverage record: 见下表
 | 效果强化 | 原图与大幅场景成品同时可见 | 桌面 / 平板 / 手机 | 浏览器截图与 DOM 尺寸 | 2 / 3 / 7 | pass | — |
 | 场景交互 | 旅行、人物、节日三个成品状态 | 鼠标 / 键盘 | click、ArrowLeft/Right、Home/End 与 aria 状态 | 4 / 5 / 6 / 7 | pass | — |
 | Web 发布 | 提交、Pages 部署与公开 URL | GitHub / Web | commit、Actions、HTTP 页面 | 9 | pass | — |
+| 扩展实验室 | 七模块总览与模块导航 | 桌面 / 平板 / 手机 / keyboard | 浏览器截图、tab 状态与焦点 | 2 / 3 / 4 / 5 / 7 | pass | — |
+| 多照片叙事 | 输入序列、编辑目标与四页成品 | 默认模块状态 | 浏览器 DOM、截图与内容核对 | 3 / 5 / 7 | pass | — |
+| 混合记忆材料 | 照片、票据、手写与日期的证据层 | 模块状态 | 浏览器截图与事实边界说明 | 3 / 5 / 7 | pass | — |
+| 时间与情绪 | 时间距离与情绪强度控制 | range 键盘 / 鼠标 | 值变化、舞台样式与文字反馈 | 4 / 5 / 6 / 7 | pass | — |
+| 可编辑分层 | 五层显隐与图层清单 | checkbox 键盘 / 鼠标 | 图层可见性、焦点与恢复 | 4 / 5 / 6 / 7 | pass | — |
+| 系列视觉系统 | 同一规则的三种输出规格 | button group / 键盘 | 规格切换、共享 token 与成品变化 | 4 / 5 / 6 / 7 | pass | — |
+| 动态与交互 | 原图到记忆作品的分阶段过渡 | play / pause / reset | 播放状态、阶段反馈、reduced motion | 4 / 5 / 6 / 7 / 8 | pass | — |
+| 声音与文字 | 声音、转写、意象和视觉成品链路 | button / keyboard | 转写状态、步骤反馈与边界文字 | 3 / 4 / 5 / 6 / 7 | pass | — |
+| 修订 4 回归 | 原比较器、场景切换与图片加载 | 1440 / 768 / 390 / keyboard | 浏览器交互、资源与溢出检查 | 5 / 7 / 9 | pass | — |
+| 修订 4 发布 | 提交、Pages 与公开扩展实验室 | GitHub / Web | commit、Actions、HTTP 与线上 DOM | 9 | continue | 验收通过后提交并发布 |
 
 ## Canonical Runtime
 
