@@ -53,7 +53,7 @@ Coverage record: 见下表
 | 动态与交互 | 原图到记忆作品的分阶段过渡 | play / pause / reset | 播放状态、阶段反馈、reduced motion | 4 / 5 / 6 / 7 / 8 | pass | — |
 | 声音与文字 | 声音、转写、意象和视觉成品链路 | button / keyboard | 转写状态、步骤反馈与边界文字 | 3 / 4 / 5 / 6 / 7 | pass | — |
 | 修订 4 回归 | 原比较器、场景切换与图片加载 | 1440 / 768 / 390 / keyboard | 浏览器交互、资源与溢出检查 | 5 / 7 / 9 | pass | — |
-| 修订 4 发布 | 提交、Pages 与公开扩展实验室 | GitHub / Web | commit、Actions、HTTP 与线上 DOM | 9 | continue | 验收通过后提交并发布 |
+| 修订 4 发布 | 提交、Pages 与公开扩展实验室 | GitHub / Web | commit、Actions、HTTP 与线上 DOM | 9 | pass | — |
 
 ## Canonical Runtime
 
@@ -69,8 +69,8 @@ Verified: 2026-08-19 Asia/Shanghai
 
 ```text
 Repository: https://github.com/yydshly/0818_githubcode_study
-Commit: 674ad5258eb58cb8b705e69c16f62956f442f676
-Pages workflow: https://github.com/yydshly/0818_githubcode_study/actions/runs/32253090371
+Commit: d20a8aff9b6f80c20c7c3e5366d2486b3fc99a17
+Pages workflow: https://github.com/yydshly/0818_githubcode_study/actions/runs/32257902341
 Workflow result: completed / success
 Public index: https://yydshly.github.io/0818_githubcode_study/
 Public showcase: https://yydshly.github.io/0818_githubcode_study/projects/visual-memory-translator/showcase/
@@ -93,11 +93,18 @@ Verified: 2026-08-19 Asia/Shanghai
 - 公开展厅经真实浏览器复查：默认旅行状态、人物点击切换、节日状态和 390px 布局均工作；节日懒加载图滚入视口后为 `1086×1448`，线上页面无错误覆盖层和横向溢出。
 - 按 Pages 根目录结构组装主站后，第 07 项目卡存在、封面加载成功，桌面与 390px 均无横向溢出。
 - 仅支持 light theme；页面没有弹窗、菜单、加载、空态、错误态或远程数据，因此这些矩阵项不适用。
+- Revision 4 新增七模块扩展实验室：多照片叙事、混合记忆材料、时间与情绪、可编辑分层、系列视觉系统、动态与交互、声音与文字；每个模块均说明目标、输入、处理、成品与边界。
+- 七模块 roving tab 通过 `End → 声音与文字`、`Home → 多照片叙事`；时间值 92 映射为 `25% / extreme / 一个隐喻`，图层照片开关完成隐藏与恢复，系列输出成功切换到 `wide`。
+- 动态原型完成 `0 → 3 → 0` 的播放与复位；声音原型完成转写、提取、编排与成品四阶段。验收期间发现并修正声音按钮初始状态被错误覆盖的问题。
+- 1440、768 与 390 三个视口的实验室均有 7 个模块且横向溢出为 0；reduced-motion 下播放会直接进入第 4 阶段并显示静态回退说明。
+- 原比较器键盘回归值为 `100 / 0 / 1`，原场景切换仍可从旅行进入人物；37 张图片无加载失败，JavaScript 无控制台或页面错误，45 个本地引用无缺失。
+- Pages 工作流 `32257902341` 对提交 `d20a8af` 的 build 与 deploy 均成功；公开展厅、CSS 与 JavaScript 均返回 HTTP 200，并包含 `data-extension-lab`、Revision 4 脚本和动态模块。
+- 公开 URL 经真实 Chromium 抽查：正文 5070 字符、37 张图片无失败、无错误覆盖层、无横向溢出，扩展实验室正常出现。
 
 ## Session Handoff
 
-1. **项目与阶段：** Visual Memory Translator 研究子项目；Revision 3 / Stage 9 已闭环并发布。
-2. **已完成：** 用大幅原图/成品切换台强化效果差异；三种场景状态、三视口、键盘、原比较器与公开 Web 部署均通过。
-3. **剩余或延期：** 当前授权范围内无 `continue`、`defer` 或 `blocked`。
-4. **证据：** 桌面前后截图、手机切换台截图、21 张图片加载、tabs 状态、键盘路径、原比较器、三视口溢出、Actions 成功记录和公开 URL 浏览器检查均通过。
-5. **下一步：** 本次范围已关闭；后续若增加新场景，沿用同一切换台结构并补充对应成品与 Prompt 记录。
+1. **项目与阶段：** Visual Memory Translator 研究子项目；Revision 4 / Stage 9 已闭环并发布。
+2. **已完成：** 七模块扩展实验室、详细研究文档、三视口、键盘、交互状态、reduced-motion、旧功能回归和公开 Web 部署均通过。
+3. **剩余或延期：** 当前授权范围内无 `continue`、`defer` 或 `blocked`；页面明确将生成模型、语音识别、真实分层导出与成片输出标记为尚未接入的新服务，而不是当前实现。
+4. **证据：** 七模块截图、交互状态、37 张图片、45 个引用、三视口溢出、键盘路径、reduced-motion、Actions 成功记录和公开 URL Chromium 检查均通过。
+5. **下一步：** 若进入真正产品开发，优先实现“多照片叙事 + 混合材料 + 可编辑分层”的最小闭环，再接入声音与动态服务。

@@ -10,7 +10,7 @@
 | 上游地址 | https://github.com/TanShilongMario/visual-memory-translator-SKILL |
 | 研究版本 | `e0d04509a40e104a68ed9f3fbf5a779fe529d8c2` |
 | 上游版本 | Skill `1.4` |
-| 研究状态 | 已完成 · 暂时搁置 |
+| 研究状态 | 已完成 · 扩展实验室已上线 |
 | 开始日期 | 2026-08-19 |
 | 最后更新 | 2026-08-19 |
 | 本地上游 | `projects/visual-memory-translator/upstream/`（Git submodule） |
