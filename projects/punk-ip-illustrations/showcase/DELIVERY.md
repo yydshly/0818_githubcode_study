@@ -54,7 +54,7 @@ Coverage record: 见下表
 | 修订 3 · 回归 | 三视口、图片、tabs、筛选、键盘与 reduced-motion | 1440 / 768 / 390 | Chrome 浏览器与工程检查 | 5 / 7 / 8 / 9 | pass | — |
 | 修订 4 · 使用说明 | 文章/目标如何与确认角色和 Skill 结合 | 使用模块 / 三类输入 / 分工 / 示例 | DOM、阅读流与事实边界检查 | 2 / 3 / 7 / 9 | pass | — |
 | 修订 4 · 风格扩展 | 从当前固定风格扩展为可插拔风格包 | 扩展模块 / 类型 / 风险 / 合同 | DOM、响应式与研究边界检查 | 2 / 3 / 7 / 9 | pass | — |
-| 修订 4 · GitHub 发布 | 提交、推送并触发 Pages | 当前研究文件 / 远端 / Pages | Git、远端 commit、Actions 与在线 URL | 9 | continue | 本地回归后发布并跟踪部署 |
+| 修订 4 · GitHub 发布 | 提交、推送并触发 Pages | 当前研究文件 / 远端 / Pages | Git、远端 commit、Actions 与在线 URL | 9 | pass | — |
 
 ## Canonical Runtime
 
@@ -82,11 +82,13 @@ Verified: 2026-08-19 Asia/Shanghai
 - 修订 4 新增使用与风格模块：浏览器确认 3 类内容输入、6 类风格家族、无生图工具降级边界和“多风格不是上游现成功能”声明均存在；1440、768、390px 的 `scrollWidth` 均等于视口宽度。
 - 修订 4 保持 9 个图片元素全部加载，既有能力 tab、场景筛选、路线键盘 `End` 和 reduced-motion 回归通过；控制台错误、页面错误和失败请求均为 0。
 - 修订 4 桌面两模块全区截图与 390px 顶部视口截图保存在工作区外的 Codex visualization 目录，并完成实际像素检查。
+- 发布提交 `27ff9df` 已推送至 `codex/punk-ip-illustrations-research` 与 `main`；GitHub Actions 运行 [`32267950806`](https://github.com/yydshly/0818_githubcode_study/actions/runs/32267950806) 完成且结论为 `success`。
+- 线上地址 `https://yydshly.github.io/0818_githubcode_study/projects/punk-ip-illustrations/showcase/` 返回 HTTP 200，并包含 `GUIDE A / HOW TO USE IT`、`GUIDE B / STYLE EXPANSION`、三类输入和六类风格；自有原始图、最终场景图与 `styles.css?v=3` 均返回 HTTP 200。
 
 ## Session Handoff
 
 1. **项目与阶段：** Punk IP Illustrations 研究子项目；Stage 9 已完成本地交付闭环。
 2. **已完成：** 固定上游 submodule、能力分析、场景与扩展文档、四张自有 ImageGen 资产、完整角色实演、响应式研究展厅、主索引与 Pages 组装规则均已完成；原上游样张完整保留。
-3. **剩余或延期：** 当前授权范围内无未完成项；未提交、推送或部署，因为用户本次未要求外部发布。
-4. **证据：** 真实 Chrome 浏览器、三视口、9 个图片元素、键盘、筛选、tabs、reduced-motion、主入口与主索引封面均通过；工程引用与 diff 检查通过。
+3. **剩余或延期：** 当前授权范围内无未完成项；研究内容已提交、推送并部署到 GitHub Pages。
+4. **证据：** 真实 Chrome 浏览器、三视口、9 个图片元素、三类内容输入、六类风格、键盘、筛选、tabs、reduced-motion、主入口与主索引封面均通过；Actions 与线上页面/资源均验证成功。
 5. **下一步：** 若后续进入实证研究，优先实现“结构化图片计划 + 角色一致性评分 + 无字底图确定性排版”三项 P0/P1 实验。
