@@ -23,7 +23,7 @@
 | [Promise Wall 项目研究](projects/promise-wall/README.md) | [thebuggeddev/promise-wall](https://github.com/thebuggeddev/promise-wall) | Three.js 空间卡片、十二场景第一版效果、后期行动地图与归档边界 | [能力分析](projects/promise-wall/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/promise-wall/showcase/) | 已完成 · 已归档 |
 | [Photo to Organic Knit 项目研究](projects/photo-to-organic-knit/README.md) | [NalaZhang27/photo-to-organic-knit](https://github.com/NalaZhang27/photo-to-organic-knit) | 照片语义取舍、概念重构、针织材料参考、ImageGen 独立实演与产品化路线 | [能力分析](projects/photo-to-organic-knit/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/photo-to-organic-knit/showcase/) | 已复现 · 持续扩展 |
 | [Muyang Illustration Skills 项目研究](projects/muyang-illustration-skills/README.md) | [yokel1121/muyang-illustration-skills](https://github.com/yokel1121/muyang-illustration-skills) | 25 套固定插画 Prompt、8 类统一主体实测、图生图一致性与文字产品化路线 | [能力分析](projects/muyang-illustration-skills/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/muyang-illustration-skills/showcase/) | 基础能力已复现 · 8 类实测 |
-| [Visual Memory Translator 项目研究](projects/visual-memory-translator/README.md) | [TanShilongMario/visual-memory-translator-SKILL](https://github.com/TanShilongMario/visual-memory-translator-SKILL) | 照片风格试衣间、记忆转译、文本隐喻、参数化艺术指导与确定性扩展路线 | [能力分析](projects/visual-memory-translator/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/visual-memory-translator/showcase/) | 已获取 · 基础能力已实演 |
+| [Visual Memory Translator 项目研究](projects/visual-memory-translator/README.md) | [TanShilongMario/visual-memory-translator-SKILL](https://github.com/TanShilongMario/visual-memory-translator-SKILL) | 照片风格试衣间、记忆转译、文本隐喻、参数化艺术指导与确定性扩展路线 | [能力分析](projects/visual-memory-translator/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/visual-memory-translator/showcase/) | 已完成 · 暂时搁置 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
 
@@ -134,6 +134,8 @@
 [Visual Memory Translator](https://github.com/TanShilongMario/visual-memory-translator-SKILL) 是一套把照片或一句话编译成编辑式记忆作品的 Agent Skill。它先判断 photo、text 或 mixed 输入，再选择原图呈现方式、版式、风格、抽象度、留白与文字；照片未指定风格时先生成 4/6/9 格视觉试衣间，选号后必须回到原图重生成成品。
 
 本研究固定上游 v1.4 commit，直接完成一组原创湖畔照片、六格风格预览、分层贴纸成品和中文文本隐喻卡。结果证明该仓库能提供清晰的艺术指导与交互合同，也暴露出生成模型对精确文字约束的真实偏差。扩展路线优先加入日期、OCR、网格、分割、色板和生成清单等确定性工具，而不是继续堆风格名。
+
+当前研究与 Web 展示均已完成，项目暂时搁置；后续仅在需要补充更多严格的同图前后对照，或将其产品化为“上传照片 → 选择场景 → 生成并导出”的交互工具时重新启动。
 
 - [照片、预览、成品与文本隐喻展厅](projects/visual-memory-translator/showcase/)
 - [能力、原理与真实边界](projects/visual-memory-translator/docs/analysis.md)

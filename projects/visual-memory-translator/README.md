@@ -10,7 +10,7 @@
 | 上游地址 | https://github.com/TanShilongMario/visual-memory-translator-SKILL |
 | 研究版本 | `e0d04509a40e104a68ed9f3fbf5a779fe529d8c2` |
 | 上游版本 | Skill `1.4` |
-| 研究状态 | 已获取 · 基础能力已实演 |
+| 研究状态 | 已完成 · 暂时搁置 |
 | 开始日期 | 2026-08-19 |
 | 最后更新 | 2026-08-19 |
 | 本地上游 | `projects/visual-memory-translator/upstream/`（Git submodule） |
@@ -118,4 +118,3 @@ ratio: 3:4
 4. 使用上游 `quality.md` 检查结果；每次只针对一个失败点重试。
 
 本地查看展厅可直接打开 `showcase/index.html`，或用任意静态 HTTP 服务运行该目录。
-
