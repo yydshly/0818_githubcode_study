@@ -1,0 +1,13 @@
+{
+  "id": "organic-knit",
+  "label": "Organic Knit",
+  "intent": "Warm, tactile, intimate handcrafted reinterpretation",
+  "materials": ["crochet", "chunky knit", "needle felt", "boucle", "mohair fibers"],
+  "path_treatment": "Turn the visual path into braided yarn, connected stitches, or a relaxed continuous strand.",
+  "form_treatment": "Compress subjects into readable knitted and felt forms with selective stitch detail.",
+  "space_treatment": "Use separated textile islands and generous warm-ivory gaps instead of a continuous background.",
+  "composition": "Compact tactile emblem with asymmetry, clear focal hierarchy, and editorial breathing room.",
+  "imperfections": ["varied stitch tension", "sparse loose ends", "wispy fibers", "uneven handmade edges"],
+  "avoid": ["literal wool filter", "plastic CGI", "machine-perfect symmetry", "continuous realistic scenery", "unrelated reference subjects"],
+  "best_for": ["family", "memory", "children", "warm-brand"]
+}

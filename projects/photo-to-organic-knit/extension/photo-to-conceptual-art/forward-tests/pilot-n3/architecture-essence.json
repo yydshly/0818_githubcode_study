@@ -1,0 +1,15 @@
+{
+  "orientation": "landscape",
+  "aspect_ratio": "3:2",
+  "subject": "One bright red cable car follows a diagonal cable toward one concrete station in a snowy alpine pass.",
+  "anchors": ["one red cable car", "single diagonal cable", "one brutalist concrete station", "snow field", "dark rock pass"],
+  "relationships": ["the cable physically connects the car to the station destination", "the car begins low left and the station ends high right"],
+  "emotion": ["remote", "purposeful", "engineered", "cold"],
+  "visual_path": "one black diagonal cable rises from the red car in the lower left to the concrete station in the upper right",
+  "metaphor": "a red punctuation mark travels along one engineered sentence toward a concrete gate",
+  "retain": ["one red cable car", "one cable", "one concrete station", "upward diagonal direction", "snow-and-rock contrast"],
+  "transform": ["diagonal cable route", "station block", "snow fields", "rock planes", "distant ridge"],
+  "discard": ["small rock texture", "window reflection", "mechanical cable hardware detail", "continuous photographic mountain depth"],
+  "palette": ["snow white", "charcoal", "concrete gray", "bright red", "pale blue"],
+  "privacy_notes": []
+}

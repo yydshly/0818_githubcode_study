@@ -1,0 +1,13 @@
+{
+  "id": "stained-glass",
+  "label": "Stained Glass",
+  "intent": "Luminous symbolism, collective structure, and strong long-distance recognition",
+  "materials": ["hand-cut glass", "lead came", "opalescent glass", "solder joints"],
+  "path_treatment": "Use expressive lead lines and a continuous luminous glass band to carry the eye.",
+  "form_treatment": "Abstract subjects into distinct translucent fields while retaining key color and relationship anchors.",
+  "space_treatment": "Replace realistic depth with quiet glass fields, transmitted light, and structural segmentation.",
+  "composition": "Bold symbolic silhouette organized by lead lines; one luminous focal axis or shared center.",
+  "imperfections": ["glass waviness", "small bubbles", "color-density variation", "visible solder character"],
+  "avoid": ["religious symbols unless requested", "neon cyberpunk", "flat vector art", "photorealistic faces", "unrelated ornament"],
+  "best_for": ["community", "culture", "impact", "symbolic-cover"]
+}

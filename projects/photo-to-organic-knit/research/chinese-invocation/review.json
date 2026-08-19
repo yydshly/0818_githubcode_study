@@ -1,0 +1,48 @@
+{
+  "id": "chinese-invocation-tea-campaign-v1",
+  "artifact": "result-layered-paper.png",
+  "attempt": 1,
+  "reviewer": "当前研究线程中的公开人工审查",
+  "gates": {
+    "brand-anchor retention": {
+      "status": "pass",
+      "score": 5,
+      "evidence": "结果保留一个深绿色圆柱茶罐、一把奶油色茶壶、恰好两只杯子、散茶与鲜叶，且所有表面保持无品牌。"
+    },
+    "graphic hierarchy": {
+      "status": "pass",
+      "score": 5,
+      "evidence": "高茶罐是第一视觉锚点，壶与两杯形成次级组合，纸带和叶形建立清晰的前中后层级。"
+    },
+    "copy-safe space": {
+      "status": "pass",
+      "score": 5,
+      "evidence": "画面右上约三分之一保持浅色、低细节纸面，可放置活动标题、日期和行动号召。"
+    },
+    "no generated brand text": {
+      "status": "pass",
+      "score": 5,
+      "evidence": "茶罐与画面中未出现品牌名、Logo、产地或认证文字。"
+    },
+    "copy-safe field": {
+      "status": "pass",
+      "score": 5,
+      "evidence": "低细节标题区与产品主体分离，排版不会遮挡茶罐、壶、杯或鲜叶。"
+    },
+    "multi-crop resilience": {
+      "status": "pass",
+      "score": 4,
+      "evidence": "4:5 主版完整；裁成宽横幅时可保留茶罐、壶和杯，但部分底部叶形与纸带会被舍弃。"
+    },
+    "no generated campaign text": {
+      "status": "pass",
+      "score": 5,
+      "evidence": "结果为完整无字 Key Art，没有标题、日期、价格、功效描述或 CTA。"
+    }
+  },
+  "notes": [
+    "中文 Essence 与隐私约束均由正式安装副本编译。",
+    "本次生成首次通过，无针对性修正或隐藏候选图。",
+    "正式品牌、文案、字体和法律信息仍需在设计系统中添加。"
+  ]
+}

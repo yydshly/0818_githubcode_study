@@ -1,0 +1,257 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "template": {
+    "id": "book-cover",
+    "version": "1.0"
+  },
+  "campaign_id": "family-memory-volume-01-sample",
+  "copy_status": "sample",
+  "locale": "zh-CN",
+  "inputs": {
+    "copy": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\examples\\family-memory-copy.json",
+    "art": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\research\\additional-validation-v2\\family-pet-knit.png",
+    "art_sha256": "c2a61f2058fc3e9186559a9667ce383bf211caff99cac6a38e10a1f110b8d93f",
+    "font": "C:\\Windows\\Fonts\\msyh.ttc",
+    "template": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\assets\\templates\\book-cover.json"
+  },
+  "checks": [
+    {
+      "variant": "book-cover-3x4",
+      "id": "dimensions",
+      "status": "PASS",
+      "evidence": {
+        "actual": [
+          1200,
+          1600
+        ],
+        "expected": [
+          1200,
+          1600
+        ]
+      }
+    },
+    {
+      "variant": "book-cover-3x4",
+      "id": "exact-copy",
+      "status": "PASS",
+      "evidence": {
+        "expected": {
+          "publication.qualifier": "家庭纪念册 · SAMPLE ARCHIVE",
+          "publication.subtitle": "一册关于陪伴、照料与家的记忆",
+          "publication.edition": "VOL. 01 · FAMILY MEMORY",
+          "publication.date": "2026",
+          "publication.footer": "示例家庭档案 · 非真实姓名",
+          "publication.title_lines[0]": "一起长大的",
+          "publication.title_lines[1]": "那些日子"
+        },
+        "rendered": {
+          "publication.qualifier": "家庭纪念册 · SAMPLE ARCHIVE",
+          "publication.edition": "VOL. 01 · FAMILY MEMORY",
+          "publication.title_lines[0]": "一起长大的",
+          "publication.title_lines[1]": "那些日子",
+          "publication.subtitle": "一册关于陪伴、照料与家的记忆",
+          "publication.date": "2026",
+          "publication.footer": "示例家庭档案 · 非真实姓名"
+        }
+      }
+    },
+    {
+      "variant": "book-cover-3x4",
+      "id": "overflow",
+      "status": "PASS",
+      "evidence": {
+        "overflow_fields": []
+      }
+    },
+    {
+      "variant": "book-cover-3x4",
+      "id": "protected-region",
+      "status": "PASS",
+      "evidence": {
+        "colliding_fields": [],
+        "protected_regions": [
+          [
+            24,
+            392,
+            1176,
+            1432
+          ]
+        ]
+      }
+    },
+    {
+      "variant": "book-cover-3x4",
+      "id": "contrast",
+      "status": "PASS",
+      "evidence": {
+        "ink_on_paper": 9.62,
+        "white_on_ink": 11.46,
+        "minimum": 4.5
+      }
+    },
+    {
+      "variant": "book-cover-3x4",
+      "id": "sample-disclosure",
+      "status": "PASS",
+      "evidence": {
+        "copy_status": "sample"
+      }
+    }
+  ],
+  "outputs": {
+    "book-cover-3x4": {
+      "path": "family-memory-volume-01-sample-book-cover-3x4.png",
+      "width": 1200,
+      "height": 1600,
+      "sha256": "890379df75c01ec2c753f5fc7ca074cf34f4f4acd22dc0aa28eefe0827ef841a",
+      "text_items": [
+        {
+          "field": "publication.qualifier",
+          "value": "家庭纪念册 · SAMPLE ARCHIVE",
+          "bbox": [
+            100,
+            80,
+            401,
+            101
+          ],
+          "container": [
+            100,
+            76,
+            1100,
+            340
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "publication.edition",
+          "value": "VOL. 01 · FAMILY MEMORY",
+          "bbox": [
+            853,
+            80,
+            1100,
+            94
+          ],
+          "container": [
+            100,
+            76,
+            1100,
+            340
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "publication.title_lines[0]",
+          "value": "一起长大的",
+          "bbox": [
+            100,
+            118,
+            440,
+            185
+          ],
+          "container": [
+            100,
+            76,
+            1100,
+            340
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "publication.title_lines[1]",
+          "value": "那些日子",
+          "bbox": [
+            100,
+            190,
+            372,
+            256
+          ],
+          "container": [
+            100,
+            76,
+            1100,
+            340
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "publication.subtitle",
+          "value": "一册关于陪伴、照料与家的记忆",
+          "bbox": [
+            100,
+            308,
+            436,
+            332
+          ],
+          "container": [
+            100,
+            76,
+            1100,
+            340
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "generated.sample_disclosure",
+          "value": "SAMPLE / 非商业发布",
+          "bbox": [
+            926,
+            315,
+            1100,
+            332
+          ],
+          "container": [
+            100,
+            76,
+            1100,
+            340
+          ],
+          "inside_container": true,
+          "source_copy": false
+        },
+        {
+          "field": "publication.date",
+          "value": "2026",
+          "bbox": [
+            48,
+            1519,
+            112,
+            1539
+          ],
+          "container": [
+            48,
+            1474,
+            1152,
+            1582
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "publication.footer",
+          "value": "示例家庭档案 · 非真实姓名",
+          "bbox": [
+            923,
+            1520,
+            1152,
+            1541
+          ],
+          "container": [
+            48,
+            1474,
+            1152,
+            1582
+          ],
+          "inside_container": true,
+          "source_copy": true
+        }
+      ]
+    }
+  },
+  "boundary": "PASS covers deterministic layout gates only; brand, factual, legal, font-license and publication approval remain external."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "family-memory",
+  "label": "Family Memory",
+  "audience": "family members, children, and memory-book readers",
+  "goal": "Preserve recognizable relationships while creating warmth, safety, and a collectible private-memory quality.",
+  "recommended_effects": [
+    {"id": "organic-knit", "reason": "Soft fibers amplify intimacy and handmade memory."},
+    {"id": "layered-paper", "reason": "Clean layers work when a more editorial family archive is preferred."}
+  ],
+  "default_delivery": "book-cover",
+  "allowed_deliveries": ["book-cover", "campaign-poster"],
+  "prompt_requirements": ["Preserve participant count and relationships.", "Keep private background details secondary.", "Leave editable title space."],
+  "quality_gates": ["participant count", "relationship readability", "privacy handling", "title-safe space"]
+}

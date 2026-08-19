@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Publication Studio · Photo to Conceptual Art</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">跳到工作区</a>
+  <header class="topbar">
+    <a class="brand" href="/"><span>PHOTO → PURPOSE</span><b>Publication Studio</b></a>
+    <div class="local-badge"><i aria-hidden="true"></i>127.0.0.1 · 临时工作区</div>
+    <a class="back-link" href="/showcase" data-showcase-link>返回研究展厅 ↗</a>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="intro-title">
+      <div>
+        <p class="eyebrow">DETERMINISTIC PUBLICATION WORKSPACE / V1</p>
+        <h1 id="intro-title">选目标，改文案，<br><em>再生成可以检查的成品。</em></h1>
+      </div>
+      <div class="intro-copy">
+        <p>这里不重新生图。四张已经通过 Review 的无字 Key Art，分别进入活动海报、家庭纪念册、影响力报告和旅行日志模板。</p>
+        <dl><div><dt>4</dt><dd>目标模板</dd></div><div><dt>6</dt><dd>每输出门禁</dd></div><div><dt>0</dt><dd>外部上传</dd></div></dl>
+      </div>
+    </section>
+
+    <section class="studio" id="workspace" aria-labelledby="workspace-title">
+      <div class="studio-heading">
+        <div><span>01 / SELECT DELIVERY</span><h2 id="workspace-title">当前发布目标</h2></div>
+        <p id="route-copy">正在读取本地模板……</p>
+      </div>
+      <div class="template-tabs" id="template-tabs" role="tablist" aria-label="发布模板"></div>
+
+      <div class="workspace-grid">
+        <aside class="editor-panel" aria-labelledby="editor-title">
+          <div class="panel-title"><div><span>02 / EXACT COPY</span><h2 id="editor-title">编辑确定性文案</h2></div><button id="reset-button" type="button">恢复样例</button></div>
+          <div class="sample-warning"><b>SAMPLE DATA</b><p>当前名称、数据、坐标和活动信息均为版式样例。请勿将 PASS 理解为内容审批。</p></div>
+          <form id="copy-form" autocomplete="off"></form>
+          <div class="editor-actions">
+            <button class="action primary" id="render-button" type="button">生成预览并检查</button>
+            <button class="action" id="copy-download-button" type="button">下载 copy.json</button>
+          </div>
+        </aside>
+
+        <section class="preview-panel" aria-labelledby="preview-title">
+          <div class="panel-title preview-title"><div><span>03 / RENDERED MASTER</span><h2 id="preview-title">输出预览</h2></div><strong id="dimension-copy">—</strong></div>
+          <div class="preview-stage">
+            <img id="preview-image" alt="当前模板的确定性发布预览">
+            <div class="preview-loading" id="preview-loading" hidden><span></span><b>正在本地渲染与检查</b></div>
+          </div>
+          <div class="render-status" id="render-status" role="status" aria-live="polite" data-state="idle">
+            <div><span id="status-kicker">SAMPLE PREVIEW</span><b id="status-title">选择模板并编辑文案</b></div>
+            <p id="status-detail">点击“生成预览并检查”后，结果会由安装的确定性渲染器生成。</p>
+          </div>
+          <div class="gate-list" id="gate-list" aria-label="质量门禁"></div>
+          <div class="download-row" id="download-row" hidden>
+            <a id="png-download" download>下载 PNG</a>
+            <a id="report-download" download>下载检查报告</a>
+            <a id="server-copy-download" download>下载本次 copy.json</a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="batch-section" aria-labelledby="batch-title">
+      <div><span>04 / BATCH EXPORT</span><h2 id="batch-title">一次导出四种目标主版。</h2><p>批量任务会使用每个模板当前保留的文案状态，生成 PNG、报告和 copy.json，并组合成一个本地 ZIP。</p></div>
+      <div class="batch-control">
+        <div class="batch-flow"><span>4 × COPY</span><i>→</i><span>5 × MASTER</span><i>→</i><span>1 × ZIP</span></div>
+        <button class="action primary" id="batch-button" type="button">批量生成并打包</button>
+        <a id="batch-download" class="batch-download" download hidden>下载批量 ZIP</a>
+        <p id="batch-status" role="status" aria-live="polite">尚未运行批量任务。</p>
+      </div>
+    </section>
+
+    <section class="boundary" aria-labelledby="boundary-title">
+      <div><span>LOCAL BETA BOUNDARY</span><h2 id="boundary-title">它是本地发布工具，<br>不是内容审批或云端资产库。</h2></div>
+      <ul><li>只使用四张项目内已审核 Key Art</li><li>不接收任意文件路径或上传</li><li>运行文件位于临时目录</li><li>服务停止后自动清理</li><li>品牌、事实、许可和发布仍需人工审批</li></ul>
+    </section>
+  </main>
+
+  <footer><span>Photo to Conceptual Art · Publication Studio V1</span><span>LOCAL ONLY · SAMPLE CONTENT</span></footer>
+  <noscript>此工作台需要 JavaScript。请使用 `python studio/server.py` 启动本地服务并启用脚本。</noscript>
+</body>
+</html>

@@ -21,6 +21,7 @@
 | [Hand-drawn Styles 项目研究](projects/hand-drawn-styles/README.md) | [threerocks/hand-drawn-styles](https://github.com/threerocks/hand-drawn-styles) | 视觉 Prompt 配方、单一真源、锚点校验、多阶段生成合同及日常场景路由 | [当前状态](projects/hand-drawn-styles/STATUS.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/hand-drawn-styles/showcase/) | 已复现 · 持续扩展 |
 | [Stamp Edge Skill 项目研究](projects/stamp-edge-skill/README.md) | [xianxie6/stamp-edge-skill](https://github.com/xianxie6/stamp-edge-skill) | 邮票齿孔、透明蒙版、投影、瀑布流合集，以及预设驱动图片风格引擎扩展 | [能力分析](projects/stamp-edge-skill/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/stamp-edge-skill/showcase/) | 已复现 · 已收口 |
 | [Promise Wall 项目研究](projects/promise-wall/README.md) | [thebuggeddev/promise-wall](https://github.com/thebuggeddev/promise-wall) | Three.js 空间卡片、十二场景第一版效果、后期行动地图与归档边界 | [能力分析](projects/promise-wall/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/promise-wall/showcase/) | 已完成 · 已归档 |
+| [Photo to Organic Knit 项目研究](projects/photo-to-organic-knit/README.md) | [NalaZhang27/photo-to-organic-knit](https://github.com/NalaZhang27/photo-to-organic-knit) | 照片语义取舍、概念重构、针织材料参考、ImageGen 独立实演与产品化路线 | [能力分析](projects/photo-to-organic-knit/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/photo-to-organic-knit/showcase/) | 已复现 · 持续扩展 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
 
@@ -94,6 +95,25 @@
 - [能力、架构与限制](projects/promise-wall/docs/analysis.md)
 - [使用场景与扩展路线](projects/promise-wall/docs/extension-scenarios.md)
 - [固定上游版本](projects/promise-wall/upstream)
+
+## 第五个研究项目：Photo to Organic Knit
+
+[Photo to Organic Knit](https://github.com/NalaZhang27/photo-to-organic-knit) 是一套运行在 Codex 与 ImageGen 之间的艺术指导 Skill。它不训练图像模型，而是先将照片元素分成保留、转化和舍弃三组，再以一个视觉隐喻、至少三项结构变化、真实纤维材料和编辑式留白形成生产 Prompt，最后检查结果是否真正重构而不是仅有毛线滤镜。
+
+本研究固定上游 commit，并累计完成六材料、场景、成品、目标驱动 Skill、前向测试与 Pilot。追加式台账锁定旧样例；中文调用进入双渠道设计层，新增验证区则为针织、彩玻璃和陶瓷浮雕逐组并列完整原图和结果，显示保留、转化与舍弃。
+
+- [独立实演与研究展厅](projects/photo-to-organic-knit/showcase/)
+- [能力、原理、意义与边界](projects/photo-to-organic-knit/docs/analysis.md)
+- [使用场景、扩展方向与实际价值](projects/photo-to-organic-knit/docs/use-cases-and-roadmap.md)
+- [完整 ImageGen 生成记录](projects/photo-to-organic-knit/showcase/assets/generated/PROMPTS.md)
+- [五种扩展效果 Prompt](projects/photo-to-organic-knit/showcase/assets/generated/MULTI_EFFECT_PROMPTS.md)
+- [三组新增场景 Prompt](projects/photo-to-organic-knit/showcase/assets/generated/SCENARIO_PROMPTS.md)
+- [目标驱动扩展 Skill](projects/photo-to-organic-knit/extension/photo-to-conceptual-art/SKILL.md)
+- [Prompt 编译器](projects/photo-to-organic-knit/extension/photo-to-conceptual-art/scripts/build_prompt.py)
+- [未见照片前向测试](projects/photo-to-organic-knit/extension/photo-to-conceptual-art/forward-tests/lighthouse-travel/RESULT.md)
+- [跨题材 n=3 Pilot](projects/photo-to-organic-knit/extension/photo-to-conceptual-art/forward-tests/pilot-n3/RESULT.md)
+- [Review 记录器](projects/photo-to-organic-knit/extension/photo-to-conceptual-art/scripts/score_review.py)
+- [固定上游版本](projects/photo-to-organic-knit/upstream)
 
 ## 仓库结构
 

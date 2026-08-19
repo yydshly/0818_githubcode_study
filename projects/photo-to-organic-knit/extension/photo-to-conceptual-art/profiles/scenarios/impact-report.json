@@ -1,0 +1,14 @@
+{
+  "id": "impact-report",
+  "label": "Impact Report",
+  "audience": "community members, funders, partner organizations, and report readers",
+  "goal": "Express shared action and credible long-term impact without depending on a generic group photograph.",
+  "recommended_effects": [
+    {"id": "stained-glass", "reason": "Distinct color fields and shared lead structure express diversity and collective action."},
+    {"id": "layered-paper", "reason": "Paper layers provide a restrained editorial alternative."}
+  ],
+  "default_delivery": "impact-report",
+  "allowed_deliveries": ["impact-report", "campaign-poster"],
+  "prompt_requirements": ["Preserve the shared action and central outcome.", "Avoid invented statistics or institutional marks.", "Reserve a credible report hierarchy area."],
+  "quality_gates": ["collective-action readability", "central outcome", "institutional neutrality", "report-safe space"]
+}

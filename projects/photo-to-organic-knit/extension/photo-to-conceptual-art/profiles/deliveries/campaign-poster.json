@@ -1,0 +1,10 @@
+{
+  "id": "campaign-poster",
+  "label": "4:5 Campaign Poster Key Art",
+  "aspect_ratio": "4:5",
+  "text_mode": "wordless-key-art",
+  "safe_area": "Reserve one broad low-detail field for brand, campaign title, date, and call to action.",
+  "layout_intent": "Reusable key art with one memorable silhouette and a deterministic copy zone.",
+  "output_variants": ["wordless poster art", "4:5 campaign preview", "wide social header", "storefront crop"],
+  "quality_gates": ["copy-safe field", "brand-anchor retention", "multi-crop resilience", "no generated campaign text"]
+}

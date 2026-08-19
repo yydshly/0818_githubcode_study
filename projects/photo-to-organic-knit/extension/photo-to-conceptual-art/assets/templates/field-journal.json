@@ -1,0 +1,24 @@
+{
+  "id": "field-journal",
+  "version": "1.0",
+  "palette": {
+    "ink": "#183844",
+    "paper": "#F2E7CE",
+    "panel_translucent": "#F5EAD5F0",
+    "accent": "#A94F20",
+    "muted": "#53605B",
+    "white": "#FFFDF6"
+  },
+  "contrast_pairs": [["ink", "paper"], ["white", "ink"]],
+  "variants": {
+    "field-journal-4x5": {
+      "canvas": [1200, 1500],
+      "layout": "field-journal",
+      "art_box": [0.0, 0.0, 1.0, 1.0],
+      "art_center": [0.5, 0.5],
+      "copy_panel": [0.055, 0.025, 0.945, 0.145],
+      "metadata_panel": [0.055, 0.87, 0.945, 0.975],
+      "protected_regions": [[0.08, 0.155, 0.92, 0.855]]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "additional-validation-v2-2026-08-19",
+  "sample_size": 3,
+  "samples": [
+    {"id": "family-pet", "scenario": "family-memory", "effect": "organic-knit", "delivery": "book-cover", "route_mode": "auto", "source": "family-pet-source.png", "result": "family-pet-knit.png", "review": "family-pet-review.json", "attempts": 1, "score": "35/35"},
+    {"id": "community-rain", "scenario": "impact-report", "effect": "stained-glass", "delivery": "impact-report", "route_mode": "auto", "source": "community-rain-source.png", "result": "community-rain-glass.png", "review": "community-rain-review.json", "attempts": 1, "score": "35/35"},
+    {"id": "honey-product", "scenario": "seasonal-campaign", "effect": "ceramic-relief", "delivery": "campaign-poster", "route_mode": "explicit-override", "source": "honey-source.png", "result": "honey-ceramic.png", "review": "honey-review.json", "attempts": 1, "score": "34/35"}
+  ],
+  "limitation": "Synthetic, deliberately selected n=3 validation. Scores are disclosed human reviews, not model accuracy or production reliability."
+}

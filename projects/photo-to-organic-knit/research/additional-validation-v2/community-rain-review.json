@@ -1,0 +1,16 @@
+{
+  "id": "additional-community-rain-glass-v1",
+  "artifact": "community-rain-glass.png",
+  "attempt": 1,
+  "reviewer": "当前研究线程中的公开人工审查",
+  "gates": {
+    "collective-action readability": {"status": "pass", "score": 5, "evidence": "四名人物围绕同一雨桶、植物和水道协作，开放圆环可读。"},
+    "central outcome": {"status": "pass", "score": 5, "evidence": "蓝色雨桶和向下延伸的水道是明确的中央成果。"},
+    "institutional neutrality": {"status": "pass", "score": 5, "evidence": "画面没有组织标志、制服、政治符号或机构文字。"},
+    "report-safe space": {"status": "pass", "score": 5, "evidence": "画面下方保留大面积低细节浅色玻璃带。"},
+    "report hierarchy space": {"status": "pass", "score": 5, "evidence": "底部浅色区域可容纳机构名、报告标题和摘要。"},
+    "no generated metrics": {"status": "pass", "score": 5, "evidence": "画面中没有数字、指标或虚构统计。"},
+    "print-safe focal placement": {"status": "pass", "score": 5, "evidence": "四人、雨桶和水道都位于内侧安全区域，未贴近裁切边缘。"}
+  },
+  "notes": ["自动路由为 stained-glass；首次生成通过。"]
+}

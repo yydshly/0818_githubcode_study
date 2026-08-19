@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0",
+  "algorithm": "Ed25519",
+  "key_id": "demo-release-key-2026",
+  "manifest_sha256": "8eae05ef5e515509d231fd0c58aa1347392f5d4a0fe1b842eff411d4769218ba",
+  "signature_base64": "CLOSQxcEghR4XUfMLtRiA9r4Vcpo3CU/ji4ZlXmUr4h5iOfPV/OB6ja4zwjOAXjrZdd6s41UopEvg1IzfgNDCg==",
+  "signed_at": "2026-08-19T11:30:00+08:00",
+  "signer": "Demo Release Authority"
+}

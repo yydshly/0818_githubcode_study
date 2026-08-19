@@ -1,0 +1,397 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "template": {
+    "id": "impact-report",
+    "version": "1.0"
+  },
+  "campaign_id": "community-rain-impact-2026-sample",
+  "copy_status": "sample",
+  "locale": "zh-CN",
+  "inputs": {
+    "copy": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\examples\\community-impact-copy.json",
+    "art": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\research\\additional-validation-v2\\community-rain-glass.png",
+    "art_sha256": "ce83b60893950f77fb699dc95799a903e2e268411dfa2f16fc8649634079b81d",
+    "font": "C:\\Windows\\Fonts\\msyh.ttc",
+    "template": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\assets\\templates\\impact-report.json"
+  },
+  "checks": [
+    {
+      "variant": "impact-report-a4",
+      "id": "dimensions",
+      "status": "PASS",
+      "evidence": {
+        "actual": [
+          1240,
+          1754
+        ],
+        "expected": [
+          1240,
+          1754
+        ]
+      }
+    },
+    {
+      "variant": "impact-report-a4",
+      "id": "exact-copy",
+      "status": "PASS",
+      "evidence": {
+        "expected": {
+          "organization.name": "青雨社区",
+          "organization.qualifier": "示例机构 · ILLUSTRATIVE DATA",
+          "report.kicker": "2026 COMMUNITY IMPACT REPORT",
+          "report.summary": "四个人、一只雨水桶与一条重新被看见的水路。",
+          "report.period": "2025.07 — 2026.06",
+          "report.footer": "SAMPLE REPORT · 数据仅用于版式验证",
+          "report.title_lines[0]": "让雨水",
+          "report.title_lines[1]": "回到土地",
+          "report.metrics[0].value": "128",
+          "report.metrics[0].label": "示意雨水单位",
+          "report.metrics[1].value": "42",
+          "report.metrics[1].label": "示意参与人次",
+          "report.metrics[2].value": "16",
+          "report.metrics[2].label": "示意种植节点"
+        },
+        "rendered": {
+          "organization.name": "青雨社区",
+          "organization.qualifier": "示例机构 · ILLUSTRATIVE DATA",
+          "report.kicker": "2026 COMMUNITY IMPACT REPORT",
+          "report.period": "2025.07 — 2026.06",
+          "report.title_lines[0]": "让雨水",
+          "report.title_lines[1]": "回到土地",
+          "report.summary": "四个人、一只雨水桶与一条重新被看见的水路。",
+          "report.metrics[0].value": "128",
+          "report.metrics[0].label": "示意雨水单位",
+          "report.metrics[1].value": "42",
+          "report.metrics[1].label": "示意参与人次",
+          "report.metrics[2].value": "16",
+          "report.metrics[2].label": "示意种植节点",
+          "report.footer": "SAMPLE REPORT · 数据仅用于版式验证"
+        }
+      }
+    },
+    {
+      "variant": "impact-report-a4",
+      "id": "overflow",
+      "status": "PASS",
+      "evidence": {
+        "overflow_fields": []
+      }
+    },
+    {
+      "variant": "impact-report-a4",
+      "id": "protected-region",
+      "status": "PASS",
+      "evidence": {
+        "colliding_fields": [],
+        "protected_regions": [
+          [
+            19,
+            123,
+            1221,
+            1193
+          ]
+        ]
+      }
+    },
+    {
+      "variant": "impact-report-a4",
+      "id": "contrast",
+      "status": "PASS",
+      "evidence": {
+        "ink_on_paper": 9.76,
+        "white_on_ink": 11.25,
+        "minimum": 4.5
+      }
+    },
+    {
+      "variant": "impact-report-a4",
+      "id": "sample-disclosure",
+      "status": "PASS",
+      "evidence": {
+        "copy_status": "sample"
+      }
+    }
+  ],
+  "outputs": {
+    "impact-report-a4": {
+      "path": "community-rain-impact-2026-sample-impact-report-a4.png",
+      "width": 1240,
+      "height": 1754,
+      "sha256": "52f0f9f61e5ffd68c37fe61da6c1f3a93595957b7ee808866bbdeb90faa6bbc9",
+      "text_items": [
+        {
+          "field": "organization.name",
+          "value": "青雨社区",
+          "bbox": [
+            48,
+            49,
+            160,
+            77
+          ],
+          "container": [
+            48,
+            18,
+            1192,
+            105
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "organization.qualifier",
+          "value": "示例机构 · ILLUSTRATIVE DATA",
+          "bbox": [
+            920,
+            54,
+            1193,
+            74
+          ],
+          "container": [
+            48,
+            18,
+            1192,
+            105
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.kicker",
+          "value": "2026 COMMUNITY IMPACT REPORT",
+          "bbox": [
+            90,
+            1243,
+            417,
+            1257
+          ],
+          "container": [
+            90,
+            1243,
+            1150,
+            1686
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.period",
+          "value": "2025.07 — 2026.06",
+          "bbox": [
+            976,
+            1243,
+            1150,
+            1257
+          ],
+          "container": [
+            90,
+            1243,
+            1150,
+            1686
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.title_lines[0]",
+          "value": "让雨水",
+          "bbox": [
+            90,
+            1283,
+            264,
+            1339
+          ],
+          "container": [
+            90,
+            1243,
+            1150,
+            1686
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.title_lines[1]",
+          "value": "回到土地",
+          "bbox": [
+            90,
+            1345,
+            322,
+            1402
+          ],
+          "container": [
+            90,
+            1243,
+            1150,
+            1686
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.summary",
+          "value": "四个人、一只雨水桶与一条重新被看见的水路。",
+          "bbox": [
+            90,
+            1413,
+            573,
+            1436
+          ],
+          "container": [
+            90,
+            1243,
+            1150,
+            1686
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.metrics[0].value",
+          "value": "128",
+          "bbox": [
+            90,
+            1485,
+            168,
+            1517
+          ],
+          "container": [
+            90,
+            1471,
+            425,
+            1656
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.metrics[0].label",
+          "value": "示意雨水单位",
+          "bbox": [
+            90,
+            1539,
+            198,
+            1557
+          ],
+          "container": [
+            90,
+            1471,
+            425,
+            1656
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.metrics[1].value",
+          "value": "42",
+          "bbox": [
+            443,
+            1485,
+            495,
+            1517
+          ],
+          "container": [
+            443,
+            1471,
+            778,
+            1656
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.metrics[1].label",
+          "value": "示意参与人次",
+          "bbox": [
+            443,
+            1539,
+            551,
+            1557
+          ],
+          "container": [
+            443,
+            1471,
+            778,
+            1656
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.metrics[2].value",
+          "value": "16",
+          "bbox": [
+            796,
+            1485,
+            848,
+            1517
+          ],
+          "container": [
+            796,
+            1471,
+            1131,
+            1656
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.metrics[2].label",
+          "value": "示意种植节点",
+          "bbox": [
+            796,
+            1539,
+            904,
+            1557
+          ],
+          "container": [
+            796,
+            1471,
+            1131,
+            1656
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "report.footer",
+          "value": "SAMPLE REPORT · 数据仅用于版式验证",
+          "bbox": [
+            90,
+            1666,
+            405,
+            1684
+          ],
+          "container": [
+            90,
+            1243,
+            1150,
+            1686
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "generated.sample_disclosure",
+          "value": "SAMPLE / 非商业发布",
+          "bbox": [
+            976,
+            1667,
+            1150,
+            1684
+          ],
+          "container": [
+            90,
+            1243,
+            1150,
+            1686
+          ],
+          "inside_container": true,
+          "source_copy": false
+        }
+      ]
+    }
+  },
+  "boundary": "PASS covers deterministic layout gates only; brand, factual, legal, font-license and publication approval remain external."
+}

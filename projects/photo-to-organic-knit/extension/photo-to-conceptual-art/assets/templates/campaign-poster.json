@@ -1,0 +1,32 @@
+{
+  "id": "campaign-poster",
+  "version": "1.0",
+  "palette": {
+    "forest": "#173E2C",
+    "paper": "#F3E8D2",
+    "paper_translucent": "#F3E8D2EC",
+    "gold": "#C59A45",
+    "white": "#FFFDF7"
+  },
+  "contrast_pairs": [["forest", "paper"], ["white", "forest"]],
+  "variants": {
+    "poster-4x5": {
+      "canvas": [1200, 1500],
+      "layout": "poster",
+      "art_box": [0.0, 0.0, 1.0, 1.0],
+      "art_center": [0.5, 0.5],
+      "copy_panel": [0.545, 0.045, 0.955, 0.535],
+      "metadata_panel": [0.0, 0.91, 1.0, 1.0],
+      "protected_regions": [[0.06, 0.36, 0.53, 0.885]]
+    },
+    "header-16x9": {
+      "canvas": [1920, 1080],
+      "layout": "header",
+      "art_box": [0.0, 0.0, 0.59, 1.0],
+      "art_center": [0.46, 0.63],
+      "copy_panel": [0.59, 0.0, 1.0, 1.0],
+      "metadata_panel": [0.625, 0.83, 0.955, 0.93],
+      "protected_regions": [[0.0, 0.0, 0.59, 1.0]]
+    }
+  }
+}

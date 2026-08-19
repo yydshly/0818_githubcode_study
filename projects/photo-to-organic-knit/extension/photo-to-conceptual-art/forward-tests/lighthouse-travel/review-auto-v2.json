@@ -1,0 +1,17 @@
+{
+  "id": "lighthouse-auto-woodcut-v2",
+  "artifact": "../../../showcase/assets/generated/forward-lighthouse-auto-woodcut-v2.png",
+  "attempt": 2,
+  "reviewer": "disclosed human review in the research thread",
+  "gates": {
+    "route clarity": {"status": "pass", "score": 5, "evidence": "One uninterrupted pale carved path leads from the traveler to the lighthouse."},
+    "direction": {"status": "pass", "score": 5, "evidence": "Traveler, bicycle, path, and lighthouse establish a clear bottom-to-top journey."},
+    "thumbnail silhouette": {"status": "pass", "score": 5, "evidence": "Orange traveler, bicycle, white path, and lighthouse remain separable at small display size."},
+    "location/traveler anchor": {"status": "pass", "score": 5, "evidence": "The coastal headland, one traveler, one bicycle, and lighthouse destination remain recognizable."},
+    "thumbnail route clarity": {"status": "pass", "score": 5, "evidence": "High-contrast woodcut fields keep the route dominant when reduced."},
+    "top 10% title band": {"status": "pass", "score": 5, "evidence": "The corrected image has a calm nearly unprinted warm-paper band above the scene."},
+    "bottom 10% metadata band": {"status": "pass", "score": 5, "evidence": "The corrected image has a calm warm-paper band below the scene for coordinates and year."},
+    "single focal anchor": {"status": "pass", "score": 5, "evidence": "The traveler-bicycle unit is the single foreground focal anchor; the lighthouse is the destination."}
+  },
+  "notes": ["First attempt failed both metadata-band gates; one targeted correction produced this artifact."]
+}

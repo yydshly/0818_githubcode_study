@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "template": "impact-report",
+  "campaign_id": "community-rain-impact-2026-sample",
+  "copy_status": "sample",
+  "locale": "zh-CN",
+  "organization": {
+    "name": "青雨社区",
+    "qualifier": "示例机构 · ILLUSTRATIVE DATA"
+  },
+  "report": {
+    "kicker": "2026 COMMUNITY IMPACT REPORT",
+    "title_lines": ["让雨水", "回到土地"],
+    "summary": "四个人、一只雨水桶与一条重新被看见的水路。",
+    "period": "2025.07 — 2026.06",
+    "metrics": [
+      {"value": "128", "label": "示意雨水单位"},
+      {"value": "42", "label": "示意参与人次"},
+      {"value": "16", "label": "示意种植节点"}
+    ],
+    "footer": "SAMPLE REPORT · 数据仅用于版式验证"
+  },
+  "accessibility": {
+    "art_alt": "四名志愿者围绕蓝色雨水桶和水道组成的彩色玻璃公益主视觉"
+  }
+}

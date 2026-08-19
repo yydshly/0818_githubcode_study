@@ -1,0 +1,13 @@
+{
+  "id": "ceramic-relief",
+  "label": "Ceramic Bas-relief",
+  "intent": "Collectible physical depth and a bridge toward product or spatial concepts",
+  "materials": ["stoneware", "slip", "matte clay", "restrained glaze"],
+  "path_treatment": "Carve the visual path as a glazed recessed channel or raised flowing ridge.",
+  "form_treatment": "Model primary forms as asymmetric raised clay planes with hand-tooled marks.",
+  "space_treatment": "Use relief depth, raking light, and an irregular plaque boundary instead of photographic perspective.",
+  "composition": "Complete physical plaque visible with one depth hierarchy and calm surrounding space.",
+  "imperfections": ["clay grain", "tool marks", "glaze pooling", "slight firing variation"],
+  "avoid": ["glossy plastic", "smooth CGI", "perfect manufactured symmetry", "photorealistic water", "fake printed texture"],
+  "best_for": ["collectible", "packaging", "museum", "spatial"]
+}

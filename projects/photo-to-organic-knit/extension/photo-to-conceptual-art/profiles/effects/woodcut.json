@@ -1,0 +1,13 @@
+{
+  "id": "woodcut",
+  "label": "Reduction Woodcut",
+  "intent": "Graphic force, route clarity, and reliable thumbnail recognition",
+  "materials": ["relief ink", "carved block", "fibrous paper", "limited spot color"],
+  "path_treatment": "Build movement from directional gouge marks and a bold continuous carved rhythm.",
+  "form_treatment": "Reduce subjects to high-contrast blocks, contour cuts, and one or two color anchors.",
+  "space_treatment": "Reserve paper white for air and distance; remove gradients and incidental texture.",
+  "composition": "Radically simplified hierarchy with one dominant path and a small unmistakable focal icon.",
+  "imperfections": ["ink-density variation", "carved chatter", "slight registration shift", "deckled sheet edge"],
+  "avoid": ["smooth vector lines", "photorealistic gradients", "digital poster polish", "too many colors", "literal tracing"],
+  "best_for": ["travel", "outdoor", "publishing", "music"]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "template": "book-cover",
+  "campaign_id": "family-memory-volume-01-sample",
+  "copy_status": "sample",
+  "locale": "zh-CN",
+  "publication": {
+    "qualifier": "家庭纪念册 · SAMPLE ARCHIVE",
+    "title_lines": ["一起长大的", "那些日子"],
+    "subtitle": "一册关于陪伴、照料与家的记忆",
+    "edition": "VOL. 01 · FAMILY MEMORY",
+    "date": "2026",
+    "footer": "示例家庭档案 · 非真实姓名"
+  },
+  "accessibility": {
+    "art_alt": "母亲与少年共同照料一只金毛犬的有机针织纪念主视觉"
+  }
+}

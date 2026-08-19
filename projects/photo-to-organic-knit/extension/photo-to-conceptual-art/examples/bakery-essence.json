@@ -1,0 +1,15 @@
+{
+  "orientation": "landscape",
+  "aspect_ratio": "3:2",
+  "subject": "One baker arranges round loaves in a large arched neighborhood storefront window.",
+  "anchors": ["arched window", "one baker", "repeated loaves", "blue-and-cream awning", "bicycle"],
+  "relationships": ["the baker and repeated bread forms sit inside one warm street-facing portal"],
+  "emotion": ["welcoming", "local", "crafted", "morning"],
+  "visual_path": "awning rhythm leads down to the arch and across the repeated bread forms",
+  "metaphor": "every morning the neighborhood opens through one warm handmade window",
+  "retain": ["arched window", "baker silhouette", "bread rhythm", "striped awning", "one bicycle"],
+  "transform": ["window into a sun or oven portal", "loaves into rhythmic motifs", "storefront into layered planes"],
+  "discard": ["glass reflections", "interior shelving", "stone noise", "pavement detail", "unrelated props"],
+  "palette": ["cream", "terracotta", "butter gold", "muted blue"],
+  "privacy_notes": ["do not invent or reproduce a real shop name or logo"]
+}

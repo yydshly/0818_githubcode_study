@@ -1,0 +1,10 @@
+{
+  "id": "book-cover",
+  "label": "3:4 Book Cover Key Art",
+  "aspect_ratio": "3:4",
+  "text_mode": "wordless-key-art",
+  "safe_area": "Reserve calm space in the upper quarter and keep essential anchors inside the central 80%.",
+  "layout_intent": "A compact emotional emblem with room for title, volume, and owner metadata in a later design layer.",
+  "output_variants": ["wordless cover art", "cover-layout preview", "square digital preview"],
+  "quality_gates": ["upper title-safe area", "central anchor safety", "portrait recomposition without destructive crop"]
+}

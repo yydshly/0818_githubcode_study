@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "template": "campaign-poster",
+  "campaign_id": "autumn-tea-2026-sample",
+  "copy_status": "sample",
+  "locale": "zh-CN",
+  "brand": {
+    "name": "林间茶事",
+    "qualifier": "示例品牌 · CONCEPT ONLY"
+  },
+  "campaign": {
+    "kicker": "秋日茶席计划 · 2026",
+    "headline_lines": ["一席", "秋茶"],
+    "body_lines": ["把安静，", "留给一杯茶。"],
+    "cta": "预约周末茶席",
+    "date": "09.12 — 10.08",
+    "location": "城市巡回 · SAMPLE COPY"
+  },
+  "accessibility": {
+    "art_alt": "绿色茶罐、茶壶和两只茶杯组成的分层剪纸无字主视觉"
+  }
+}

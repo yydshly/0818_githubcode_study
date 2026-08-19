@@ -1,0 +1,15 @@
+{
+  "orientation": "landscape",
+  "aspect_ratio": "3:2",
+  "subject": "A lone traveler in a yellow jacket paddles a red canoe through a misty mountain river.",
+  "anchors": ["deep-red canoe", "mustard-yellow traveler", "S-shaped river", "mountain opening"],
+  "relationships": ["the traveler moves along the river toward the open mountain gate"],
+  "emotion": ["quiet", "solitary", "forward-moving"],
+  "visual_path": "an S-shaped river leads from the foreground to the mountain opening",
+  "metaphor": "one continuous path carries a small traveler through an open gate",
+  "retain": ["red canoe", "yellow traveler", "S-shaped journey", "layered mountain silhouette"],
+  "transform": ["river", "mountains", "mist", "sparse reeds"],
+  "discard": ["photographic sky detail", "water reflections", "continuous vegetation", "incidental background texture"],
+  "palette": ["slate blue", "reed gold", "deep red", "mustard yellow"],
+  "privacy_notes": []
+}

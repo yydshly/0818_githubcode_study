@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "template": "campaign-poster",
+  "campaign_id": "wild-honey-autumn-2026-approved-demo",
+  "copy_status": "approved",
+  "locale": "zh-CN",
+  "brand": {
+    "name": "山野蜜坊",
+    "qualifier": "山野秋蜜系列 · 2026"
+  },
+  "campaign": {
+    "kicker": "秋季限定 · 09.20 上新",
+    "headline_lines": ["一勺", "秋蜜"],
+    "body_lines": ["把一季金黄，", "收进一勺甜。"],
+    "cta": "前往官方商城",
+    "date": "09.20 — 10.18",
+    "location": "官方商城 · 秋季限定"
+  },
+  "accessibility": {
+    "art_alt": "蜂蜜罐、蜂蜜棒、蜂巢和野花组成的陶瓷浮雕秋季活动主视觉"
+  }
+}
