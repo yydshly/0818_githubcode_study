@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Visual Memory Translator：照片风格预览、记忆转译、文本隐喻、能力原理与扩展场景研究展厅">
+  <title>Visual Memory Translator · 研究与效果演示</title>
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../../">GITHUB CODE STUDY</a>
+    <nav aria-label="页面导航">
+      <a href="#how">怎么用</a>
+      <a href="#demo">实演</a>
+      <a href="#capability">能力</a>
+      <a href="#extension">扩展</a>
+      <a href="#scenarios">场景</a>
+      <a href="https://github.com/TanShilongMario/visual-memory-translator-SKILL">上游 ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">RESEARCH 07 / AGENT VISUAL DIRECTION</p>
+        <h1>原图记录现实，<br><em>新图编辑记忆。</em></h1>
+        <p class="lede">它不是六种固定滤镜。它先理解“这张图要用在哪里”，再决定保留什么、怎样重组、是否加入短文字，最后生成适合旅行、纪念、节日、品牌或内容发布的成品。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#demo">查看自有实演</a>
+          <a class="button" href="../docs/analysis.md">阅读完整分析</a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <img src="assets/generated/waterfront-layered-sticker-final.png" width="1086" height="1448" alt="本研究生成的分层贴纸记忆页：人物、建筑与远山水面组成三层白边贴纸">
+        <figcaption>本研究 ImageGen · 选择预览 03 后从原图重生成</figcaption>
+      </figure>
+      <div class="hero-stats" aria-label="仓库能力统计">
+        <div><strong>03</strong><span>输入路径</span></div>
+        <div><strong>18</strong><span>风格模式</span></div>
+        <div><strong>09</strong><span>智能预设</span></div>
+        <div><strong>00</strong><span>像素算法</span></div>
+      </div>
+    </section>
+
+    <section class="boundary-band" aria-label="能力边界">
+      <b>真实定位</b>
+      <p><span>仓库负责：</span>视觉理解流程、参数选择、Prompt 合同、风格预览和失败恢复。</p>
+      <p><span>外部模型负责：</span>照片理解、抠图、重绘、文字与最终像素。</p>
+    </section>
+
+    <section class="section how" id="how">
+      <div class="section-heading">
+        <p>00 / THE SHORT ANSWER</p>
+        <h2>六格是试衣间，<br>场景才决定成品。</h2>
+        <span>不知道要什么风格时，先生成 4 / 6 / 9 个候选；已经知道用途时，可以直接跳过预览，生成一张针对场景适配的成品。</span>
+      </div>
+
+      <div class="answer-formula" aria-label="Skill 使用逻辑">
+        <div><b>原始输入</b><span>照片 / 一句话 / 图文混合</span></div><i>×</i>
+        <div><b>使用场景</b><span>旅行 / 纪念 / 节日 / 品牌 / 内容</span></div><i>→</i>
+        <div><b>适配策略</b><span>选择、重组、留白、短文案、薄层</span></div><i>→</i>
+        <div class="formula-result"><b>一张场景成品</b><span>而不是固定套用六种效果</span></div>
+      </div>
+
+      <div class="answer-grid">
+        <article><span>WHEN UNCLEAR</span><h3>没想好风格</h3><p>先用六宫格比较艺术方向，再选择一个方向回到原图重生成。六格只承担决策，不是最终必须交付六张。</p></article>
+        <article><span>WHEN SPECIFIC</span><h3>用途已经明确</h3><p>直接说“做旅行明信片”或“做生日社媒封面”，Skill 会选择适合的布局、留白、画幅和文字密度。</p></article>
+        <article><span>TEXT HAS TWO JOBS</span><h3>文字既能控制，也能入画</h3><p>“用于七夕”可以只控制氛围；“标题只写‘岁岁欢喜’”才要求文字出现在画面里。正式长文仍建议后期排版。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="section-heading">
+        <p>01 / DIRECT DEMONSTRATION</p>
+        <h2>不做开关测试，<br>直接跑完整工作流。</h2>
+        <span>演示输入与输出均由本研究生成；上游 Skill 未修改。当前日期命中七夕窗口，预览按上游规则只给单人场景加入低强度线或星，不增加伴侣。</span>
+      </div>
+
+      <div class="sequence">
+        <article>
+          <span>STEP 01 / SOURCE</span>
+          <figure><img src="assets/generated/waterfront-source-photo.png" width="1086" height="1448" loading="lazy" decoding="async" alt="用于研究的原创湖畔旅行照片：红褐色外套人物、混凝土亭廊、水面和远山"></figure>
+          <h3>先建立事实证据</h3>
+          <p>一人、红褐色长外套、亭廊、水面、远山与前景芦苇。前中远景清晰，适合验证分层与结构转译。</p>
+        </article>
+        <article class="sequence-wide">
+          <span>STEP 02 / STYLE FITTING ROOM</span>
+          <figure><img src="assets/generated/waterfront-style-preview.png" width="1024" height="1536" loading="lazy" decoding="async" alt="同一湖畔照片生成的六格风格预览，包含水彩、抽象、分层贴纸、档案、长虹玻璃和结构解构"></figure>
+          <h3>一次生成六种艺术指导</h3>
+          <ol class="style-key">
+            <li><b>01</b>线稿水彩</li><li><b>02</b>极致抽象</li><li><b>03</b>分层贴纸</li>
+            <li><b>04</b>展览档案</li><li><b>05</b>长虹玻璃</li><li><b>06</b>结构解构</li>
+          </ol>
+          <p class="finding">真实偏差：04 格额外生成了一个大号“4”。网格与风格成立，但精确文字合同仍不是确定性能力。</p>
+        </article>
+      </div>
+
+      <div class="compare-block">
+        <div class="compare-copy">
+          <span>STEP 03 / REGENERATE FROM SOURCE</span>
+          <h3>选择 03，必须回到原图。</h3>
+          <p>成品不裁切、不放大宫格单元，而是重新读取原始照片，把人物、亭廊与步道、水面与山体组成三张完整白边层。拖动滑杆查看输入与结果。</p>
+          <dl>
+            <div><dt>DISPLAY</dt><dd>extracted_sticker_layers</dd></div>
+            <div><dt>LAYOUT</dt><dd>sticker_layer_reassembly</dd></div>
+            <div><dt>STYLE</dt><dd>layered_sticker_reassembly</dd></div>
+            <div><dt>HOLIDAY</dt><dd>skip for final</dd></div>
+          </dl>
+        </div>
+        <div class="comparison" data-comparison style="--split: 50%">
+          <img class="comparison-before" src="assets/generated/waterfront-source-photo.png" width="1086" height="1448" loading="lazy" decoding="async" alt="转译前的湖畔原始照片">
+          <div class="comparison-after"><img src="assets/generated/waterfront-layered-sticker-final.png" width="1086" height="1448" loading="lazy" decoding="async" alt="转译后的三层白边贴纸记忆页"></div>
+          <div class="comparison-line" aria-hidden="true"></div>
+          <span class="label before">原始照片</span><span class="label after">03 成品</span>
+          <label><span class="sr-only">拖动比较原图与分层贴纸成品</span><input type="range" min="0" max="100" value="50"></label>
+        </div>
+      </div>
+
+      <div class="same-source">
+        <div class="same-source-intro">
+          <span>ONE SOURCE / THREE JOBS</span>
+          <h3>左边始终是原图，<br>右边只切换任务。</h3>
+          <p>这里没有换照片。人物、红色外套、亭廊、水面和远山都是共同事实；点击旅行、人物或节日，即可直接比较交付目标怎样改变成品。</p>
+          <ul>
+            <li><b>固定事实</b>人物数量、姿态、服装、建筑与环境</li>
+            <li><b>允许变化</b>裁切、层次、纸张、留白、短标题与低强度符号</li>
+            <li><b>必须审核</b>身份漂移、错字、虚构人物和场景变形</li>
+          </ul>
+        </div>
+        <div class="scene-switcher" data-scene-switcher>
+          <div class="scene-switcher-head">
+            <div><span>DIRECT COMPARISON</span><b>选择右侧要交付的场景成品</b></div>
+            <div class="scene-tabs" role="tablist" aria-label="选择场景成品">
+              <button type="button" role="tab" id="scene-tab-travel" aria-controls="scene-panel-travel" aria-selected="true" tabindex="0">旅行纪念</button>
+              <button type="button" role="tab" id="scene-tab-portrait" aria-controls="scene-panel-portrait" aria-selected="false" tabindex="-1">人物纪念</button>
+              <button type="button" role="tab" id="scene-tab-holiday" aria-controls="scene-panel-holiday" aria-selected="false" tabindex="-1">节日薄层</button>
+            </div>
+          </div>
+
+          <div class="scene-stage">
+            <figure class="source-proof">
+              <img src="assets/generated/waterfront-source-photo.png" width="1086" height="1448" loading="lazy" decoding="async" alt="固定不变的湖畔原始输入照片">
+              <figcaption><b>INPUT / 原始照片</b><span>人物、姿态、衣着、亭廊、山水均为事实锚点</span></figcaption>
+            </figure>
+            <div class="scene-arrow" aria-hidden="true"><span>按场景适配</span>→</div>
+            <div class="scene-panels">
+              <article class="scene-panel" id="scene-panel-travel" role="tabpanel" aria-labelledby="scene-tab-travel">
+                <figure><img src="assets/generated/waterfront-layered-sticker-final.png" width="1086" height="1448" loading="lazy" decoding="async" alt="湖畔原图适配为旅行记忆分层贴纸页"></figure>
+                <div class="scene-panel-copy"><span>OUTPUT 01 / 旅行纪念</span><h4>从整张照片变成三层可收藏记忆</h4><dl><div><dt>明显变化</dt><dd>人物、亭廊、山水被提取并重组</dd></div><div><dt>可用成品</dt><dd>视觉日记、明信片、纪念海报</dd></div></dl></div>
+              </article>
+              <article class="scene-panel" id="scene-panel-portrait" role="tabpanel" aria-labelledby="scene-tab-portrait" hidden>
+                <figure><img src="assets/generated/waterfront-birthday-keepsake.png" width="1086" height="1448" loading="lazy" decoding="async" alt="同一湖畔原图适配为写有岁岁欢喜的人物纪念卡"></figure>
+                <div class="scene-panel-copy"><span>OUTPUT 02 / 人物纪念</span><h4>从旅行快照变成有标题的纪念卡</h4><dl><div><dt>明显变化</dt><dd>主照片、局部照片与“岁岁欢喜”建立编辑层级</dd></div><div><dt>可用成品</dt><dd>生日卡、周年纪念、社交媒体封面</dd></div></dl></div>
+              </article>
+              <article class="scene-panel" id="scene-panel-holiday" role="tabpanel" aria-labelledby="scene-tab-holiday" hidden>
+                <figure><img src="assets/generated/waterfront-qixi-thin-layer.png" width="1086" height="1448" loading="lazy" decoding="async" alt="同一湖畔原图只在天空加入锈红细线和两个微型星点的七夕薄层版本"></figure>
+                <div class="scene-panel-copy"><span>OUTPUT 03 / 节日薄层</span><h4>照片不重做，只增加可撤回的节日语气</h4><dl><div><dt>明显变化</dt><dd>天空增加一条红线与两个微型星点</dd></div><div><dt>可用成品</dt><dd>七夕、春节、圣诞的克制发布图</dd></div></dl></div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-demo">
+        <figure><img src="assets/generated/text-metaphor-card.png" width="1086" height="1448" loading="lazy" decoding="async" alt="文本隐喻卡：不是所有答案，都需要立刻被填满；下方是一条停在空容器前的红线"></figure>
+        <div>
+          <span>STEP 04 / TEXT ROUTE</span>
+          <blockquote>“不是所有答案，<br>都需要立刻被填满。”</blockquote>
+          <h3>句子不是配图标题，<br>画面只承担一个隐喻。</h3>
+          <p>text 路径默认跳过六格预览。这里保留原句，只使用“空容器 + 停在入口前的线”，没有底图照片、完整故事、图标矩阵或鸡汤标题。</p>
+          <ul><li>原句准确出现一次</li><li>隐喻只占小型视觉岛</li><li>纸色、炭黑与一个锈红强调色</li><li>超过 65% 留白</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section capability" id="capability">
+      <div class="section-heading">
+        <p>02 / CAPABILITY MAP</p>
+        <h2>它把模糊审美，<br>拆成可以协商的参数。</h2>
+        <span>风格只是表达插件。全局仍然要求克制、留白、编辑层级、原图事实和人物完整性。</span>
+      </div>
+      <div class="cap-grid">
+        <article><b>INPUT</b><strong>photo · text · mixed</strong><p>照片走记忆转译，句子走隐喻，图文混合时不额外发明文案。</p></article>
+        <article><b>DISPLAY · 14</b><strong>原图怎样出现</strong><p>分栏、胶带、拍立得、胶片、展签、邮票窗、票据、透明纸、窥视窗、分层贴纸等。</p></article>
+        <article><b>LAYOUT · 7</b><strong>页面怎样呼吸</strong><p>分栏、视觉岛、中央注记、编辑卡、单作品、不对称档案和贴纸重组。</p></article>
+        <article><b>STYLE · 18</b><strong>记忆用什么语言</strong><p>水彩、线条、矢量、抽象、色块、票据、玻璃、档案、标本、地图、贴纸和隐喻卡。</p></article>
+        <article><b>SYSTEM</b><strong>人物 · 色彩 · 文字</strong><p>保留姿态与身份，压缩五官；从原图提取 3–6 色；文案短、冷静、不虚构事实。</p></article>
+        <article><b>QUALITY</b><strong>失败后定向修正</strong><p>候选像滤镜、画面太满、贴纸融合、肖像过写实或节日海报化，都有对应重试合同。</p></article>
+      </div>
+
+      <div class="pipeline" aria-label="运行原理">
+        <div><span>01</span><b>输入证据</b><small>照片 / 句子</small></div><i>→</i>
+        <div><span>02</span><b>Agent 理解</b><small>主体 / 构图 / 张力</small></div><i>→</i>
+        <div><span>03</span><b>Skill 编排</b><small>参数 / Prompt / 禁止项</small></div><i>→</i>
+        <div><span>04</span><b>ImageGen</b><small>真正生成像素</small></div><i>→</i>
+        <div><span>05</span><b>质量恢复</b><small>发现问题再重试</small></div>
+      </div>
+    </section>
+
+    <section class="section upstream-gallery">
+      <div class="section-heading compact">
+        <p>03 / UPSTREAM EVIDENCE</p>
+        <h2>上游公开样张，<br>覆盖不同输入结构。</h2>
+        <span>以下图片直接来自固定 submodule 的 `outputs/`，不冒充本研究生成。上游没有公开对应原始照片，因此只能证明成品方向，不能独立验证前后忠实度。</span>
+      </div>
+      <div class="gallery-grid">
+        <figure><img src="../upstream/outputs/paddleboard-rounded-monoline-memory.png" loading="lazy" alt="上游圆润粗线色块记忆样张"><figcaption><b>圆润粗线</b><span>人物姿态与器材轮廓</span></figcaption></figure>
+        <figure><img src="../upstream/outputs/coffee-material-specimen-memory.png" loading="lazy" alt="上游咖啡材料标本页样张"><figcaption><b>材料标本</b><span>泡沫、烘烤色与金属</span></figcaption></figure>
+        <figure><img src="../upstream/outputs/waterfront-architecture-memory-translation.png" loading="lazy" alt="上游滨水建筑记忆转译样张"><figcaption><b>建筑记忆</b><span>结构、光线与水纹</span></figcaption></figure>
+        <figure><img src="../upstream/outputs/text-card-work-life-balance-mobile.png" loading="lazy" alt="上游工作与生活平衡文本隐喻卡"><figcaption><b>文本隐喻</b><span>一句话与一个视觉张力</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section extension" id="extension">
+      <div class="section-heading">
+        <p>04 / EXTENSION SURFACE</p>
+        <h2>扩展不只是<br>再写一个风格名。</h2>
+        <span>上游已经给出 Style 合同；真正能提高可靠性的下一步，是把日期、文字、网格、分割与生成记录变成可验证工具。</span>
+      </div>
+      <div class="extension-grid">
+        <article><span>A</span><h3>新 Style</h3><p>定义概念、媒介、线条、颜色、边缘、材质、人物、字体、微图形、留白与避免项。</p><b>改变视觉语言</b></article>
+        <article><span>B</span><h3>新 Preset</h3><p>把 Display、Layout、Style、抽象度和文字组合成博物馆器物、家庭档案、建筑田野或品牌底图。</p><b>对应稳定用途</b></article>
+        <article><span>C</span><h3>场景路由</h3><p>继续识别封面、Story、邀请函、展签、相册和品牌主视觉，自动决定画幅、安全区与文字密度。</p><b>从风格走向交付</b></article>
+        <article><span>D</span><h3>确定性工具</h3><p>加入农历日期、OCR、网格检查、真实 Alpha 分割、色板提取和生成清单。</p><b>约束概率模型</b></article>
+        <article><span>E</span><h3>质量门禁</h3><p>检查人数重复、原句匹配、留白比例、颜色数量、格数和身份相似度，再交给人工判断审美。</p><b>先暴露失败</b></article>
+        <article><span>F</span><h3>分层交付</h3><p>背景、照片、贴纸层、文字和微图形独立输出；正式文字进入 Figma、InDesign 或代码排版层。</p><b>进入设计生产</b></article>
+      </div>
+      <a class="text-link" href="../docs/use-cases-and-extension.md">阅读完整扩展路线 →</a>
+    </section>
+
+    <section class="section scenarios" id="scenarios">
+      <div class="section-heading">
+        <p>05 / USE CASES</p>
+        <h2>不是选一个滤镜，<br>而是为任务选择能力。</h2>
+        <span>每个场景都给出输入、处理策略、成品和实际用途。标为“上游样张”的项目没有公开原图，只用于说明成品方向。</span>
+      </div>
+      <div class="scene-catalog">
+        <article>
+          <figure><img src="assets/generated/waterfront-layered-sticker-final.png" width="1086" height="1448" loading="lazy" decoding="async" alt="旅行照片转译成分层贴纸纪念页"><figcaption>本研究实演</figcaption></figure>
+          <div><span>01 / TRAVEL</span><h3>旅行照片</h3><p>将人物、地点和环境拆成可收藏的视觉记忆，而不是只给整张照片套色。</p><dl><div><dt>输入</dt><dd>人物或风景旅行照</dd></div><div><dt>适配</dt><dd>地图、票据、邮票窗、分层贴纸</dd></div><div><dt>用途</dt><dd>视觉日记、明信片、纪念海报</dd></div></dl></div>
+        </article>
+        <article>
+          <figure><img src="assets/generated/waterfront-birthday-keepsake.png" width="1086" height="1448" loading="lazy" decoding="async" alt="人物照片转译成岁岁欢喜生日纪念卡"><figcaption>本研究实演</figcaption></figure>
+          <div><span>02 / PORTRAIT</span><h3>人物纪念</h3><p>保留人物、姿态和服装，用纸张层级、局部裁切与一句短标题建立纪念感。</p><dl><div><dt>输入</dt><dd>个人、家庭或朋友照片</dd></div><div><dt>适配</dt><dd>编辑卡、视觉岛、线稿水彩</dd></div><div><dt>用途</dt><dd>生日卡、周年图、社媒封面</dd></div></dl></div>
+        </article>
+        <article>
+          <figure><img src="../upstream/outputs/waterfront-architecture-memory-translation.png" loading="lazy" decoding="async" alt="上游滨水建筑记忆转译样张"><figcaption>上游成品方向</figcaption></figure>
+          <div><span>03 / SPACE</span><h3>建筑与空间</h3><p>强调轴线、透视、材料、光线与空间节奏，让照片变成观察记录。</p><dl><div><dt>输入</dt><dd>建筑、室内或公共空间照片</dd></div><div><dt>适配</dt><dd>结构解构、展览档案、长虹玻璃</dd></div><div><dt>用途</dt><dd>展览视觉、项目封面、概念稿</dd></div></dl></div>
+        </article>
+        <article>
+          <figure><img src="../upstream/outputs/coffee-material-specimen-memory.png" loading="lazy" decoding="async" alt="上游咖啡材料标本页样张"><figcaption>上游成品方向</figcaption></figure>
+          <div><span>04 / OBJECT</span><h3>咖啡、食物与器物</h3><p>从“这是什么”转向“它有什么颜色、材质、触感和收藏价值”。</p><dl><div><dt>输入</dt><dd>产品、菜品、植物或器物照片</dd></div><div><dt>适配</dt><dd>材料标本、色板、收藏档案</dd></div><div><dt>用途</dt><dd>品牌海报、菜单概念、档案卡</dd></div></dl></div>
+        </article>
+        <article>
+          <figure><img src="assets/generated/text-metaphor-card.png" width="1086" height="1448" loading="lazy" decoding="async" alt="一句话转译成空容器与停止线的隐喻卡"><figcaption>本研究实演</figcaption></figure>
+          <div><span>05 / TEXT</span><h3>一句话与抽象观点</h3><p>不寻找装饰性配图，而是把句子的张力压缩成一个视觉隐喻。</p><dl><div><dt>输入</dt><dd>一句话、情绪或抽象观点</dd></div><div><dt>适配</dt><dd>一个隐喻、短句、超过六成留白</dd></div><div><dt>用途</dt><dd>小红书配图、公众号题图、章节页</dd></div></dl></div>
+        </article>
+        <article>
+          <figure><img src="assets/generated/waterfront-qixi-thin-layer.png" width="1086" height="1448" loading="lazy" decoding="async" alt="湖畔照片增加一条锈红细线与微型星点的七夕薄层版本"><figcaption>本研究实演</figcaption></figure>
+          <div><span>06 / HOLIDAY</span><h3>节日薄层</h3><p>节日只是附加语气，不改变原图人物关系，也不把所有照片改造成节庆海报。</p><dl><div><dt>输入</dt><dd>已经成立的照片或成品</dd></div><div><dt>适配</dt><dd>一个点缀色或低强度符号</dd></div><div><dt>用途</dt><dd>春节、圣诞、七夕的克制发布图</dd></div></dl></div>
+        </article>
+        <article>
+          <figure><img src="assets/generated/waterfront-style-preview.png" width="1024" height="1536" loading="lazy" decoding="async" alt="同一照片六种美术方向的设计探索宫格"><figcaption>本研究实演</figcaption></figure>
+          <div><span>07 / EXPLORATION</span><h3>设计师方向探索</h3><p>六宫格在这里最有价值：先比较语言，再挑选一个方向回到原图深化。</p><dl><div><dt>输入</dt><dd>原图与开放式创意目标</dd></div><div><dt>适配</dt><dd>4 / 6 / 9 个差异明确的候选</dd></div><div><dt>用途</dt><dd>提案、评审、风格定向与深化</dd></div></dl></div>
+        </article>
+      </div>
+
+      <div class="not-fit">
+        <div><span>NOT A GOOD FIT</span><h3>这些任务不要交给它单独完成。</h3><p>共同原因是任务要求确定性、精确边界或可规模化治理，而这个仓库提供的是生成式视觉指导。</p></div>
+        <ol>
+          <li><b>证件照和精确人像修复</b><span>生成模型可能改变脸、皮肤和细节。</span><small>改用专用修复工具并人工复核</small></li>
+          <li><b>电商商品精确抠图</b><span>生成式“贴纸层”不等于真实 Alpha 蒙版。</span><small>改用分割、钢笔路径或摄影后期</small></li>
+          <li><b>百分之百保持人物身份</b><span>即使写了保留约束，也不能提供身份保证。</span><small>身份敏感任务需要专用管线与授权</small></li>
+          <li><b>数据图表或大量文字</b><span>数字、中文和密集排版可能出现错误。</span><small>图表用代码，长文用 Figma / InDesign</small></li>
+          <li><b>无人审核的大规模品牌生产</b><span>缺少版权、审批、一致性和资产治理。</span><small>必须增加质检、审批和 DAM 流程</small></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="limits">
+      <div><span>06 / HONEST LIMITS</span><h2>它值得研究，<br>但不是确定性软件。</h2></div>
+      <ul>
+        <li><b>没有模型或算法</b><span>仓库不训练模型，也不直接渲染像素。</span></li>
+        <li><b>精确文字仍会失败</b><span>本次预览已出现额外数字。</span></li>
+        <li><b>分割依赖生成模型</b><span>三层贴纸不是可导出的真实 Alpha 管线。</span></li>
+        <li><b>跨模型结果不一致</b><span>同一 Skill 在不同宿主上的遵循度会变化。</span></li>
+        <li><b>不含生产治理</b><span>版权、肖像、品牌审批、批量变体和 DAM 需要另建系统。</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div><b>Visual Memory Translator Research</b><span>固定上游 e0d04509 · Skill 1.4 · MIT</span></div>
+    <nav><a href="../README.md">项目记录</a><a href="../docs/analysis.md">能力分析</a><a href="assets/generated/PROMPTS.md">生成记录</a><a href="https://github.com/TanShilongMario/visual-memory-translator-SKILL">上游仓库</a></nav>
+  </footer>
+  <script src="script.js?v=3"></script>
+</body>
+</html>

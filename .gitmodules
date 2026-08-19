@@ -16,3 +16,6 @@
 [submodule "projects/muyang-illustration-skills/upstream"]
 	path = projects/muyang-illustration-skills/upstream
 	url = https://github.com/yokel1121/muyang-illustration-skills.git
+[submodule "projects/visual-memory-translator/upstream"]
+	path = projects/visual-memory-translator/upstream
+	url = https://github.com/TanShilongMario/visual-memory-translator-SKILL.git
