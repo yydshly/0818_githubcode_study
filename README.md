@@ -24,6 +24,7 @@
 | [Photo to Organic Knit 项目研究](projects/photo-to-organic-knit/README.md) | [NalaZhang27/photo-to-organic-knit](https://github.com/NalaZhang27/photo-to-organic-knit) | 照片语义取舍、概念重构、针织材料参考、ImageGen 独立实演与产品化路线 | [能力分析](projects/photo-to-organic-knit/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/photo-to-organic-knit/showcase/) | 已复现 · 持续扩展 |
 | [Muyang Illustration Skills 项目研究](projects/muyang-illustration-skills/README.md) | [yokel1121/muyang-illustration-skills](https://github.com/yokel1121/muyang-illustration-skills) | 25 套固定插画 Prompt、8 类统一主体实测、图生图一致性与文字产品化路线 | [能力分析](projects/muyang-illustration-skills/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/muyang-illustration-skills/showcase/) | 基础能力已复现 · 8 类实测 |
 | [Visual Memory Translator 项目研究](projects/visual-memory-translator/README.md) | [TanShilongMario/visual-memory-translator-SKILL](https://github.com/TanShilongMario/visual-memory-translator-SKILL) | 照片风格试衣间、记忆转译、文本隐喻、参数化艺术指导与确定性扩展路线 | [能力分析](projects/visual-memory-translator/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/visual-memory-translator/showcase/) | 已完成 · 扩展实验室已上线 |
+| [Punk IP Illustrations 项目研究](projects/punk-ip-illustrations/README.md) | [adrianpunk/punk-ip-illustrations](https://github.com/adrianpunk/punk-ip-illustrations) | 个人 IP 角色确认、跨文章形象一致性、自有 ImageGen 场景实演、双模式配图与可测量扩展路线 | [能力分析](projects/punk-ip-illustrations/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/punk-ip-illustrations/showcase/) | 已获取 · 自有实演已完成 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
 
@@ -142,6 +143,18 @@
 - [可扩展方向与使用场景](projects/visual-memory-translator/docs/use-cases-and-extension.md)
 - [完整 ImageGen 生成记录](projects/visual-memory-translator/showcase/assets/generated/PROMPTS.md)
 - [固定上游版本](projects/visual-memory-translator/upstream)
+
+## 第八个研究项目：Punk IP Illustrations
+
+[Punk IP Illustrations](https://github.com/adrianpunk/punk-ip-illustrations) 不是新的图像模型，而是一套让同一人物 IP 持续进入不同文章的 Agent 工作流。它先从人物照片生成角色设定板、干净参考图和人物规范；只有用户明确确认后，角色才会从 `draft` 变为 `confirmed`，随后 Agent 才读取完整文章、选择认知锚点，并以“流程拆解”或“核心动作”模式逐张生成 16:9 正文插图。
+
+本研究固定上游 commit，审计角色注册脚本与全部工作流参考，明确区分 Skill 的路由/状态/文件能力、Agent 的文章规划和底层图像模型的最终像素能力。新增自有实演以 ImageGen 生成虚构人物“小岚”的模拟原始图，再生成角色设定板、确认参考与“研究开源项目并发布 Web 结论”的四步文章插图；上游公开样张继续保留为独立对照。Web 展厅进一步按“一句意图 / 文章大纲 / 完整文章”解释实际使用，按身份保留风险拆解多风格扩展，并整理九类场景及工程、产品、研究三层路线。
+
+- [角色一致性、能力边界与扩展路线展厅](projects/punk-ip-illustrations/showcase/)
+- [能力、原理与真实边界](projects/punk-ip-illustrations/docs/analysis.md)
+- [使用场景与扩展路线](projects/punk-ip-illustrations/docs/extension-roadmap.md)
+- [自有 ImageGen 生成记录](projects/punk-ip-illustrations/showcase/assets/generated/PROMPTS.md)
+- [固定上游版本](projects/punk-ip-illustrations/upstream)
 
 ## 仓库结构
 

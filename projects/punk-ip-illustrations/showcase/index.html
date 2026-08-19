@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Punk IP Illustrations 研究展厅：个人形象一致性工作流、文章或目标驱动配图、多风格扩展、使用场景与真实边界。">
+  <title>Punk IP Illustrations · 角色一致性工作流研究</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="topbar">
+    <a class="brand" href="../../../">GITHUB CODE STUDY</a>
+    <nav aria-label="页面导航">
+      <a href="#our-demo">自有实演</a>
+      <a href="#usage">如何使用</a>
+      <a href="#style-expansion">多风格</a>
+      <a href="#anatomy">能力</a>
+      <a href="#workflow">工作流</a>
+      <a href="#evidence">证据</a>
+      <a href="#scenarios">场景</a>
+      <a href="#roadmap">扩展</a>
+      <a href="https://github.com/adrianpunk/punk-ip-illustrations">上游 ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">RESEARCH 08 / CHARACTER CONSISTENCY</p>
+        <h1>一个角色，<br><em>持续进入每一篇文章。</em></h1>
+        <p class="lede">它不是一个新的图像模型。它把人物照片、角色确认、身份参考、文章理解和图片交付编排成一条可重复使用的 Agent 工作流。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#our-demo">看自有实演</a>
+          <a class="button" href="#usage">看如何使用</a>
+        </div>
+      </div>
+
+      <figure class="hero-visual">
+        <div class="visual-label"><span>UPSTREAM EVIDENCE</span><b>流程拆解模式</b></div>
+        <img src="../upstream/docs/images/article-workflow.png" width="1672" height="941" alt="上游文章工作流插图：同一 Punk 角色在多个流程节点执行不同动作">
+        <figcaption>上游公开示例 · `docs/images/article-workflow.png`</figcaption>
+      </figure>
+
+      <div class="hero-metrics" aria-label="研究摘要">
+        <div><strong>06</strong><span>工作流阶段</span></div>
+        <div><strong>02</strong><span>插图模式</span></div>
+        <div><strong>01</strong><span>人工确认门</span></div>
+        <div><strong>00</strong><span>自研图像模型</span></div>
+      </div>
+    </section>
+
+    <section class="truth-band" aria-label="能力边界摘要">
+      <p><b>Skill 负责</b><span>路由、角色状态、视觉合同、文件版本与交付规则</span></p>
+      <p><b>Agent 负责</b><span>读完整文章、选择认知锚点、组织每张图片方案</span></p>
+      <p><b>图像模型负责</b><span>身份理解、角色保真、动作场景与最终像素</span></p>
+    </section>
+
+    <section class="section short-answer">
+      <div class="section-heading">
+        <p>00 / THE SHORT ANSWER</p>
+        <h2>本质是形象一致，<br>价值在持续使用。</h2>
+        <span>固定的是角色身份；变化的是文章观点、动作和物件。仓库真正增加的，是确认门、角色包和跨文章复用规则。</span>
+      </div>
+
+      <div class="formula" aria-label="能力公式">
+        <div><small>IDENTITY</small><b>固定角色</b><span>脸、发型、服装、配件</span></div>
+        <i>＋</i>
+        <div><small>SEMANTICS</small><b>动态内容</b><span>观点、流程、动作、物件</span></div>
+        <i>＋</i>
+        <div><small>STYLE</small><b>统一语言</b><span>16:9、纯白、扁平 3D</span></div>
+        <i>＝</i>
+        <div class="formula-result"><small>OUTPUT</small><b>系列文章插图</b><span>同一角色，不同认知任务</span></div>
+      </div>
+
+      <div class="identity-contract">
+        <article>
+          <span class="signal stable">必须稳定</span>
+          <h3>读者一眼认出是同一个人</h3>
+          <ul><li>脸型与五官比例</li><li>发型与发际线</li><li>身体比例与年龄感</li><li>固定服装、鞋子和配件</li></ul>
+        </article>
+        <article>
+          <span class="signal flexible">允许变化</span>
+          <h3>角色为不同观点执行不同任务</h3>
+          <ul><li>动作、姿态与方向</li><li>视线与轻微表情</li><li>场景中的 1—3 个物件</li><li>流程节点与可见结果</li></ul>
+        </article>
+        <article>
+          <span class="signal risk">仍然不保证</span>
+          <h3>一致性最终受底层模型约束</h3>
+          <ul><li>侧脸与背面可能漂移</li><li>左右配件可能镜像</li><li>图片内中文可能错误</li><li>跨大量图片没有自动评分</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section self-demo" id="our-demo">
+      <div class="section-heading">
+        <p>LAB / OUR IMAGEGEN DEMO</p>
+        <h2>不用上游样张，<br>自己跑一遍。</h2>
+        <span>我们先生成一位虚构人物“小岚”的模拟原始图，再依照仓库的角色确认流程生成设定板、干净参考图和最终文章场景。原有上游演示仍保留在后文，便于对照。</span>
+      </div>
+
+      <div class="demo-brief">
+        <div><small>SCENE</small><b>研究一个开源项目并发布 Web 结论</b></div>
+        <div><small>MODE</small><b>流程拆解 · 4 个认知节点</b></div>
+        <div><small>SOURCE</small><b>ImageGen 生成的虚构人物，不是真人照片</b></div>
+      </div>
+
+      <div class="asset-chain" aria-label="小岚角色从模拟原始图到确认参考图的过程">
+        <figure class="asset-card source-asset">
+          <div class="asset-index"><span>01</span><b>模拟原始图</b><small>synthetic source</small></div>
+          <img src="assets/generated/xiaolan-source.png" width="1122" height="1402" loading="lazy" decoding="async" alt="ImageGen 生成的虚构人物小岚全身模拟原始图">
+          <figcaption>先固定可观察身份：蓝色挑染、圆框眼镜、芥末黄外套、珊瑚红挎包。</figcaption>
+        </figure>
+        <figure class="asset-card sheet-asset">
+          <div class="asset-index"><span>02</span><b>角色设定板</b><small>draft character sheet</small></div>
+          <img src="assets/generated/xiaolan-character-sheet.png" width="1024" height="1536" loading="lazy" decoding="async" alt="小岚角色设定板，含主视图和前后左右视图">
+          <figcaption>把单张原始图扩展为主角色与前、侧、背面参考，模拟 draft 阶段。</figcaption>
+        </figure>
+        <figure class="asset-card clean-asset">
+          <div class="asset-index"><span>03</span><b>确认参考图</b><small>confirmed clean reference</small></div>
+          <img src="assets/generated/xiaolan-character-reference-clean.png" width="1122" height="1402" loading="lazy" decoding="async" alt="小岚确认后的纯白背景干净角色参考图">
+          <figcaption>人工检查后锁定为 confirmed；场景图只引用设定板和这张干净参考。</figcaption>
+        </figure>
+      </div>
+
+      <figure class="final-demo">
+        <div class="final-demo-head">
+          <div><span>04 / FINAL ARTICLE ILLUSTRATION</span><h3>同一个“小岚”，进入四个研究动作</h3></div>
+          <p>收集仓库 → 阅读技能与脚本 → 验证证据 → 发布 Web 结论</p>
+        </div>
+        <img src="assets/generated/xiaolan-open-source-research-workflow.png" width="1672" height="941" loading="lazy" decoding="async" alt="小岚研究开源项目并发布 Web 结论的四步流程插图">
+        <figcaption><b>自有 ImageGen 场景图</b><span>xiaolan-open-source-research-workflow.png</span></figcaption>
+      </figure>
+
+      <div class="demo-observations">
+        <article><span class="signal stable">保持稳定</span><h3>六个身份锚点被带入场景</h3><p>蓝色挑染、黑色短发、圆框眼镜、芥末黄外套、海军蓝长裤与珊瑚红挎包，在四个动作中均可识别。</p></article>
+        <article><span class="signal flexible">按内容变化</span><h3>姿态与道具服从文章语义</h3><p>电脑、代码文件、检查表、放大镜和网页窗口分别承担四步研究流程，不改变角色身份。</p></article>
+        <article><span class="signal risk">真实边界</span><h3>这是工作流演示，不是算法证明</h3><p>本次样张说明参考图能约束生成；仍需更多角色、模型与重复轮次实验，才能量化一致性。</p></article>
+      </div>
+
+      <div class="demo-files">
+        <p><b>可复核资产</b><span>人物规范、状态清单与完整生成记录均随页面保存。</span></p>
+        <div><a class="button" href="assets/generated/xiaolan-character-spec.md">角色规范</a><a class="button" href="assets/generated/xiaolan-character.json">状态清单</a><a class="button" href="assets/generated/PROMPTS.md">生成记录</a></div>
+      </div>
+    </section>
+
+    <section class="section use-guide" id="usage">
+      <div class="section-heading">
+        <p>GUIDE A / HOW TO USE IT</p>
+        <h2>把内容交给 AI，<br>不是把场景塞进原图。</h2>
+        <span>原始图只负责回答“谁”；文章、目标或大纲负责回答“表达什么”。Skill 把两类输入编排成图片计划，再由可用的图像模型生成最终像素。</span>
+      </div>
+
+      <div class="binding-equation" aria-label="文章配图的输入组合">
+        <div><small>WHO</small><strong>已确认角色</strong><span>设定板、干净参考、人物规范</span></div>
+        <i>＋</i>
+        <div><small>WHAT</small><strong>内容输入</strong><span>意图、文章大纲或完整文章</span></div>
+        <i>＋</i>
+        <div><small>HOW</small><strong>Skill 编排</strong><span>锚点、模式、动作、道具、插入位置</span></div>
+        <i>→</i>
+        <div class="binding-output"><small>OUTPUT</small><strong>系列正文配图</strong><span>同一人物进入不同认知任务</span></div>
+      </div>
+
+      <div class="usage-phase-grid">
+        <article>
+          <div class="phase-number">首次</div>
+          <div><small>ONE-TIME SETUP</small><h3>先把一张原始图变成可复用角色</h3><ol><li>上传人物原始图</li><li>生成设定板、四视图和干净参考</li><li>检查脸、发型、服装与配件</li><li>明确确认，状态变为 <code>confirmed</code></li></ol></div>
+        </article>
+        <article class="routine-phase">
+          <div class="phase-number">日常</div>
+          <div><small>REPEATABLE RUN</small><h3>以后直接提交文章或表达目标</h3><ol><li>AI 读取内容并选择认知锚点</li><li>Skill 决定模式、动作和物件</li><li>图像模型引用确认角色逐张生成</li><li>返回文件、用途和建议插入位置</li></ol></div>
+        </article>
+      </div>
+
+      <div class="input-classification">
+        <div class="classification-intro"><span>THREE INPUT LEVELS</span><h3>三种内容都能用，信息越完整，规划越准确。</h3><p>它们不是三个不同功能，而是同一条工作流的不同输入深度。</p></div>
+        <article><div><b>01</b><span class="input-fit quick">快速</span></div><h4>一句意图</h4><p>适合先探索方向。AI 会补足大部分结构，因此画面更概括，也更依赖模型判断。</p><dl><div><dt>示例</dt><dd>解释这个库不是模型，而是角色一致性工作流</dd></div><div><dt>典型输出</dt><dd>1—2 张概念图或初步图片计划</dd></div></dl></article>
+        <article><div><b>02</b><span class="input-fit balanced">均衡</span></div><h4>文章大纲</h4><p>适合文章尚未写完时预排视觉结构。章节关系明确，但具体论据和转折仍可能不足。</p><dl><div><dt>示例</dt><dd>定位 → 创建角色 → 文章配图 → 限制 → 扩展</dd></div><div><dt>典型输出</dt><dd>按章节组织的 3—5 张配图计划</dd></div></dl></article>
+        <article class="recommended-input"><div><b>03</b><span class="input-fit best">推荐</span></div><h4>完整文章</h4><p>最适合正式生产。AI 可以识别总判断、机制、逻辑转折、冲突与行动结论，减少装饰性配图。</p><dl><div><dt>示例</dt><dd>完整 Markdown、公众号草稿或博客正文</dd></div><div><dt>典型输出</dt><dd>1—8 张配图、锚点理由与插入位置</dd></div></dl></article>
+      </div>
+
+      <div class="usage-example">
+        <div class="example-request">
+          <span>EXAMPLE REQUEST</span>
+          <h3>我要发布一篇学习这个库的文章</h3>
+          <pre><code>请使用已确认角色，为这篇文章制作正文配图。&#10;重点解释：它不是新模型，而是角色一致性工作流。&#10;先输出图片计划，再逐张生成，并标注插入位置。</code></pre>
+        </div>
+        <div class="example-plan" aria-label="示例图片计划">
+          <div><b>01</b><span><small>核心动作</small><strong>模型与工作流的区别</strong><em>角色把“模型”盒子推开，指向角色工作流</em></span></div>
+          <div><b>02</b><span><small>流程拆解</small><strong>一张图如何成为确认角色</strong><em>原始图 → 设定板 → 人工确认 → 当前角色</em></span></div>
+          <div><b>03</b><span><small>流程拆解</small><strong>角色如何持续进入文章</strong><em>同一人物分别研究、写作、教学与发布</em></span></div>
+          <div><b>04</b><span><small>核心动作</small><strong>一致性仍需要检查</strong><em>放大镜检查侧脸、配件方向与图片文字</em></span></div>
+        </div>
+      </div>
+
+      <div class="responsibility-map">
+        <p><b>你提供</b><span>人物原始图、确认决定、文章或目标、发布要求</span></p>
+        <p><b>AI + Skill 提供</b><span>文章理解、认知锚点、场景计划、角色状态和文件规则</span></p>
+        <p><b>图像模型提供</b><span>参考图理解、人物动作、场景物件和最终 PNG</span></p>
+        <p class="fallback-map"><b>没有生图工具时</b><span>仍可交付图片计划、提示和插入位置，但不会产生最终图片</span></p>
+      </div>
+    </section>
+
+    <section class="section style-expansion" id="style-expansion">
+      <div class="section-heading">
+        <p>GUIDE B / STYLE EXPANSION</p>
+        <h2>身份可以固定，<br>风格可以插拔。</h2>
+        <span>上游当前只定义“复古彩色扁平 3D”这一套视觉合同。多风格不是仓库已经完成的功能，而是建立在角色包与文章计划之上的自然扩展方向。</span>
+      </div>
+
+      <div class="style-layer-equation">
+        <div class="identity-layer"><small>STABLE</small><b>角色身份</b><span>脸、发型、眼镜、服装、配件</span></div>
+        <i>＋</i>
+        <div class="semantic-layer"><small>DYNAMIC</small><b>文章语义</b><span>观点、动作、物件、流程关系</span></div>
+        <i>＋</i>
+        <div class="pluggable-layer"><small>PLUGGABLE</small><b>视觉风格包</b><span>线条、材质、色彩、光影、构图规则</span></div>
+      </div>
+
+      <div class="current-extension">
+        <article><span>CURRENT / UPSTREAM</span><h3>一套固定风格，减少生产变量</h3><ul><li>16:9 横版、纯白背景</li><li>复古扁平 3D、圆润几何</li><li>主体约占 55%—65%</li><li>1—3 个物件、3—5 个主色</li></ul><small>这是已实现规则</small></article>
+        <div aria-hidden="true">→</div>
+        <article class="extension-target"><span>EXTENSION / PROPOSED</span><h3>多套风格包，共用同一个确认角色</h3><ul><li>每套风格拥有独立视觉合同</li><li>身份锚点不随风格切换</li><li>文章计划不与渲染风格耦合</li><li>每种风格单独评估身份漂移</li></ul><small>这是本研究建议，不是上游现状</small></article>
+      </div>
+
+      <div class="style-categories">
+        <div class="classification-intro"><span>STYLE FAMILIES</span><h3>可扩展风格与身份保留风险</h3><p>越强烈地改变五官和身体比例，越需要额外参考与人工复核。</p></div>
+        <article><span class="risk-level low">低风险</span><h4>半写实编辑</h4><p>保留面部结构和人体比例，只改变光影、材质与背景语言。</p><small>适合：专业文章、个人品牌</small></article>
+        <article><span class="risk-level low">低风险</span><h4>扁平 3D 变体</h4><p>在现有风格上改变色板、材质和几何细节，迁移成本最低。</p><small>适合：教程、SOP、知识栏目</small></article>
+        <article><span class="risk-level medium">中风险</span><h4>极简编辑插画</h4><p>减少面部细节，身份更多依赖发型、眼镜、服装和配件。</p><small>适合：观点、商业内容</small></article>
+        <article><span class="risk-level medium">中风险</span><h4>线稿与水彩</h4><p>笔触和轮廓波动更大，需要锁定五官比例与颜色锚点。</p><small>适合：随笔、故事、课程</small></article>
+        <article><span class="risk-level high">高风险</span><h4>Q 版、像素与剪纸</h4><p>身体与五官比例被强烈重构，必须依赖标志性外观识别。</p><small>适合：轻内容、贴纸、栏目符号</small></article>
+        <article><span class="risk-level high">高风险</span><h4>漫画与抽象实验</h4><p>夸张动作和镜头会放大侧脸、遮挡与配件镜像问题。</p><small>适合：叙事测试、视觉实验</small></article>
+      </div>
+
+      <div class="style-pack-anatomy">
+        <div><span>STYLE PACK CONTRACT</span><h3>真正可用的风格扩展，不只是追加一句“改成水彩”。</h3><p>每个风格包都应把视觉选择变成可检查的合同，并与人物身份规范分开保存。</p></div>
+        <ol>
+          <li><b>01</b><span><strong>画面合同</strong><em>画幅、背景、主体占比、留白与物件数量</em></span></li>
+          <li><b>02</b><span><strong>视觉语言</strong><em>线条、材质、色板、阴影、透视和细节密度</em></span></li>
+          <li><b>03</b><span><strong>身份规则</strong><em>必须保留与允许风格化的外观特征</em></span></li>
+          <li><b>04</b><span><strong>禁用项</strong><em>完整房间、大段文字、品牌 Logo 或竞争隐喻</em></span></li>
+          <li><b>05</b><span><strong>评估规则</strong><em>身份相似、语义正确、风格符合、文字准确</em></span></li>
+        </ol>
+      </div>
+
+      <div class="style-conclusion">
+        <p><small>准确描述</small><b>当前仓库：固定角色 + 固定风格 + 动态文章场景</b></p>
+        <p><small>扩展目标</small><b>固定角色 + 可选风格包 + 动态文章场景</b></p>
+      </div>
+    </section>
+
+    <section class="section anatomy" id="anatomy" data-layer-explorer>
+      <div class="section-heading">
+        <p>01 / CAPABILITY ANATOMY</p>
+        <h2>三层能力，<br>不要混成一个“AI 魔法”。</h2>
+        <span>切换角色层、文章层和交付层，查看每一层的输入、确定性实现与外部依赖。</span>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="选择能力层">
+        <button type="button" role="tab" id="layer-tab-character" aria-controls="layer-panel-character" aria-selected="true" tabindex="0">01 角色层</button>
+        <button type="button" role="tab" id="layer-tab-article" aria-controls="layer-panel-article" aria-selected="false" tabindex="-1">02 文章层</button>
+        <button type="button" role="tab" id="layer-tab-delivery" aria-controls="layer-panel-delivery" aria-selected="false" tabindex="-1">03 交付层</button>
+      </div>
+
+      <div class="layer-panels">
+        <article class="layer-panel" id="layer-panel-character" role="tabpanel" aria-labelledby="layer-tab-character">
+          <div class="layer-index">01</div>
+          <div class="layer-copy"><span>PHOTO → REUSABLE CHARACTER</span><h3>把一次照片输入编译成角色资产包</h3><p>照片是唯一身份来源。Agent 生成角色设定板、干净单人物参考图和人物规范，再由注册脚本写入本地角色包。草稿不能进入文章生产。</p></div>
+          <dl><div><dt>确定性</dt><dd>目录、manifest、版本、状态</dd></div><div><dt>生成式</dt><dd>四视图、干净参考、身份提炼</dd></div><div><dt>人工门</dt><dd>明确说“确认”才可激活</dd></div></dl>
+        </article>
+        <article class="layer-panel" id="layer-panel-article" role="tabpanel" aria-labelledby="layer-tab-article">
+          <div class="layer-index">02</div>
+          <div class="layer-copy"><span>FULL TEXT → COGNITIVE ANCHORS</span><h3>从完整文章选择真正值得可视化的关系</h3><p>Agent 不按段落平均配图，而是寻找总判断、易误解机制、逻辑转折、冲突和行动结论。每个锚点再选择“流程拆解”或“核心动作”。</p></div>
+          <dl><div><dt>数量</dt><dd>短观点 1 张，长文最多约 8 张</dd></div><div><dt>模式</dt><dd>流程拆解 / 核心动作</dd></div><div><dt>限制</dt><dd>依赖 LLM 判断，没有评分器</dd></div></dl>
+        </article>
+        <article class="layer-panel" id="layer-panel-delivery" role="tabpanel" aria-labelledby="layer-tab-delivery">
+          <div class="layer-index">03</div>
+          <div class="layer-copy"><span>PLAN → FILES → ARTICLE</span><h3>逐张生成、检查、命名并报告插入位置</h3><p>每个认知锚点独立生成一张 PNG；失败时只修一个主要问题，最多两次针对性重试。默认不修改文章，只有用户明确要求才写回 Markdown。</p></div>
+          <dl><div><dt>输出</dt><dd>绝对路径、用途、插入锚点</dd></div><div><dt>版本</dt><dd>同名文件使用 -v2 / -v3</dd></div><div><dt>降级</dt><dd>无图像工具时只交付提示与计划</dd></div></dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="section workflow" id="workflow">
+      <div class="section-heading">
+        <p>02 / THE OPERATING LOOP</p>
+        <h2>确认角色只暂停一次，<br>后续文章自动向前走。</h2>
+        <span>这条链路把高风险的身份确认放在前面，把可重复的文章配图留给自动执行。</span>
+      </div>
+
+      <ol class="workflow-list">
+        <li><span>01</span><div><small>IDENTITY SOURCE</small><h3>上传人物照片</h3><p>提取可观察的脸型、发型、服装和配件，不猜测敏感属性。</p></div></li>
+        <li><span>02</span><div><small>CHARACTER DRAFT</small><h3>生成角色草稿</h3><p>主角色 + 四视图、干净参考图、人物规范，状态仍是 draft。</p></div></li>
+        <li class="human-gate"><span>03</span><div><small>HUMAN GATE</small><h3>修改或明确确认</h3><p>这是唯一必须停下来的环节。未确认角色不能用于文章配图。</p></div></li>
+        <li><span>04</span><div><small>ACTIVE MEMORY</small><h3>激活当前角色</h3><p>注册表只解析 confirmed 角色；后续不再需要重复上传照片。</p></div></li>
+        <li><span>05</span><div><small>ARTICLE PLANNING</small><h3>读取全文并选择锚点</h3><p>决定图片数量、表现模式、动作、物件和建议插入位置。</p></div></li>
+        <li><span>06</span><div><small>GENERATE & DELIVER</small><h3>逐张生成与交付</h3><p>检查语义、身份、留白和文字，保存版本并报告实际路径。</p></div></li>
+      </ol>
+
+      <div class="state-machine" aria-label="角色状态机">
+        <div><small>NEW / REVISED</small><b>draft</b><span>不可激活 · 不可配图</span></div>
+        <i>用户明确确认 →</i>
+        <div class="confirmed"><small>APPROVED</small><b>confirmed</b><span>可激活 · 可跨文章复用</span></div>
+        <i>选择当前角色 →</i>
+        <div><small>POINTER</small><b>current</b><span>解析为绝对资产路径</span></div>
+      </div>
+    </section>
+
+    <section class="section evidence" id="evidence">
+      <div class="section-heading">
+        <p>03 / UPSTREAM EVIDENCE · RETAINED</p>
+        <h2>上游公开样张，<br>继续保留作对照。</h2>
+        <span>自有实演没有替换这些证据。以下四张图仍来自固定上游 `docs/images/`，用于对照其“流程拆解 / 核心动作”两种模式。角色源设定资产受单独许可约束，本展厅不直接展示或复制。</span>
+      </div>
+
+      <div class="mode-grid">
+        <article class="mode-card process-mode">
+          <div class="mode-card-head"><span>MODE A</span><h3>流程拆解</h3><p>适合步骤、方法、教程和工作流。一个角色在 3—5 个节点承担不同动作。</p></div>
+          <figure><img src="../upstream/docs/images/article-workflow.png" width="1672" height="941" loading="lazy" decoding="async" alt="上游流程拆解模式示例"><figcaption>article-workflow.png</figcaption></figure>
+        </article>
+        <article class="mode-card action-mode">
+          <div class="mode-card-head"><span>MODE B</span><h3>核心动作</h3><p>适合观点、冲突和反直觉关系。一个人物、一个动作、一个可见结果。</p></div>
+          <figure><img src="../upstream/docs/images/value-over-price.png" width="1672" height="941" loading="lazy" decoding="async" alt="上游核心动作模式示例：价值高于价格"><figcaption>value-over-price.png</figcaption></figure>
+        </article>
+      </div>
+
+      <div class="evidence-row">
+        <figure><img src="../upstream/docs/images/double-standard.png" width="1672" height="941" loading="lazy" decoding="async" alt="上游双重标准观点插图示例"><figcaption><b>观点冲突</b><span>double-standard.png</span></figcaption></figure>
+        <figure><img src="../upstream/docs/images/poverty-template.png" width="1672" height="941" loading="lazy" decoding="async" alt="上游贫穷模板观点插图示例"><figcaption><b>处境隐喻</b><span>poverty-template.png</span></figcaption></figure>
+      </div>
+
+      <div class="style-contract">
+        <p><b>固定画面合同</b><span>16:9 横版 · 纯白页面 · 主体 55%—65% · 1—3 个主要物件 · 3—5 个场景主色</span></p>
+        <p><b>明确不做</b><span>封面海报 · 复杂信息图 · 完整空间背景 · 大段文字 · 多个竞争隐喻</span></p>
+      </div>
+    </section>
+
+    <section class="section scenarios" id="scenarios" data-scenario-filter>
+      <div class="section-heading">
+        <p>04 / WHERE IT FITS</p>
+        <h2>不是所有视觉任务，<br>都需要一个固定人物。</h2>
+        <span>按内容、组织或品牌筛选场景；红色边界卡说明何时不该使用这套工作流。</span>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="筛选使用场景">
+        <button type="button" aria-pressed="true" data-filter="all">全部</button>
+        <button type="button" aria-pressed="false" data-filter="content">内容生产</button>
+        <button type="button" aria-pressed="false" data-filter="team">团队组织</button>
+        <button type="button" aria-pressed="false" data-filter="brand">个人品牌</button>
+        <button type="button" aria-pressed="false" data-filter="avoid">不适合</button>
+      </div>
+
+      <div class="scenario-grid" aria-live="polite">
+        <article data-category="content"><span>CONTENT / LONGFORM</span><h3>公众号与博客长文</h3><p>从完整文章选择 1—8 个认知锚点，让作者 IP 持续出现在系列内容中。</p><small>交付：正文插图 + 建议插入位置</small></article>
+        <article data-category="content"><span>CONTENT / PROCESS</span><h3>教程、SOP 与工作流</h3><p>把输入到输出压缩为 3—5 个节点，同一角色在各节点执行不同动作。</p><small>交付：流程拆解图</small></article>
+        <article data-category="content"><span>CONTENT / OPINION</span><h3>观点与社媒帖子</h3><p>将反直觉判断压缩成一个人物与一个物理关系，减少装饰性配图。</p><small>交付：核心动作图</small></article>
+        <article data-category="brand"><span>BRAND / EXPERT</span><h3>顾问、讲师与创始人</h3><p>固定人物身份、服装和配件，建立跨文章可识别的内容栏目。</p><small>价值：个人 IP 的视觉连续性</small></article>
+        <article data-category="team"><span>TEAM / AUTHORS</span><h3>团队作者与知识栏目</h3><p>为不同成员创建确认角色，按文章作者切换当前角色。</p><small>价值：多角色注册与激活</small></article>
+        <article data-category="brand"><span>BRAND / SERIES</span><h3>多栏目系列内容</h3><p>保持人物身份不变，让动作和物件随栏目主题变化，形成统一视觉记忆。</p><small>价值：身份与场景解耦</small></article>
+        <article class="avoid-card" data-category="avoid"><span>AVOID / PRECISION</span><h3>像素级连续漫画</h3><p>参考图不能保证跨镜头、遮挡和复杂动作的精确连续性，需要更强角色模型或制作管线。</p><small>原因：身份一致性没有算法保证</small></article>
+        <article class="avoid-card" data-category="avoid"><span>AVOID / DATA</span><h3>数据图表与复杂信息图</h3><p>这套视觉合同刻意限制为一个关系和少量物件，不适合精确数据表达。</p><small>原因：表达密度与任务冲突</small></article>
+        <article class="avoid-card" data-category="avoid"><span>AVOID / TYPOGRAPHY</span><h3>必须零错字的商业海报</h3><p>图像模型内生文字仍可能错误，应改用无字底图与确定性排版。</p><small>原因：文本不是确定性输出</small></article>
+      </div>
+      <p class="filter-status" data-filter-status>当前显示 9 个场景</p>
+    </section>
+
+    <section class="section roadmap" id="roadmap" data-roadmap>
+      <div class="section-heading">
+        <p>05 / EXTENSION ROADMAP</p>
+        <h2>先让它可测，<br>再把它做大。</h2>
+        <span>扩展分成工程可靠性、产品工作台和研究验证三层。它们是本研究建议，不是上游已实现功能。</span>
+      </div>
+
+      <div class="roadmap-tabs" role="tablist" aria-label="选择扩展层级">
+        <button type="button" role="tab" id="roadmap-tab-engineering" aria-controls="roadmap-panel-engineering" aria-selected="true" tabindex="0"><span>P0–P1</span>工程可靠性</button>
+        <button type="button" role="tab" id="roadmap-tab-product" aria-controls="roadmap-panel-product" aria-selected="false" tabindex="-1"><span>P2</span>产品工作台</button>
+        <button type="button" role="tab" id="roadmap-tab-research" aria-controls="roadmap-panel-research" aria-selected="false" tabindex="-1"><span>P3</span>研究验证</button>
+      </div>
+
+      <div class="roadmap-panels">
+        <div class="roadmap-panel" id="roadmap-panel-engineering" role="tabpanel" aria-labelledby="roadmap-tab-engineering">
+          <div class="roadmap-intro"><span>MAKE IT MEASURABLE</span><h3>把“看起来像”变成可追踪的质量数据</h3><p>不改变 Skill 定位，先补足稳定性、文字与运行记录。</p></div>
+          <ol><li><b>01</b><div><h4>结构化图片计划</h4><p>保存原文证据、锚点、模式、动作、物件、插入位置和状态。</p></div><small>最高优先</small></li><li><b>02</b><div><h4>角色一致性评分</h4><p>组合视觉特征、服装色和人工评分，检测脸、发型与配件漂移。</p></div><small>核心指标</small></li><li><b>03</b><div><h4>确定性文字排版</h4><p>先生成无字底图，再用 SVG/Canvas/Pillow 叠加准确标签。</p></div><small>立即可做</small></li><li><b>04</b><div><h4>运行观测与测试</h4><p>记录模型、参考图版本、成本、耗时、失败原因和重试差异。</p></div><small>生产基础</small></li></ol>
+        </div>
+        <div class="roadmap-panel" id="roadmap-panel-product" role="tabpanel" aria-labelledby="roadmap-tab-product">
+          <div class="roadmap-intro"><span>MAKE IT OPERABLE</span><h3>把命令行式 Skill 变成可审核的内容工作台</h3><p>让角色、文章锚点和图片候选在同一界面可见。</p></div>
+          <ol><li><b>01</b><div><h4>角色工作室</h4><p>草稿、确认、版本对比、回滚、多角色和身份规范可视化管理。</p></div><small>身份中心</small></li><li><b>02</b><div><h4>文章配图审核台</h4><p>文章段落、认知锚点、候选图和插入位置并排审核并局部重生成。</p></div><small>主闭环</small></li><li><b>03</b><div><h4>可插拔风格包</h4><p>角色身份保持独立，风格插件分别定义画面、文字与评估合同。</p></div><small>扩展表面</small></li><li><b>04</b><div><h4>权利与团队审批</h4><p>记录照片授权、角色所有者、可用渠道、期限和发布审批。</p></div><small>团队边界</small></li></ol>
+        </div>
+        <div class="roadmap-panel" id="roadmap-panel-research" role="tabpanel" aria-labelledby="roadmap-tab-research">
+          <div class="roadmap-intro"><span>MAKE IT TESTABLE</span><h3>验证工作流是否真的跨模型、跨时间保持有效</h3><p>从主观样张展示升级为可重复的实验与消融。</p></div>
+          <ol><li><b>01</b><div><h4>角色一致性基准</h4><p>覆盖动作、角度、遮挡、情绪和多角色，比较不同参考图策略。</p></div><small>视觉基准</small></li><li><b>02</b><div><h4>文章语义覆盖率</h4><p>评价图片集合是否覆盖总判断、机制、转折和行动结论且不重复。</p></div><small>规划基准</small></li><li><b>03</b><div><h4>跨模型可移植性</h4><p>用同一图片计划比较身份、语义、文字、成本和耗时。</p></div><small>系统基准</small></li><li><b>04</b><div><h4>长期身份漂移</h4><p>追踪同一角色经过 10、50、100 篇文章后的误差累积。</p></div><small>记忆研究</small></li></ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section verdict">
+      <div class="section-heading">
+        <p>06 / RESEARCH VERDICT</p>
+        <h2>值得研究，<br>但研究对象不是画图算法。</h2>
+        <span>它最有价值的部分，是 Agent 工作流、人在回路和跨任务角色记忆；模型创新与生产成熟度仍有限。</span>
+      </div>
+
+      <div class="score-grid">
+        <article><span>Agent Skill 结构</span><strong>8.0</strong><div aria-hidden="true"><i style="--score:80%"></i></div><p>阶段路由、按需读参考、失败降级完整。</p></article>
+        <article><span>人在回路设计</span><strong>8.5</strong><div aria-hidden="true"><i style="--score:85%"></i></div><p>把唯一强制确认放在身份定稿点。</p></article>
+        <article><span>长期角色记忆</span><strong>7.5</strong><div aria-hidden="true"><i style="--score:75%"></i></div><p>角色包简单、清楚、可跨任务解析。</p></article>
+        <article><span>图像算法创新</span><strong>2.0</strong><div aria-hidden="true"><i style="--score:20%"></i></div><p>没有训练、推理或一致性算法。</p></article>
+      </div>
+
+      <div class="final-call">
+        <p><span>适合研究</span>角色一致性工作流 · 内容语义到视觉规划 · Agent 本地状态 · 人工确认点</p>
+        <p><span>不应误读</span>不是角色模型 · 不是通用插图库 · 不是企业级内容平台 · 不保证像素级一致</p>
+      </div>
+    </section>
+
+    <section class="section source-note">
+      <div><p>FIXED SOURCE</p><h2>研究基于固定提交，<br>结论可回到源码核对。</h2></div>
+      <dl><div><dt>Commit</dt><dd><code>8bcc522192a9f757cbf2b52cefabc9ffbfb1712c</code></dd></div><div><dt>License</dt><dd>工作流 MIT；Punk 角色源资产为单独许可</dd></div><div><dt>Research date</dt><dd>2026-08-19 · Asia/Shanghai</dd></div></dl>
+      <div class="source-links"><a class="button primary" href="../docs/analysis.md">完整能力分析</a><a class="button" href="../docs/extension-roadmap.md">扩展路线文档</a><a class="button" href="../upstream/SKILL.md">固定上游 Skill</a></div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="../../../">← 返回研究总览</a>
+    <p>本页面区分上游事实、外部模型能力与研究建议。示例图片版权遵循上游 `LICENSE-ASSETS`。</p>
+  </footer>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>

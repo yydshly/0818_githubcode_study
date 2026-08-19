@@ -45,6 +45,10 @@ h2 { margin: 0; font: clamp(2.2rem, 5vw, 4.4rem)/1 Georgia, serif; }
 .project-card-sixth .actions .primary { color: var(--bg); background: #a9d5b5; border-color: #a9d5b5; }
 .project-card-seventh .project-number { background: #a34d35; }
 .project-card-seventh .actions .primary { color: #fff; background: #a34d35; border-color: #a34d35; }
+.project-card-eighth .project-number { color: #fff; background: #1756d1; }
+.project-card-eighth .actions .primary { color: #fff; background: #1756d1; border-color: #1756d1; }
+.project-cover.punk-ip-cover { width: min(390px, 48%); color: #5e625b; background: #f5f1e9; transform: rotate(-.45deg); }
+.project-cover.punk-ip-cover img { height: auto; aspect-ratio: 16/9; object-fit: cover; }
 .project-cover.visual-memory-cover { width: min(260px, 38%); color: #776b59; background: #f3eee4; transform: rotate(.7deg); }
 .project-cover.visual-memory-cover img { aspect-ratio: 3/4; object-fit: cover; }
 .project-cover.muyang-cover { width: min(260px, 38%); transform: rotate(-.7deg); }
@@ -87,6 +91,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 32px
   .project-cover { float: none; width: min(100%, 360px); margin: 24px 0; }
   .project-cover.promise-scene-cover { width: min(100%, 420px); }
   .project-cover.muyang-cover { width: min(100%, 360px); }
+  .project-cover.punk-ip-cover { width: min(100%, 420px); }
   .promise-cover { float: none; width: min(100%, 360px); margin: 24px 0; }
   footer { display: block; }
   footer span { display: block; margin-bottom: 6px; }

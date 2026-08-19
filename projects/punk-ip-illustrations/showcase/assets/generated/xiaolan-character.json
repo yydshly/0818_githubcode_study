@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "id": "xiaolan",
+  "display_name": "小岚 / XIAOLAN",
+  "fictional": true,
+  "synthetic_source": true,
+  "status": "confirmed",
+  "revision": 1,
+  "confirmed_at": "2026-08-19",
+  "source": "xiaolan-source.png",
+  "character_sheet": "xiaolan-character-sheet.png",
+  "clean_reference": "xiaolan-character-reference-clean.png",
+  "final_scene": "xiaolan-open-source-research-workflow.png",
+  "scene_mode": "process-breakdown",
+  "scene_anchor": "research an open-source project and publish a Web conclusion"
+}

@@ -19,3 +19,6 @@
 [submodule "projects/visual-memory-translator/upstream"]
 	path = projects/visual-memory-translator/upstream
 	url = https://github.com/TanShilongMario/visual-memory-translator-SKILL.git
+[submodule "projects/punk-ip-illustrations/upstream"]
+	path = projects/punk-ip-illustrations/upstream
+	url = https://github.com/adrianpunk/punk-ip-illustrations.git

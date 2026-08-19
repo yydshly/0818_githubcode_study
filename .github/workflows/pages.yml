@@ -15,6 +15,7 @@ on:
       - "projects/photo-to-organic-knit/**"
       - "projects/muyang-illustration-skills/**"
       - "projects/visual-memory-translator/**"
+      - "projects/punk-ip-illustrations/**"
   workflow_dispatch:
 
 permissions:
@@ -43,7 +44,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site/projects/luopan/upstream
-          cp site/index.html site/styles.css _site/
+          cp site/index.html site/styles.css site/favicon.svg _site/
           cp -R projects/luopan/showcase _site/projects/luopan/showcase
           cp -R projects/luopan/applied _site/projects/luopan/applied
           cp -R projects/luopan/docs _site/projects/luopan/docs
@@ -95,6 +96,14 @@ jobs:
           cp -R projects/visual-memory-translator/docs _site/projects/visual-memory-translator/docs
           cp projects/visual-memory-translator/README.md _site/projects/visual-memory-translator/README.md
           cp -R projects/visual-memory-translator/upstream/outputs _site/projects/visual-memory-translator/upstream/outputs
+          mkdir -p _site/projects/punk-ip-illustrations/upstream
+          cp -R projects/punk-ip-illustrations/showcase _site/projects/punk-ip-illustrations/showcase
+          cp -R projects/punk-ip-illustrations/docs _site/projects/punk-ip-illustrations/docs
+          cp projects/punk-ip-illustrations/README.md _site/projects/punk-ip-illustrations/README.md
+          cp projects/punk-ip-illustrations/upstream/SKILL.md projects/punk-ip-illustrations/upstream/LICENSE projects/punk-ip-illustrations/upstream/LICENSE-ASSETS _site/projects/punk-ip-illustrations/upstream/
+          cp -R projects/punk-ip-illustrations/upstream/docs _site/projects/punk-ip-illustrations/upstream/docs
+          cp -R projects/punk-ip-illustrations/upstream/references _site/projects/punk-ip-illustrations/upstream/references
+          cp -R projects/punk-ip-illustrations/upstream/scripts _site/projects/punk-ip-illustrations/upstream/scripts
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
