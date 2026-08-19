@@ -41,6 +41,10 @@ h2 { margin: 0; font: clamp(2.2rem, 5vw, 4.4rem)/1 Georgia, serif; }
 .project-card-third .actions .primary { color: var(--bg); background: #edc26d; border-color: #edc26d; }
 .project-card-fourth .project-number { background: #d97a3f; }
 .project-card-fourth .actions .primary { color: #fff; background: #d97a3f; border-color: #d97a3f; }
+.project-card-sixth .project-number { background: #a9d5b5; }
+.project-card-sixth .actions .primary { color: var(--bg); background: #a9d5b5; border-color: #a9d5b5; }
+.project-cover.muyang-cover { width: min(260px, 38%); transform: rotate(-.7deg); }
+.project-cover.muyang-cover img { aspect-ratio: 4/5; object-fit: cover; }
 .promise-cover { position: relative; float: right; width: min(320px, 42%); min-height: 230px; margin: 0 0 24px 34px; overflow: hidden; border: 1px solid #b9aa93; border-radius: 2px 20px 2px 20px; background-color: #c7b79f; background-image: linear-gradient(90deg, rgba(255,255,255,.14) 1px, transparent 1px), linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), radial-gradient(circle at 35% 20%, rgba(255,255,255,.3), transparent 14rem); background-size: 54px 43px, 54px 43px, auto; box-shadow: inset 0 -22px 0 #9a704b, inset 0 -28px 0 #e4dac9; }
 .promise-cover small { position: absolute; right: 9px; bottom: 6px; color: rgba(255,255,255,.7); font-size: .54rem; font-weight: 800; }
 .promise-note { position: absolute; width: 92px; min-height: 76px; padding: 25px 10px 10px; display: grid; place-items: center; color: #463c32; background: #f3e8ce; box-shadow: 0 9px 16px rgba(52,37,22,.2); font: 700 .68rem/1.2 Georgia, serif; text-align: center; }
@@ -78,6 +82,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 32px
   .project-body ul { grid-template-columns: 1fr; }
   .project-cover { float: none; width: min(100%, 360px); margin: 24px 0; }
   .project-cover.promise-scene-cover { width: min(100%, 420px); }
+  .project-cover.muyang-cover { width: min(100%, 360px); }
   .promise-cover { float: none; width: min(100%, 360px); margin: 24px 0; }
   footer { display: block; }
   footer span { display: block; margin-bottom: 6px; }

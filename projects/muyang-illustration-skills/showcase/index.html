@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Muyang Illustration Skills 基础能力、文字入参、固定 Prompt 路由原理与后期研究路线">
+  <title>Muyang Illustration Skills · 固定 Prompt 插画路由研究</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="topbar">
+    <a class="brand" href="../../../">GITHUB CODE STUDY <span>/ 06</span></a>
+    <nav aria-label="页面导航">
+      <a href="#samples">自有样例</a>
+      <a href="#capabilities">25 种能力</a>
+      <a href="#workbench">调用演示</a>
+      <a href="#principle">实现原理</a>
+      <a href="#productization">产品扩展</a>
+    </nav>
+    <a class="source-link" href="https://github.com/yokel1121/muyang-illustration-skills">上游源码 ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">CODEX SKILL / FIXED PROMPT ROUTER</p>
+        <h1 id="hero-title">它不负责画画。<br><em>它负责把画法固定下来。</em></h1>
+        <p class="lede">用户输入主体文字并选择具体风格；Skill 查找固定配方，只替换主体占位符，再把完整内部 Prompt 交给外部图像模型。真正出图的是 ImageGen，不是这个仓库。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#samples">查看我们的样例</a>
+          <a class="button" href="#workbench">试填文字入参</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="研究范围">
+        <span class="stamp">BASELINE / 2026.08.19</span>
+        <dl>
+          <div><dt>09</dt><dd>Codex Skills<br>1 总入口 + 8 子技能</dd></div>
+          <div><dt>25</dt><dd>固定风格<br>一风格一套配方</dd></div>
+          <div><dt>02</dt><dd>必填文字<br>主体 + 具体风格</dd></div>
+          <div><dt>08</dt><dd>自有生成样例<br>统一主体对照</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="thesis" aria-label="核心判断">
+      <p>一句话结论</p>
+      <h2>这是一个“固定风格 Prompt 预设库 + Agent 调用协议”，不是模型、LoRA，也不是照片处理器。</h2>
+      <div class="boundary-tags" aria-label="能力边界">
+        <span>✓ 文字主体</span><span>✓ 固定风格路由</span><span>✓ 文生图调用</span>
+        <span>× 不训练模型</span><span>× 不自动图生图</span><span>× 不保证跨模型复现</span>
+      </div>
+    </section>
+
+    <section class="section samples-section" id="samples" aria-labelledby="samples-title">
+      <div class="section-heading">
+        <div><span>01 / OUR CONTROLLED SAMPLES</span><h2 id="samples-title">同一主体，8 个分类实测</h2></div>
+        <p>以下图片由本研究调用已安装的固定配方生成，不是上游样例。统一主体为“一个女孩在窗边读书”，每个分类选择一个代表风格，便于直接比较风格路由带来的变化。</p>
+      </div>
+      <div class="sample-method" aria-label="样例方法">
+        <div><span>固定变量</span><strong>主体文字一致</strong><p>一个女孩在窗边读书</p></div>
+        <div><span>变化变量</span><strong>具体风格配方</strong><p>8 个分类各选择 1 种</p></div>
+        <div><span>当前证据</span><strong>基础能力演示</strong><p>单次样例，不代表稳定率</p></div>
+      </div>
+      <div class="generated-gallery" id="generated-gallery"></div>
+      <p class="sample-caveat"><strong>观察：</strong>“柔纱纯白插画”连续生成时会把“时装杂志封面感”解释成版面文字。这不是网页叠加，而是模型输出，说明固定配方仍受底层模型语义偏好影响。</p>
+    </section>
+
+    <section class="section" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="section-heading">
+        <div><span>02 / ORIGINAL UPSTREAM SAMPLES</span><h2 id="capabilities-title">25 张上游原样例完整保留</h2></div>
+        <p>这些图片没有被删除，现在恢复为页面内直接展示。它们来自固定上游子模块，用来说明作者原本定义的全部 25 种风格；每张继续标注“上游示意”，与我们的 8 张实测图区分。</p>
+      </div>
+      <div class="source-banner"><strong>ORIGINAL / UPSTREAM</strong><span>25 张原始参考图 · 非本研究生成 · 固定版本 8c35300</span></div>
+      <div class="filters" role="group" aria-label="按风格分类筛选">
+        <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">全部 <b>25</b></button>
+        <button class="filter" type="button" data-filter="editorial" aria-pressed="false">极简编辑 <b>3</b></button>
+        <button class="filter" type="button" data-filter="colorblock" aria-pressed="false">撞色时装 <b>4</b></button>
+        <button class="filter" type="button" data-filter="dream" aria-pressed="false">柔焦梦幻 <b>5</b></button>
+        <button class="filter" type="button" data-filter="couture" aria-pressed="false">纯白高定 <b>2</b></button>
+        <button class="filter" type="button" data-filter="dark" aria-pressed="false">暗黑时尚 <b>3</b></button>
+        <button class="filter" type="button" data-filter="oriental" aria-pressed="false">东方诗意 <b>3</b></button>
+        <button class="filter" type="button" data-filter="print" aria-pressed="false">复古印刷 <b>3</b></button>
+        <button class="filter" type="button" data-filter="cinematic" aria-pressed="false">电影叙事 <b>2</b></button>
+      </div>
+      <p class="result-count" id="result-count" aria-live="polite">当前显示 25 / 25 种风格</p>
+      <div class="gallery" id="style-gallery"></div>
+      <noscript><p class="notice">这个能力档案需要 JavaScript 渲染；上游原图仍可在 <a href="../upstream/README.md">README</a> 中查看。</p></noscript>
+    </section>
+
+    <section class="section workbench-section" id="workbench" aria-labelledby="workbench-title">
+      <div class="section-heading compact">
+        <div><span>03 / TEXT INPUT DEMO</span><h2 id="workbench-title">只演示真实入参，不重复生图</h2></div>
+        <p>工作台输出的是你可以发给 Codex 的调用文本。内部配方仍保持隐藏，本页不会调用图像模型。</p>
+      </div>
+      <div class="workbench">
+        <form id="demo-form">
+          <div class="field">
+            <label for="subject">主体文字 <span>必填</span></label>
+            <textarea id="subject" name="subject" rows="4" required>一个女孩在窗边读书</textarea>
+            <small>主体由用户亲自描述；Skill 不会替你补动作、服装、场景或故事。</small>
+          </div>
+          <div class="field">
+            <label for="style">具体风格 <span>必填</span></label>
+            <select id="style" name="style" required></select>
+            <small id="style-note"></small>
+          </div>
+          <div class="field">
+            <label for="constraint">画幅或硬限制 <span>可选</span></label>
+            <input id="constraint" name="constraint" type="text" value="画幅：9:16" placeholder="例如：画幅：9:16">
+            <small>上游只允许把明确限制原样追加到配方末尾。</small>
+          </div>
+          <button class="button primary" type="submit">生成调用文本</button>
+        </form>
+        <div class="output-panel">
+          <div class="output-heading">
+            <div><span>CALL PREVIEW</span><h3>可复制的 Skill 请求</h3></div>
+            <button class="copy-button" id="copy-call" type="button">复制</button>
+          </div>
+          <pre id="call-output" tabindex="0"></pre>
+          <p class="copy-status" id="copy-status" aria-live="polite"></p>
+          <div class="route-result" aria-live="polite">
+            <span>内部路由</span>
+            <strong id="route-skill"></strong>
+            <p id="route-description"></p>
+          </div>
+          <p class="privacy-note">本页到此为止：不展开固定配方、不上传图片、不调用 ImageGen。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="principle" aria-labelledby="principle-title">
+      <div class="section-heading">
+        <div><span>04 / HOW IT WORKS</span><h2 id="principle-title">五层流程，只有最后一层真正画图</h2></div>
+        <p>上游的工程价值主要在“限制 Agent 怎么做”，而不是增加底层模型能力。</p>
+      </div>
+      <ol class="flow">
+        <li><b>01</b><div><span>用户请求层</span><h3>主体 + 风格</h3><p>收集两个必填文字；信息不全就询问，不先生成。</p></div></li>
+        <li><b>02</b><div><span>总入口路由层</span><h3>25 → 8</h3><p>把具体风格名映射到对应的兄弟子 Skill。</p></div></li>
+        <li><b>03</b><div><span>固定配方层</span><h3>只替换主体</h3><p>复制配方全文，不润色、不混配、不改色板和构图。</p></div></li>
+        <li><b>04</b><div><span>宿主工具层</span><h3>调用 ImageGen</h3><p>Codex 把内部 Prompt 交给当前可用的图像生成工具。</p></div></li>
+        <li><b>05</b><div><span>模型输出层</span><h3>返回图片</h3><p>实际画质、遵循度与稳定性由外部模型决定。</p></div></li>
+      </ol>
+      <div class="architecture-grid">
+        <article><span>SKILL.md</span><h3>控制行为</h3><p>输入校验、缺项询问、路由、填槽步骤和禁止事项。</p></article>
+        <article><span>recipes.md</span><h3>保存画法</h3><p>固定的构图、色板、光影、材质和负面约束。</p></article>
+        <article><span>assets/*.png</span><h3>风格示意</h3><p>用于帮助人理解和核对风格，不会自动成为图生图输入。</p></article>
+        <article><span>openai.yaml</span><h3>定义入口</h3><p>显示名、简要说明，以及 Codex 中的默认调用提示。</p></article>
+      </div>
+    </section>
+
+    <section class="section productization" id="productization" aria-labelledby="productization-title">
+      <div class="section-heading">
+        <div><span>05 / FROM IMAGE TO PRODUCT</span><h2 id="productization-title">两条扩展，解决“可控”与“可交付”</h2></div>
+        <p>当前 Skill 只生产风格化底图。要把它升级为真实产品，需要分别解决人物画面一致性与文字内容准确性；两者不是继续堆 Prompt 就能完成。</p>
+      </div>
+
+      <div class="extension-tracks">
+        <article class="extension-track">
+          <div class="track-heading"><span>TRACK A / CONSISTENCY</span><strong>参考图驱动的图生图</strong><b>后期实现</b></div>
+          <p class="track-lede">文字只能弱控制“画什么”；参考图和保留合同才能约束“必须还是这个人、这套衣服和这个画面”。</p>
+          <div class="pipeline" aria-label="图生图一致性流程">
+            <div><b>01</b><strong>参考图片</strong><span>人物、产品或原始画面</span></div>
+            <i>→</i>
+            <div><b>02</b><strong>保留合同</strong><span>身份、脸、服装、姿态、构图</span></div>
+            <i>→</i>
+            <div><b>03</b><strong>图像编辑</strong><span>显式传图，不是只写 Prompt</span></div>
+            <i>→</i>
+            <div><b>04</b><strong>一致性质检</strong><span>不合格则重试或人工确认</span></div>
+          </div>
+          <div class="contract-grid">
+            <div><span>必须保留</span><p>人物身份、脸部特征、发型、服装、姿态、镜头与产品结构。</p></div>
+            <div><span>允许改变</span><p>插画材质、色板、光影、背景简化程度和风格强度。</p></div>
+          </div>
+          <p class="track-truth"><strong>关键边界：</strong>只修改 Skill 文案不够；Skill 还必须把参考图片真正传给支持图像编辑的工具。</p>
+        </article>
+
+        <article class="extension-track">
+          <div class="track-heading"><span>TRACK B / TYPOGRAPHY</span><strong>确定性文字产品化</strong><b>后期实现</b></div>
+          <p class="track-lede">有文字才可能成为封面、海报或社媒卡，但文字不能依赖模型随机画出来，必须由系统准确排版。</p>
+          <div class="pipeline" aria-label="文字产品化流程">
+            <div><b>01</b><strong>无字底图</strong><span>Skill 生成干净插画资产</span></div>
+            <i>→</i>
+            <div><b>02</b><strong>内容字段</strong><span>标题、副标题、品牌、日期</span></div>
+            <i>→</i>
+            <div><b>03</b><strong>模板排版</strong><span>HTML / SVG / Canvas</span></div>
+            <i>→</i>
+            <div><b>04</b><strong>成品质检</strong><span>准确性、安全区、对比度、溢出</span></div>
+          </div>
+          <div class="product-example" aria-label="产品化输入示例">
+            <span>小说封面 / 1600 × 2560</span>
+            <strong>盛夏以前</strong>
+            <p>关于告别与重逢 · 林川</p>
+          </div>
+          <p class="track-truth"><strong>关键边界：</strong>模型自动生成的杂志文字即使好看，也可能错误或不可编辑；产品文字必须由确定性排版层负责。</p>
+        </article>
+      </div>
+
+      <div class="target-architecture">
+        <span>目标产品结构</span>
+        <strong>参考图与内容字段 → Skill 路由与保留合同 → ImageGen 底图/编辑 → 确定性排版 → 一致性与文字质检 → 可交付资产</strong>
+      </div>
+    </section>
+
+    <section class="section boundaries" aria-labelledby="boundaries-title">
+      <div class="section-heading compact">
+        <div><span>06 / LIMITS</span><h2 id="boundaries-title">现在能证明什么，不能证明什么</h2></div>
+      </div>
+      <div class="truth-table" role="table" aria-label="当前证据边界">
+        <div class="truth-head" role="row"><span role="columnheader">观察</span><span role="columnheader">当前结论</span><span role="columnheader">证据强度</span></div>
+        <div role="row"><span role="cell">仓库存在 9 个 Skill 和 25 套配方</span><span role="cell">结构完整，可安装和调用</span><b role="cell" class="strong">强</b></div>
+        <div role="row"><span role="cell">每种风格有一张上游示意图</span><span role="cell">能说明作者定义的视觉方向</span><b role="cell" class="medium">中</b></div>
+        <div role="row"><span role="cell">统一主体覆盖 8 个分类各 1 张</span><span role="cell">能证明基础路由与明显风格差异</span><b role="cell" class="strong">强</b></div>
+        <div role="row"><span role="cell">每个代表风格目前只有一次入选结果</span><span role="cell">仍不能证明重复生成稳定性与成功率</span><b role="cell" class="weak">不足</b></div>
+        <div role="row"><span role="cell">资产只在文档中用于核对</span><span role="cell">当前是文生图，不是参考图重绘</span><b role="cell" class="strong">强</b></div>
+        <div role="row"><span role="cell">部分配方隐含人物与时装假设</span><span role="cell">动物、建筑、产品可能出现语义冲突</span><b role="cell" class="medium">中</b></div>
+      </div>
+      <aside class="rights-note">
+        <strong>素材权利提醒</strong>
+        <p>上游说明 Skill、Prompt 整理和文档采用 MIT License，但 25 张示意图不包含在 MIT 授权范围内。这里仅按固定子模块作研究展示；重新分发和商用前需确认原图授权。</p>
+        <a href="../upstream/NOTICE.md">阅读上游 NOTICE →</a>
+      </aside>
+    </section>
+
+    <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section-heading">
+        <div><span>07 / LATER, NOT NOW</span><h2 id="roadmap-title">后期扩展先做评测，再增加能力</h2></div>
+        <p>以下均为研究路线，当前没有实现。重点不是继续堆 Prompt，而是先获得可复现证据。</p>
+      </div>
+      <div class="roadmap">
+        <article><b>01</b><span>可复现基线</span><h3>统一主体与重复采样</h3><p>固定模型、版本、尺寸和元数据；人物、动物、场景各生成多次，保留成功与失败。</p></article>
+        <article><b>02</b><span>质量门禁</span><h3>兼容矩阵与配方回归</h3><p>记录风格 × 主体 × 模型的适配，做 Prompt 消融和版本化回归。</p></article>
+        <article><b>03</b><span>图生图</span><h3>参考图 + 保留合同</h3><p>明确身份、姿态、构图和产品结构哪些必须保留，哪些允许风格化。</p></article>
+        <article><b>04</b><span>产品化</span><h3>版本、成本与权利追踪</h3><p>增加调用记录、团队审批、资产来源、批量任务和失败审核。</p></article>
+      </div>
+      <div class="closing-links">
+        <a class="button primary" href="../docs/analysis.md">阅读完整原理分析</a>
+        <a class="button" href="../docs/extension-roadmap.md">阅读后期扩展路线</a>
+        <a class="button" href="../upstream/">查看固定上游版本</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>MUYANG ILLUSTRATION SKILLS RESEARCH</strong><span>固定上游：8c35300 · 研究日期：2026-08-19</span></div>
+    <div><a href="../README.md">项目说明</a><a href="../../../">返回研究主库</a></div>
+    <p>本研究生成的 8 张对照样例与上游 25 张原样例均直接保留展示，并明确标注来源；权利边界见上游 NOTICE。</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

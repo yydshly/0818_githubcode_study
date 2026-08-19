@@ -22,6 +22,7 @@
 | [Stamp Edge Skill 项目研究](projects/stamp-edge-skill/README.md) | [xianxie6/stamp-edge-skill](https://github.com/xianxie6/stamp-edge-skill) | 邮票齿孔、透明蒙版、投影、瀑布流合集，以及预设驱动图片风格引擎扩展 | [能力分析](projects/stamp-edge-skill/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/stamp-edge-skill/showcase/) | 已复现 · 已收口 |
 | [Promise Wall 项目研究](projects/promise-wall/README.md) | [thebuggeddev/promise-wall](https://github.com/thebuggeddev/promise-wall) | Three.js 空间卡片、十二场景第一版效果、后期行动地图与归档边界 | [能力分析](projects/promise-wall/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/promise-wall/showcase/) | 已完成 · 已归档 |
 | [Photo to Organic Knit 项目研究](projects/photo-to-organic-knit/README.md) | [NalaZhang27/photo-to-organic-knit](https://github.com/NalaZhang27/photo-to-organic-knit) | 照片语义取舍、概念重构、针织材料参考、ImageGen 独立实演与产品化路线 | [能力分析](projects/photo-to-organic-knit/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/photo-to-organic-knit/showcase/) | 已复现 · 持续扩展 |
+| [Muyang Illustration Skills 项目研究](projects/muyang-illustration-skills/README.md) | [yokel1121/muyang-illustration-skills](https://github.com/yokel1121/muyang-illustration-skills) | 25 套固定插画 Prompt、8 类统一主体实测、图生图一致性与文字产品化路线 | [能力分析](projects/muyang-illustration-skills/docs/analysis.md) | [在线演示](https://yydshly.github.io/0818_githubcode_study/projects/muyang-illustration-skills/showcase/) | 基础能力已复现 · 8 类实测 |
 
 状态建议使用：`待开始`、`研究中`、`已复现`、`持续跟踪`、`已归档`。
 
@@ -114,6 +115,18 @@
 - [跨题材 n=3 Pilot](projects/photo-to-organic-knit/extension/photo-to-conceptual-art/forward-tests/pilot-n3/RESULT.md)
 - [Review 记录器](projects/photo-to-organic-knit/extension/photo-to-conceptual-art/scripts/score_review.py)
 - [固定上游版本](projects/photo-to-organic-knit/upstream)
+
+## 第六个研究项目：Muyang Illustration Skills
+
+[Muyang Illustration Skills](https://github.com/yokel1121/muyang-illustration-skills) 是一套面向 Codex 的固定插画 Prompt 路由层。用户提供主体文字并从 25 种风格中选择一项；总入口路由到 8 个子 Skill 之一，子 Skill 只替换固定配方中的主体占位符，最后由宿主已有的图像生成工具真正出图。
+
+本研究安装全部 9 个 Skill，固定上游 commit，并以统一主体“一个女孩在窗边读书”为 8 个分类各生成 1 张自有样例；25 张上游示意图也直接完整展示。展厅提供文字调用工作台，如实记录纯白高定的模型文字偏差，并进一步说明参考图 + 保留合同的图生图一致性，以及无字底图 + 确定性排版的文字产品化路线。
+
+- [8 类自有样例、25 种能力与文字调用展厅](projects/muyang-illustration-skills/showcase/)
+- [能力、原理与边界](projects/muyang-illustration-skills/docs/analysis.md)
+- [后期研究与扩展路线](projects/muyang-illustration-skills/docs/extension-roadmap.md)
+- [项目研究说明](projects/muyang-illustration-skills/README.md)
+- [固定上游版本](projects/muyang-illustration-skills/upstream)
 
 ## 仓库结构
 
