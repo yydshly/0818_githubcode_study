@@ -13,3 +13,6 @@
 [submodule "projects/photo-to-organic-knit/upstream"]
 	path = projects/photo-to-organic-knit/upstream
 	url = https://github.com/NalaZhang27/photo-to-organic-knit.git
+[submodule "projects/muyang-illustration-skills/upstream"]
+	path = projects/muyang-illustration-skills/upstream
+	url = https://github.com/yokel1121/muyang-illustration-skills.git
