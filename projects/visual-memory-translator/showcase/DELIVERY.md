@@ -43,7 +43,7 @@ Coverage record: 见下表
 | 修订闭环 | 新资源、链接、响应式与键盘回归 | 1440 / 768 / 390 / keyboard | 浏览器与工程检查 | 5 / 7 / 9 | pass | — |
 | 效果强化 | 原图与大幅场景成品同时可见 | 桌面 / 平板 / 手机 | 浏览器截图与 DOM 尺寸 | 2 / 3 / 7 | pass | — |
 | 场景交互 | 旅行、人物、节日三个成品状态 | 鼠标 / 键盘 | click、ArrowLeft/Right、Home/End 与 aria 状态 | 4 / 5 / 6 / 7 | pass | — |
-| Web 发布 | 提交、PR、合并、Pages 部署与公开 URL | GitHub / Web | commit、PR、Actions、HTTP 页面 | 9 | continue | 浏览器验收后执行发布流程 |
+| Web 发布 | 提交、Pages 部署与公开 URL | GitHub / Web | commit、Actions、HTTP 页面 | 9 | pass | — |
 
 ## Canonical Runtime
 
@@ -52,6 +52,18 @@ Start command: python -m http.server 8878 --directory E:\0818_codex_project
 Canonical URL: http://127.0.0.1:8878/projects/visual-memory-translator/showcase/
 Theme: light only
 Required viewports: 1440×1000, 768×1024, 390×844
+Verified: 2026-08-19 Asia/Shanghai
+```
+
+## Online Deployment
+
+```text
+Repository: https://github.com/yydshly/0818_githubcode_study
+Commit: 674ad5258eb58cb8b705e69c16f62956f442f676
+Pages workflow: https://github.com/yydshly/0818_githubcode_study/actions/runs/32253090371
+Workflow result: completed / success
+Public index: https://yydshly.github.io/0818_githubcode_study/
+Public showcase: https://yydshly.github.io/0818_githubcode_study/projects/visual-memory-translator/showcase/
 Verified: 2026-08-19 Asia/Shanghai
 ```
 
@@ -67,13 +79,15 @@ Verified: 2026-08-19 Asia/Shanghai
 - Revision 3 将三张小卡替换为大幅切换台；1440px 同一视口同时显示原始照片、场景成品和变化说明，390px 以原图 → 成品的纵向顺序呈现。
 - 场景 tabs 默认“旅行纪念”，真实点击切换到“人物纪念”；ArrowRight、Home、End 均能切换选中项与对应面板，任一时刻只有一个 `tabpanel` 可见，焦点环为 `solid 3px`。
 - Revision 3 页面共 21 个图片引用；滚动加载后失败数为 0。原比较器回归通过，End 后值为 `100`；1440、768 与 390 三个视口横向溢出均为 `0`。
+- GitHub Pages 工作流 `32253090371` 对提交 `674ad52` 的结论为 `success`；公开主页与展厅均返回 HTTP 200，主页包含第 07 项目，展厅包含 `data-scene-switcher`。
+- 公开展厅经真实浏览器复查：默认旅行状态、人物点击切换、节日状态和 390px 布局均工作；节日懒加载图滚入视口后为 `1086×1448`，线上页面无错误覆盖层和横向溢出。
 - 按 Pages 根目录结构组装主站后，第 07 项目卡存在、封面加载成功，桌面与 390px 均无横向溢出。
 - 仅支持 light theme；页面没有弹窗、菜单、加载、空态、错误态或远程数据，因此这些矩阵项不适用。
 
 ## Session Handoff
 
-1. **项目与阶段：** Visual Memory Translator 研究子项目；Revision 3 / Stage 9 发布中。
-2. **已完成：** 用大幅原图/成品切换台强化效果差异；三种场景状态、三视口、键盘与原比较器回归均通过。
-3. **剩余或延期：** `Web 发布`仍为 `continue`；没有 `defer` 或 `blocked`。
-4. **证据：** 桌面前后截图、手机切换台截图、21 张图片加载、tabs 状态、键盘路径、原比较器、三视口溢出和浏览器错误检查均通过。
-5. **下一步：** 审查提交范围，推送分支、创建并合并 PR，等待 Pages 成功后验证公开 URL，再关闭发布记录。
+1. **项目与阶段：** Visual Memory Translator 研究子项目；Revision 3 / Stage 9 已闭环并发布。
+2. **已完成：** 用大幅原图/成品切换台强化效果差异；三种场景状态、三视口、键盘、原比较器与公开 Web 部署均通过。
+3. **剩余或延期：** 当前授权范围内无 `continue`、`defer` 或 `blocked`。
+4. **证据：** 桌面前后截图、手机切换台截图、21 张图片加载、tabs 状态、键盘路径、原比较器、三视口溢出、Actions 成功记录和公开 URL 浏览器检查均通过。
+5. **下一步：** 本次范围已关闭；后续若增加新场景，沿用同一切换台结构并补充对应成品与 Prompt 记录。
