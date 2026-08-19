@@ -1,0 +1,13 @@
+{
+  "id": "layered-paper",
+  "label": "Layered Paper Cut",
+  "intent": "Editorial hierarchy, clean negative space, and modular campaign composition",
+  "materials": ["cotton paper", "vellum", "deckled paper", "embossed paper"],
+  "path_treatment": "Turn the visual path into a continuous cut-paper ribbon with lifted deckled edges.",
+  "form_treatment": "Reduce subjects into a few asymmetric overlapping paper planes and embossed motifs.",
+  "space_treatment": "Let the background show between layers and preserve broad copy-safe paper fields.",
+  "composition": "Clear foreground, middle, and background planes with deliberate overlap and cast shadows.",
+  "imperfections": ["tiny cutting irregularities", "lifted corners", "subtle fiber variation", "handmade embossing"],
+  "avoid": ["flat vector illustration", "childlike construction paper", "plastic 3D", "continuous photo depth", "excessive props"],
+  "best_for": ["editorial", "campaign", "brand", "report"]
+}

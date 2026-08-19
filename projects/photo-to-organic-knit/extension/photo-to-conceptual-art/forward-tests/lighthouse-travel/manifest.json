@@ -1,0 +1,42 @@
+{
+  "id": "lighthouse-travel-2026-08-19",
+  "scenario": "travel-cover",
+  "delivery": "field-journal",
+  "source": "../../../showcase/assets/generated/forward-lighthouse-source.png",
+  "essence": "essence.json",
+  "review_method": "human gate review, five dimensions scored 1-5",
+  "routes": {
+    "auto": {
+      "effect": "woodcut",
+      "reason": "High-contrast carved rhythm preserves direction at small sizes.",
+      "initial_output": "../../../showcase/assets/generated/forward-lighthouse-auto-woodcut.png",
+      "initial_failure": "top and bottom metadata bands were not calm enough",
+      "final_output": "../../../showcase/assets/generated/forward-lighthouse-auto-woodcut-v2.png",
+      "scores": {
+        "anchor_retention": 5,
+        "route_and_direction": 5,
+        "thumbnail_silhouette": 5,
+        "material_credibility": 5,
+        "metadata_safety_after_correction": 5
+      },
+      "total": 25
+    },
+    "override": {
+      "effect": "layered-paper",
+      "reason": "Paper ribbons work for a quieter editorial route story.",
+      "initial_output": "../../../showcase/assets/generated/forward-lighthouse-override-paper.png",
+      "initial_failure": "top and bottom metadata bands were not calm enough",
+      "final_output": "../../../showcase/assets/generated/forward-lighthouse-override-paper-v2.png",
+      "scores": {
+        "anchor_retention": 5,
+        "route_and_direction": 5,
+        "thumbnail_silhouette": 4,
+        "material_credibility": 5,
+        "metadata_safety_after_correction": 5
+      },
+      "total": 24
+    }
+  },
+  "decision": "Auto woodcut wins narrowly for the stated travel-cover goal because its route and focal silhouette remain stronger at small sizes. Layered paper remains a valid override when a quieter editorial tone matters more than maximum graphic force.",
+  "profile_change": "field-journal safe-area language was strengthened from abstract protection to explicit nearly-unprinted top and bottom 10% bands"
+}

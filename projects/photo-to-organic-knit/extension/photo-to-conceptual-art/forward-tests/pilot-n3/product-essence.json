@@ -1,0 +1,15 @@
+{
+  "orientation": "landscape",
+  "aspect_ratio": "3:2",
+  "subject": "One unbranded deep-green tea tin stands beside one cream teapot and exactly two cups.",
+  "anchors": ["one cylindrical green tea tin", "one cream teapot", "two cream cups", "loose tea leaves", "one fresh tea branch"],
+  "relationships": ["the tin is the tallest focal object", "the teapot and two cups form a calm triangular ritual beside it"],
+  "emotion": ["quiet", "crafted", "natural", "premium without gloss"],
+  "visual_path": "window shadows lead to the tall tin, then step down through teapot and two cups toward the fresh branch",
+  "metaphor": "a sealed green vessel opens into a small shared daily ritual",
+  "retain": ["one green tin", "one teapot", "exactly two cups", "tea leaves", "fresh branch", "unbranded surfaces"],
+  "transform": ["cylindrical tin silhouette", "triangular object family", "leaf and window-shadow rhythm"],
+  "discard": ["plaster cracks", "individual leaf fragments", "photographic stone grain", "incidental reflections"],
+  "palette": ["forest green", "warm cream", "tea brown", "pale stone", "fresh green"],
+  "privacy_notes": ["do not invent brand text, logo, certification, origin, or product claim"]
+}

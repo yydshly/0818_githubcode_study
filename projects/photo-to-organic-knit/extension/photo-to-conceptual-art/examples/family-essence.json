@@ -1,0 +1,15 @@
+{
+  "orientation": "landscape",
+  "aspect_ratio": "3:2",
+  "subject": "A grandmother and granddaughter lean together over one open book with an orange cat beside them.",
+  "anchors": ["grandmother", "granddaughter", "shared open book", "orange cat", "curved porch arch"],
+  "relationships": ["two generations read the same book while the cat rests beside them"],
+  "emotion": ["intimate", "safe", "intergenerational"],
+  "visual_path": "the arch encloses the pair and their hands meet around the open book",
+  "metaphor": "two generations and one cat are held inside the same handmade story",
+  "retain": ["two people", "shared book", "orange cat", "coral vest", "sage dress"],
+  "transform": ["porch arch", "book connection", "garden plants"],
+  "discard": ["door hardware", "window reflections", "distant garden detail", "private home detail"],
+  "palette": ["cream", "coral", "sage", "orange", "warm wood"],
+  "privacy_notes": ["child identity requires user-authorized handling", "remove identifiable home details"]
+}

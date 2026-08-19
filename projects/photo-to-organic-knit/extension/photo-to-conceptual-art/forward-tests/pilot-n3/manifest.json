@@ -1,0 +1,72 @@
+{
+  "id": "cross-subject-pilot-n3-2026-08-19",
+  "sample_size": 3,
+  "review_method": "human gate review; one compiled auto route per unseen synthetic source; maximum one targeted correction allowed",
+  "observed_first_round_passes": 3,
+  "observed_pass_rate": "3/3",
+  "generalization_claim": false,
+  "samples": [
+    {
+      "id": "person-relationship",
+      "source_class": "person and relationship",
+      "source": "../../../showcase/assets/generated/pilot-person-source.png",
+      "essence": "person-essence.json",
+      "scenario": "family-memory",
+      "effect": "organic-knit",
+      "delivery": "book-cover",
+      "output": "../../../showcase/assets/generated/pilot-person-auto-knit.png",
+      "attempts": 1,
+      "gates": {
+        "anchor_and_quantity": "pass",
+        "scenario_fit": "pass",
+        "material_credibility": "pass",
+        "delivery_safety": "pass",
+        "wordless_art": "pass",
+        "privacy_handling": "pass for synthetic benchmark source"
+      },
+      "score": 25
+    },
+    {
+      "id": "product-still-life",
+      "source_class": "product still life",
+      "source": "../../../showcase/assets/generated/pilot-product-source.png",
+      "essence": "product-essence.json",
+      "scenario": "seasonal-campaign",
+      "effect": "layered-paper",
+      "delivery": "campaign-poster",
+      "output": "../../../showcase/assets/generated/pilot-product-auto-paper.png",
+      "attempts": 1,
+      "gates": {
+        "anchor_and_quantity": "pass",
+        "scenario_fit": "pass",
+        "material_credibility": "pass",
+        "delivery_safety": "pass",
+        "wordless_art": "pass",
+        "brand_neutrality": "pass"
+      },
+      "score": 25
+    },
+    {
+      "id": "architecture-mobility",
+      "source_class": "architecture and mobility",
+      "source": "../../../showcase/assets/generated/pilot-architecture-source.png",
+      "essence": "architecture-essence.json",
+      "scenario": "travel-cover",
+      "effect": "woodcut",
+      "delivery": "field-journal",
+      "output": "../../../showcase/assets/generated/pilot-architecture-auto-woodcut.png",
+      "attempts": 1,
+      "gates": {
+        "anchor_and_quantity": "pass",
+        "scenario_fit": "pass",
+        "material_credibility": "pass",
+        "delivery_safety": "pass",
+        "wordless_art": "pass",
+        "route_and_direction": "pass"
+      },
+      "score": 25
+    }
+  ],
+  "skill_change": "none; all three samples passed on the first compiled attempt",
+  "limitation": "This is a synthetic n=3 pilot selected to span three source classes. It does not estimate production success rate, real-photo privacy performance, or model-version stability."
+}

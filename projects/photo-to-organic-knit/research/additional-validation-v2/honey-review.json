@@ -1,0 +1,16 @@
+{
+  "id": "additional-honey-ceramic-v1",
+  "artifact": "honey-ceramic.png",
+  "attempt": 1,
+  "reviewer": "当前研究线程中的公开人工审查",
+  "gates": {
+    "brand-anchor retention": {"status": "pass", "score": 5, "evidence": "一个琥珀蜂蜜罐、软木塞、蜂蜜棒、蜂巢和野花全部保留，表面无品牌。"},
+    "graphic hierarchy": {"status": "pass", "score": 5, "evidence": "蜂蜜罐是第一锚点，蜂巢和蜂蜜棒形成次级路径，花枝连接上方釉色流线。"},
+    "copy-safe space": {"status": "pass", "score": 5, "evidence": "陶板右上大面积低细节哑光区域适合活动文案。"},
+    "no generated brand text": {"status": "pass", "score": 5, "evidence": "罐体和陶板未出现品牌名、Logo、产地或认证。"},
+    "copy-safe field": {"status": "pass", "score": 5, "evidence": "文案区与罐体、蜂巢、蜂蜜棒及花枝分离。"},
+    "multi-crop resilience": {"status": "pass", "score": 4, "evidence": "4:5 主版完整；宽横幅可保留蜂蜜罐和蜂巢，但会损失部分花枝和釉色路径。"},
+    "no generated campaign text": {"status": "pass", "score": 5, "evidence": "结果为无字陶瓷浮雕 Key Art，没有活动标题、日期、价格或 CTA。"}
+  },
+  "notes": ["显式效果覆盖为 ceramic-relief；首次生成通过。"]
+}

@@ -1,0 +1,15 @@
+{
+  "orientation": "landscape",
+  "aspect_ratio": "3:2",
+  "subject": "Five volunteers form an open circle while planting and watering one young tree.",
+  "anchors": ["five volunteers", "shared hands", "young green tree", "watering can", "wooden stake"],
+  "relationships": ["five people support one shared living outcome"],
+  "emotion": ["collective", "hopeful", "grounded"],
+  "visual_path": "a radial movement converges on the central tree and remains open on one side",
+  "metaphor": "many hands become one living canopy",
+  "retain": ["five human figures", "central sapling", "care circle", "water and soil action"],
+  "transform": ["people into distinct fields", "arms into converging lines", "tree into a luminous axis"],
+  "discard": ["apartment facades", "courtyard paving", "realistic faces", "incidental tools"],
+  "palette": ["fresh green", "blue", "rust", "amber", "earth"],
+  "privacy_notes": ["abstract faces unless releases are confirmed"]
+}

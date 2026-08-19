@@ -1,0 +1,41 @@
+{
+  "orientation": "landscape",
+  "aspect_ratio": "3:2",
+  "subject": "One traveler in a burnt-orange jacket walks a sea-green touring bicycle along a coastal path toward a white lighthouse.",
+  "anchors": [
+    "burnt-orange traveler",
+    "sea-green touring bicycle",
+    "S-shaped coastal path",
+    "small white lighthouse",
+    "dark headland between two sea fields"
+  ],
+  "relationships": [
+    "the traveler and bicycle follow the path toward the lighthouse destination",
+    "the lighthouse remains small but visually aligned with the route"
+  ],
+  "emotion": ["determined", "solitary", "windswept", "forward-moving"],
+  "visual_path": "a dark S-shaped path begins behind the traveler and rises across the headland to the lighthouse",
+  "metaphor": "the coastal path becomes a compass needle connecting the traveler to a distant beacon",
+  "retain": [
+    "exactly one traveler",
+    "one touring bicycle",
+    "burnt-orange and sea-green color anchors",
+    "white lighthouse destination",
+    "continuous route relationship"
+  ],
+  "transform": [
+    "coastal path",
+    "headland silhouette",
+    "two sea fields",
+    "windswept grass",
+    "single warm break in the clouds"
+  ],
+  "discard": [
+    "individual wave detail",
+    "continuous realistic cloud volume",
+    "small rock texture",
+    "incidental bicycle hardware detail"
+  ],
+  "palette": ["slate blue", "sea green", "pale grass", "white", "burnt orange"],
+  "privacy_notes": []
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "release_id": "wild-honey-autumn-2026-approved-demo",
+  "release_scope": "demo",
+  "campaign_id": "wild-honey-autumn-2026-approved-demo",
+  "template": "campaign-poster",
+  "copy_sha256": "37b7f2ff112cbe35ad0f7aeca14a1fb32d12c9c818dade4254123e8cd1e4ab6c",
+  "art_sha256": "8b8a0f2660685195a4ec89c4c864464c2c3d0ed3d8b329bd69d226615018b9da",
+  "approvals": {
+    "brand": {
+      "status": "approved",
+      "reviewer": "Demo Brand Owner",
+      "approved_at": "2026-08-19T10:00:00+08:00",
+      "evidence": "demo://approval/brand/B-001"
+    },
+    "copy": {
+      "status": "approved",
+      "reviewer": "Demo Copy Owner",
+      "approved_at": "2026-08-19T10:05:00+08:00",
+      "evidence": "demo://approval/copy/C-001"
+    },
+    "legal": {
+      "status": "approved",
+      "reviewer": "Demo Legal Owner",
+      "approved_at": "2026-08-19T10:10:00+08:00",
+      "evidence": "demo://approval/legal/L-001"
+    },
+    "design": {
+      "status": "approved",
+      "reviewer": "Demo Design Owner",
+      "approved_at": "2026-08-19T10:15:00+08:00",
+      "evidence": "demo://approval/design/D-001"
+    },
+    "channel": {
+      "status": "approved",
+      "reviewer": "Demo Channel Owner",
+      "approved_at": "2026-08-19T10:20:00+08:00",
+      "evidence": "demo://approval/channel/H-001"
+    }
+  }
+}

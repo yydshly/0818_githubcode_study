@@ -1,0 +1,4 @@
+interface:
+  display_name: "Photo to Conceptual Art"
+  short_description: "Route photos into goal-driven conceptual art assets"
+  default_prompt: "Use $photo-to-conceptual-art to turn this photo into a goal-driven visual asset for my intended audience and delivery format."

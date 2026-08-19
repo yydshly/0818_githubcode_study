@@ -1,0 +1,14 @@
+{
+  "id": "seasonal-campaign",
+  "label": "Seasonal Campaign",
+  "audience": "local customers and campaign viewers",
+  "goal": "Create reusable brand-safe key art with a clear graphic hierarchy and generous space for exact campaign copy.",
+  "recommended_effects": [
+    {"id": "layered-paper", "reason": "Modular paper planes and negative space integrate reliably with brand typography."},
+    {"id": "ceramic-relief", "reason": "Physical relief suits collectible or product-led campaigns."}
+  ],
+  "default_delivery": "campaign-poster",
+  "allowed_deliveries": ["campaign-poster", "book-cover"],
+  "prompt_requirements": ["Preserve distinctive product or place anchors.", "Remove incidental photographic noise.", "Keep campaign copy outside the raster art."],
+  "quality_gates": ["brand-anchor retention", "graphic hierarchy", "copy-safe space", "no generated brand text"]
+}

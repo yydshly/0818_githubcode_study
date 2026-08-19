@@ -1,0 +1,15 @@
+{
+  "orientation": "landscape",
+  "aspect_ratio": "3:2",
+  "subject": "A father and daughter work together to repair one red paper kite on a wooden table.",
+  "anchors": ["exactly two people", "one red diamond kite", "visible bamboo frame", "one blue string spool", "shared hands"],
+  "relationships": ["the father steadies the bamboo while the child threads the same blue string", "both people focus on one shared repair"],
+  "emotion": ["patient", "collaborative", "intimate"],
+  "visual_path": "the blue string travels from its spool through the child's hands to the red kite center where both pairs of hands meet",
+  "metaphor": "two pairs of hands mend one shared path into the sky",
+  "retain": ["father and daughter", "one red kite", "bamboo cross", "blue spool", "shared repair gesture"],
+  "transform": ["protective body arc", "kite diamond", "blue connecting string", "wood table"],
+  "discard": ["doorway detail", "private courtyard features", "potted tree detail", "realistic wall depth"],
+  "palette": ["indigo", "red", "blue", "warm wood", "cream"],
+  "privacy_notes": ["child identity requires authorized handling", "abstract private home details"]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "travel-cover",
+  "label": "Travel Cover",
+  "audience": "travelers, outdoor readers, and route-content subscribers",
+  "goal": "Turn a journey into a strong route symbol that remains recognizable at cover and thumbnail sizes.",
+  "recommended_effects": [
+    {"id": "woodcut", "reason": "High-contrast carved rhythm preserves direction at small sizes."},
+    {"id": "layered-paper", "reason": "Paper ribbons work for a quieter editorial route story."}
+  ],
+  "default_delivery": "field-journal",
+  "allowed_deliveries": ["field-journal", "campaign-poster"],
+  "prompt_requirements": ["Make the route or movement dominant.", "Retain one location or traveler anchor.", "Protect thumbnail silhouette."],
+  "quality_gates": ["route clarity", "direction", "thumbnail silhouette", "location/traveler anchor"]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "field-journal",
+  "label": "4:5 Field Journal Key Art",
+  "aspect_ratio": "4:5",
+  "text_mode": "wordless-key-art",
+  "safe_area": "Reserve the top approximately 10% and bottom approximately 10% as calm, nearly unprinted metadata bands while keeping the complete route and all required anchors inside the central field.",
+  "layout_intent": "Strong central journey image that accepts title, coordinates, distance, and date as editable overlay.",
+  "output_variants": ["wordless journal cover", "route-card crop", "social preview"],
+  "quality_gates": ["thumbnail route clarity", "top 10% title band", "bottom 10% metadata band", "single focal anchor"]
+}

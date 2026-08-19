@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0",
+  "keys": {
+    "demo-release-key-2026": {
+      "algorithm": "Ed25519",
+      "public_key_base64": "anVRixph1VgR8tEARpHjWgNXbU9nMWJtHHKW/zUNVJY=",
+      "status": "active",
+      "scope": "demo",
+      "owner": "Demo Release Authority"
+    }
+  }
+}

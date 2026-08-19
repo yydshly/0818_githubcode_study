@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "sequence": 1,
+  "event_type": "release-rendered",
+  "recorded_at": "2026-08-19T07:21:00Z",
+  "release_id": "wild-honey-autumn-2026-approved-demo",
+  "release_scope": "demo",
+  "manifest_sha256": "8eae05ef5e515509d231fd0c58aa1347392f5d4a0fe1b842eff411d4769218ba",
+  "key_id": "demo-release-key-2026",
+  "copy_sha256": "37b7f2ff112cbe35ad0f7aeca14a1fb32d12c9c818dade4254123e8cd1e4ab6c",
+  "art_sha256": "8b8a0f2660685195a4ec89c4c864464c2c3d0ed3d8b329bd69d226615018b9da",
+  "outputs": {
+    "poster-4x5": "5822261a661550427d2f8974f5351e91fe64bede792d8fcc7b8dc80ad77ab5a3",
+    "header-16x9": "c970c5250349a6b8a9d0f35e5a123446c36d0dbeb67923fead817c5d40d56451"
+  },
+  "previous_event_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "event_hash": "410dcb8f58c77855c060d24e75eb70ef75c355f8d2b3d0eab678fc52dd1b0991"
+}

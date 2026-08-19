@@ -1,0 +1,10 @@
+{
+  "id": "impact-report",
+  "label": "A4 Impact Report Key Art",
+  "aspect_ratio": "1:1.414",
+  "text_mode": "wordless-key-art",
+  "safe_area": "Keep a quiet lower or upper region for organization identity, report title, summary, and verified metrics.",
+  "layout_intent": "Credible symbolic art that supports an editorial report grid without inventing data or institutional marks.",
+  "output_variants": ["wordless report art", "A4 cover preview", "presentation title slide"],
+  "quality_gates": ["institutional neutrality", "report hierarchy space", "no generated metrics", "print-safe focal placement"]
+}

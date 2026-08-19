@@ -1,0 +1,16 @@
+{
+  "id": "additional-family-pet-knit-v1",
+  "artifact": "family-pet-knit.png",
+  "attempt": 1,
+  "reviewer": "当前研究线程中的公开人工审查",
+  "gates": {
+    "participant count": {"status": "pass", "score": 5, "evidence": "结果中恰好两个人和一只金毛犬，没有新增人物或宠物。"},
+    "relationship readability": {"status": "pass", "score": 5, "evidence": "母亲托住犬头，少年用梳子梳理犬背，共同照料关系清晰。"},
+    "privacy handling": {"status": "pass", "score": 5, "evidence": "测试使用合成源图，家庭背景被抽象为暖白纤维空间。"},
+    "title-safe space": {"status": "pass", "score": 5, "evidence": "竖版画面上方约四分之一保持低细节暖白区域。"},
+    "upper title-safe area": {"status": "pass", "score": 5, "evidence": "上方标题区没有遮挡人物、犬或梳理动作。"},
+    "central anchor safety": {"status": "pass", "score": 5, "evidence": "两人一犬完整位于中央安全区域。"},
+    "portrait recomposition without destructive crop": {"status": "pass", "score": 5, "evidence": "横版源图重组为竖版后，两人、犬、梳子和保护弧线均未被裁断。"}
+  },
+  "notes": ["自动路由为 organic-knit；首次生成通过。"]
+}

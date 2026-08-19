@@ -1,0 +1,13 @@
+{
+  "id": "miniature-diorama",
+  "label": "Miniature Diorama",
+  "intent": "Narrative space, exhibition thinking, and a path toward motion or interaction",
+  "materials": ["resin", "cork", "painted plaster", "natural fibers", "cotton mist"],
+  "path_treatment": "Build the visual path as a continuous physical channel with believable miniature depth.",
+  "form_treatment": "Translate key forms into simplified hand-built model components and one detailed focal miniature.",
+  "space_treatment": "Expose gaps and a tabletop base so the result reads as a crafted maquette, not a full-size scene.",
+  "composition": "Gentle elevated three-quarter view with a complete irregular base and legible spatial journey.",
+  "imperfections": ["cork grain", "plaster edges", "tiny brush variation", "believable miniature shadows"],
+  "avoid": ["plastic toy sheen", "commercial toy CGI", "full-size photorealism", "excessive tilt-shift blur", "tools in frame"],
+  "best_for": ["exhibition", "game-concept", "education", "spatial-story"]
+}

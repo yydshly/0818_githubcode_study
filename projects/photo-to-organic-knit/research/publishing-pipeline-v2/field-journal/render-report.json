@@ -1,0 +1,277 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "template": {
+    "id": "field-journal",
+    "version": "1.0"
+  },
+  "campaign_id": "lighthouse-field-journal-2026-sample",
+  "copy_status": "sample",
+  "locale": "zh-CN",
+  "inputs": {
+    "copy": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\examples\\lighthouse-journal-copy.json",
+    "art": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\showcase\\assets\\generated\\forward-lighthouse-auto-woodcut-v2.png",
+    "art_sha256": "f49a9930673b5957faaa0544728dbf51fbb6dcd6f1b3ec75532aeb2a34e4d547",
+    "font": "C:\\Windows\\Fonts\\msyh.ttc",
+    "template": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\assets\\templates\\field-journal.json"
+  },
+  "checks": [
+    {
+      "variant": "field-journal-4x5",
+      "id": "dimensions",
+      "status": "PASS",
+      "evidence": {
+        "actual": [
+          1200,
+          1500
+        ],
+        "expected": [
+          1200,
+          1500
+        ]
+      }
+    },
+    {
+      "variant": "field-journal-4x5",
+      "id": "exact-copy",
+      "status": "PASS",
+      "evidence": {
+        "expected": {
+          "journal.qualifier": "示例路线 · 非真实地点数据",
+          "journal.kicker": "COASTAL FIELD JOURNAL · 07",
+          "journal.subtitle": "沿着海风与旧路，记录一次缓慢抵达。",
+          "journal.coordinates": "54.35°N · 5.68°W",
+          "journal.distance": "42 KM",
+          "journal.year": "2026",
+          "journal.footer": "SAMPLE JOURNEY · NOT FACTUAL",
+          "journal.title_lines[0]": "向灯塔去"
+        },
+        "rendered": {
+          "journal.qualifier": "示例路线 · 非真实地点数据",
+          "journal.kicker": "COASTAL FIELD JOURNAL · 07",
+          "journal.title_lines[0]": "向灯塔去",
+          "journal.subtitle": "沿着海风与旧路，记录一次缓慢抵达。",
+          "journal.coordinates": "54.35°N · 5.68°W",
+          "journal.distance": "42 KM",
+          "journal.year": "2026",
+          "journal.footer": "SAMPLE JOURNEY · NOT FACTUAL"
+        }
+      }
+    },
+    {
+      "variant": "field-journal-4x5",
+      "id": "overflow",
+      "status": "PASS",
+      "evidence": {
+        "overflow_fields": []
+      }
+    },
+    {
+      "variant": "field-journal-4x5",
+      "id": "protected-region",
+      "status": "PASS",
+      "evidence": {
+        "colliding_fields": [],
+        "protected_regions": [
+          [
+            96,
+            232,
+            1104,
+            1282
+          ]
+        ]
+      }
+    },
+    {
+      "variant": "field-journal-4x5",
+      "id": "contrast",
+      "status": "PASS",
+      "evidence": {
+        "ink_on_paper": 10.13,
+        "white_on_ink": 12.22,
+        "minimum": 4.5
+      }
+    },
+    {
+      "variant": "field-journal-4x5",
+      "id": "sample-disclosure",
+      "status": "PASS",
+      "evidence": {
+        "copy_status": "sample"
+      }
+    }
+  ],
+  "outputs": {
+    "field-journal-4x5": {
+      "path": "lighthouse-field-journal-2026-sample-field-journal-4x5.png",
+      "width": 1200,
+      "height": 1500,
+      "sha256": "031991cff70ecd73733049899e6f5f9fcd301b60b25b3466af217c75cd5e0c61",
+      "text_items": [
+        {
+          "field": "journal.qualifier",
+          "value": "示例路线 · 非真实地点数据",
+          "bbox": [
+            94,
+            55,
+            299,
+            73
+          ],
+          "container": [
+            94,
+            54,
+            1106,
+            201
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "journal.kicker",
+          "value": "COASTAL FIELD JOURNAL · 07",
+          "bbox": [
+            847,
+            55,
+            1106,
+            68
+          ],
+          "container": [
+            94,
+            54,
+            1106,
+            201
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "journal.title_lines[0]",
+          "value": "向灯塔去",
+          "bbox": [
+            94,
+            88,
+            326,
+            145
+          ],
+          "container": [
+            94,
+            54,
+            1106,
+            201
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "journal.subtitle",
+          "value": "沿着海风与旧路，记录一次缓慢抵达。",
+          "bbox": [
+            94,
+            177,
+            451,
+            199
+          ],
+          "container": [
+            94,
+            54,
+            1106,
+            201
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "journal.coordinates",
+          "value": "54.35°N · 5.68°W",
+          "bbox": [
+            96,
+            1327,
+            279,
+            1343
+          ],
+          "container": [
+            96,
+            1323,
+            1104,
+            1444
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "journal.distance",
+          "value": "42 KM",
+          "bbox": [
+            566,
+            1327,
+            634,
+            1343
+          ],
+          "container": [
+            96,
+            1323,
+            1104,
+            1444
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "journal.year",
+          "value": "2026",
+          "bbox": [
+            1052,
+            1327,
+            1104,
+            1343
+          ],
+          "container": [
+            96,
+            1323,
+            1104,
+            1444
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "journal.footer",
+          "value": "SAMPLE JOURNEY · NOT FACTUAL",
+          "bbox": [
+            96,
+            1428,
+            376,
+            1440
+          ],
+          "container": [
+            96,
+            1323,
+            1104,
+            1444
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "generated.sample_disclosure",
+          "value": "SAMPLE / 非商业发布",
+          "bbox": [
+            940,
+            1423,
+            1104,
+            1440
+          ],
+          "container": [
+            96,
+            1323,
+            1104,
+            1444
+          ],
+          "inside_container": true,
+          "source_copy": false
+        }
+      ]
+    }
+  },
+  "boundary": "PASS covers deterministic layout gates only; brand, factual, legal, font-license and publication approval remain external."
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "template": "field-journal",
+  "campaign_id": "lighthouse-field-journal-2026-sample",
+  "copy_status": "sample",
+  "locale": "zh-CN",
+  "journal": {
+    "qualifier": "示例路线 · 非真实地点数据",
+    "kicker": "COASTAL FIELD JOURNAL · 07",
+    "title_lines": ["向灯塔去"],
+    "subtitle": "沿着海风与旧路，记录一次缓慢抵达。",
+    "coordinates": "54.35°N · 5.68°W",
+    "distance": "42 KM",
+    "year": "2026",
+    "footer": "SAMPLE JOURNEY · NOT FACTUAL"
+  },
+  "accessibility": {
+    "art_alt": "旅行者推着自行车沿海岸路径走向灯塔的木刻版画主视觉"
+  }
+}

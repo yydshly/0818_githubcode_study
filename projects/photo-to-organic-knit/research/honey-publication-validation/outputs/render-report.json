@@ -1,0 +1,611 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "template": {
+    "id": "campaign-poster",
+    "version": "1.0"
+  },
+  "campaign_id": "wild-honey-autumn-2026-sample",
+  "copy_status": "sample",
+  "locale": "zh-CN",
+  "inputs": {
+    "copy": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\examples\\honey-campaign-copy.json",
+    "art": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\research\\additional-validation-v2\\honey-ceramic.png",
+    "art_sha256": "8b8a0f2660685195a4ec89c4c864464c2c3d0ed3d8b329bd69d226615018b9da",
+    "font": "C:\\Windows\\Fonts\\msyh.ttc",
+    "template": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\assets\\templates\\campaign-poster.json"
+  },
+  "checks": [
+    {
+      "variant": "poster-4x5",
+      "id": "dimensions",
+      "status": "PASS",
+      "evidence": {
+        "actual": [
+          1200,
+          1500
+        ],
+        "expected": [
+          1200,
+          1500
+        ]
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "exact-copy",
+      "status": "PASS",
+      "evidence": {
+        "expected": {
+          "brand.qualifier": "示例品牌 · CONCEPT ONLY",
+          "brand.name": "山野蜜坊",
+          "campaign.kicker": "秋季蜂蜜限定 · 2026",
+          "campaign.cta": "查看秋季限定",
+          "campaign.date": "09.20 — 10.18",
+          "campaign.location": "线上预览 · SAMPLE COPY",
+          "campaign.headline_lines[0]": "一勺",
+          "campaign.headline_lines[1]": "秋蜜",
+          "campaign.body_lines[0]": "把山野的甜，",
+          "campaign.body_lines[1]": "留到秋天。"
+        },
+        "rendered": {
+          "brand.qualifier": "示例品牌 · CONCEPT ONLY",
+          "brand.name": "山野蜜坊",
+          "campaign.kicker": "秋季蜂蜜限定 · 2026",
+          "campaign.headline_lines[0]": "一勺",
+          "campaign.headline_lines[1]": "秋蜜",
+          "campaign.body_lines[0]": "把山野的甜，",
+          "campaign.body_lines[1]": "留到秋天。",
+          "campaign.cta": "查看秋季限定",
+          "campaign.date": "09.20 — 10.18",
+          "campaign.location": "线上预览 · SAMPLE COPY"
+        }
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "overflow",
+      "status": "PASS",
+      "evidence": {
+        "overflow_fields": []
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "protected-region",
+      "status": "PASS",
+      "evidence": {
+        "colliding_fields": [],
+        "protected_regions": [
+          [
+            72,
+            540,
+            636,
+            1328
+          ]
+        ]
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "contrast",
+      "status": "PASS",
+      "evidence": {
+        "forest_on_paper": 9.81,
+        "white_on_forest": 11.72,
+        "minimum": 4.5
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "sample-disclosure",
+      "status": "PASS",
+      "evidence": {
+        "copy_status": "sample"
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "dimensions",
+      "status": "PASS",
+      "evidence": {
+        "actual": [
+          1920,
+          1080
+        ],
+        "expected": [
+          1920,
+          1080
+        ]
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "exact-copy",
+      "status": "PASS",
+      "evidence": {
+        "expected": {
+          "brand.qualifier": "示例品牌 · CONCEPT ONLY",
+          "brand.name": "山野蜜坊",
+          "campaign.kicker": "秋季蜂蜜限定 · 2026",
+          "campaign.cta": "查看秋季限定",
+          "campaign.date": "09.20 — 10.18",
+          "campaign.location": "线上预览 · SAMPLE COPY",
+          "campaign.headline_lines[0]": "一勺",
+          "campaign.headline_lines[1]": "秋蜜",
+          "campaign.body_lines[0]": "把山野的甜，",
+          "campaign.body_lines[1]": "留到秋天。"
+        },
+        "rendered": {
+          "brand.qualifier": "示例品牌 · CONCEPT ONLY",
+          "brand.name": "山野蜜坊",
+          "campaign.kicker": "秋季蜂蜜限定 · 2026",
+          "campaign.headline_lines[0]": "一勺",
+          "campaign.headline_lines[1]": "秋蜜",
+          "campaign.body_lines[0]": "把山野的甜，",
+          "campaign.body_lines[1]": "留到秋天。",
+          "campaign.cta": "查看秋季限定",
+          "campaign.date": "09.20 — 10.18",
+          "campaign.location": "线上预览 · SAMPLE COPY"
+        }
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "overflow",
+      "status": "PASS",
+      "evidence": {
+        "overflow_fields": []
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "protected-region",
+      "status": "PASS",
+      "evidence": {
+        "colliding_fields": [],
+        "protected_regions": [
+          [
+            0,
+            0,
+            1133,
+            1080
+          ]
+        ]
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "contrast",
+      "status": "PASS",
+      "evidence": {
+        "forest_on_paper": 9.81,
+        "white_on_forest": 11.72,
+        "minimum": 4.5
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "sample-disclosure",
+      "status": "PASS",
+      "evidence": {
+        "copy_status": "sample"
+      }
+    }
+  ],
+  "outputs": {
+    "poster-4x5": {
+      "path": "wild-honey-autumn-2026-sample-poster-4x5.png",
+      "width": 1200,
+      "height": 1500,
+      "sha256": "53e100f167121b10f803e9c68d58be46080623b4e5b2e46797a1ef37cf9b276e",
+      "text_items": [
+        {
+          "field": "brand.qualifier",
+          "value": "示例品牌 · CONCEPT ONLY",
+          "bbox": [
+            688,
+            98,
+            948,
+            119
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "brand.name",
+          "value": "山野蜜坊",
+          "bbox": [
+            688,
+            136,
+            856,
+            177
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.kicker",
+          "value": "秋季蜂蜜限定 · 2026",
+          "bbox": [
+            688,
+            214,
+            897,
+            237
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.headline_lines[0]",
+          "value": "一勺",
+          "bbox": [
+            688,
+            262,
+            896,
+            362
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.headline_lines[1]",
+          "value": "秋蜜",
+          "bbox": [
+            688,
+            370,
+            896,
+            472
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.body_lines[0]",
+          "value": "把山野的甜，",
+          "bbox": [
+            688,
+            496,
+            892,
+            529
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.body_lines[1]",
+          "value": "留到秋天。",
+          "bbox": [
+            688,
+            544,
+            858,
+            577
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.cta",
+          "value": "查看秋季限定",
+          "bbox": [
+            742,
+            632,
+            886,
+            656
+          ],
+          "container": [
+            688,
+            610,
+            940,
+            674
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "generated.sample_disclosure",
+          "value": "SAMPLE / 非商业发布",
+          "bbox": [
+            928,
+            755,
+            1112,
+            774
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": false
+        },
+        {
+          "field": "campaign.date",
+          "value": "09.20 — 10.18",
+          "bbox": [
+            48,
+            1424,
+            220,
+            1442
+          ],
+          "container": [
+            48,
+            1385,
+            1152,
+            1480
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.location",
+          "value": "线上预览 · SAMPLE COPY",
+          "bbox": [
+            906,
+            1423,
+            1152,
+            1444
+          ],
+          "container": [
+            48,
+            1385,
+            1152,
+            1480
+          ],
+          "inside_container": true,
+          "source_copy": true
+        }
+      ]
+    },
+    "header-16x9": {
+      "path": "wild-honey-autumn-2026-sample-header-16x9.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "0c6d63b6fbe92032fc0f11fa9db90de16c6ca091bfcb8fef639271b80716dbc4",
+      "text_items": [
+        {
+          "field": "brand.qualifier",
+          "value": "示例品牌 · CONCEPT ONLY",
+          "bbox": [
+            1205,
+            62,
+            1465,
+            83
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "brand.name",
+          "value": "山野蜜坊",
+          "bbox": [
+            1205,
+            105,
+            1381,
+            146
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.kicker",
+          "value": "秋季蜂蜜限定 · 2026",
+          "bbox": [
+            1205,
+            210,
+            1414,
+            233
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.headline_lines[0]",
+          "value": "一勺",
+          "bbox": [
+            1205,
+            265,
+            1389,
+            353
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.headline_lines[1]",
+          "value": "秋蜜",
+          "bbox": [
+            1205,
+            363,
+            1389,
+            452
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.body_lines[0]",
+          "value": "把山野的甜，",
+          "bbox": [
+            1205,
+            485,
+            1409,
+            518
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.body_lines[1]",
+          "value": "留到秋天。",
+          "bbox": [
+            1205,
+            533,
+            1375,
+            566
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.cta",
+          "value": "查看秋季限定",
+          "bbox": [
+            1267,
+            633,
+            1411,
+            657
+          ],
+          "container": [
+            1205,
+            609,
+            1473,
+            677
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.date",
+          "value": "09.20 — 10.18",
+          "bbox": [
+            1200,
+            896,
+            1365,
+            913
+          ],
+          "container": [
+            1200,
+            896,
+            1834,
+            1004
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.location",
+          "value": "线上预览 · SAMPLE COPY",
+          "bbox": [
+            1613,
+            985,
+            1834,
+            1004
+          ],
+          "container": [
+            1200,
+            896,
+            1834,
+            1004
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "generated.sample_disclosure",
+          "value": "SAMPLE / 非商业发布",
+          "bbox": [
+            1664,
+            62,
+            1848,
+            81
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": false
+        }
+      ]
+    }
+  },
+  "boundary": "PASS covers deterministic layout gates only; brand, factual, legal, font-license and publication approval remain external."
+}

@@ -1,0 +1,640 @@
+{
+  "schema_version": "1.0",
+  "status": "PASS",
+  "template": {
+    "id": "campaign-poster",
+    "version": "1.0"
+  },
+  "campaign_id": "wild-honey-autumn-2026-approved-demo",
+  "copy_status": "approved",
+  "locale": "zh-CN",
+  "inputs": {
+    "copy": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\examples\\honey-campaign-approved-demo.json",
+    "art": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\research\\additional-validation-v2\\honey-ceramic.png",
+    "art_sha256": "8b8a0f2660685195a4ec89c4c864464c2c3d0ed3d8b329bd69d226615018b9da",
+    "font": "C:\\Windows\\Fonts\\msyh.ttc",
+    "template": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\extension\\photo-to-conceptual-art\\assets\\templates\\campaign-poster.json",
+    "release_manifest": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\research\\honey-formal-publication-demo\\honey-release-manifest-approved-demo.json",
+    "release_signature": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\research\\honey-formal-publication-demo\\honey-release-signature-approved-demo.json",
+    "trusted_keys": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\research\\release-security-v1\\trusted-release-keys-demo.json",
+    "audit_log": "E:\\0818_codex_project\\projects\\photo-to-organic-knit\\research\\release-security-v1\\release-audit-demo.jsonl"
+  },
+  "release": {
+    "required": true,
+    "status": "PASS",
+    "release_id": "wild-honey-autumn-2026-approved-demo",
+    "release_scope": "demo",
+    "manifest_sha256": "8eae05ef5e515509d231fd0c58aa1347392f5d4a0fe1b842eff411d4769218ba",
+    "copy_sha256": "37b7f2ff112cbe35ad0f7aeca14a1fb32d12c9c818dade4254123e8cd1e4ab6c",
+    "art_sha256": "8b8a0f2660685195a4ec89c4c864464c2c3d0ed3d8b329bd69d226615018b9da",
+    "approvals": {
+      "brand": {
+        "status": "approved",
+        "reviewer": "Demo Brand Owner",
+        "approved_at": "2026-08-19T10:00:00+08:00",
+        "evidence": "demo://approval/brand/B-001"
+      },
+      "copy": {
+        "status": "approved",
+        "reviewer": "Demo Copy Owner",
+        "approved_at": "2026-08-19T10:05:00+08:00",
+        "evidence": "demo://approval/copy/C-001"
+      },
+      "legal": {
+        "status": "approved",
+        "reviewer": "Demo Legal Owner",
+        "approved_at": "2026-08-19T10:10:00+08:00",
+        "evidence": "demo://approval/legal/L-001"
+      },
+      "design": {
+        "status": "approved",
+        "reviewer": "Demo Design Owner",
+        "approved_at": "2026-08-19T10:15:00+08:00",
+        "evidence": "demo://approval/design/D-001"
+      },
+      "channel": {
+        "status": "approved",
+        "reviewer": "Demo Channel Owner",
+        "approved_at": "2026-08-19T10:20:00+08:00",
+        "evidence": "demo://approval/channel/H-001"
+      }
+    }
+  },
+  "signature": {
+    "required": true,
+    "status": "PASS",
+    "algorithm": "Ed25519",
+    "key_id": "demo-release-key-2026",
+    "signer": "Demo Release Authority",
+    "signed_at": "2026-08-19T11:30:00+08:00",
+    "manifest_sha256": "8eae05ef5e515509d231fd0c58aa1347392f5d4a0fe1b842eff411d4769218ba",
+    "signature_sha256": "2e64c90e030b495d2d691c47b50493b7f6d0c3c457cd1ddf61b68544cf139bce",
+    "trust_store_sha256": "68f97a93c0517cbc10d9371791b8b75859c31b07d7b79d13a7589e582e811de8",
+    "key_scope": "demo"
+  },
+  "audit": {
+    "required": true,
+    "status": "PASS",
+    "sequence": 1,
+    "event_hash": "410dcb8f58c77855c060d24e75eb70ef75c355f8d2b3d0eab678fc52dd1b0991",
+    "previous_event_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "audit_log_sha256": "7f3f51fcae76967cb3cde97b84e81f7b252cd3e987f7601d1eda41c5f6e65d34"
+  },
+  "checks": [
+    {
+      "variant": "poster-4x5",
+      "id": "dimensions",
+      "status": "PASS",
+      "evidence": {
+        "actual": [
+          1200,
+          1500
+        ],
+        "expected": [
+          1200,
+          1500
+        ]
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "exact-copy",
+      "status": "PASS",
+      "evidence": {
+        "expected": {
+          "brand.qualifier": "山野秋蜜系列 · 2026",
+          "brand.name": "山野蜜坊",
+          "campaign.kicker": "秋季限定 · 09.20 上新",
+          "campaign.cta": "前往官方商城",
+          "campaign.date": "09.20 — 10.18",
+          "campaign.location": "官方商城 · 秋季限定",
+          "campaign.headline_lines[0]": "一勺",
+          "campaign.headline_lines[1]": "秋蜜",
+          "campaign.body_lines[0]": "把一季金黄，",
+          "campaign.body_lines[1]": "收进一勺甜。"
+        },
+        "rendered": {
+          "brand.qualifier": "山野秋蜜系列 · 2026",
+          "brand.name": "山野蜜坊",
+          "campaign.kicker": "秋季限定 · 09.20 上新",
+          "campaign.headline_lines[0]": "一勺",
+          "campaign.headline_lines[1]": "秋蜜",
+          "campaign.body_lines[0]": "把一季金黄，",
+          "campaign.body_lines[1]": "收进一勺甜。",
+          "campaign.cta": "前往官方商城",
+          "campaign.date": "09.20 — 10.18",
+          "campaign.location": "官方商城 · 秋季限定"
+        }
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "overflow",
+      "status": "PASS",
+      "evidence": {
+        "overflow_fields": []
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "protected-region",
+      "status": "PASS",
+      "evidence": {
+        "colliding_fields": [],
+        "protected_regions": [
+          [
+            72,
+            540,
+            636,
+            1328
+          ]
+        ]
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "contrast",
+      "status": "PASS",
+      "evidence": {
+        "forest_on_paper": 9.81,
+        "white_on_forest": 11.72,
+        "minimum": 4.5
+      }
+    },
+    {
+      "variant": "poster-4x5",
+      "id": "sample-disclosure",
+      "status": "PASS",
+      "evidence": {
+        "copy_status": "approved"
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "dimensions",
+      "status": "PASS",
+      "evidence": {
+        "actual": [
+          1920,
+          1080
+        ],
+        "expected": [
+          1920,
+          1080
+        ]
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "exact-copy",
+      "status": "PASS",
+      "evidence": {
+        "expected": {
+          "brand.qualifier": "山野秋蜜系列 · 2026",
+          "brand.name": "山野蜜坊",
+          "campaign.kicker": "秋季限定 · 09.20 上新",
+          "campaign.cta": "前往官方商城",
+          "campaign.date": "09.20 — 10.18",
+          "campaign.location": "官方商城 · 秋季限定",
+          "campaign.headline_lines[0]": "一勺",
+          "campaign.headline_lines[1]": "秋蜜",
+          "campaign.body_lines[0]": "把一季金黄，",
+          "campaign.body_lines[1]": "收进一勺甜。"
+        },
+        "rendered": {
+          "brand.qualifier": "山野秋蜜系列 · 2026",
+          "brand.name": "山野蜜坊",
+          "campaign.kicker": "秋季限定 · 09.20 上新",
+          "campaign.headline_lines[0]": "一勺",
+          "campaign.headline_lines[1]": "秋蜜",
+          "campaign.body_lines[0]": "把一季金黄，",
+          "campaign.body_lines[1]": "收进一勺甜。",
+          "campaign.cta": "前往官方商城",
+          "campaign.date": "09.20 — 10.18",
+          "campaign.location": "官方商城 · 秋季限定"
+        }
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "overflow",
+      "status": "PASS",
+      "evidence": {
+        "overflow_fields": []
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "protected-region",
+      "status": "PASS",
+      "evidence": {
+        "colliding_fields": [],
+        "protected_regions": [
+          [
+            0,
+            0,
+            1133,
+            1080
+          ]
+        ]
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "contrast",
+      "status": "PASS",
+      "evidence": {
+        "forest_on_paper": 9.81,
+        "white_on_forest": 11.72,
+        "minimum": 4.5
+      }
+    },
+    {
+      "variant": "header-16x9",
+      "id": "sample-disclosure",
+      "status": "PASS",
+      "evidence": {
+        "copy_status": "approved"
+      }
+    }
+  ],
+  "outputs": {
+    "poster-4x5": {
+      "path": "wild-honey-autumn-2026-approved-demo-poster-4x5.png",
+      "width": 1200,
+      "height": 1500,
+      "sha256": "5822261a661550427d2f8974f5351e91fe64bede792d8fcc7b8dc80ad77ab5a3",
+      "text_items": [
+        {
+          "field": "brand.qualifier",
+          "value": "山野秋蜜系列 · 2026",
+          "bbox": [
+            688,
+            98,
+            878,
+            119
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "brand.name",
+          "value": "山野蜜坊",
+          "bbox": [
+            688,
+            136,
+            856,
+            177
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.kicker",
+          "value": "秋季限定 · 09.20 上新",
+          "bbox": [
+            688,
+            214,
+            910,
+            237
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.headline_lines[0]",
+          "value": "一勺",
+          "bbox": [
+            688,
+            262,
+            896,
+            362
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.headline_lines[1]",
+          "value": "秋蜜",
+          "bbox": [
+            688,
+            370,
+            896,
+            472
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.body_lines[0]",
+          "value": "把一季金黄，",
+          "bbox": [
+            688,
+            496,
+            892,
+            529
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.body_lines[1]",
+          "value": "收进一勺甜。",
+          "bbox": [
+            688,
+            544,
+            892,
+            577
+          ],
+          "container": [
+            688,
+            92,
+            1112,
+            778
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.cta",
+          "value": "前往官方商城",
+          "bbox": [
+            742,
+            632,
+            886,
+            658
+          ],
+          "container": [
+            688,
+            610,
+            940,
+            674
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.date",
+          "value": "09.20 — 10.18",
+          "bbox": [
+            48,
+            1424,
+            220,
+            1442
+          ],
+          "container": [
+            48,
+            1385,
+            1152,
+            1480
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.location",
+          "value": "官方商城 · 秋季限定",
+          "bbox": [
+            971,
+            1423,
+            1152,
+            1445
+          ],
+          "container": [
+            48,
+            1385,
+            1152,
+            1480
+          ],
+          "inside_container": true,
+          "source_copy": true
+        }
+      ]
+    },
+    "header-16x9": {
+      "path": "wild-honey-autumn-2026-approved-demo-header-16x9.png",
+      "width": 1920,
+      "height": 1080,
+      "sha256": "c970c5250349a6b8a9d0f35e5a123446c36d0dbeb67923fead817c5d40d56451",
+      "text_items": [
+        {
+          "field": "brand.qualifier",
+          "value": "山野秋蜜系列 · 2026",
+          "bbox": [
+            1205,
+            62,
+            1395,
+            83
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "brand.name",
+          "value": "山野蜜坊",
+          "bbox": [
+            1205,
+            105,
+            1381,
+            146
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.kicker",
+          "value": "秋季限定 · 09.20 上新",
+          "bbox": [
+            1205,
+            210,
+            1427,
+            233
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.headline_lines[0]",
+          "value": "一勺",
+          "bbox": [
+            1205,
+            265,
+            1389,
+            353
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.headline_lines[1]",
+          "value": "秋蜜",
+          "bbox": [
+            1205,
+            363,
+            1389,
+            452
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.body_lines[0]",
+          "value": "把一季金黄，",
+          "bbox": [
+            1205,
+            485,
+            1409,
+            518
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.body_lines[1]",
+          "value": "收进一勺甜。",
+          "bbox": [
+            1205,
+            533,
+            1409,
+            566
+          ],
+          "container": [
+            1205,
+            58,
+            1848,
+            1022
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.cta",
+          "value": "前往官方商城",
+          "bbox": [
+            1267,
+            633,
+            1411,
+            659
+          ],
+          "container": [
+            1205,
+            609,
+            1473,
+            677
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.date",
+          "value": "09.20 — 10.18",
+          "bbox": [
+            1200,
+            896,
+            1365,
+            913
+          ],
+          "container": [
+            1200,
+            896,
+            1834,
+            1004
+          ],
+          "inside_container": true,
+          "source_copy": true
+        },
+        {
+          "field": "campaign.location",
+          "value": "官方商城 · 秋季限定",
+          "bbox": [
+            1671,
+            984,
+            1834,
+            1004
+          ],
+          "container": [
+            1200,
+            896,
+            1834,
+            1004
+          ],
+          "inside_container": true,
+          "source_copy": true
+        }
+      ]
+    }
+  },
+  "boundary": "PASS covers deterministic layout gates only; brand, factual, legal, font-license and publication approval remain external."
+}

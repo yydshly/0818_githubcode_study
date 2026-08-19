@@ -10,3 +10,6 @@
 [submodule "projects/promise-wall/upstream"]
 	path = projects/promise-wall/upstream
 	url = https://github.com/thebuggeddev/promise-wall.git
+[submodule "projects/photo-to-organic-knit/upstream"]
+	path = projects/photo-to-organic-knit/upstream
+	url = https://github.com/NalaZhang27/photo-to-organic-knit.git

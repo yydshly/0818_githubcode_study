@@ -12,6 +12,7 @@ on:
       - "projects/hand-drawn-styles/**"
       - "projects/stamp-edge-skill/**"
       - "projects/promise-wall/**"
+      - "projects/photo-to-organic-knit/**"
   workflow_dispatch:
 
 permissions:
@@ -73,6 +74,14 @@ jobs:
           cp -R projects/promise-wall/docs _site/projects/promise-wall/docs
           cp projects/promise-wall/README.md _site/projects/promise-wall/README.md
           cp projects/promise-wall/upstream/index.html _site/projects/promise-wall/upstream/index.html
+          mkdir -p _site/projects/photo-to-organic-knit/upstream/assets
+          cp -R projects/photo-to-organic-knit/showcase _site/projects/photo-to-organic-knit/showcase
+          cp -R projects/photo-to-organic-knit/docs _site/projects/photo-to-organic-knit/docs
+          cp -R projects/photo-to-organic-knit/extension _site/projects/photo-to-organic-knit/extension
+          cp -R projects/photo-to-organic-knit/research _site/projects/photo-to-organic-knit/research
+          cp -R projects/photo-to-organic-knit/studio _site/projects/photo-to-organic-knit/studio
+          cp projects/photo-to-organic-knit/README.md _site/projects/photo-to-organic-knit/README.md
+          cp projects/photo-to-organic-knit/upstream/assets/train-before-after.png projects/photo-to-organic-knit/upstream/assets/forest-before-after.png _site/projects/photo-to-organic-knit/upstream/assets/
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4

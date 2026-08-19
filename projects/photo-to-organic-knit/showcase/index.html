@@ -1,0 +1,1119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Photo to Organic Knit 研究展厅：独立 before/after 实演、工作原理、使用意义、后期场景与扩展路线。">
+  <title>Photo to Organic Knit · 从照片到概念针织海报</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="topbar">
+    <a class="brand" href="../../../"><span aria-hidden="true">●</span> GITHUB CODE STUDY</a>
+    <nav aria-label="页面导航">
+      <a href="#demo">实演</a>
+      <a href="#research-ledger">阶段</a>
+      <a href="#effect-lab">多效果</a>
+      <a href="#scenario-cases">场景案例</a>
+      <a href="#deliverables">成品</a>
+      <a href="#framework">系统</a>
+      <a href="#forward-test">实测</a>
+      <a href="#pilot-benchmark">基准</a>
+      <a href="#review-protocol">评分</a>
+      <a href="#chinese-publish">中文</a>
+      <a href="#additional-validation">新增验证</a>
+      <a href="#publishing-pipeline">发布引擎</a>
+      <a href="#publishing-templates">多模板</a>
+      <a href="#honey-publication">蜂蜜成品</a>
+      <a href="#formal-publication">正式发布</a>
+      <a href="#release-manifest">审批包</a>
+      <a href="#release-security">签名审计</a>
+      <a href="#action-runbook">动作</a>
+      <a href="#publication-studio">工作台</a>
+      <a href="#method">原理</a>
+      <a href="#meaning">意义</a>
+      <a href="#scenarios">场景</a>
+      <a href="#roadmap">扩展</a>
+      <a href="#value">价值</a>
+    </nav>
+    <a class="source" href="https://github.com/NalaZhang27/photo-to-organic-knit">上游源码 ↗</a>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PROJECT 05 / AGENTIC IMAGE ART DIRECTION</p>
+        <h1>不是给照片织一层纹理，<br><em>是重新决定什么值得留下。</em></h1>
+        <p class="lede">Photo to Organic Knit 把照片拆成保留、转化与舍弃三组，以一个视觉隐喻重建构图，再让 ImageGen 把结果做成有真实纤维触感的编辑海报。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#demo">拖动查看实演</a>
+          <a class="button" href="#meaning">为什么值得研究</a>
+        </div>
+        <dl class="metrics" aria-label="项目摘要">
+          <div><dt>0</dt><dd>仓库内图像模型</dd></div>
+          <div><dt>3</dt><dd>元素决策分组</dd></div>
+          <div><dt>≥3</dt><dd>结构变化要求</dd></div>
+          <div><dt>1</dt><dd>核心视觉隐喻</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-card">
+        <img src="assets/generated/canoe-organic-knit.png" width="1536" height="1024" alt="黄色外套的划船者沿编织毛线河流驶向针织山谷，标题为 Follow the Current">
+        <figcaption><span>CODEX IMAGEGEN · 独立复现</span>Follow the Current / 2026-08-19</figcaption>
+      </figure>
+    </section>
+
+    <section class="thesis" aria-label="核心判断">
+      <strong>上游贡献的是艺术指导协议，而不是新的生图算法。</strong>
+      <p>照片负责“是谁与发生了什么”，风格参考负责“材料应该有多真实”，Skill 负责“如何取舍与重构”，ImageGen 最后负责像素。</p>
+    </section>
+
+    <section class="research-ledger" id="research-ledger" aria-labelledby="ledger-title">
+      <div class="ledger-heading"><div><span>APPEND-ONLY RESEARCH LEDGER</span><h2 id="ledger-title">旧样例锁定保留，<br>新工作按阶段追加。</h2></div><p>后续实验不会替换前面的证据。下面每一层都有独立锚点、文件和验证边界，可以直接回到原始能力或继续查看新增研究。</p></div>
+      <div class="ledger-grid">
+        <a href="#demo"><span>BASE 01</span><b>独立 before / after</b><small>独木舟源图与针织复现</small></a>
+        <a href="#upstream"><span>BASE 02</span><b>上游原始证据</b><small>火车与森林两组原版案例</small></a>
+        <a href="#effect-lab"><span>ADD 03</span><b>六材料能力实验</b><small>同一意境，不同材料合同</small></a>
+        <a href="#scenario-cases"><span>ADD 04</span><b>目标场景案例</b><small>家庭、旅行、公益与品牌</small></a>
+        <a href="#deliverables"><span>ADD 05</span><b>最终交付 Mockup</b><small>艺术底图与确定性排版</small></a>
+        <a href="#framework"><span>ADD 06</span><b>目标驱动 Skill</b><small>Schema、Profile 与编译器</small></a>
+        <a href="#forward-test"><span>ADD 07</span><b>未见照片前向测试</b><small>自动路线与人工覆盖</small></a>
+        <a href="#pilot-benchmark"><span>ADD 08</span><b>跨题材 n=3 Pilot</b><small>人物、产品与建筑交通</small></a>
+        <a href="#review-protocol"><span>ADD 09</span><b>评价协议</b><small>人工证据与确定性汇总</small></a>
+        <a href="#chinese-publish"><span>ADD 10</span><b>中文发布层</b><small>中文调用、排版与横幅适配</small></a>
+        <a href="#additional-validation"><span>ADD 11</span><b>三效果新增验证</b><small>原图对比针织、彩玻璃与陶瓷</small></a>
+        <a href="#publishing-pipeline"><span>ADD 12</span><b>确定性发布引擎</b><small>copy.json、自动排版与双尺寸导出</small></a>
+        <a href="#publishing-templates"><span>ADD 13</span><b>三类新增发布模板</b><small>纪念册、影响力报告与旅行日志</small></a>
+        <a href="#publication-studio"><span>ADD 14</span><b>本地发布工作台</b><small>表单、门禁反馈与批量 ZIP</small></a>
+        <a href="#honey-publication"><span>ADD 15</span><b>蜂蜜跨图片发布验证</b><small>原图、陶瓷 Key Art 与双尺寸成品</small></a>
+        <a href="#formal-publication"><span>ADD 16</span><b>正式发布模式示例</b><small>取消样例声明、恢复渠道字段与审批清单</small></a>
+        <a href="#release-manifest"><span>ADD 17</span><b>Release Manifest 门禁</b><small>五方审批、文案与图片哈希绑定</small></a>
+        <a href="#release-security"><span>ADD 18</span><b>Ed25519 签名与审计链</b><small>可信公钥、离线签名和输出哈希事件</small></a>
+        <a href="#action-runbook"><span>ADD 19</span><b>非生产 Action Runbook</b><small>正常动作、失败响应与研究待办</small></a>
+      </div>
+      <p class="ledger-lock"><b>BASELINE LOCKED</b> 原始图片文件、原版对比与独立复现都由项目测试作为必需资源保护。</p>
+    </section>
+
+    <section class="section" id="demo" aria-labelledby="demo-title">
+      <div class="section-heading">
+        <div><span>01 / INDEPENDENT DEMO</span><h2 id="demo-title">同一条河，<br>两种叙事。</h2></div>
+        <p>这组输入与输出都由本研究使用 Codex 内置 ImageGen 制作。拖动滑杆查看：辨识锚点被保留，但摄影舞台被真正重构。</p>
+      </div>
+
+      <div class="compare-shell" data-compare style="--reveal: 54%">
+        <div class="compare-stage">
+          <img class="compare-before" src="assets/generated/canoe-source.png" width="1536" height="1024" alt="原始输入：黄色外套的人划红色独木舟穿过秋季河谷">
+          <div class="compare-after" aria-hidden="true">
+            <img src="assets/generated/canoe-organic-knit.png" width="1536" height="1024" alt="">
+          </div>
+          <div class="compare-line" aria-hidden="true"><span>↔</span></div>
+          <span class="compare-label before-label">SOURCE PHOTO</span>
+          <span class="compare-label after-label">ORGANIC KNIT</span>
+        </div>
+        <label class="compare-control">拖动比较
+          <input type="range" min="0" max="100" value="54" aria-label="调整针织结果显示比例">
+        </label>
+      </div>
+
+      <div class="decision-grid" aria-label="演示的设计决策">
+        <article class="retain"><span>RETAIN / 保留</span><h3>让人仍能认出旅程</h3><p>红色独木舟、黄色外套、S 形方向、山谷轮廓与少量芦苇。</p></article>
+        <article class="transform"><span>TRANSFORM / 转化</span><h3>让画面开始表达</h3><p>河流成为编织路径，山成为不对称织物岛，雾成为松散马海毛。</p></article>
+        <article class="discard"><span>DISCARD / 舍弃</span><h3>让概念获得呼吸</h3><p>删除写实天空、水面反射、连续植被、摄影景深与背景杂讯。</p></article>
+      </div>
+
+      <div class="concept-strip">
+        <span>ONE-SENTENCE ART DIRECTION</span>
+        <p>“河流是一根线，把小小旅行者带过山间之门。”</p>
+        <a href="assets/generated/PROMPTS.md">查看完整生成记录 →</a>
+      </div>
+    </section>
+
+    <section class="section effect-lab" id="effect-lab" aria-labelledby="effect-lab-title">
+      <div class="section-heading">
+        <div><span>02 / ONE ESSENCE, SIX MATERIALS</span><h2 id="effect-lab-title">意境不变，<br>材料决定表达。</h2></div>
+        <p>这是一次“同一意境、六种材料”的控制实验：六张图使用同一张源照片和同一份语义 Brief。变化的不是故事，而是每个效果 Profile 对路径、山门、空间、缺陷和成品用途的重新规定。</p>
+      </div>
+
+      <div class="essence-contract" aria-label="六种效果共享的语义合同">
+        <div><span>ANCHORS / 辨识锚点</span><p>红色独木舟 · 黄色外套 · S 形路径 · 山间开口 · 稀疏芦苇</p></div>
+        <div><span>MOOD / 情绪</span><p>安静、独行、向前；不是冒险奇观，而是一段被材料重新记住的旅程。</p></div>
+        <div><span>METAPHOR / 隐喻</span><p>一根路径带着小小旅行者，穿过山间之门。</p></div>
+      </div>
+
+      <div class="effect-workbench">
+        <div class="effect-controls" role="tablist" aria-label="选择材料效果">
+          <button class="is-active" data-effect="knit" role="tab" aria-selected="true"><span>01</span>有机针织</button>
+          <button data-effect="paper" role="tab" aria-selected="false"><span>02</span>分层剪纸</button>
+          <button data-effect="ceramic" role="tab" aria-selected="false"><span>03</span>陶瓷浮雕</button>
+          <button data-effect="glass" role="tab" aria-selected="false"><span>04</span>彩色玻璃</button>
+          <button data-effect="woodcut" role="tab" aria-selected="false"><span>05</span>木刻版画</button>
+          <button data-effect="diorama" role="tab" aria-selected="false"><span>06</span>微缩场景</button>
+        </div>
+
+        <div class="effect-stage">
+          <figure class="effect-visual">
+            <img id="effect-image" src="assets/generated/canoe-organic-knit.png" width="1536" height="1024" alt="有机针织效果：红舟沿编织河流驶向针织山谷">
+            <figcaption><span id="effect-material">CROCHET · KNIT · FELT · MOHAIR</span><b id="effect-caption">有机针织 / Organic Knit</b></figcaption>
+          </figure>
+          <article class="effect-copy" aria-live="polite">
+            <span id="effect-kicker">EFFECT 01 / TACTILE WARMTH</span>
+            <h3 id="effect-title">把河流变成一根可以触摸的线</h3>
+            <p id="effect-description">编织路径承担视觉动线，山脉拆成有缝隙的织物岛，马海毛雾气让“穿过山门”的意境变得柔软而安静。</p>
+            <dl>
+              <div><dt>河流</dt><dd id="effect-river">多股编织毛线，线尾和粗细变化可见</dd></div>
+              <div><dt>山脉</dt><dd id="effect-mountains">不对称针织块与毛毡层，留出背景缝隙</dd></div>
+              <div><dt>适用</dt><dd id="effect-use">家庭、旅行、儿童内容、温暖品牌视觉</dd></div>
+              <div><dt>价值</dt><dd id="effect-value">亲和、手作、可收藏，适合需要情感温度的内容</dd></div>
+            </dl>
+            <a id="effect-prompt-link" href="assets/generated/PROMPTS.md">查看该效果的 Prompt 记录 →</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="effect-gallery" aria-label="六种效果总览">
+        <button class="effect-card is-active" data-effect="knit"><img src="assets/generated/canoe-organic-knit.png" width="1536" height="1024" loading="lazy" alt="有机针织效果缩略图"><span><b>有机针织</b><small>柔软 · 亲和 · 手作</small></span></button>
+        <button class="effect-card" data-effect="paper"><img src="assets/generated/canoe-paper-cut.png" width="1536" height="1024" loading="lazy" alt="分层剪纸效果缩略图"><span><b>分层剪纸</b><small>留白 · 层级 · 编辑</small></span></button>
+        <button class="effect-card" data-effect="ceramic"><img src="assets/generated/canoe-ceramic-relief.png" width="1536" height="1024" loading="lazy" alt="陶瓷浮雕效果缩略图"><span><b>陶瓷浮雕</b><small>凹凸 · 光影 · 收藏</small></span></button>
+        <button class="effect-card" data-effect="glass"><img src="assets/generated/canoe-stained-glass.png" width="1536" height="1024" loading="lazy" alt="彩色玻璃效果缩略图"><span><b>彩色玻璃</b><small>透光 · 轮廓 · 仪式</small></span></button>
+        <button class="effect-card" data-effect="woodcut"><img src="assets/generated/canoe-woodcut.png" width="1536" height="1024" loading="lazy" alt="木刻版画效果缩略图"><span><b>木刻版画</b><small>高对比 · 节奏 · 出版</small></span></button>
+        <button class="effect-card" data-effect="diorama"><img src="assets/generated/canoe-miniature-diorama.png" width="1536" height="1024" loading="lazy" alt="微缩场景效果缩略图"><span><b>微缩场景</b><small>空间 · 叙事 · 展陈</small></span></button>
+      </div>
+
+      <div class="effect-conclusion">
+        <span>RESEARCH FINDING</span>
+        <p><strong>Skill 没有“完全控制像素”，但可以控制解释框架。</strong>同一意境经过不同材料合同后，会稳定地改变视觉层级、情绪距离和后期用途。</p>
+        <a href="assets/generated/MULTI_EFFECT_PROMPTS.md">阅读五种扩展效果的完整 Prompt</a>
+      </div>
+    </section>
+
+    <section class="section scenario-cases" id="scenario-cases" aria-labelledby="scenario-cases-title">
+      <div class="section-heading">
+        <div><span>03 / EFFECTS CHOSEN BY USE</span><h2 id="scenario-cases-title">不是先选风格，<br>而是先确定交付。</h2></div>
+        <p>能力实验回答“能生成什么”；下面四个案例回答“为什么这个场景应该选择这个效果”。每组都保留源照片，结果图不承载正式文字，让设计师在后期完成标题与品牌排版。</p>
+      </div>
+
+      <div class="scenario-formula" aria-label="场景效果选择公式">
+        <div><span>01</span><b>目标使用场景</b><small>先明确受众与交付物</small></div>
+        <i aria-hidden="true">→</i>
+        <div><span>02</span><b>可转化结构</b><small>寻找关系、路径与隐喻</small></div>
+        <i aria-hidden="true">→</i>
+        <div><span>03</span><b>匹配材料效果</b><small>选择能放大目标的语言</small></div>
+        <i aria-hidden="true">→</i>
+        <div><span>04</span><b>实际交付资产</b><small>保留后期排版和治理空间</small></div>
+      </div>
+
+      <div class="scenario-case-list">
+        <article class="scenario-case">
+          <div class="scenario-media">
+            <figure class="scenario-result"><img src="assets/generated/scenario-family-knit.png" width="1536" height="1024" loading="lazy" alt="针织家庭记忆案例：祖母和孙女在毛线拱形怀抱中共读，橘猫卧在旁边"><figcaption><span>RESULT / 有机针织</span><b>两代人的同一本故事</b></figcaption></figure>
+            <div class="scenario-source"><img src="assets/generated/scenario-family-source.png" width="1536" height="1024" loading="lazy" alt="源照片：祖母和孙女在木制拱廊下与橘猫一起读书"><div><span>SOURCE PHOTO</span><b>共读关系 · 拱形庇护 · 橘猫</b></div></div>
+          </div>
+          <div class="scenario-case-copy">
+            <div class="case-index"><span>CASE 01</span><b>家庭成长册 / 绘本扉页</b></div>
+            <h3>需要的是亲密与安全，<br>所以选择有机针织。</h3>
+            <p>照片最重要的不是庭院细节，而是两代人靠在一起看同一本书。针织把木拱门放大成“拥抱环”，把共读关系变成可触摸的家庭记忆。</p>
+            <dl>
+              <div><dt>目标受众</dt><dd>家庭成员、儿童与纪念册阅读者</dd></div>
+              <div><dt>核心锚点</dt><dd>祖母、孙女、打开的书、橘猫、拱门</dd></div>
+              <div><dt>选择理由</dt><dd>柔软纤维降低距离感，手作不规则性与私人记忆相符</dd></div>
+              <div><dt>可交付</dt><dd>成长册封面、绘本扉页、家庭节日卡、无字相册底图</dd></div>
+            </dl>
+            <p class="case-value"><b>实际价值</b> 不需要精确还原住宅环境，也能保留“这是我们三个人的时刻”。</p>
+          </div>
+        </article>
+
+        <article class="scenario-case reverse">
+          <div class="scenario-media">
+            <figure class="scenario-result"><img src="assets/generated/canoe-woodcut.png" width="1536" height="1024" loading="lazy" alt="木刻旅行纪念案例：高对比刻线组成河流和山谷，黄衣旅行者驾驶红舟"><figcaption><span>RESULT / 木刻版画</span><b>沿着一条线进入群山</b></figcaption></figure>
+            <div class="scenario-source"><img src="assets/generated/canoe-source.png" width="1536" height="1024" loading="lazy" alt="源照片：黄衣旅行者划红色独木舟穿过雾中河谷"><div><span>SOURCE PHOTO</span><b>S 形路线 · 红舟 · 山门</b></div></div>
+          </div>
+          <div class="scenario-case-copy">
+            <div class="case-index"><span>CASE 02</span><b>旅行纪念 / 户外栏目封面</b></div>
+            <h3>需要缩小后仍然有力量，<br>所以选择木刻版画。</h3>
+            <p>旅行封面首先要让路线和方向被看见。木刻删除雾、水纹和植被，把河流压缩成高对比刀痕，让红舟和黄衣成为远距离也能识别的锚点。</p>
+            <dl>
+              <div><dt>目标受众</dt><dd>旅行者、户外读者、路线内容订阅者</dd></div>
+              <div><dt>核心锚点</dt><dd>S 形河道、红舟、黄衣、山间出口</dd></div>
+              <div><dt>选择理由</dt><dd>高对比轮廓适合封面缩略图，双色逻辑接近可控印刷</dd></div>
+              <div><dt>可交付</dt><dd>旅行日志封面、路线卡、户外栏目首图、双色纪念版画</dd></div>
+            </dl>
+            <p class="case-value"><b>实际价值</b> 从一张普通风景照中提炼出具有识别度的“这次旅程的图腾”。</p>
+          </div>
+        </article>
+
+        <article class="scenario-case">
+          <div class="scenario-media">
+            <figure class="scenario-result"><img src="assets/generated/scenario-community-glass.png" width="1536" height="1024" loading="lazy" alt="公益报告案例：五名志愿者化为彩色玻璃人物，围绕中央绿色树苗共同种植"><figcaption><span>RESULT / 彩色玻璃</span><b>许多双手组成一片树冠</b></figcaption></figure>
+            <div class="scenario-source"><img src="assets/generated/scenario-community-source.png" width="1536" height="1024" loading="lazy" alt="源照片：五名社区志愿者围绕一棵树苗共同种植"><div><span>SOURCE PHOTO</span><b>五人圆环 · 手的协作 · 中央树苗</b></div></div>
+          </div>
+          <div class="scenario-case-copy">
+            <div class="case-index"><span>CASE 03</span><b>社区公益 / 年度影响力报告</b></div>
+            <h3>需要共同体与长期象征，<br>所以选择彩色玻璃。</h3>
+            <p>公益传播不必依赖一张标准合影。玻璃效果把五个人转成五块不同色域，用铅线连接手、泥土和水，让中央树苗成为清晰的共同成果。</p>
+            <dl>
+              <div><dt>目标受众</dt><dd>社区成员、捐助者、合作机构与报告读者</dd></div>
+              <div><dt>核心锚点</dt><dd>五名志愿者、保护圆环、共同双手、绿色树苗</dd></div>
+              <div><dt>选择理由</dt><dd>透光色块表达多样性，铅线把分散行动组织为一个整体</dd></div>
+              <div><dt>可交付</dt><dd>影响力报告封面、公益活动 KV、成果页首图、空间玻璃概念</dd></div>
+            </dl>
+            <p class="case-value"><b>实际价值</b> 人物身份被适度抽象，仍能保留“多人共同照顾一件事”的行动关系。</p>
+          </div>
+        </article>
+
+        <article class="scenario-case reverse">
+          <div class="scenario-media">
+            <figure class="scenario-result"><img src="assets/generated/scenario-bakery-paper.png" width="1536" height="1024" loading="lazy" alt="独立面包店品牌案例：剪纸拱窗内一名面包师整理面包，蓝白纸质遮阳篷和纸线自行车清晰可见"><figcaption><span>RESULT / 分层剪纸</span><b>每天清晨从一扇暖窗开始</b></figcaption></figure>
+            <div class="scenario-source"><img src="assets/generated/scenario-bakery-source.png" width="1536" height="1024" loading="lazy" alt="源照片：面包师在石墙拱形橱窗内陈列面包，旁边停着自行车"><div><span>SOURCE PHOTO</span><b>拱窗 · 面包节奏 · 遮阳篷 · 自行车</b></div></div>
+          </div>
+          <div class="scenario-case-copy">
+            <div class="case-index"><span>CASE 04</span><b>独立品牌 / 季节活动主视觉</b></div>
+            <h3>需要清晰版式与本地手作感，<br>所以选择分层剪纸。</h3>
+            <p>剪纸把石墙噪点压成干净平面，把拱窗变成太阳与烤炉的双重隐喻；重复圆形面包负责节奏，大面积奶油色墙面留给活动标题。</p>
+            <dl>
+              <div><dt>目标受众</dt><dd>附近居民、门店顾客、季节活动参与者</dd></div>
+              <div><dt>核心锚点</dt><dd>拱窗、面包师、重复面包、蓝白棚、自行车</dd></div>
+              <div><dt>选择理由</dt><dd>层次明确且留白稳定，容易接入品牌字体、日期与 CTA</dd></div>
+              <div><dt>可交付</dt><dd>季节活动 KV、社媒头图、邀请函、橱窗贴纸与包装插画</dd></div>
+            </dl>
+            <p class="case-value"><b>实际价值</b> 保留“街角小店”的身份，同时把真实店面整理成可扩展的品牌图形。</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="scenario-case-summary">
+        <span>SCENE ROUTING PRINCIPLE</span>
+        <p><strong>效果不是审美标签，而是交付策略。</strong>针织负责亲密，木刻负责缩略识别，玻璃负责共同体象征，剪纸负责编辑结构和品牌留白。</p>
+        <a href="assets/generated/SCENARIO_PROMPTS.md">查看三组新场景的完整 Prompt</a>
+      </div>
+    </section>
+
+    <section class="section deliverables" id="deliverables" aria-labelledby="deliverables-title">
+      <div class="section-heading">
+        <div><span>04 / FROM ART TO DELIVERABLE</span><h2 id="deliverables-title">AI 负责底图，<br>设计系统完成交付。</h2></div>
+        <p>下面的标题、日期、信息层级和规格全部是可选择、可复制的 HTML 文本，不是生图模型烘焙进图片的字符。它们展示一条更可靠的生产路径：先生成无字艺术资产，再进入确定性排版。</p>
+      </div>
+
+      <div class="production-equation" aria-label="生产流程">
+        <div><span>AI LAYER</span><b>意境、构图、材料</b></div><i>＋</i>
+        <div><span>DESIGN LAYER</span><b>标题、网格、品牌、信息</b></div><i>＝</i>
+        <div><span>DELIVERABLE</span><b>可审核、可替换、可继续生产</b></div>
+      </div>
+
+      <div class="deliverable-grid">
+        <article class="deliverable-card">
+          <div class="deliverable-preview family-cover" aria-label="家庭成长册封面模拟">
+            <div class="cover-topline"><span>FAMILY ARCHIVE</span><span>2026</span></div>
+            <div class="cover-title"><small>VOLUME 01</small><h3>Our Shared<br>Stories</h3><p>Three generations of small moments,<br>kept close.</p></div>
+            <img src="assets/generated/scenario-family-knit.png" width="1537" height="1023" loading="lazy" alt="祖母、孙女和橘猫的针织家庭艺术图">
+            <div class="cover-footer"><span>MEMORY BOOK</span><b>Lin Family</b></div>
+          </div>
+          <div class="deliverable-notes">
+            <div class="delivery-label"><span>DELIVERABLE 01</span><b>家庭成长册封面</b></div>
+            <h3>3:4 竖版 · 私人纪念</h3>
+            <dl>
+              <div><dt>AI 层</dt><dd>祖孙共读、针织拥抱环、橘猫与暖白留白</dd></div>
+              <div><dt>设计层</dt><dd>卷册编号、封面标题、家庭署名和文字安全区</dd></div>
+              <div><dt>实际交付</dt><dd>精装封面、扉页、家庭数字相册首屏</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="deliverable-card">
+          <div class="deliverable-preview travel-cover" aria-label="旅行日志封面模拟">
+            <img src="assets/generated/canoe-woodcut.png" width="1536" height="1024" loading="lazy" alt="红舟进入山谷的木刻旅行艺术图">
+            <div class="travel-shade" aria-hidden="true"></div>
+            <div class="travel-head"><span>FIELD NOTES / 06</span><b>NORTH RIVER</b></div>
+            <div class="travel-title"><small>A QUIET ROUTE THROUGH THE MOUNTAINS</small><h3>Follow<br>the Current</h3></div>
+            <div class="travel-meta"><span>47° 12′ N</span><span>3 DAYS · 28 KM</span><span>2026</span></div>
+          </div>
+          <div class="deliverable-notes">
+            <div class="delivery-label"><span>DELIVERABLE 02</span><b>旅行日志封面</b></div>
+            <h3>4:5 竖版 · 户外出版</h3>
+            <dl>
+              <div><dt>AI 层</dt><dd>高对比木刻路线、山门、红舟和黄色人物锚点</dd></div>
+              <div><dt>设计层</dt><dd>栏目编号、路线标题、坐标、距离与时间元数据</dd></div>
+              <div><dt>实际交付</dt><dd>旅行日志、路线 PDF、栏目封面、社媒长图首屏</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="deliverable-card">
+          <div class="deliverable-preview impact-cover" aria-label="社区公益影响力报告封面模拟">
+            <div class="report-header"><span>COMMON GROUND</span><span>IMPACT REPORT · 2026</span></div>
+            <img src="assets/generated/scenario-community-glass.png" width="1536" height="1024" loading="lazy" alt="五名志愿者围绕树苗的彩色玻璃公益艺术图">
+            <div class="report-copy"><small>NEIGHBORHOOD GREENING PROGRAM</small><h3>Many hands.<br>One living canopy.</h3><p>A sample editorial cover demonstrating how symbolic generated artwork can enter a governed report layout.</p></div>
+            <div class="report-metrics"><div><b>05</b><span>districts</span></div><div><b>320</b><span>volunteers</span></div><div><b>1,240</b><span>new trees</span></div></div>
+            <p class="sample-disclaimer">SAMPLE LAYOUT · ILLUSTRATIVE DATA</p>
+          </div>
+          <div class="deliverable-notes">
+            <div class="delivery-label"><span>DELIVERABLE 03</span><b>年度影响力报告</b></div>
+            <h3>A4 竖版 · 机构传播</h3>
+            <dl>
+              <div><dt>AI 层</dt><dd>五人协作圆环、发光树苗和共同体玻璃符号</dd></div>
+              <div><dt>设计层</dt><dd>机构标识位、报告标题、摘要、指标和数据免责声明</dd></div>
+              <div><dt>实际交付</dt><dd>报告封面、成果页、合作机构简报和活动展板</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="deliverable-card">
+          <div class="deliverable-preview bakery-poster" aria-label="面包店季节活动海报模拟">
+            <div class="bakery-brand"><span>NEIGHBORHOOD BAKERY</span><b>OVEN &amp; STONE</b></div>
+            <img src="assets/generated/scenario-bakery-paper.png" width="1536" height="1024" loading="lazy" alt="拱窗面包店的分层剪纸品牌艺术图">
+            <div class="bakery-copy"><small>WEEKEND SERIES · 07:30</small><h3>Morning<br>Batch</h3><p>Fresh loaves, slow mornings,<br>one warm window.</p></div>
+            <div class="bakery-footer"><span>SAT–SUN / SEPTEMBER</span><b>LOCAL FLOUR · SMALL BATCH</b></div>
+          </div>
+          <div class="deliverable-notes">
+            <div class="delivery-label"><span>DELIVERABLE 04</span><b>季节活动主视觉</b></div>
+            <h3>4:5 竖版 · 门店与社媒</h3>
+            <dl>
+              <div><dt>AI 层</dt><dd>纸雕拱窗、面包节奏、蓝白棚和社区自行车</dd></div>
+              <div><dt>设计层</dt><dd>品牌名、活动标题、营业时间、日期和卖点信息</dd></div>
+              <div><dt>实际交付</dt><dd>活动海报、社媒头图、门店立牌、包装腰封方向</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+
+      <div class="handoff-boundary">
+        <div><span>PRODUCTION BOUNDARY</span><h3>这是布局验证，不是印刷终稿。</h3></div>
+        <p>进入真实生产还需要替换正式品牌、审核文案与数据、确认字体许可、建立出血与色彩配置，并由设计师输出可编辑源文件。页面证明的是工作流可行性，而不是替代这些步骤。</p>
+      </div>
+    </section>
+
+    <section class="section framework" id="framework" aria-labelledby="framework-title">
+      <div class="section-heading">
+        <div><span>05 / RUNNABLE SKILL FRAMEWORK</span><h2 id="framework-title">现在不只是展厅，<br>而是一条可编译路线。</h2></div>
+        <p>扩展 Skill 已经把照片理解、目标场景、材料效果与交付规格拆开。用户可以只说明发布目标，让编译器自动选择效果；也可以显式覆盖效果，同时保留目标相关的质量门禁。</p>
+      </div>
+
+      <div class="framework-flow" aria-label="目标驱动生成流程">
+        <article><span>01</span><b>ESSENCE</b><p>锚点、关系、情绪、路径与隐喻</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>02</span><b>SCENARIO</b><p>受众、目标与推荐效果排序</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>03</span><b>EFFECT</b><p>材料如何处理路径、形体与空间</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>04</span><b>DELIVERY</b><p>画幅、留字安全区与输出变体</p></article>
+        <i aria-hidden="true">→</i>
+        <article><span>05</span><b>PROMPT</b><p>确定性编译与目标质量门禁</p></article>
+      </div>
+
+      <div class="framework-grid">
+        <article class="framework-tree">
+          <div class="framework-panel-head"><span>ACTUAL FILE TREE</span><b>photo-to-conceptual-art/</b></div>
+          <pre><code>SKILL.md
+agents/openai.yaml
+references/
+  essence-schema.md
+  profile-authoring.md
+  quality-gates.md
+profiles/
+  effects/       <b>6 JSON</b>
+  scenarios/     <b>4 JSON</b>
+  deliveries/    <b>4 JSON</b>
+scripts/
+  build_prompt.py
+examples/        <b>4 essence files</b>
+tests/
+  test_prompt_compiler.py</code></pre>
+          <div class="framework-links">
+            <a href="../extension/photo-to-conceptual-art/SKILL.md">打开 Skill</a>
+            <a href="../extension/photo-to-conceptual-art/scripts/build_prompt.py">打开编译器</a>
+            <a href="../extension/photo-to-conceptual-art/references/essence-schema.md">查看 Schema</a>
+          </div>
+        </article>
+
+        <article class="compiler-demo">
+          <div class="framework-panel-head"><span>REAL CLI</span><b>auto route</b></div>
+          <pre><code>python scripts/build_prompt.py \
+  --essence examples/canoe-essence.json \
+  --scenario travel-cover \
+  --effect auto \
+  --format json</code></pre>
+          <div class="compiled-route">
+            <div><span>SCENARIO</span><b>travel-cover</b></div>
+            <i>→</i>
+            <div><span>EFFECT</span><b>woodcut</b></div>
+            <i>→</i>
+            <div><span>DELIVERY</span><b>field-journal</b></div>
+          </div>
+          <blockquote>“High-contrast carved rhythm preserves direction at small sizes.”</blockquote>
+          <p>输出不仅包含 Prompt，还包含路由原因、输出变体与合并后的质量门禁，便于后续自动化或人工审核。</p>
+        </article>
+      </div>
+
+      <div class="route-matrix" aria-label="四类目标的自动路由结果">
+        <article><span>FAMILY MEMORY</span><h3>家庭成长册</h3><p>亲密、安全、关系优先</p><div><b>organic-knit</b><i>→</i><b>book-cover</b></div><a href="../extension/photo-to-conceptual-art/profiles/scenarios/family-memory.json">查看场景 Profile</a></article>
+        <article><span>TRAVEL COVER</span><h3>旅行日志</h3><p>路线、方向、缩略识别</p><div><b>woodcut</b><i>→</i><b>field-journal</b></div><a href="../extension/photo-to-conceptual-art/profiles/scenarios/travel-cover.json">查看场景 Profile</a></article>
+        <article><span>IMPACT REPORT</span><h3>公益报告</h3><p>共同体、象征、可信层级</p><div><b>stained-glass</b><i>→</i><b>impact-report</b></div><a href="../extension/photo-to-conceptual-art/profiles/scenarios/impact-report.json">查看场景 Profile</a></article>
+        <article><span>SEASONAL CAMPAIGN</span><h3>品牌活动</h3><p>图形层级、留白、可排版</p><div><b>layered-paper</b><i>→</i><b>campaign-poster</b></div><a href="../extension/photo-to-conceptual-art/profiles/scenarios/seasonal-campaign.json">查看场景 Profile</a></article>
+      </div>
+
+      <div class="framework-validation">
+        <div><strong>06</strong><span>effect profiles</span></div>
+        <div><strong>04</strong><span>scenario profiles</span></div>
+        <div><strong>04</strong><span>delivery profiles</span></div>
+        <div><strong>15</strong><span>passing behavior tests</span></div>
+        <p><b>FAIL-CLOSED</b> 错误 Essence、未知效果和不允许的交付组合不会静默降级，而是明确失败。</p>
+      </div>
+    </section>
+
+    <section class="section forward-test" id="forward-test" aria-labelledby="forward-test-title">
+      <div class="section-heading">
+        <div><span>06 / UNSEEN-PHOTO FORWARD TEST</span><h2 id="forward-test-title">自动路由真的更合适吗？</h2></div>
+        <p>这张海岸骑行照片此前没有出现在项目中。Skill 只收到目标 `travel-cover`：自动选择木刻；随后用同一 Essence、同一 `field-journal` 规格人工覆盖为剪纸，检验推荐理由能否在真实输出中成立。</p>
+      </div>
+
+      <div class="forward-source">
+        <figure><img src="assets/generated/forward-lighthouse-source.png" width="1536" height="1024" loading="lazy" alt="未见源照片：橙色外套的旅行者推着绿色自行车沿海岸路径走向灯塔"><figcaption><span>UNSEEN SOURCE</span><b>不是已有案例的重新路由</b></figcaption></figure>
+        <div>
+          <span>SHARED ESSENCE</span>
+          <h3>道路是一枚指向灯塔的指南针。</h3>
+          <dl>
+            <div><dt>锚点</dt><dd>橙衣旅行者、绿色旅行车、S 路线、白色灯塔、两侧海面</dd></div>
+            <div><dt>目标</dt><dd>旅行日志封面；路线与方向在缩略图中仍应清晰</dd></div>
+            <div><dt>交付</dt><dd>4:5 field-journal；顶部标题带、底部坐标与年份带</dd></div>
+            <div><dt>不变量</dt><dd>两条路线使用相同 Essence、相同画幅、相同质量门禁</dd></div>
+          </dl>
+          <a href="../extension/photo-to-conceptual-art/forward-tests/lighthouse-travel/essence.json">查看 Essence JSON</a>
+        </div>
+      </div>
+
+      <div class="forward-routes">
+        <article class="forward-route auto-route">
+          <div class="route-badge"><span>AUTO ROUTE</span><b>25 / 25</b></div>
+          <figure><img src="assets/generated/forward-lighthouse-auto-woodcut-v2.png" width="1122" height="1402" loading="lazy" alt="自动木刻结果：橙衣旅行者推自行车沿高对比刻线路径走向灯塔，上下保留纸面元数据带"><figcaption>woodcut → field-journal</figcaption></figure>
+          <div class="forward-route-copy"><h3>自动选择：木刻</h3><blockquote>“高对比刀痕能在小尺寸中保持方向。”</blockquote><p>路线像一根明确的刻线贯穿人物与灯塔，橙衣和绿色自行车仍是强色彩锚点，最符合旅行封面的缩略识别目标。</p></div>
+        </article>
+
+        <article class="forward-route override-route">
+          <div class="route-badge"><span>MANUAL OVERRIDE</span><b>24 / 25</b></div>
+          <figure><img src="assets/generated/forward-lighthouse-override-paper-v2.png" width="1122" height="1402" loading="lazy" alt="人工剪纸覆盖结果：橙衣旅行者推自行车沿分层纸路走向灯塔，上下保留纸面元数据带"><figcaption>layered-paper → field-journal</figcaption></figure>
+          <div class="forward-route-copy"><h3>人工覆盖：剪纸</h3><blockquote>“纸带适合更安静的编辑路线故事。”</blockquote><p>材料层次更柔和、留白更自然，仍然是有效交付；但缩小后人物、路径和灯塔的对比略弱，因此在当前目标下只落后一分。</p></div>
+        </article>
+      </div>
+
+      <div class="gate-table" role="table" aria-label="自动路由和人工覆盖的质量门禁评分">
+        <div class="gate-row gate-head" role="row"><span>目标门禁</span><span>自动木刻</span><span>剪纸覆盖</span><span>观察</span></div>
+        <div class="gate-row" role="row"><b>锚点保留</b><span>5</span><span>5</span><p>人、车、灯塔、颜色和方向关系全部保留</p></div>
+        <div class="gate-row" role="row"><b>路线与方向</b><span>5</span><span>5</span><p>S 路径均成为画面主轴</p></div>
+        <div class="gate-row" role="row"><b>缩略图轮廓</b><span class="winner">5</span><span>4</span><p>木刻的黑白结构更快建立起点与终点</p></div>
+        <div class="gate-row" role="row"><b>材料可信</b><span>5</span><span>5</span><p>刀痕与纸层都形成真实材料信号</p></div>
+        <div class="gate-row" role="row"><b>元数据安全区</b><span>5</span><span>5</span><p>第二轮上下约 10% 留字带通过</p></div>
+      </div>
+
+      <div class="iteration-proof">
+        <div class="iteration-copy"><span>OBSERVED FAILURE → NARROW FIX</span><h3>第一轮不是全过。</h3><p>两张首轮结果都把画面铺满，无法稳定放置日志标题与坐标。Skill 没有无限重试，而是各做一次只针对安全区的修正；随后把证据写回 `field-journal` Profile。</p></div>
+        <figure><img src="assets/generated/forward-lighthouse-auto-woodcut.png" width="1122" height="1402" loading="lazy" alt="第一轮木刻结果，画面占满上下区域"><figcaption><b>ROUND 01</b><span>metadata bands / fail</span></figcaption></figure>
+        <figure><img src="assets/generated/forward-lighthouse-auto-woodcut-v2.png" width="1122" height="1402" loading="lazy" alt="第二轮木刻结果，上下留有安静纸面"><figcaption><b>ROUND 02</b><span>targeted correction / pass</span></figcaption></figure>
+      </div>
+
+      <div class="forward-conclusion">
+        <div><span>DECISION</span><h3>自动路线胜出，但人工覆盖仍然有效。</h3></div>
+        <p>当前目标强调路线力量和缩略识别，所以木刻更合适；如果目标改成安静、现代的编辑封面，剪纸可能成为首选。这个结果支持“按目标路由”，而不是宣称某个效果永远最好。</p>
+        <div class="forward-links"><a href="../extension/photo-to-conceptual-art/forward-tests/lighthouse-travel/RESULT.md">完整测试记录</a><a href="../extension/photo-to-conceptual-art/forward-tests/lighthouse-travel/manifest.json">评分 Manifest</a></div>
+      </div>
+      <p class="score-disclosure">评分是对每轮单张结果的公开人工评审，不代表模型统计性能；未使用隐藏候选图或额外人工润色。</p>
+    </section>
+
+    <section class="section pilot-benchmark" id="pilot-benchmark" aria-labelledby="pilot-title">
+      <div class="section-heading">
+        <div><span>07 / CROSS-SUBJECT PILOT · N=3</span><h2 id="pilot-title">跨题材能工作吗？<br>先做一个小样本。</h2></div>
+        <p>人物关系、产品静物和建筑交通分别走过自动路由。三个源图都是本轮新生成，ImageGen 接收编译 Prompt 后各只生成一次；没有隐藏候选图，也没有针对性修正。</p>
+      </div>
+
+      <div class="pilot-summary" aria-label="Pilot 摘要">
+        <div><strong>03</strong><span>unseen samples</span></div>
+        <div><strong>03</strong><span>source classes</span></div>
+        <div><strong>3/3</strong><span>observed gate pass</span></div>
+        <div><strong>01</strong><span>attempt each</span></div>
+        <div><strong>00</strong><span>profile changes</span></div>
+      </div>
+
+      <div class="pilot-grid">
+        <article class="pilot-card">
+          <div class="pilot-media"><img class="pilot-result" src="assets/generated/pilot-person-auto-knit.png" width="1122" height="1402" loading="lazy" alt="针织人物关系结果：父亲与女儿共同修复红色风筝"><div class="pilot-source"><img src="assets/generated/pilot-person-source.png" width="1536" height="1024" loading="lazy" alt="源照片：父亲与女儿在桌边修复红风筝"><span>SOURCE / person + relationship</span></div></div>
+          <div class="pilot-copy"><span>SAMPLE 01</span><h3>共同修复一只风筝</h3><p class="pilot-route">family-memory <i>→</i> organic-knit <i>→</i> book-cover</p><p>两人数量、共同手势、红风筝、竹架和蓝线轴保留；针织把协作关系变成柔软的家庭封面，同时上方保留标题区域。</p><ul><li>anchor &amp; quantity / pass</li><li>relationship / pass</li><li>material / pass</li><li>delivery safety / pass</li><li>wordless art / pass</li></ul><b class="pilot-status">PASS · attempt 1</b></div>
+        </article>
+
+        <article class="pilot-card">
+          <div class="pilot-media"><img class="pilot-result" src="assets/generated/pilot-product-auto-paper.png" width="1122" height="1402" loading="lazy" alt="剪纸产品结果：绿色茶罐、奶油色茶壶与两只杯子组成品牌活动主视觉"><div class="pilot-source"><img src="assets/generated/pilot-product-source.png" width="1536" height="1024" loading="lazy" alt="源照片：无品牌绿色茶罐、茶壶和两只杯子"><span>SOURCE / product still life</span></div></div>
+          <div class="pilot-copy"><span>SAMPLE 02</span><h3>无品牌茶产品静物</h3><p class="pilot-route">seasonal-campaign <i>→</i> layered-paper <i>→</i> campaign-poster</p><p>1 罐、1 壶、2 杯数量正确，绿色圆柱仍是主锚点；分层纸带形成品牌图形，同时右上方保留大面积活动文案空间。</p><ul><li>product count / pass</li><li>brand neutrality / pass</li><li>material / pass</li><li>copy-safe field / pass</li><li>wordless art / pass</li></ul><b class="pilot-status">PASS · attempt 1</b></div>
+        </article>
+
+        <article class="pilot-card">
+          <div class="pilot-media"><img class="pilot-result" src="assets/generated/pilot-architecture-auto-woodcut.png" width="1122" height="1402" loading="lazy" alt="木刻建筑交通结果：红色缆车沿单一斜线通向混凝土山站"><div class="pilot-source"><img src="assets/generated/pilot-architecture-source.png" width="1536" height="1024" loading="lazy" alt="源照片：红色雪山缆车沿斜线通向混凝土站房"><span>SOURCE / architecture + mobility</span></div></div>
+          <div class="pilot-copy"><span>SAMPLE 03</span><h3>雪山缆车与混凝土站</h3><p class="pilot-route">travel-cover <i>→</i> woodcut <i>→</i> field-journal</p><p>一车、一线、一站和左下到右上的工程路径完整保留；更新后的 Profile 在新样本中直接生成了清晰的上下元数据带。</p><ul><li>route direction / pass</li><li>architecture anchor / pass</li><li>thumbnail silhouette / pass</li><li>10% metadata bands / pass</li><li>wordless art / pass</li></ul><b class="pilot-status">PASS · attempt 1</b></div>
+        </article>
+      </div>
+
+      <div class="pilot-boundary">
+        <div><span>WHAT 3/3 MEANS</span><h3>只代表这三个样本通过。</h3></div>
+        <p>样本是为合法、可复现而生成的合成照片，并且由我们有意选择来覆盖三类结构。它不能估计真实用户照片成功率、隐私处理能力、模型版本稳定性或批量成本。下一次扩容应随机化输入并记录失败，而不是继续挑容易成功的案例。</p>
+        <div><a href="../extension/photo-to-conceptual-art/forward-tests/pilot-n3/RESULT.md">完整 Pilot 记录</a><a href="../extension/photo-to-conceptual-art/forward-tests/pilot-n3/manifest.json">机器 Manifest</a></div>
+      </div>
+    </section>
+
+    <section class="section review-protocol" id="review-protocol" aria-labelledby="review-title">
+      <div class="section-heading">
+        <div><span>08 / REVIEW EVIDENCE PROTOCOL</span><h2 id="review-title">分数不能自己出现，<br>每一分都要有证据。</h2></div>
+        <p>`score_review.py` 不看图片，也不假装自动理解审美。它读取人工观察记录，检查场景与交付 Profile 的门禁是否完整、状态是否合法，再计算可重复的 pass/fail/unverified 汇总。</p>
+      </div>
+
+      <div class="review-flow" aria-label="评价记录流程">
+        <article><span>01</span><b>PROFILE GATES</b><p>场景与交付定义必须检查什么</p></article><i>→</i>
+        <article><span>02</span><b>HUMAN EVIDENCE</b><p>观察实际像素并写一条具体证据</p></article><i>→</i>
+        <article><span>03</span><b>SCHEMA VALIDATION</b><p>缺门禁、额外门禁、非法状态直接失败</p></article><i>→</i>
+        <article><span>04</span><b>SUMMARY</b><p>确定性生成 decision、计数和分数</p></article>
+      </div>
+
+      <div class="review-demo">
+        <article class="review-command">
+          <div><span>REAL COMMAND</span><b>lighthouse-auto-woodcut-v2</b></div>
+          <pre><code>python scripts/score_review.py \
+  --review forward-tests/lighthouse-travel/review-auto-v2.json \
+  --scenario travel-cover \
+  --delivery field-journal \
+  --format json</code></pre>
+          <div class="review-output"><strong>PASS</strong><span>40 / 40</span><small>8 pass · 0 fail · 0 unverified</small></div>
+          <div class="review-links"><a href="../extension/photo-to-conceptual-art/scripts/score_review.py">打开评分器</a><a href="../extension/photo-to-conceptual-art/forward-tests/lighthouse-travel/review-auto-v2.json">打开 Review JSON</a></div>
+        </article>
+
+        <article class="review-gates">
+          <div><span>REQUIRED GATES</span><b>travel-cover + field-journal</b></div>
+          <ul><li><b>route clarity</b><span>pass · 5</span></li><li><b>direction</b><span>pass · 5</span></li><li><b>thumbnail silhouette</b><span>pass · 5</span></li><li><b>location / traveler anchor</b><span>pass · 5</span></li><li><b>thumbnail route clarity</b><span>pass · 5</span></li><li><b>top 10% title band</b><span>pass · 5</span></li><li><b>bottom 10% metadata band</b><span>pass · 5</span></li><li><b>single focal anchor</b><span>pass · 5</span></li></ul>
+        </article>
+      </div>
+
+      <div class="review-boundaries">
+        <div><span>THE TOOL CAN</span><ul><li>验证门禁是否完整</li><li>拒绝非法状态和矛盾分数</li><li>计算相同 Rubric 下的汇总</li><li>保留证据、尝试次数与备注</li></ul></div>
+        <div><span>THE TOOL CANNOT</span><ul><li>自动观看或理解图片</li><li>证明模型成功率</li><li>替代隐私、品牌或出版审批</li><li>让不同 Rubric 的分数可直接比较</li></ul></div>
+        <a href="../extension/photo-to-conceptual-art/references/review-schema.md">阅读 Review Schema →</a>
+      </div>
+    </section>
+
+    <section class="section chinese-publish" id="chinese-publish" aria-labelledby="chinese-publish-title">
+      <div class="section-heading">
+        <div><span>09 / CHINESE END-TO-END HANDOFF</span><h2 id="chinese-publish-title">中文调用，不等于<br>让模型在图里写中文。</h2></div>
+        <p>已安装 Skill 接受中文目标与中文 Essence，生成无字剪纸 Key Art；准确品牌、标题、日期和 CTA 在下面由 HTML/CSS 确定性排版。所有中文都可选择、复制和替换。</p>
+      </div>
+
+      <div class="chinese-route-strip">
+        <div><span>中文目标</span><b>秋季品牌活动主视觉</b></div><i>→</i>
+        <div><span>自动效果</span><b>layered-paper</b></div><i>→</i>
+        <div><span>Key Art Review</span><b>PASS · 34/35</b></div><i>→</i>
+        <div><span>设计系统</span><b>中文排版与渠道适配</b></div>
+      </div>
+
+      <div class="chinese-layout-grid">
+        <article class="chinese-layout-card">
+          <div class="cn-poster" aria-label="4:5 中文秋季茶活动海报示例">
+            <img src="../research/chinese-invocation/result-layered-paper.png" width="1122" height="1402" loading="lazy" alt="绿色茶罐、茶壶和两只茶杯组成的分层剪纸无字主视觉">
+            <div class="cn-poster-brand"><span>示例品牌 · CONCEPT ONLY</span><b>林间茶事</b></div>
+            <div class="cn-poster-copy"><small>秋日茶席计划 · 2026</small><h3>一席<br>秋茶</h3><p>把安静，<br>留给一杯茶。</p><a href="#chinese-publish">预约周末茶席</a></div>
+            <div class="cn-poster-meta"><span>09.12 — 10.08</span><span>城市巡回 · SAMPLE COPY</span></div>
+          </div>
+          <div class="chinese-layout-notes"><span>MASTER / 4:5</span><h3>活动海报主版</h3><p>使用右上低细节区承载主标题，产品组合保持完整；所有文字位于 DOM，不属于生成图片。</p><dl><div><dt>图像层</dt><dd>剪纸茶具 Key Art</dd></div><div><dt>文字层</dt><dd>示例品牌、标题、日期、CTA</dd></div><div><dt>状态</dt><dd>布局验证，非商业终稿</dd></div></dl></div>
+        </article>
+
+        <article class="chinese-layout-card wide-card">
+          <div class="cn-header" aria-label="16:9 中文秋季茶活动社媒横幅示例">
+            <img src="../research/chinese-invocation/result-layered-paper.png" width="1122" height="1402" loading="lazy" alt="剪纸茶具主视觉裁切为横向社媒头图">
+            <div class="cn-header-shade" aria-hidden="true"></div>
+            <div class="cn-header-brand"><span>示例品牌</span><b>林间茶事</b></div>
+            <div class="cn-header-copy"><small>AUTUMN TEA SERIES</small><h3>把安静，<br>留给一杯茶。</h3><p>09.12—10.08 · 周末茶席</p></div>
+          </div>
+          <div class="chinese-layout-notes"><span>DERIVATIVE / 16:9</span><h3>社媒横幅变体</h3><p>横向裁切保留茶罐、茶壶和两只杯子，但舍弃部分底部叶形。这正是 Review 中 `multi-crop resilience=4/5` 的可见取舍。</p><dl><div><dt>保留</dt><dd>产品核心组合与品牌文案区</dd></div><div><dt>舍弃</dt><dd>部分底部纸带与叶形装饰</dd></div><div><dt>用途</dt><dd>网站 Hero、公众号头图、活动横幅</dd></div></dl></div>
+        </article>
+      </div>
+
+      <div class="chinese-production-boundary">
+        <div><span>SAMPLE COPY ONLY</span><h3>这是中文流程验证，不是真实品牌发布。</h3></div>
+        <p>“林间茶事”、活动日期和 CTA 均为示例占位。真实发布仍需要品牌授权、正式文案、字体许可、产品声明审核、无障碍替代文本和渠道尺寸导出。</p>
+        <div><a href="../research/chinese-invocation/RESULT.md">完整中文调用记录</a><a href="../research/chinese-invocation/review.json">中文 Review JSON</a></div>
+      </div>
+    </section>
+
+    <section class="section additional-validation" id="additional-validation" aria-labelledby="additional-validation-title">
+      <div class="section-heading">
+        <div><span>10 / THREE NEW EFFECT VALIDATIONS</span><h2 id="additional-validation-title">左边看原图，<br>右边看处理结果。</h2></div>
+        <p>当前茶具案例是分层剪纸效果。下面新增三组不同材料：自动针织、自动彩色玻璃和显式陶瓷浮雕。每组都完整保留原始照片，避免只看结果而无法判断 Skill 做了什么。</p>
+      </div>
+
+      <div class="effect-clarification"><b>现有茶具样例</b><span>layered-paper / 分层剪纸</span><p>模拟纸层、毛边与投影，不是实际裁纸成品。</p></div>
+
+      <div class="validation-v2-list">
+        <article class="validation-v2-card">
+          <div class="validation-v2-head"><span>CASE A · AUTO ROUTE</span><b>family-memory → organic-knit → book-cover</b><strong>35 / 35</strong></div>
+          <div class="validation-v2-pair">
+            <figure><div><img src="../research/additional-validation-v2/family-pet-source.png" width="1536" height="1024" loading="lazy" alt="原始照片：母亲和少年共同为一只年迈金毛犬梳毛"></div><figcaption><span>BEFORE / 原始照片</span><b>两人 · 一犬 · 一把梳子</b></figcaption></figure>
+            <figure><div><img src="../research/additional-validation-v2/family-pet-knit.png" width="1122" height="1402" loading="lazy" alt="处理结果：母亲、少年和金毛犬被重构为有机针织家庭纪念图"></div><figcaption><span>AFTER / 有机针织</span><b>保护弧线 · 纤维照料关系</b></figcaption></figure>
+          </div>
+          <div class="validation-v2-decisions"><div><span>保留</span><p>恰好两人、一只犬、蜂蜜色犬毛、珊瑚与蓝色衣物、梳理动作。</p></div><div><span>转化</span><p>两人的身体弧线变成保护环，犬的卧姿成为中央针织徽章。</p></div><div><span>舍弃</span><p>墙板、毛毯和真实庭院空间，换成可排版的暖白纤维背景。</p></div></div>
+        </article>
+
+        <article class="validation-v2-card">
+          <div class="validation-v2-head"><span>CASE B · AUTO ROUTE</span><b>impact-report → stained-glass → impact-report</b><strong>35 / 35</strong></div>
+          <div class="validation-v2-pair">
+            <figure><div><img src="../research/additional-validation-v2/community-rain-source.png" width="1536" height="1024" loading="lazy" alt="原始照片：四名志愿者围绕蓝色雨水桶建设雨水花园"></div><figcaption><span>BEFORE / 原始照片</span><b>四人 · 雨桶 · 水道与植物</b></figcaption></figure>
+            <figure><div><img src="../research/additional-validation-v2/community-rain-glass.png" width="1122" height="1402" loading="lazy" alt="处理结果：四名志愿者和雨水花园被重构为彩色玻璃公益报告主视觉"></div><figcaption><span>AFTER / 彩色玻璃</span><b>共同体圆环 · 蓝色循环轴</b></figcaption></figure>
+          </div>
+          <div class="validation-v2-decisions"><div><span>保留</span><p>四名人物、一个蓝桶、植物、石块水道和开放协作圆环。</p></div><div><span>转化</span><p>人物成为四块玻璃色域，手臂成为铅线，水道成为蓝色发光路径。</p></div><div><span>舍弃</span><p>公寓、铺地和写实面孔；底部新增报告标题与摘要安全区。</p></div></div>
+        </article>
+
+        <article class="validation-v2-card">
+          <div class="validation-v2-head"><span>CASE C · EXPLICIT OVERRIDE</span><b>seasonal-campaign + ceramic-relief → campaign-poster</b><strong>34 / 35</strong></div>
+          <div class="validation-v2-pair">
+            <figure><div><img src="../research/additional-validation-v2/honey-source.png" width="1536" height="1024" loading="lazy" alt="原始照片：无品牌琥珀色蜂蜜罐、蜂蜜棒、蜂巢和野花"></div><figcaption><span>BEFORE / 原始照片</span><b>一罐 · 一棒 · 一块蜂巢</b></figcaption></figure>
+            <figure><div><img src="../research/additional-validation-v2/honey-ceramic.png" width="1122" height="1402" loading="lazy" alt="处理结果：蜂蜜产品被重构为具有釉色路径的陶瓷浮雕活动主视觉"></div><figcaption><span>AFTER / 陶瓷浮雕</span><b>陶板 · 釉色蜂蜜路径</b></figcaption></figure>
+          </div>
+          <div class="validation-v2-decisions"><div><span>保留</span><p>一个蜂蜜罐、软木塞、蜂蜜棒、蜂巢、野花和琥珀金色。</p></div><div><span>转化</span><p>产品轮廓成为高浮雕，蜂蜜流动变成釉色凹槽，花枝成为浅浮雕边饰。</p></div><div><span>舍弃</span><p>写实玻璃反射和石材噪点；右上保留活动文案区。</p></div></div>
+        </article>
+      </div>
+
+      <div class="validation-v2-boundary"><div><span>VALIDATION RESULT</span><h3>三种材料、两种路由模式，均首次通过。</h3></div><p>这些仍是有意选择的合成样本和人工 Review，不能解释为生产成功率。陶瓷样例的 34/35 来自横幅裁切会损失部分花枝和釉色路径。</p><div><a href="../research/additional-validation-v2/RESULT.md">完整验证记录</a><a href="../research/additional-validation-v2/manifest.json">机器 Manifest</a></div></div>
+    </section>
+
+    <section class="section publishing-pipeline" id="publishing-pipeline" aria-labelledby="publishing-pipeline-title">
+      <div class="section-heading">
+        <div><span>10B / DETERMINISTIC PUBLISHING PIPELINE</span><h2 id="publishing-pipeline-title">这次不是排版示意，<br>是 Skill 真正导出的文件。</h2></div>
+        <p>同一张已审核无字 Key Art 与同一份 UTF-8 `copy.json`，经过本地确定性渲染器生成 4:5 海报和 16:9 横幅。文字不再手工写进网页，也不由 ImageGen 猜测。</p>
+      </div>
+
+      <div class="publish-flow" aria-label="确定性发布流程">
+        <div><span>01 / ART</span><b>审核通过的无字 Key Art</b><small>layered-paper · 34/35</small></div><i>→</i>
+        <div><span>02 / COPY</span><b>结构化中文 copy.json</b><small>一字不改 · 显式换行</small></div><i>→</i>
+        <div><span>03 / RENDER</span><b>campaign-poster 模板</b><small>Pillow · 本地确定性绘制</small></div><i>→</i>
+        <div><span>04 / EXPORT</span><b>4:5 + 16:9 PNG</b><small>六类门禁全部 PASS</small></div>
+      </div>
+
+      <div class="publish-artifact-grid">
+        <figure class="publish-artifact input-artifact">
+          <div><img src="../research/chinese-invocation/result-layered-paper.png" width="1122" height="1402" loading="lazy" alt="输入发布引擎的无字茶产品分层剪纸 Key Art"></div>
+          <figcaption><span>INPUT / ART LAYER</span><b>无字 Key Art</b><small>产品、茶具、纸层与右上安全区</small></figcaption>
+        </figure>
+        <figure class="publish-artifact poster-artifact">
+          <div><img src="../research/publishing-pipeline-v1/outputs/autumn-tea-2026-sample-poster-4x5.png" width="1200" height="1500" loading="lazy" alt="自动导出的四比五中文秋季茶活动海报"></div>
+          <figcaption><span>OUTPUT A / 1200×1500</span><b>4:5 活动海报</b><small>右上文案面板 + 底部活动元数据</small></figcaption>
+        </figure>
+        <figure class="publish-artifact header-artifact">
+          <div><img src="../research/publishing-pipeline-v1/outputs/autumn-tea-2026-sample-header-16x9.png" width="1920" height="1080" loading="lazy" alt="自动导出的十六比九中文秋季茶活动横幅"></div>
+          <figcaption><span>OUTPUT B / 1920×1080</span><b>16:9 社媒横幅</b><small>左侧艺术层 + 右侧确定性文案区</small></figcaption>
+        </figure>
+      </div>
+
+      <div class="publish-proof-grid">
+        <article class="copy-proof">
+          <span>EXACT COPY / UTF-8 JSON</span>
+          <h3>文案先确定，渲染器只负责准确放置。</h3>
+          <dl><div><dt>品牌</dt><dd>林间茶事</dd></div><div><dt>标题</dt><dd>一席 / 秋茶</dd></div><div><dt>正文</dt><dd>把安静， / 留给一杯茶。</dd></div><div><dt>CTA</dt><dd>预约周末茶席</dd></div><div><dt>日期</dt><dd>09.12 — 10.08</dd></div></dl>
+          <a href="../extension/photo-to-conceptual-art/examples/chinese-tea-copy.json">查看 copy.json →</a>
+        </article>
+        <article class="gate-proof">
+          <span>RENDER REPORT / PASS</span>
+          <h3>不是“看起来能用”，而是每次导出都留下检查记录。</h3>
+          <div class="publish-gates"><div><b>PASS</b><span>精确文案</span></div><div><b>PASS</b><span>文字溢出</span></div><div><b>PASS</b><span>颜色对比</span></div><div><b>PASS</b><span>主体保护区</span></div><div><b>PASS</b><span>样例声明</span></div><div><b>PASS</b><span>输出尺寸</span></div></div>
+          <div class="publish-links"><a href="../research/publishing-pipeline-v1/outputs/render-report.json">机器检查报告</a><a href="../extension/photo-to-conceptual-art/scripts/render_layout.py">渲染器源码</a><a href="../extension/photo-to-conceptual-art/references/copy-schema.md">Copy Schema</a></div>
+        </article>
+      </div>
+
+      <div class="publish-boundary"><div><span>V1 BETA BOUNDARY</span><h3>现在已经能自动生成发布预览，但还不是商业审批系统。</h3></div><p>PASS 只证明输入文案被准确绘制、没有溢出、对比度和安全区满足模板要求。真实品牌授权、文案事实、Logo、字体许可、法规声明与渠道审核仍需由发布团队确认。</p><a href="../research/publishing-pipeline-v1/DESIGN-CONTRACT.md">查看 V1 设计契约 →</a></div>
+
+      <div class="publish-template-expansion" id="publishing-templates" aria-labelledby="publishing-templates-title">
+        <div class="template-expansion-heading"><div><span>V2 / THREE TARGET-SPECIFIC MASTERS</span><h3 id="publishing-templates-title">不是把同一个海报换图，<br>而是让目标决定版式。</h3></div><p>下面三组都展示“审核后的无字 Key Art → Skill 自动排版成品”。每类使用不同字段、不同安全区和不同主版尺寸；原有 4:5/16:9 活动海报保持不变。</p></div>
+
+        <div class="template-case-list">
+          <article class="template-case">
+            <div class="template-case-head"><div><span>TEMPLATE 02 / BOOK COVER</span><h4>家庭纪念册：把关系留在画面中央。</h4></div><b>1200 × 1600</b></div>
+            <div class="template-case-pair">
+              <figure><div><img src="../research/additional-validation-v2/family-pet-knit.png" width="1122" height="1402" loading="lazy" alt="输入发布模板的家庭宠物有机针织无字 Key Art"></div><figcaption><span>INPUT / KEY ART</span><b>两人、一犬与照料关系</b></figcaption></figure>
+              <figure><div><img src="../research/publishing-pipeline-v2/book-cover/family-memory-volume-01-sample-book-cover-3x4.png" width="1200" height="1600" loading="lazy" alt="Skill 自动导出的家庭纪念册中文封面"></div><figcaption><span>OUTPUT / 3:4 MASTER</span><b>标题在上，关系主体保持完整</b></figcaption></figure>
+            </div>
+            <div class="template-case-foot"><p><b>版式决策</b> 使用上方平静纤维区承载标题，底部独立书册信息条；文字不进入人物、犬与照料圆环。</p><div><a href="../extension/photo-to-conceptual-art/examples/family-memory-copy.json">copy.json</a><a href="../research/publishing-pipeline-v2/book-cover/render-report.json">PASS 报告</a></div></div>
+          </article>
+
+          <article class="template-case">
+            <div class="template-case-head"><div><span>TEMPLATE 03 / IMPACT REPORT</span><h4>影响力报告：事实层与艺术层必须分开。</h4></div><b>1240 × 1754</b></div>
+            <div class="template-case-pair">
+              <figure><div><img src="../research/additional-validation-v2/community-rain-glass.png" width="1122" height="1402" loading="lazy" alt="输入发布模板的四名志愿者雨水花园彩色玻璃无字 Key Art"></div><figcaption><span>INPUT / KEY ART</span><b>四人、蓝桶与水循环</b></figcaption></figure>
+              <figure><div><img src="../research/publishing-pipeline-v2/impact-report/community-rain-impact-2026-sample-impact-report-a4.png" width="1240" height="1754" loading="lazy" alt="Skill 自动导出的社区雨水花园影响力报告封面"></div><figcaption><span>OUTPUT / A4 MASTER</span><b>底部报告字段与三项示意指标</b></figcaption></figure>
+            </div>
+            <div class="template-case-foot"><p><b>版式决策</b> 四名志愿者和蓝色雨桶保持在上方玻璃图像中；标题、周期和三项指标全部落在原图预留的浅色报告区。</p><div><a href="../extension/photo-to-conceptual-art/examples/community-impact-copy.json">copy.json</a><a href="../research/publishing-pipeline-v2/impact-report/render-report.json">PASS 报告</a></div></div>
+          </article>
+
+          <article class="template-case">
+            <div class="template-case-head"><div><span>TEMPLATE 04 / FIELD JOURNAL</span><h4>旅行日志：沿用前向测试验证过的上下信息带。</h4></div><b>1200 × 1500</b></div>
+            <div class="template-case-pair">
+              <figure><div><img src="assets/generated/forward-lighthouse-auto-woodcut-v2.png" width="1122" height="1402" loading="lazy" alt="输入发布模板的旅行者、自行车、路径和灯塔木刻无字 Key Art"></div><figcaption><span>INPUT / KEY ART</span><b>旅行者、路线与灯塔目标</b></figcaption></figure>
+              <figure><div><img src="../research/publishing-pipeline-v2/field-journal/lighthouse-field-journal-2026-sample-field-journal-4x5.png" width="1200" height="1500" loading="lazy" alt="Skill 自动导出的向灯塔去旅行日志封面"></div><figcaption><span>OUTPUT / 4:5 MASTER</span><b>上方标题，下方坐标与行程元数据</b></figcaption></figure>
+            </div>
+            <div class="template-case-foot"><p><b>版式决策</b> 复用灯塔前向测试中修正得到的上、下约 10% 安静区域；木刻矩形、人物、自行车和 S 形路径均不被文字覆盖。</p><div><a href="../extension/photo-to-conceptual-art/examples/lighthouse-journal-copy.json">copy.json</a><a href="../research/publishing-pipeline-v2/field-journal/render-report.json">PASS 报告</a></div></div>
+          </article>
+        </div>
+
+        <div class="template-support-matrix"><div><span>SUPPORTED NOW</span><strong>4</strong><p>campaign-poster<br>book-cover<br>impact-report<br>field-journal</p></div><div><span>ACTUAL MASTERS</span><strong>5</strong><p>活动海报 4:5<br>活动横幅 16:9<br>纪念册 3:4<br>报告 A4<br>日志 4:5</p></div><div><span>GATES PER OUTPUT</span><strong>6</strong><p>文案 · 溢出 · 对比<br>保护区 · 声明 · 尺寸</p></div><div><span>IMAGEGEN CALLS</span><strong>0</strong><p>本阶段只复用<br>已审核 Key Art</p></div></div>
+      </div>
+
+      <div class="publish-boundary"><div><span>V2 BETA BOUNDARY</span><h3>四种模板已经可重复导出，但还不是商业审批系统。</h3></div><p>PASS 只证明输入文案被准确绘制、没有溢出、对比度和安全区满足模板要求。真实品牌授权、文案事实、Logo、字体许可、法规声明与渠道审核仍需由发布团队确认。</p><div><a href="../research/publishing-pipeline-v1/DESIGN-CONTRACT.md">V1 契约</a><a href="../research/publishing-pipeline-v2/DESIGN-CONTRACT.md">V2 契约</a></div></div>
+    </section>
+
+    <section class="section honey-publication" id="honey-publication" aria-labelledby="honey-publication-title">
+      <div class="section-heading">
+        <div><span>10C / SECOND PRODUCT-ART PUBLICATION TEST</span><h2 id="honey-publication-title">同一个活动模板，<br>换成蜂蜜还能成立吗？</h2></div>
+        <p>可以。这里不再复用茶产品，而是把蜂蜜原图、陶瓷浮雕 Key Art 和蜂蜜专用中文文案送进完全相同的 `campaign-poster` 模板。模板和渲染器没有为蜂蜜做特例修改。</p>
+      </div>
+
+      <div class="honey-route-strip">
+        <div><span>01 / SOURCE</span><b>蜂蜜产品原图</b><small>一罐、一棒、一块蜂巢</small></div><i>→</i>
+        <div><span>02 / KEY ART</span><b>ceramic-relief</b><small>Review PASS · 34/35</small></div><i>→</i>
+        <div><span>03 / EXACT COPY</span><b>honey-campaign-copy.json</b><small>山野蜜坊 · 一勺秋蜜</small></div><i>→</i>
+        <div><span>04 / OUTPUT</span><b>4:5 + 16:9</b><small>12 / 12 门禁 PASS</small></div>
+      </div>
+
+      <div class="honey-stage-grid">
+        <figure class="honey-stage-card">
+          <div><img src="../research/additional-validation-v2/honey-source.png" width="1536" height="1024" loading="lazy" alt="蜂蜜原始照片：琥珀色蜂蜜罐、蜂蜜棒、蜂巢和野花"></div>
+          <figcaption><span>STAGE 01 / 原始照片</span><b>产品事实层</b><small>提供罐、蜂蜜棒、蜂巢、花枝和琥珀色证据。</small></figcaption>
+        </figure>
+        <figure class="honey-stage-card">
+          <div><img src="../research/additional-validation-v2/honey-ceramic.png" width="1122" height="1402" loading="lazy" alt="蜂蜜产品转化为陶瓷浮雕无字 Key Art"></div>
+          <figcaption><span>STAGE 02 / 无字 Key Art</span><b>陶瓷浮雕艺术层</b><small>釉色路径组织画面，右上保留活动文案区域。</small></figcaption>
+        </figure>
+        <figure class="honey-stage-card">
+          <div><img src="../research/honey-publication-validation/outputs/wild-honey-autumn-2026-sample-poster-4x5.png" width="1200" height="1500" loading="lazy" alt="山野蜜坊一勺秋蜜四比五活动海报样例"></div>
+          <figcaption><span>STAGE 03 / 1200×1500</span><b>4:5 活动主版</b><small>产品不被覆盖；所有中文来自确定性 copy.json。</small></figcaption>
+        </figure>
+        <figure class="honey-stage-card wide">
+          <div><img src="../research/honey-publication-validation/outputs/wild-honey-autumn-2026-sample-header-16x9.png" width="1920" height="1080" loading="lazy" alt="山野蜜坊一勺秋蜜十六比九活动横幅样例"></div>
+          <figcaption><span>STAGE 04 / 1920×1080</span><b>16:9 横幅变体</b><small>蜂蜜罐、蜂巢、蜂蜜棒、花枝和釉色路径仍位于左侧艺术层。</small></figcaption>
+        </figure>
+      </div>
+
+      <div class="honey-proof-grid">
+        <article><span>EXACT COPY</span><h3>蜂蜜文案不是生成在图里。</h3><dl><div><dt>品牌</dt><dd>山野蜜坊</dd></div><div><dt>标题</dt><dd>一勺 / 秋蜜</dd></div><div><dt>正文</dt><dd>把山野的甜， / 留到秋天。</dd></div><div><dt>CTA</dt><dd>查看秋季限定</dd></div><div><dt>日期</dt><dd>09.20 — 10.18</dd></div></dl><a href="../extension/photo-to-conceptual-art/examples/honey-campaign-copy.json">查看蜂蜜 copy.json →</a></article>
+        <article><span>CROSS-ART RESULT</span><h3>不是新增模板，而是验证旧模板能复用。</h3><div class="honey-gates"><div><b>PASS</b><span>4:5 · 6 gates</span></div><div><b>PASS</b><span>16:9 · 6 gates</span></div><div><b>0</b><span>模板代码修改</span></div><div><b>0</b><span>ImageGen 调用</span></div></div><p>茶与蜂蜜现在共享同一个模板和渲染器，只替换审核后的 Key Art 与精确文案。这证明两个选定产品样本可跨图片复用，但不代表批量成功率。</p><div class="honey-links"><a href="../research/honey-publication-validation/outputs/render-report.json">12 项机器报告</a><a href="../research/honey-publication-validation/RESULT.md">完整验证记录</a></div></article>
+      </div>
+
+      <div class="honey-boundary"><b>SAMPLE PRODUCT CAMPAIGN</b><p>“山野蜜坊”、日期、CTA 与产品语言均为演示文案。结果不验证产地、营养、价格、健康宣称、商标、标签法规或商业发布资格。</p><a href="../research/honey-publication-validation/DESIGN-CONTRACT.md">查看验证契约 →</a></div>
+    </section>
+
+    <section class="section formal-publication" id="formal-publication" aria-labelledby="formal-publication-title">
+      <div class="section-heading">
+        <div><span>10D / APPROVED-MODE PUBLICATION DEMO</span><h2 id="formal-publication-title">正式发布不是删掉提示，<br>而是先完成外部审批。</h2></div>
+        <p>当品牌、文案、事实、法律、资产与渠道负责人都确认后，调用方才把 `copy_status` 从 `sample` 改为 `approved`。渲染器随后移除系统样例声明，并把右下字段恢复成真正的渠道信息。</p>
+      </div>
+
+      <div class="formal-mode-flow">
+        <div><span>01 / APPROVAL PACKET</span><b>品牌 · 文案 · 法务 · 资产 · 渠道</b><small>由发布团队在 Skill 外确认</small></div><i>→</i>
+        <div><span>02 / COPY STATUS</span><b>approved</b><small>调用方声明，不是工具自动判定</small></div><i>→</i>
+        <div><span>03 / RENDER</span><b>移除样例声明</b><small>保留准确渠道和 CTA</small></div><i>→</i>
+        <div><span>04 / FINAL QA</span><b>4:5 + 16:9</b><small>12 / 12 布局门禁 PASS</small></div>
+      </div>
+
+      <div class="formal-comparison-grid">
+        <figure>
+          <div><img src="../research/honey-publication-validation/outputs/wild-honey-autumn-2026-sample-poster-4x5.png" width="1200" height="1500" loading="lazy" alt="蜂蜜活动海报样例模式，带非商业发布声明和线上预览字段"></div>
+          <figcaption><span>SAMPLE MODE</span><b>研究与提案阶段</b><small>右上：SAMPLE / 非商业发布<br>右下：线上预览 · SAMPLE COPY</small></figcaption>
+        </figure>
+        <figure>
+          <div><img src="../research/honey-formal-publication-demo/outputs/wild-honey-autumn-2026-approved-demo-poster-4x5.png" width="1200" height="1500" loading="lazy" alt="蜂蜜活动海报正式发布模式示例，无样例声明，渠道为官方商城秋季限定"></div>
+          <figcaption><span>APPROVED MODE DEMO</span><b>审批完成后的版式状态</b><small>右上：不再生成样例声明<br>右下：官方商城 · 秋季限定</small></figcaption>
+        </figure>
+        <figure class="wide">
+          <div><img src="../research/honey-formal-publication-demo/outputs/wild-honey-autumn-2026-approved-demo-header-16x9.png" width="1920" height="1080" loading="lazy" alt="蜂蜜活动正式发布模式十六比九横幅示例"></div>
+          <figcaption><span>APPROVED MODE / 16:9</span><b>渠道横幅变体</b><small>文案面板只保留品牌、系列、活动、CTA、日期与真实用途渠道字段。</small></figcaption>
+        </figure>
+      </div>
+
+      <div class="formal-diff-table" aria-label="样例模式和正式发布模式字段差异">
+        <div class="head"><span>字段</span><span>Sample</span><span>Approved-mode demo</span></div>
+        <div><b>copy_status</b><span>sample</span><span>approved</span></div>
+        <div><b>系统声明</b><span>SAMPLE / 非商业发布</span><span>不渲染</span></div>
+        <div><b>右下字段</b><span>线上预览 · SAMPLE COPY</span><span>官方商城 · 秋季限定</span></div>
+        <div><b>CTA</b><span>查看秋季限定</span><span>前往官方商城</span></div>
+      </div>
+
+      <div class="approval-checklist">
+        <div class="approval-heading"><span>EXTERNAL RELEASE CHECKLIST</span><h3>谁确认什么，必须在 approved 之前留下记录。</h3><p>这些证据不由图片渲染器生成，也不能从 PASS 分数中推断。</p></div>
+        <ol><li><span>01</span><div><b>品牌负责人</b><p>品牌名、Logo、活动身份和视觉使用范围。</p></div></li><li><span>02</span><div><b>文案负责人</b><p>标题、日期、CTA、渠道与所有产品表述。</p></div></li><li><span>03</span><div><b>法务／合规</b><p>产地、价格、营养、健康宣称、标签与强制声明。</p></div></li><li><span>04</span><div><b>设计／制作</b><p>最终 Logo、字体许可、图像权利、色彩、出血和尺寸。</p></div></li><li><span>05</span><div><b>渠道负责人</b><p>目标链接、商城库存、无障碍文本、追踪与发布时间。</p></div></li></ol>
+      </div>
+
+      <div class="formal-proof"><div><span>RENDER EVIDENCE</span><b>approved · PASS 12/12</b><p>两个输出均不存在 `generated.sample_disclosure`，渠道字段准确保留，并且 Release Manifest 验证为 PASS。</p></div><div><a href="../extension/photo-to-conceptual-art/examples/honey-campaign-approved-demo.json">Approved demo JSON</a><a href="../research/honey-formal-publication-demo/honey-release-manifest-approved-demo.json">Release Manifest</a><a href="../research/honey-formal-publication-demo/outputs/render-report.json">机器报告</a><a href="../research/honey-formal-publication-demo/RESULT.md">完整说明</a></div></div>
+      <div class="formal-boundary"><b>APPROVAL-MODE DEMO ≠ REAL APPROVAL</b><p>页面中的“山野蜜坊”仍是虚构示例。图片看起来像正式发布，不代表已经取得品牌、事实、法规、字体或渠道授权；真实项目必须以外部审批包为准。</p><a href="../research/honey-formal-publication-demo/DESIGN-CONTRACT.md">查看正式模式契约 →</a></div>
+    </section>
+
+    <section class="section release-manifest" id="release-manifest" aria-labelledby="release-manifest-title">
+      <div class="section-heading">
+        <div><span>10E / HASH-BOUND RELEASE GATE</span><h2 id="release-manifest-title">现在，approved<br>不再只是一个字段。</h2></div>
+        <p>正式成品必须绑定当前文案和 Key Art 的 SHA-256，并包含品牌、文案、法务、设计和渠道五类完整审批。缺包、待审批或任一文件变化，渲染器都会在输出前拒绝。</p>
+      </div>
+
+      <div class="release-chain">
+        <div><span>01 / LOCK INPUTS</span><b>Copy SHA-256<br>Art SHA-256</b><small>任何字节变化都会失效</small></div><i>+</i>
+        <div><span>02 / FIVE OWNERS</span><b>Brand · Copy · Legal<br>Design · Channel</b><small>状态、负责人、时间与证据</small></div><i>→</i>
+        <div><span>03 / MANIFEST</span><b>Release ID<br>Scope · Template</b><small>严格字段，不接受静默扩展</small></div><i>→</i>
+        <div><span>04 / RENDER</span><b>PASS 才写出</b><small>Manifest 随输出包保留</small></div>
+      </div>
+
+      <div class="release-evidence-grid">
+        <article class="manifest-card">
+          <span>RETAINED DEMO MANIFEST</span>
+          <h3>wild-honey-autumn-2026-approved-demo</h3>
+          <pre><code>{
+  "release_scope": "demo",
+  "template": "campaign-poster",
+  "copy_sha256": "37b7f2ff…ab6c",
+  "art_sha256": "8b8a0f26…b9da",
+  "approvals": {
+    "brand": "approved",
+    "copy": "approved",
+    "legal": "approved",
+    "design": "approved",
+    "channel": "approved"
+  }
+}</code></pre>
+          <div><a href="../research/honey-formal-publication-demo/honey-release-manifest-approved-demo.json">查看完整 Manifest</a><a href="../extension/photo-to-conceptual-art/references/release-manifest.md">Schema 与生命周期</a></div>
+        </article>
+        <article class="approval-evidence-card">
+          <span>APPROVAL COMPLETENESS</span>
+          <h3>五个负责人，缺一不可。</h3>
+          <div class="release-approvals"><div><b>PASS</b><span>Brand</span><small>Demo Brand Owner</small></div><div><b>PASS</b><span>Copy</span><small>Demo Copy Owner</small></div><div><b>PASS</b><span>Legal</span><small>Demo Legal Owner</small></div><div><b>PASS</b><span>Design</span><small>Demo Design Owner</small></div><div><b>PASS</b><span>Channel</span><small>Demo Channel Owner</small></div></div>
+          <p>示例审批记录使用 `demo://` 证据 ID，并明确 `release_scope=demo`。它用于验证工作流，不代表真实人员或商业授权。</p>
+        </article>
+      </div>
+
+      <div class="release-fail-matrix">
+        <div class="head"><span>输入状态</span><span>决定</span><span>原因</span></div>
+        <div><b>approved + 无 Manifest</b><strong>REJECT</strong><span>正式状态必须提供审批包</span></div>
+        <div><b>Legal = pending</b><strong>REJECT</strong><span>五方审批不完整</span></div>
+        <div><b>Copy SHA 不一致</b><strong>REJECT</strong><span>审批后文案发生变化</span></div>
+        <div><b>Art SHA 不一致</b><strong>REJECT</strong><span>审批后图片发生变化</span></div>
+        <div class="pass"><b>五方 PASS + 双哈希匹配</b><strong>ALLOW</strong><span>生成并保留 Manifest 与机器报告</span></div>
+      </div>
+
+      <div class="release-command"><div><span>REPRODUCIBLE COMMANDS</span><pre><code>python scripts/release_manifest.py --copy approved.json --art key-art.png --release-id autumn-2026 --scope production --out release.json
+python scripts/render_layout.py --copy approved.json --art key-art.png --release-manifest release.json --out-dir release/</code></pre></div><div><b>报告状态</b><strong>release.status = PASS</strong><p>Manifest SHA、Copy SHA、Art SHA 与五类审批记录进入 `render-report.json`。</p><a href="../research/release-manifest-v1/RESULT.md">阅读完整验证结果 →</a></div></div>
+      <div class="release-boundary"><b>INTEGRITY CONTRACT, NOT DIGITAL SIGNATURES</b><p>V1 可以证明审批包完整且输入未变化，不能证明审批人身份、权限、签名真实性或撤销状态。生产环境仍需要真实身份与审计系统。</p><a href="../research/release-manifest-v1/DESIGN-CONTRACT.md">查看 Release Manifest 契约 →</a></div>
+    </section>
+
+    <section class="section release-security" id="release-security" aria-labelledby="release-security-title">
+      <div class="section-heading">
+        <div><span>10F / TRUSTED SIGNATURE & AUDIT PROTOTYPE</span><h2 id="release-security-title">审批包完整之后，<br>谁签的、发布了什么？</h2></div>
+        <p>Release Security V1 使用仓库外私钥对 Manifest 原始字节做 Ed25519 签名，通过可信公钥验证后才渲染，并把输入与输出哈希追加到哈希链审计日志。</p>
+      </div>
+
+      <div class="security-chain">
+        <div><span>01 / OFFLINE KEY</span><b>Private Key</b><small>只在临时目录与受控签名端</small></div><i>→</i>
+        <div><span>02 / SIGN</span><b>Ed25519</b><small>签署 Manifest 原始字节</small></div><i>→</i>
+        <div><span>03 / TRUST</span><b>Active Public Key</b><small>Key ID · Owner · Scope</small></div><i>→</i>
+        <div><span>04 / AUDIT</span><b>Hash Chain</b><small>输入、输出与前一事件哈希</small></div>
+      </div>
+
+      <div class="security-evidence-grid">
+        <article><span>TRUSTED PUBLIC KEY</span><h3>demo-release-key-2026</h3><dl><div><dt>算法</dt><dd>Ed25519</dd></div><div><dt>状态</dt><dd>active</dd></div><div><dt>范围</dt><dd>demo</dd></div><div><dt>Owner</dt><dd>Demo Release Authority</dd></div></dl><a href="../research/release-security-v1/trusted-release-keys-demo.json">查看 Demo 公钥信任库 →</a></article>
+        <article><span>DETACHED SIGNATURE</span><h3>signature.status = PASS</h3><dl><div><dt>Manifest</dt><dd>8eae05ef…9218ba</dd></div><div><dt>Signature</dt><dd>2e64c90e…139bce</dd></div><div><dt>签署时间</dt><dd>2026-08-19 11:30 +08:00</dd></div><div><dt>Signer</dt><dd>Demo Release Authority</dd></div></dl><a href="../research/honey-formal-publication-demo/honey-release-signature-approved-demo.json">查看 Detached Signature →</a></article>
+        <article><span>HASH-CHAINED AUDIT</span><h3>sequence 1 · PASS</h3><dl><div><dt>前一哈希</dt><dd>00000000…000000</dd></div><div><dt>事件哈希</dt><dd>410dcb8f…1b0991</dd></div><div><dt>4:5 输出</dt><dd>5822261a…ab5a3</dd></div><div><dt>16:9 输出</dt><dd>c970c525…56451</dd></div></dl><a href="../research/release-security-v1/release-audit-demo.jsonl">查看 Audit JSONL →</a></article>
+      </div>
+
+      <div class="security-fail-grid"><div><span>未提供签名</span><b>REJECT</b></div><div><span>未知或 revoked Key</span><b>REJECT</b></div><div><span>签名后 Manifest 改动</span><b>REJECT</b></div><div><span>Signer 与可信 Owner 不符</span><b>REJECT</b></div><div><span>审计事件被修改</span><b>REJECT</b></div><div class="pass"><span>Manifest + Signature + Trust + Audit</span><b>ALLOW</b></div></div>
+
+      <div class="security-cleanup-proof"><div><span>PRIVATE KEY HYGIENE</span><h3>私钥没有进入仓库。</h3><p>一次性 Demo 私钥在系统临时目录生成，仅用于签署保留的蜂蜜 Manifest；公钥和签名写入项目后，整个私钥临时目录已删除。</p></div><div><span>RETAINED PUBLIC EVIDENCE</span><ul><li>Release Manifest</li><li>Detached Signature</li><li>Trusted Public Key</li><li>Render Report</li><li>Audit Event + Chain</li></ul></div></div>
+
+      <div class="security-command"><pre><code>python scripts/release_security.py verify --manifest release.json --signature signature.json --trusted-keys trusted-keys.json
+python scripts/release_security.py audit-verify --audit-log release-audit.jsonl</code></pre><div><b>验证结果</b><strong>Signature PASS<br>Audit PASS · 1 event</strong><a href="../research/release-security-v1/RESULT.md">查看完整安全验证 →</a></div></div>
+      <div class="security-boundary"><b>PROTOTYPE TRUST ≠ ENTERPRISE IDENTITY</b><p>签名证明有人控制对应私钥，本地审计链能暴露修改；它们不能证明真实身份、组织权限、密钥未泄漏，也不能防止日志被整体删除或回滚。生产环境需要身份系统、HSM/KMS、撤销、独立时间戳和远程不可变审计。</p><a href="../research/release-security-v1/DESIGN-CONTRACT.md">查看安全契约 →</a></div>
+    </section>
+
+    <section class="section action-runbook" id="action-runbook" aria-labelledby="action-runbook-title">
+      <div class="section-heading">
+        <div><span>10G / NON-PRODUCTION ACTION RUNBOOK</span><h2 id="action-runbook-title">暂不进入生产，<br>现在具体做什么？</h2></div>
+        <p>停止继续堆基础设施。当前阶段的动作是稳定地使用、记录失败、扩大样本和保留可复现证据；涉及真实身份、密钥托管、客户资产与公开发布的事项全部延期。</p>
+      </div>
+
+      <ol class="action-path">
+        <li><span>01</span><div><small>GOAL LOCK</small><b>确认目标、受众、交付、隐私和必须保留的锚点。</b><p>信息不足就停下来澄清，不猜身份、数量或权限。</p></div></li>
+        <li><span>02</span><div><small>ESSENCE</small><b>写 retain / transform / discard 和核心视觉隐喻。</b><p>只记录能从原图和目标中得到的证据。</p></div></li>
+        <li><span>03</span><div><small>ROUTE & GENERATE</small><b>编译场景、效果与交付，生成无字 Key Art。</b><p>一次只修一个失败门禁；同一门禁两次仍失败就停止。</p></div></li>
+        <li><span>04</span><div><small>REVIEW</small><b>逐项记录人工证据，不允许分数凭空出现。</b><p>任何必需门禁 fail 或 unverified，都不能进入发布层。</p></div></li>
+        <li><span>05</span><div><small>LAYOUT</small><b>选择 Sample 或 Approved 路线，放入准确 copy.json。</b><p>文字溢出就改文案或换行，不无限缩字，也不交给生图模型。</p></div></li>
+        <li><span>06</span><div><small>VERIFY</small><b>检查版式；Approved 还必须验证 Manifest、签名、Trust 与 Audit。</b><p>任一哈希、审批、签名或审计失败，立即冻结该次输出。</p></div></li>
+        <li><span>07</span><div><small>RETAIN</small><b>保存输入、输出、哈希、报告、边界和失败版本。</b><p>私钥和未授权私有原图不得进入项目或发布包。</p></div></li>
+      </ol>
+
+      <div class="action-mode-split">
+        <article><span>常规研究动作 / SAMPLE</span><h3>用于提案、评审和样例验证。</h3><ol><li>保留 `copy_status=sample`</li><li>生成并保留非商业声明</li><li>执行六类版式门禁</li><li>保存 copy、PNG、报告和边界</li></ol><b>不需要审批包、签名或审计链</b></article>
+        <article><span>审批流程演示 / APPROVED</span><h3>只在五方审批真的完成后使用。</h3><ol><li>冻结最终 copy 与 Key Art</li><li>建立双哈希 Manifest</li><li>完成五方审批并离线签名</li><li>可信公钥验证并追加审计事件</li></ol><b>任一证据失败都禁止输出</b></article>
+      </div>
+
+      <div class="action-failure-table">
+        <div class="head"><span>出现什么问题</span><span>必须采取的动作</span><span>禁止的动作</span></div>
+        <div><b>Key Art 缺少一个门禁</b><span>只修该门禁并重新 Review</span><em>同时改多项或隐藏失败版本</em></div>
+        <div><b>同一门禁连续两次失败</b><span>停止生成并报告未解决项</span><em>无限重试或挑选未记录候选</em></div>
+        <div><b>文字溢出／遮挡主体</b><span>改文案、明确换行或调整模板构图</span><em>无限缩字或覆盖必要锚点</em></div>
+        <div><b>审批后 Copy／Art 哈希变化</b><span>作废旧审批并重新建立 Manifest</span><em>继续复用旧签名</em></div>
+        <div><b>签名或可信 Key 失败</b><span>冻结发布，检查 Key ID、状态、Scope 与原始字节</span><em>绕过验证或静默换 Key</em></div>
+        <div><b>审计链失败</b><span>保留失败日志，从独立可信链头恢复</span><em>截断、重写或无记录地另起新链</em></div>
+        <div><b>项目中出现私钥</b><span>停止、移除并在真实暴露时轮换重签</span><em>提交、上传或放进 ZIP</em></div>
+      </div>
+
+      <div class="nonprod-backlog">
+        <article><span>NOW / 立即可做</span><h3>冻结研究基线</h3><p>在用户明确要求提交后，把当前分支形成一个可回退版本；不要再让新实验改变既有证据。</p><b>需要用户明确提交指令</b></article>
+        <article><span>NEXT / 研究价值最高</span><h3>20–50 个样本 Benchmark</h3><p>统计自动路由、首次通过、修正次数、失败门禁、人工时间和不同模板稳定性。</p><b>先测稳定性，再谈产品化</b></article>
+        <article><span>NEXT / 能力可用时</span><h3>浏览器与无障碍证据</h3><p>补齐桌面、手机、键盘、焦点、中文扩展和下载交互的真实浏览器证据。</p><b>等待可编程浏览器控制</b></article>
+        <article><span>PILOT / 需要真实输入</span><h3>一组已授权真实内容</h3><p>仅在用户提供图片、正式文案、权限和真实审批人后运行，不由 Demo 自动假设。</p><b>需要新授权与素材</b></article>
+      </div>
+
+      <div class="production-defer"><div><span>DEFER UNTIL PRODUCTION IS AUTHORIZED</span><h3>这些不是“再优化一下”就能补齐的。</h3></div><ul><li>公开部署、账号、组织角色和访问控制</li><li>真实 KMS/HSM、密钥轮换和撤销分发</li><li>远程不可变审计和独立可信时间戳</li><li>客户资产存储、任意上传、计费与发布集成</li></ul></div>
+      <div class="action-runbook-link"><b>ACTION SOURCE OF TRUTH</b><p>Skill 中的动作、失败响应和停止规则位于维护中的 Runbook，而不是只存在于网页说明。</p><a href="../extension/photo-to-conceptual-art/references/action-runbook.md">阅读 Non-Production Action Runbook →</a></div>
+    </section>
+
+    <section class="section publication-studio-entry" id="publication-studio" aria-labelledby="publication-studio-title">
+      <div class="section-heading">
+        <div><span>10C / OPERABLE LOCAL STUDIO</span><h2 id="publication-studio-title">从编辑 JSON，<br>变成填写表单。</h2></div>
+        <p>Publication Studio 把四类模板、准确文案、确定性渲染、门禁反馈和批量导出放进一个 localhost 工作区。它直接调用同一个 `render_layout.py`，不会维护第二套排版逻辑。</p>
+      </div>
+
+      <div class="studio-entry-shell">
+        <div class="studio-entry-preview" aria-label="Publication Studio 界面结构示意">
+          <div class="studio-mini-top"><b>Publication Studio</b><span>127.0.0.1 · 临时工作区</span></div>
+          <div class="studio-mini-tabs"><span class="active">活动海报</span><span>家庭纪念册</span><span>影响力报告</span><span>旅行日志</span></div>
+          <div class="studio-mini-workspace">
+            <div class="studio-mini-form"><small>EXACT COPY</small><i></i><i></i><i></i><i></i><button type="button" tabindex="-1">生成预览并检查</button></div>
+            <div class="studio-mini-output"><small>RENDERED MASTER</small><img src="../research/publishing-pipeline-v1/outputs/autumn-tea-2026-sample-poster-4x5.png" width="1200" height="1500" loading="lazy" alt="Publication Studio 默认显示的中文秋季茶活动海报样例"><div><b>PASS</b><span>12 项变体门禁通过</span></div></div>
+          </div>
+        </div>
+
+        <div class="studio-entry-copy">
+          <span>RUN LOCALLY</span>
+          <h3>一个命令启动，停止后清理临时运行文件。</h3>
+          <pre><code>cd projects/photo-to-organic-knit
+python -B studio/server.py</code></pre>
+          <ol><li><b>选择模板</b><p>四类目标保持各自字段和安全区。</p></li><li><b>编辑中文文案</b><p>没有自由 JSON，也不会自动改写。</p></li><li><b>生成并检查</b><p>PASS/FAIL 和六类门禁直接返回页面。</p></li><li><b>单份或批量导出</b><p>下载 PNG、报告、copy.json 或四模板 ZIP。</p></li></ol>
+          <div class="studio-entry-actions"><a class="button primary" href="http://127.0.0.1:8877/">打开本地工作台</a><a class="button" href="../studio/README.md">运行与安全说明</a></div>
+        </div>
+      </div>
+
+      <div class="studio-verification-strip"><div><span>HTTP FLOW</span><b>200 / PASS</b><small>页面、状态、渲染与 ZIP 均实测</small></div><div><span>TEMPLATES</span><b>4</b><small>只允许维护中的固定 ID</small></div><div><span>BATCH ZIP</span><b>5 PNG</b><small>附 4 份报告与 copy.json</small></div><div><span>LIFECYCLE</span><b>TEMP</b><small>服务停止后清理运行目录</small></div></div>
+      <div class="studio-entry-boundary"><b>LOCAL BETA</b><p>工作台不接收任意路径或外部上传，不进行事实、授权、许可证和发布审批。真实 Key Art 上传、账号权限、持久化任务和公开部署仍不在 V1 范围内。</p><a href="../research/publication-studio-v1/DESIGN-CONTRACT.md">查看工作台设计契约 →</a></div>
+    </section>
+
+    <section class="section upstream" aria-labelledby="upstream-title">
+      <div class="section-heading compact">
+        <div><span>11 / UPSTREAM EVIDENCE</span><h2 id="upstream-title">上游已有的<br>两组能力证据。</h2></div>
+        <p>以下合成图来自固定上游 commit。它们证明该方法对交通主体与自然风景都可工作；独立案例则验证本研究能够重新执行同一路线。</p>
+      </div>
+      <div class="upstream-grid">
+        <figure><img src="../upstream/assets/train-before-after.png" loading="lazy" alt="上游蒸汽火车照片与针织艺术海报前后对比"><figcaption><b>交通与结构</b><span>火车、桥梁、蒸汽 → 路径、拱门与纤维云</span></figcaption></figure>
+        <figure><img src="../upstream/assets/forest-before-after.png" loading="lazy" alt="上游雾林照片与针织艺术海报前后对比"><figcaption><b>自然与气氛</b><span>森林、雾气、层次 → 织物岛、负形与编辑留白</span></figcaption></figure>
+      </div>
+      <p class="source-note">来源：上游仓库 `assets/`，MIT License。页面未修改或伪装这些结果的出处。</p>
+    </section>
+
+    <section class="section" id="method" aria-labelledby="method-title">
+      <div class="section-heading">
+        <div><span>12 / HOW IT WORKS</span><h2 id="method-title">五层协作，<br>只有一层出图。</h2></div>
+        <p>把每一层的职责分开，才能理解它的意义，也能避免把优秀结果误认为仓库训练了模型。</p>
+      </div>
+      <ol class="pipeline">
+        <li><span>01</span><div><b>用户照片</b><p>提供主体、关系、轮廓、运动与情绪。</p></div><small>内容证据</small></li>
+        <li><span>02</span><div><b>Codex 视觉理解</b><p>识别方向、锚点，并完成 retain / transform / discard。</p></div><small>语义决策</small></li>
+        <li><span>03</span><div><b>Skill 艺术指导</b><p>选择隐喻、设计装置、构图尺度、材料与避免项。</p></div><small>规则编排</small></li>
+        <li><span>04</span><div><b>ImageGen</b><p>接收原图、风格参考和生产 Prompt，生成实际像素。</p></div><small class="external">外部模型</small></li>
+        <li><span>05</span><div><b>检查与迭代</b><p>验证辨识、转化、留白、材质和题字，一次只修一个问题。</p></div><small>质量门禁</small></li>
+      </ol>
+
+      <div class="method-cards">
+        <article><span>CONTENT ROLE</span><h3>原照片不是版式模板</h3><p>只保留定义身份的少数锚点。摄影透视、连续背景和次要纹理都可以被舍弃。</p></article>
+        <article><span>STYLE ROLE</span><h3>参考图不是复制对象</h3><p>只借用真实纤维、针脚、毛毡、边缘与光线质量，明确排除火车、桥梁和原题字。</p></article>
+        <article><span>AGENT ROLE</span><h3>Prompt 是设计合同</h3><p>必须说明选了什么、为什么变、怎样重构，以及什么结果即使漂亮也应该拒绝。</p></article>
+      </div>
+    </section>
+
+    <section class="section meaning" id="meaning" aria-labelledby="meaning-title">
+      <div class="section-heading">
+        <div><span>13 / WHY IT MATTERS</span><h2 id="meaning-title">它把隐性审美，<br>变成共享语言。</h2></div>
+        <p>仓库很小，但命中了生成式创作最难维护的一层：怎样让不同任务沿着同一种判断方式工作。</p>
+      </div>
+      <div class="meaning-grid">
+        <article><strong>01</strong><h3>从形容词到决策</h3><p>“温暖、手作、有设计感”被拆成取舍、隐喻、层级、留白、材料和瑕疵。</p></article>
+        <article><strong>02</strong><h3>从滤镜到作者性</h3><p>要求至少三项结构变化，让输出拥有新的视觉路径，而不是原图的针织复制品。</p></article>
+        <article><strong>03</strong><h3>从一次 Prompt 到 Skill</h3><p>团队可以版本化工作流、参考图和质量门禁，而不是在聊天记录里寻找灵感句子。</p></article>
+        <article><strong>04</strong><h3>从成图到可研究对象</h3><p>规则可以被消融、比较和评分，为计算创意与人机协作提供清晰实验单元。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="scenarios" aria-labelledby="scenarios-title">
+      <div class="section-heading">
+        <div><span>14 / NEXT-FIT MAP</span><h2 id="scenarios-title">下一批还可以用在<br>什么地方？</h2></div>
+        <p>选择一个场景，查看输入、交付物与最直接的业务价值。页面只描述适配方向，不声称上游已经实现批量产品能力。</p>
+      </div>
+      <div class="scenario-lab">
+        <div class="scenario-tabs" role="tablist" aria-label="使用场景">
+          <button class="is-active" data-scenario="brand" role="tab" aria-selected="true">品牌主视觉</button>
+          <button data-scenario="travel" role="tab" aria-selected="false">旅行纪念</button>
+          <button data-scenario="family" role="tab" aria-selected="false">家庭绘本</button>
+          <button data-scenario="editorial" role="tab" aria-selected="false">编辑出版</button>
+          <button data-scenario="community" role="tab" aria-selected="false">社区公益</button>
+          <button data-scenario="packaging" role="tab" aria-selected="false">包装提案</button>
+        </div>
+        <article class="scenario-output" aria-live="polite">
+          <span id="scenario-kicker">BRAND / 品牌主视觉</span>
+          <h3 id="scenario-title">把真实品牌锚点变成可讲述的视觉徽章</h3>
+          <dl>
+            <div><dt>输入</dt><dd id="scenario-input">产品、门店、创始人、地标或活动照片</dd></div>
+            <div><dt>交付</dt><dd id="scenario-output">KV、邀请函、社媒头图与无字封面底图</dd></div>
+            <div><dt>价值</dt><dd id="scenario-value">快速验证“手作、自然、柔软、可收藏”的品牌方向</dd></div>
+          </dl>
+          <p id="scenario-note">Logo、价格和长文案应在 Figma 或专业排版软件中后期完成。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section roadmap" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="section-heading">
+        <div><span>15 / EXTENSION ROADMAP</span><h2 id="roadmap-title">从漂亮样图，<br>到受控资产系统。</h2></div>
+        <p>扩展不应先堆更多风格。优先解决复现、检查和交付，再进入批量生产与真实组织流程。</p>
+      </div>
+      <div class="roadmap-list">
+        <article><span>A</span><div><small>NOW / 可复现</small><h3>记录输入、Prompt、模型版本与失败版本</h3><p>增加无字底图模式、生成档案和跨题材最小测试集。</p></div><b>先知道什么有效</b></article>
+        <article><span>B</span><div><small>NEXT / 可检查</small><h3>方向、OCR、锚点、留白与参考泄漏门禁</h3><p>把主观质检拆成可解释信号，但保留设计师最终判断。</p></div><b>再知道哪里失败</b></article>
+        <article><span>C</span><div><small>LATER / 可生产</small><h3>内容 × 构图 × 材质 × 交付预设</h3><p>支持品牌批量资产、无字/题字版本、安全区和后期编辑接口。</p></div><b>最后扩大规模</b></article>
+        <article><span>D</span><div><small>REAL WORLD / 可治理</small><h3>DAM、来源授权、审核、分层输出与实物打样</h3><p>让生成结果进入真实设计、印刷、包装或针织制造流程。</p></div><b>形成组织能力</b></article>
+      </div>
+    </section>
+
+    <section class="section" id="value" aria-labelledby="value-title">
+      <div class="section-heading">
+        <div><span>16 / ACTUAL VALUE</span><h2 id="value-title">价值不只是一张<br>好看的图。</h2></div>
+        <p>它在不同成熟度下承担不同职责；清楚区分这些层级，比笼统声称“可以商用”更诚实。</p>
+      </div>
+      <div class="value-table" role="table" aria-label="实际价值分层">
+        <div class="value-row header" role="row"><span>层级</span><span>直接价值</span><span>还缺什么</span></div>
+        <div class="value-row" role="row"><b>个人创作</b><span>旅行、家庭、宠物和内容封面</span><span>合法输入与人工挑选</span></div>
+        <div class="value-row" role="row"><b>设计团队</b><span>统一 brief，快速探索主视觉</span><span>Prompt 归档与后期排版</span></div>
+        <div class="value-row" role="row"><b>品牌组织</b><span>可复用的手作视觉资产线</span><span>品牌预设、审批、版本与 DAM</span></div>
+        <div class="value-row" role="row"><b>平台产品</b><span>照片到海报的垂直生成体验</span><span>质量评分、成本、安全与批量控制</span></div>
+        <div class="value-row" role="row"><b>学术研究</b><span>研究隐性设计知识怎样被 Agent 执行</span><span>数据集、消融、盲评与统计</span></div>
+      </div>
+
+      <div class="limits">
+        <div><span>BOUNDARY</span><h3>值得研究，但别把它说成新模型。</h3></div>
+        <ul>
+          <li>没有模型权重、训练数据或像素渲染代码</li>
+          <li>构图比例和“不要像滤镜”仍靠视觉判断</li>
+          <li>短标题不等于可替代专业排版</li>
+          <li>一次成功案例不能证明批量稳定性</li>
+          <li>生成针织美术不等于可制造针织图纸</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>固定上游 `b84efe522e758649e46fe59f34d700eb60bedc12`</span>
+    <div><a href="../docs/analysis.md">完整分析</a><a href="../docs/use-cases-and-roadmap.md">场景与路线</a><a href="https://github.com/NalaZhang27/photo-to-organic-knit">上游仓库</a></div>
+  </footer>
+</body>
+</html>
